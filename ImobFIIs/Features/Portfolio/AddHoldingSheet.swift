@@ -44,6 +44,8 @@ struct AddHoldingSheet: View {
                         LabeledContent("Cotas", value: "\(shares)")
                     }
 
+                    shareQuickAddButtons
+
                     TextField("Preço médio", text: $priceText)
                         .keyboardType(.decimalPad)
                 }
@@ -69,6 +71,25 @@ struct AddHoldingSheet: View {
             }
         }
         .presentationDetents([.medium, .large])
+    }
+
+    private var shareQuickAddButtons: some View {
+        HStack(spacing: 8) {
+            ForEach([10, 50, 100], id: \.self) { amount in
+                Button("+\(amount)") {
+                    addShares(amount)
+                }
+                .buttonStyle(.glass)
+                .frame(maxWidth: .infinity)
+            }
+        }
+        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Atalhos de cotas")
+    }
+
+    private func addShares(_ amount: Int) {
+        shares = min(shares + amount, 1_000_000)
     }
 
     @ViewBuilder
