@@ -4,6 +4,12 @@ extension FormatStyle where Self == Decimal.FormatStyle.Currency {
     static var brl: Decimal.FormatStyle.Currency {
         .currency(code: "BRL").locale(Locale(identifier: "pt_BR"))
     }
+
+    static var brlInput: Decimal.FormatStyle.Currency {
+        .currency(code: "BRL")
+            .locale(Locale(identifier: "pt_BR"))
+            .precision(.fractionLength(2))
+    }
 }
 
 extension FormatStyle where Self == FloatingPointFormatStyle<Double>.Percent {

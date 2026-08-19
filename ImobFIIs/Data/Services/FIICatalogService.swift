@@ -52,11 +52,23 @@ struct BrapiFIICatalogService: FIICatalogServing {
     }
 
     func tickers(_ query: FIITickerQuery) async throws -> FIITickerPage {
-        let response: TickerListResponse = try await client.send(.tickers(query))
-        let funds = response.results.compactMap(FundSummary.init(dto:))
+        async let fiiResponse: TickerListResponse = client.send(.tickers(query.with(subType: "fii")))
+        async let fiagroResponse: TickerListResponse = client.send(.tickers(query.with(subType: "fi-agro")))
+        async let etfResponse: TickerListResponse = client.send(.tickers(query.with(subType: "etf")))
+
+        let (fiis, fiagros, etfs) = try await (fiiResponse, fiagroResponse, etfResponse)
+        let combined = fiis.results + fiagros.results + etfs.results
+        var seen = Set<String>()
+        let funds = combined.compactMap { dto -> FundSummary? in
+            guard let summary = FundSummary(dto: dto), seen.insert(summary.ticker).inserted else {
+                return nil
+            }
+            return summary
+        }
+
         return FIITickerPage(
             funds: funds,
-            totalItems: response.pagination?.totalItems ?? funds.count
+            totalItems: funds.count
         )
     }
 
@@ -84,16 +96,43 @@ struct BrapiFIICatalogService: FIICatalogServing {
 extension FundSummary {
     init?(dto: TickerDTO) {
         guard dto.isActive != false else { return nil }
-        if let subType = dto.subType, subType != "fii" { return nil }
+        guard dto.belongsInExploreCatalog else { return nil }
 
         ticker = dto.symbol
         name = dto.name
         longName = dto.longName
-        segment = FundSegment.fromAPI(subsector: dto.subsector)
+        segment = FundSegment.fromAPI(
+            subsector: dto.subsector,
+            subType: dto.subType,
+            name: [dto.longName, dto.name].compactMap { $0 }.joined(separator: " ")
+        )
         currentPrice = dto.quote?.lastPrice.map { Decimal($0) }
         changePercent = dto.quote?.changePercent.map { $0 / 100 }
         volume = dto.quote?.volume
         logoURL = dto.logoUrl.flatMap(URL.init(string:))
+    }
+}
+
+extension TickerDTO {
+    /// FIIs, Fiagros, and funds still named as FII/Fiagro even if brapi tags them as ETF
+    /// (ex.: BTAL11 after converting from FII to Fiagro).
+    var belongsInExploreCatalog: Bool {
+        switch subType {
+        case "fii", "fi-agro":
+            return true
+        default:
+            return hasRealEstateOrAgroIdentity
+        }
+    }
+
+    var hasRealEstateOrAgroIdentity: Bool {
+        let blob = [name, longName, subsector]
+            .compactMap { $0 }
+            .joined(separator: " ")
+            .folding(options: .diacriticInsensitive, locale: Locale(identifier: "pt_BR"))
+            .lowercased()
+
+        return blob.contains("imobiliario") || blob.contains("fiagro")
     }
 }
 

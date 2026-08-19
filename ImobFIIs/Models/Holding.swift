@@ -40,10 +40,15 @@ final class Holding {
     }
 
     func addShares(_ additionalShares: Int, at price: Decimal) {
-        guard additionalShares > 0 else { return }
+        guard let projected = projectedPosition(adding: additionalShares, at: price) else { return }
+        shares = projected.shares
+        averagePrice = projected.averagePrice
+    }
+
+    func projectedPosition(adding additionalShares: Int, at price: Decimal) -> (shares: Int, averagePrice: Decimal)? {
+        guard additionalShares > 0, price > 0 else { return nil }
         let totalShares = shares + additionalShares
         let totalCost = investedAmount + (price * Decimal(additionalShares))
-        shares = totalShares
-        averagePrice = totalCost / Decimal(totalShares)
+        return (totalShares, totalCost / Decimal(totalShares))
     }
 }

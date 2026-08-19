@@ -10,6 +10,7 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
     case fundsOfFunds = "Fundo de Fundos"
     case urban = "Renda Urbana"
     case residential = "Residencial"
+    case fiagro = "Fiagro"
     case other = "Outros"
 
     var id: String { rawValue }
@@ -24,11 +25,25 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
         case .fundsOfFunds: "rectangle.stack.fill"
         case .urban: "storefront.fill"
         case .residential: "house.fill"
+        case .fiagro: "leaf.fill"
         case .other: "building.columns.fill"
         }
     }
 
-    static func fromAPI(subsector: String?) -> FundSegment {
+    static func fromAPI(subsector: String?, subType: String? = nil, name: String? = nil) -> FundSegment {
+        if subType == "fi-agro" {
+            return .fiagro
+        }
+
+        let fromSubsector = segment(forSubsector: subsector)
+        if fromSubsector != .other {
+            return fromSubsector
+        }
+
+        return inferred(from: name) ?? .other
+    }
+
+    private static func segment(forSubsector subsector: String?) -> FundSegment {
         let normalized = subsector?
             .folding(options: .diacriticInsensitive, locale: Locale(identifier: "pt_BR"))
             .lowercased()
@@ -37,7 +52,7 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
         switch normalized {
         case "logistica":
             return .logistics
-        case "lajes corporativas", "escritorios":
+        case "lajes corporativas", "lages corporativas", "escritorios":
             return .offices
         case "shoppings":
             return .malls
@@ -51,9 +66,57 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
             return .urban
         case "residencial":
             return .residential
+        case "fiagro":
+            return .fiagro
         default:
             return .other
         }
+    }
+
+    private static func inferred(from name: String?) -> FundSegment? {
+        let blob = name?
+            .folding(options: .diacriticInsensitive, locale: Locale(identifier: "pt_BR"))
+            .lowercased() ?? ""
+        guard !blob.isEmpty else { return nil }
+
+        if blob.contains("fiagro")
+            || blob.contains("agronegocio")
+            || blob.contains("agroindustrial")
+            || blob.contains("agricola")
+            || blob.contains("rural")
+            || blob.contains(" agro")
+        {
+            return .fiagro
+        }
+        if blob.contains("fundo de fundos") || blob.contains("fofii") {
+            return .fundsOfFunds
+        }
+        if blob.contains("securities")
+            || blob.contains("recebiveis")
+            || blob.contains("credito")
+            || blob.contains(" cri")
+            || blob.contains("indice de papel")
+        {
+            return .paper
+        }
+        if blob.contains("renda urbana") || blob.contains("imoveis urbanos") {
+            return .urban
+        }
+        if blob.contains("residencial") {
+            return .residential
+        }
+        if blob.contains("logistica") {
+            return .logistics
+        }
+        if blob.contains("shopping") {
+            return .malls
+        }
+        if blob.contains("laje") || blob.contains("lage") || blob.contains("office")
+            || blob.contains("escritorio") || blob.contains("edificios corporativos")
+        {
+            return .offices
+        }
+        return nil
     }
 }
 

@@ -1,7 +1,10 @@
+import SwiftData
 import SwiftUI
 
 struct ExploreView: View {
+    @Environment(\.modelContext) private var modelContext
     @Bindable var viewModel: ExploreViewModel
+    @FocusState private var isSearchFocused: Bool
 
     var body: some View {
         List {
@@ -26,6 +29,13 @@ struct ExploreView: View {
             FundDetailView(summary: fund)
         }
         .searchable(text: $viewModel.searchText, prompt: "Ticker ou nome")
+        .searchFocused($isSearchFocused)
+        .scrollDismissesKeyboard(.immediately)
+        .background {
+            DismissKeyboardOnTap {
+                isSearchFocused = false
+            }
+        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu("Segmento", systemImage: "line.3.horizontal.decrease") {
@@ -45,9 +55,11 @@ struct ExploreView: View {
         }
         .refreshable {
             await viewModel.refresh()
+            FundStore.syncSegments(viewModel.funds, in: modelContext)
         }
         .task {
             await viewModel.loadIfNeeded()
+            FundStore.syncSegments(viewModel.funds, in: modelContext)
         }
         .overlay {
             overlayContent

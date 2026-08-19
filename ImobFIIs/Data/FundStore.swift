@@ -45,4 +45,28 @@ enum FundStore {
 
         return fund
     }
+
+    @MainActor
+    static func repairSegments(in context: ModelContext) {
+        guard let funds = try? context.fetch(FetchDescriptor<Fund>()) else { return }
+
+        for fund in funds {
+            let repaired = FundSegment.fromAPI(subsector: fund.segmentRaw, name: fund.name)
+            if fund.segment != repaired {
+                fund.segment = repaired
+            }
+        }
+    }
+
+    @MainActor
+    static func syncSegments(_ summaries: [FundSummary], in context: ModelContext) {
+        guard !summaries.isEmpty else { return }
+        let byTicker = Dictionary(uniqueKeysWithValues: summaries.map { ($0.ticker, $0) })
+        guard let funds = try? context.fetch(FetchDescriptor<Fund>()) else { return }
+
+        for fund in funds {
+            guard let summary = byTicker[fund.ticker], fund.segment != summary.segment else { continue }
+            fund.segment = summary.segment
+        }
+    }
 }

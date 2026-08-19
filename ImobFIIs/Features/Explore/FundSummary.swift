@@ -43,7 +43,7 @@ struct FundSummary: Identifiable, Hashable, Sendable {
         self.init(
             ticker: fund.ticker,
             name: fund.name,
-            segment: fund.segment,
+            segment: FundSegment.fromAPI(subsector: fund.segmentRaw, name: fund.name),
             currentPrice: fund.currentPrice
         )
     }

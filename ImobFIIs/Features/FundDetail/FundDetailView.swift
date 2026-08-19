@@ -2,6 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct FundDetailView: View {
+    @Query private var holdings: [Holding]
     @State private var viewModel: FundDetailViewModel
     @State private var isAddingHolding = false
 
@@ -117,8 +118,12 @@ struct FundDetailView: View {
         }
     }
 
+    private var isInPortfolio: Bool {
+        holdings.contains { $0.fund?.ticker == viewModel.summary.ticker }
+    }
+
     private var addToPortfolioButton: some View {
-        Button("Adicionar à carteira", systemImage: "plus") {
+        Button(isInPortfolio ? "Adicionar cotas" : "Adicionar à carteira", systemImage: "plus") {
             isAddingHolding = true
         }
         .buttonStyle(.glassProminent)
@@ -126,7 +131,7 @@ struct FundDetailView: View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 16)
         .padding(.top, 8)
-        .padding(.bottom, 4)
+        .padding(.bottom, 16)
     }
 
     private var administratorText: String {
