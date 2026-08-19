@@ -36,7 +36,7 @@ struct PortfolioView: View {
             Section("Posições") {
                 ForEach(holdings) { holding in
                     if let fund = holding.fund {
-                        NavigationLink(value: fund) {
+                        NavigationLink(value: FundSummary(fund: fund)) {
                             HoldingRow(holding: holding)
                         }
                     }
@@ -44,8 +44,8 @@ struct PortfolioView: View {
                 .onDelete(perform: deleteHoldings)
             }
         }
-        .navigationDestination(for: Fund.self) { fund in
-            FundDetailView(fund: fund)
+        .navigationDestination(for: FundSummary.self) { summary in
+            FundDetailView(summary: summary)
         }
     }
 

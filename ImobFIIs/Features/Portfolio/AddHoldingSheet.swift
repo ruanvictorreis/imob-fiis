@@ -7,17 +7,18 @@ struct AddHoldingSheet: View {
 
     @Query(sort: \Fund.ticker) private var funds: [Fund]
 
-    let preselectedFund: Fund?
+    let summary: FundSummary?
+    let indicators: FIIIndicators?
 
     @State private var selectedFund: Fund?
     @State private var shares = 10
     @State private var priceText = ""
 
-    init(preselectedFund: Fund? = nil) {
-        self.preselectedFund = preselectedFund
-        _selectedFund = State(initialValue: preselectedFund)
-        if let preselectedFund {
-            _priceText = State(initialValue: NSDecimalNumber(decimal: preselectedFund.currentPrice).stringValue)
+    init(summary: FundSummary? = nil, indicators: FIIIndicators? = nil) {
+        self.summary = summary
+        self.indicators = indicators
+        if let price = summary?.currentPrice {
+            _priceText = State(initialValue: NSDecimalNumber(decimal: price).stringValue)
         }
     }
 
@@ -27,30 +28,23 @@ struct AddHoldingSheet: View {
     }
 
     private var canSave: Bool {
-        selectedFund != nil && shares > 0 && (parsedPrice ?? 0) > 0
+        let hasFund = summary != nil || selectedFund != nil
+        return hasFund && shares > 0 && (parsedPrice ?? 0) > 0
     }
 
     var body: some View {
         NavigationStack {
             Form {
                 Section("Fundo") {
-                    if preselectedFund == nil {
-                        Picker("Ticker", selection: $selectedFund) {
-                            Text("Selecione").tag(nil as Fund?)
-                            ForEach(funds) { fund in
-                                Text(fund.ticker).tag(fund as Fund?)
-                            }
-                        }
-                    } else if let selectedFund {
-                        LabeledContent("Ticker", value: selectedFund.ticker)
-                        LabeledContent("Nome", value: selectedFund.name)
-                    }
+                    fundSection
                 }
 
                 Section("Posição") {
                     Stepper(value: $shares, in: 1...1_000_000) {
                         LabeledContent("Cotas", value: "\(shares)")
                     }
+
+                    shareQuickAddButtons
 
                     TextField("Preço médio", text: $priceText)
                         .keyboardType(.decimalPad)
@@ -72,15 +66,61 @@ struct AddHoldingSheet: View {
                 }
             }
             .onChange(of: selectedFund) { _, fund in
-                guard preselectedFund == nil, let fund, priceText.isEmpty else { return }
+                guard summary == nil, let fund, priceText.isEmpty else { return }
                 priceText = NSDecimalNumber(decimal: fund.currentPrice).stringValue
             }
         }
         .presentationDetents([.medium, .large])
     }
 
+    private var shareQuickAddButtons: some View {
+        HStack(spacing: 8) {
+            ForEach([10, 50, 100], id: \.self) { amount in
+                Button("+\(amount)") {
+                    addShares(amount)
+                }
+                .buttonStyle(.glass)
+                .frame(maxWidth: .infinity)
+            }
+        }
+        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Atalhos de cotas")
+    }
+
+    private func addShares(_ amount: Int) {
+        shares = min(shares + amount, 1_000_000)
+    }
+
+    @ViewBuilder
+    private var fundSection: some View {
+        if let summary {
+            LabeledContent("Ticker", value: summary.ticker)
+            LabeledContent("Nome", value: summary.displayName)
+        } else if funds.isEmpty {
+            Text("Adicione um fundo pela aba Explorar para começar a montar a carteira.")
+                .foregroundStyle(.secondary)
+        } else {
+            Picker("Ticker", selection: $selectedFund) {
+                Text("Selecione").tag(nil as Fund?)
+                ForEach(funds) { fund in
+                    Text(fund.ticker).tag(fund as Fund?)
+                }
+            }
+        }
+    }
+
     private func save() {
-        guard let fund = selectedFund, let price = parsedPrice else { return }
+        guard let price = parsedPrice else { return }
+
+        let fund: Fund
+        if let summary {
+            fund = FundStore.upsert(summary, indicators: indicators, in: modelContext)
+        } else if let selectedFund {
+            fund = selectedFund
+        } else {
+            return
+        }
 
         if let existing = fund.holdings.first {
             existing.addShares(shares, at: price)

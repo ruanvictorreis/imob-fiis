@@ -9,6 +9,8 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
     case hybrid = "Híbrido"
     case fundsOfFunds = "Fundo de Fundos"
     case urban = "Renda Urbana"
+    case residential = "Residencial"
+    case other = "Outros"
 
     var id: String { rawValue }
 
@@ -21,6 +23,36 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
         case .hybrid: "square.split.2x1.fill"
         case .fundsOfFunds: "rectangle.stack.fill"
         case .urban: "storefront.fill"
+        case .residential: "house.fill"
+        case .other: "building.columns.fill"
+        }
+    }
+
+    static func fromAPI(subsector: String?) -> FundSegment {
+        let normalized = subsector?
+            .folding(options: .diacriticInsensitive, locale: Locale(identifier: "pt_BR"))
+            .lowercased()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        switch normalized {
+        case "logistica":
+            return .logistics
+        case "lajes corporativas", "escritorios":
+            return .offices
+        case "shoppings":
+            return .malls
+        case "titulos e val. mob.", "titulos e valores mobiliarios", "papel":
+            return .paper
+        case "hibrido":
+            return .hybrid
+        case "fundo de fundos", "fof":
+            return .fundsOfFunds
+        case "renda urbana", "varejo":
+            return .urban
+        case "residencial":
+            return .residential
+        default:
+            return .other
         }
     }
 }

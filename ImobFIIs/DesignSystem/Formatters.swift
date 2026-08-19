@@ -12,6 +12,13 @@ extension FormatStyle where Self == FloatingPointFormatStyle<Double>.Percent {
             .precision(.fractionLength(1...2))
             .locale(Locale(identifier: "pt_BR"))
     }
+
+    static var marketChange: FloatingPointFormatStyle<Double>.Percent {
+        .percent
+            .precision(.fractionLength(2))
+            .sign(strategy: .always())
+            .locale(Locale(identifier: "pt_BR"))
+    }
 }
 
 extension Collection where Element == Holding {

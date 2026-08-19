@@ -1,37 +1,17 @@
-import SwiftData
 import SwiftUI
 
 struct ExploreView: View {
-    @Query(sort: \Fund.ticker) private var funds: [Fund]
-    @State private var searchText = ""
-    @State private var selectedSegment: FundSegment?
-
-    private var filteredFunds: [Fund] {
-        funds.filter { fund in
-            let matchesSegment = selectedSegment.map { fund.segment == $0 } ?? true
-            let matchesSearch = searchText.isEmpty
-                || fund.ticker.localizedStandardContains(searchText)
-                || fund.name.localizedStandardContains(searchText)
-                || fund.manager.localizedStandardContains(searchText)
-            return matchesSegment && matchesSearch
-        }
-    }
-
-    private var groupedFunds: [(FundSegment, [Fund])] {
-        Dictionary(grouping: filteredFunds, by: \.segment)
-            .map { ($0.key, $0.value.sorted { $0.ticker < $1.ticker }) }
-            .sorted { $0.0.rawValue < $1.0.rawValue }
-    }
+    @Bindable var viewModel: ExploreViewModel
 
     var body: some View {
         List {
-            if !searchText.isEmpty || selectedSegment != nil {
+            if !viewModel.searchText.isEmpty || viewModel.selectedSegment != nil {
                 Section {
                     filterSummary
                 }
             }
 
-            ForEach(groupedFunds, id: \.0) { segment, funds in
+            ForEach(viewModel.groupedFunds, id: \.0) { segment, funds in
                 Section(segment.rawValue) {
                     ForEach(funds) { fund in
                         NavigationLink(value: fund) {
@@ -42,20 +22,20 @@ struct ExploreView: View {
             }
         }
         .navigationTitle("Explorar")
-        .navigationDestination(for: Fund.self) { fund in
-            FundDetailView(fund: fund)
+        .navigationDestination(for: FundSummary.self) { fund in
+            FundDetailView(summary: fund)
         }
-        .searchable(text: $searchText, prompt: "Ticker, nome ou gestora")
+        .searchable(text: $viewModel.searchText, prompt: "Ticker ou nome")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu("Segmento", systemImage: "line.3.horizontal.decrease") {
                     Button("Todos") {
-                        selectedSegment = nil
+                        viewModel.selectedSegment = nil
                     }
                     Divider()
-                    ForEach(FundSegment.allCases) { segment in
+                    ForEach(viewModel.availableSegments) { segment in
                         Button {
-                            selectedSegment = segment
+                            viewModel.selectedSegment = segment
                         } label: {
                             Label(segment.rawValue, systemImage: segment.systemImage)
                         }
@@ -63,21 +43,45 @@ struct ExploreView: View {
                 }
             }
         }
+        .refreshable {
+            await viewModel.refresh()
+        }
+        .task {
+            await viewModel.loadIfNeeded()
+        }
         .overlay {
-            if filteredFunds.isEmpty {
-                ContentUnavailableView.search(text: searchText)
+            overlayContent
+        }
+    }
+
+    @ViewBuilder
+    private var overlayContent: some View {
+        if viewModel.isLoading && viewModel.funds.isEmpty {
+            ProgressView("Carregando FIIs…")
+        } else if let errorMessage = viewModel.errorMessage, viewModel.funds.isEmpty {
+            ContentUnavailableView {
+                Label("Não foi possível carregar os FIIs", systemImage: "wifi.exclamationmark")
+            } description: {
+                Text(errorMessage)
+            } actions: {
+                Button("Tentar novamente") {
+                    Task { await viewModel.refresh() }
+                }
+                .buttonStyle(.glassProminent)
             }
+        } else if viewModel.displayedFunds.isEmpty {
+            ContentUnavailableView.search(text: viewModel.searchText)
         }
     }
 
     private var filterSummary: some View {
         HStack {
-            Text("\(filteredFunds.count) fundos")
+            Text("\(viewModel.displayedFunds.count) fundos")
                 .foregroundStyle(.secondary)
             Spacer()
-            if let selectedSegment {
+            if let selectedSegment = viewModel.selectedSegment {
                 Button {
-                    self.selectedSegment = nil
+                    viewModel.selectedSegment = nil
                 } label: {
                     Label(selectedSegment.rawValue, systemImage: "xmark")
                 }
@@ -89,10 +93,11 @@ struct ExploreView: View {
 }
 
 #Preview {
-    let container = Persistence.makeContainer(inMemory: true)
-    SampleData.seedIfNeeded(in: container.mainContext)
-    return NavigationStack {
-        ExploreView()
+    NavigationStack {
+        ExploreView(
+            viewModel: ExploreViewModel(
+                catalog: MockFIICatalogService.preview
+            )
+        )
     }
-    .modelContainer(container)
 }

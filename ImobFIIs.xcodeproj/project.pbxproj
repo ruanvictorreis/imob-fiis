@@ -19,11 +19,26 @@
 /* Begin PBXFileReference section */
 		F11001000000000000000004 /* ImobFIIs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImobFIIs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11001000000000000000016 /* ImobFIIsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImobFIIsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11001000000000000000028 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		F11001000000000000000029 /* Secrets.xcconfig.example */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig.example; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F11001000000000000000027 /* Exceptions for "ImobFIIs" folder in "ImobFIIs" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F11001000000000000000006 /* ImobFIIs */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F11001000000000000000005 /* ImobFIIs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F11001000000000000000027 /* Exceptions for "ImobFIIs" folder in "ImobFIIs" target */,
+			);
 			path = ImobFIIs;
 			sourceTree = "<group>";
 		};
@@ -55,6 +70,7 @@
 		F11001000000000000000002 = {
 			isa = PBXGroup;
 			children = (
+				F1100100000000000000002A /* Config */,
 				F11001000000000000000005 /* ImobFIIs */,
 				F11001000000000000000017 /* ImobFIIsTests */,
 				F11001000000000000000003 /* Products */,
@@ -68,6 +84,15 @@
 				F11001000000000000000016 /* ImobFIIsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F1100100000000000000002A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F11001000000000000000028 /* Shared.xcconfig */,
+				F11001000000000000000029 /* Secrets.xcconfig.example */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +228,7 @@
 /* Begin XCBuildConfiguration section */
 		F11001000000000000000011 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F11001000000000000000028 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -268,6 +294,7 @@
 		};
 		F11001000000000000000012 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F11001000000000000000028 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -335,6 +362,7 @@
 				DEVELOPMENT_TEAM = SY9W464QW2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImobFIIs/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Imob FIIs";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -370,6 +398,7 @@
 				DEVELOPMENT_TEAM = SY9W464QW2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImobFIIs/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Imob FIIs";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

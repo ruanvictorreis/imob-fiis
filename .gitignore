@@ -19,6 +19,9 @@ xcuserdata/
 .AppleDouble
 .LSOverride
 
+# Secrets
+Config/Secrets.xcconfig
+
 # Fastlane
 fastlane/report.xml
 fastlane/Preview.html
