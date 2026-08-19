@@ -3,7 +3,12 @@ import SwiftUI
 
 struct RootTabView: View {
     @State private var selectedTab: AppTab = .portfolio
+    @State private var exploreViewModel: ExploreViewModel
     @Query(sort: \Holding.purchasedAt, order: .reverse) private var holdings: [Holding]
+
+    init(exploreViewModel: ExploreViewModel = ExploreViewModel()) {
+        _exploreViewModel = State(initialValue: exploreViewModel)
+    }
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -15,13 +20,13 @@ struct RootTabView: View {
 
             Tab("Explorar", systemImage: "building.columns.fill", value: .explore) {
                 NavigationStack {
-                    ExploreView()
+                    ExploreView(viewModel: exploreViewModel)
                 }
             }
 
             Tab(value: .search, role: .search) {
                 NavigationStack {
-                    ExploreView()
+                    ExploreView(viewModel: exploreViewModel)
                 }
             }
         }
@@ -39,8 +44,8 @@ private enum AppTab: Hashable {
 }
 
 #Preview {
-    let container = Persistence.makeContainer(inMemory: true)
-    SampleData.seedIfNeeded(in: container.mainContext)
-    return RootTabView()
-        .modelContainer(container)
+    RootTabView(
+        exploreViewModel: ExploreViewModel(catalog: MockFIICatalogService.preview)
+    )
+    .modelContainer(Persistence.makeContainer(inMemory: true))
 }

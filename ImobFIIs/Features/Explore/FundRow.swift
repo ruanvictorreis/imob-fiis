@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FundRow: View {
-    let fund: Fund
+    let fund: FundSummary
 
     var body: some View {
         HStack(spacing: 12) {
@@ -11,18 +11,10 @@ struct FundRow: View {
                 .frame(width: 32)
 
             VStack(alignment: .leading, spacing: 4) {
-                HStack {
-                    Text(fund.ticker)
-                        .font(.headline)
-                        .monospaced()
-                    if fund.isInPortfolio {
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.caption)
-                            .foregroundStyle(.tint)
-                            .accessibilityLabel("Na carteira")
-                    }
-                }
-                Text(fund.name)
+                Text(fund.ticker)
+                    .font(.headline)
+                    .monospaced()
+                Text(fund.displayName)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
@@ -31,15 +23,25 @@ struct FundRow: View {
             Spacer(minLength: 8)
 
             VStack(alignment: .trailing, spacing: 4) {
-                Text(fund.currentPrice, format: .brl)
-                    .font(.subheadline.weight(.semibold))
-                    .monospacedDigit()
-                Text(fund.dividendYield, format: .fiiYield)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .accessibilityLabel("Dividend yield \(fund.dividendYield.formatted(.fiiYield))")
+                if let price = fund.currentPrice {
+                    Text(price, format: .brl)
+                        .font(.subheadline.weight(.semibold))
+                        .monospacedDigit()
+                } else {
+                    Text("—")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                if let changePercent = fund.changePercent {
+                    Text(changePercent, format: .marketChange)
+                        .font(.caption)
+                        .monospacedDigit()
+                        .foregroundStyle(changePercent >= 0 ? Color.green : Color.red)
+                }
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
     }
 }
