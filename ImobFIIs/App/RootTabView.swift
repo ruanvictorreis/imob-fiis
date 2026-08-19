@@ -2,6 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct RootTabView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var selectedTab: AppTab = .portfolio
     @State private var exploreViewModel: ExploreViewModel
     @Query(sort: \Holding.purchasedAt, order: .reverse) private var holdings: [Holding]
@@ -33,6 +34,9 @@ struct RootTabView: View {
         .tabBarMinimizeBehavior(.onScrollDown)
         .tabViewBottomAccessory(isEnabled: !holdings.isEmpty) {
             PortfolioSummaryAccessory(holdings: holdings)
+        }
+        .task {
+            FundStore.repairSegments(in: modelContext)
         }
     }
 }

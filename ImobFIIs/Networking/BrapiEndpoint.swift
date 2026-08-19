@@ -54,17 +54,26 @@ enum BrapiEndpoint: Sendable {
 struct FIITickerQuery: Sendable, Equatable {
     var search: String? = nil
     var subsector: String? = nil
+    var subType: String = "fii"
     var page: Int = 1
     var limit: Int = 400
     var sortBy: String = "volume"
     var sortOrder: String = "desc"
 
     static let allFIIs = FIITickerQuery()
+    static let allFiagros = FIITickerQuery(subType: "fi-agro")
+    static let listedETFs = FIITickerQuery(subType: "etf")
+
+    func with(subType: String) -> FIITickerQuery {
+        var copy = self
+        copy.subType = subType
+        return copy
+    }
 
     var urlQueryItems: [URLQueryItem] {
         var items = [
             URLQueryItem(name: "type", value: "fund"),
-            URLQueryItem(name: "subType", value: "fii"),
+            URLQueryItem(name: "subType", value: subType),
             URLQueryItem(name: "page", value: String(page)),
             URLQueryItem(name: "limit", value: String(limit)),
             URLQueryItem(name: "sortBy", value: sortBy),

@@ -32,7 +32,61 @@ struct ImobFIIsTests {
 
         #expect(holding.shares == 20)
         #expect(holding.averagePrice == 110)
-        #expect(fund.holdings.count == 1)
+        #expect(holding.fund?.holdings.count == 1)
+    }
+
+    @Test @MainActor
+    func repairSegmentsUpdatesStaleOtherClassification() {
+        let container = Persistence.makeContainer(inMemory: true)
+        let context = container.mainContext
+
+        let rura = Fund(
+            ticker: "RURA11",
+            name: "Itau Asset Rural Figaro Imobiliario",
+            segment: .other,
+            manager: "",
+            currentPrice: 10,
+            dividendYield: 0,
+            lastDividend: 0
+        )
+        let cpts = Fund(
+            ticker: "CPTS11",
+            name: "Capitania Securities II Fundo de Investimento Imobiliario Cotas",
+            segment: .other,
+            manager: "",
+            currentPrice: 8,
+            dividendYield: 0,
+            lastDividend: 0
+        )
+        context.insert(rura)
+        context.insert(cpts)
+
+        FundStore.repairSegments(in: context)
+
+        #expect(rura.segment == .fiagro)
+        #expect(cpts.segment == .paper)
+    }
+
+    @Test
+    func projectedPositionShowsWeightedAverageBeforeSaving() {
+        let holding = Holding(shares: 120, averagePrice: Decimal(string: "98.5")!)
+        let projected = holding.projectedPosition(adding: 30, at: 100)
+
+        #expect(projected?.shares == 150)
+        #expect(projected?.averagePrice == Decimal(string: "98.8"))
+        #expect(holding.shares == 120)
+        #expect(holding.averagePrice == Decimal(string: "98.5"))
+    }
+
+    @Test
+    func brlInputFormatsPriceAsBrazilianCurrency() {
+        let formatted = Decimal(string: "98.5")!.formatted(.brlInput)
+
+        #expect(formatted.contains("R$"))
+        #expect(formatted.contains("98,50"))
+
+        let thousands = Decimal(string: "1234.5")!.formatted(.brlInput)
+        #expect(thousands.contains("1.234,50"))
     }
 }
 
@@ -63,6 +117,20 @@ struct ExploreCatalogTests {
         #expect(FundSegment.fromAPI(subsector: "Híbrido") == .hybrid)
         #expect(FundSegment.fromAPI(subsector: "Multicategoria") == .other)
         #expect(FundSegment.fromAPI(subsector: nil) == .other)
+        #expect(FundSegment.fromAPI(subsector: nil, subType: "fi-agro") == .fiagro)
+        #expect(FundSegment.fromAPI(subsector: "Fiagro") == .fiagro)
+        #expect(
+            FundSegment.fromAPI(
+                subsector: "Outros",
+                name: "Itau Asset Rural Figaro Imobiliario"
+            ) == .fiagro
+        )
+        #expect(
+            FundSegment.fromAPI(
+                subsector: "Outros",
+                name: "Capitania Securities II Fundo de Investimento Imobiliario Cotas"
+            ) == .paper
+        )
     }
 
     @Test @MainActor
@@ -79,6 +147,63 @@ struct ExploreCatalogTests {
         viewModel.searchText = ""
         viewModel.selectedSegment = .malls
         #expect(viewModel.displayedFunds.map(\.ticker) == ["XPML11"])
+    }
+
+    @Test
+    func keepsConvertedFIIMisclassifiedAsETF() {
+        let dto = TickerDTO(
+            symbol: "BTAL11",
+            name: "BTAL11",
+            longName: "Fundo de Investimento Imobiliario BTG Pactual Agro Logistica",
+            assetType: "fund",
+            subType: "etf",
+            sector: nil,
+            subsector: "Logística",
+            isActive: true,
+            logoUrl: nil,
+            quote: nil
+        )
+
+        let summary = FundSummary(dto: dto)
+        #expect(summary?.ticker == "BTAL11")
+        #expect(summary?.segment == .logistics)
+    }
+
+    @Test
+    func keepsFiagroSubtype() {
+        let dto = TickerDTO(
+            symbol: "RURA11",
+            name: "RURA11",
+            longName: "Itau Asset Rural Figaro Imobiliario",
+            assetType: "fund",
+            subType: "fi-agro",
+            sector: nil,
+            subsector: nil,
+            isActive: true,
+            logoUrl: nil,
+            quote: nil
+        )
+
+        #expect(FundSummary(dto: dto)?.ticker == "RURA11")
+        #expect(FundSummary(dto: dto)?.segment == .fiagro)
+    }
+
+    @Test
+    func dropsIndexETFsFromExploreCatalog() {
+        let dto = TickerDTO(
+            symbol: "BOVA11",
+            name: "BOVA11",
+            longName: "iShares Ibovespa Fundo de Indice",
+            assetType: "fund",
+            subType: "etf",
+            sector: "Miscellaneous",
+            subsector: nil,
+            isActive: true,
+            logoUrl: nil,
+            quote: nil
+        )
+
+        #expect(FundSummary(dto: dto) == nil)
     }
 
     @Test

@@ -3,8 +3,16 @@ import SwiftUI
 
 struct PortfolioView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Holding.purchasedAt, order: .reverse) private var holdings: [Holding]
-    @State private var isAddingHolding = false
+    @Query private var holdings: [Holding]
+    @State private var addHoldingDestination: AddHoldingDestination?
+
+    private var sortedHoldings: [Holding] {
+        holdings.sorted { lhs, rhs in
+            let left = lhs.fund?.ticker ?? ""
+            let right = rhs.fund?.ticker ?? ""
+            return left.localizedStandardCompare(right) == .orderedAscending
+        }
+    }
 
     var body: some View {
         Group {
@@ -18,12 +26,17 @@ struct PortfolioView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Adicionar", systemImage: "plus") {
-                    isAddingHolding = true
+                    addHoldingDestination = .pickFund
                 }
             }
         }
-        .sheet(isPresented: $isAddingHolding) {
-            AddHoldingSheet()
+        .sheet(item: $addHoldingDestination) { destination in
+            switch destination {
+            case .pickFund:
+                AddHoldingSheet()
+            case .fund(let summary):
+                AddHoldingSheet(summary: summary)
+            }
         }
     }
 
@@ -34,14 +47,24 @@ struct PortfolioView: View {
             }
 
             Section("Posições") {
-                ForEach(holdings) { holding in
+                ForEach(sortedHoldings) { holding in
                     if let fund = holding.fund {
                         NavigationLink(value: FundSummary(fund: fund)) {
                             HoldingRow(holding: holding)
                         }
+                        .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                            Button("Adicionar cotas", systemImage: "plus") {
+                                addHoldingDestination = .fund(FundSummary(fund: fund))
+                            }
+                            .tint(.accentColor)
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button("Excluir", systemImage: "trash", role: .destructive) {
+                                modelContext.delete(holding)
+                            }
+                        }
                     }
                 }
-                .onDelete(perform: deleteHoldings)
             }
         }
         .navigationDestination(for: FundSummary.self) { summary in
@@ -97,15 +120,23 @@ struct PortfolioView: View {
             Text("Adicione fundos imobiliários para acompanhar cotações, dividend yield e proventos.")
         } actions: {
             Button("Adicionar fundo") {
-                isAddingHolding = true
+                addHoldingDestination = .pickFund
             }
             .buttonStyle(.glassProminent)
         }
     }
+}
 
-    private func deleteHoldings(at offsets: IndexSet) {
-        for index in offsets {
-            modelContext.delete(holdings[index])
+private enum AddHoldingDestination: Identifiable {
+    case pickFund
+    case fund(FundSummary)
+
+    var id: String {
+        switch self {
+        case .pickFund:
+            "pickFund"
+        case .fund(let summary):
+            summary.ticker
         }
     }
 }
