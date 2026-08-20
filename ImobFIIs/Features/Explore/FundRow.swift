@@ -28,7 +28,7 @@ struct FundRow: View {
                         .font(.subheadline.weight(.semibold))
                         .monospacedDigit()
                 } else {
-                    Text("—")
+                    Text(L10n.Common.dash)
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }

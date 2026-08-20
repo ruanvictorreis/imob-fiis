@@ -10,15 +10,21 @@ struct AddHoldingSheet: View {
 
     let summary: FundSummary?
     let indicators: FIIIndicators?
+    let lastDividend: Decimal?
 
     @State private var selectedFund: Fund?
     @State private var sharesText = ""
     @State private var price: Decimal?
     @FocusState private var focusedField: Field?
 
-    init(summary: FundSummary? = nil, indicators: FIIIndicators? = nil) {
+    init(
+        summary: FundSummary? = nil,
+        indicators: FIIIndicators? = nil,
+        lastDividend: Decimal? = nil
+    ) {
         self.summary = summary
         self.indicators = indicators
+        self.lastDividend = lastDividend
         _price = State(initialValue: summary?.currentPrice)
     }
 
@@ -43,22 +49,28 @@ struct AddHoldingSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Fundo") {
+                Section(L10n.AddHolding.fund) {
                     fundSection
                 }
+                .imobSurface()
 
                 if let existingHolding {
-                    Section("Posição atual") {
+                    Section(L10n.AddHolding.currentPosition) {
                         Text(
-                            "Você tem \(existingHolding.shares) cotas · média "
-                                + existingHolding.averagePrice.formatted(.brl)
+                            L10n.AddHolding.currentPositionValue(
+                                shares: existingHolding.shares,
+                                average: existingHolding.averagePrice.formatted(.brl)
+                            )
                         )
                         .foregroundStyle(.secondary)
                     }
+                    .imobSurface()
                 }
 
-                Section(isAddingToExisting ? "Nesta compra" : "Posição") {
-                    LabeledContent(isAddingToExisting ? "Cotas nesta compra" : "Cotas") {
+                Section(isAddingToExisting ? L10n.AddHolding.thisPurchase : L10n.AddHolding.position) {
+                    LabeledContent(
+                        isAddingToExisting ? L10n.AddHolding.sharesThisPurchase : L10n.AddHolding.shares
+                    ) {
                         TextField("0", text: $sharesText)
                             .keyboardType(.numberPad)
                             .multilineTextAlignment(.trailing)
@@ -71,7 +83,9 @@ struct AddHoldingSheet: View {
 
                     shareQuickAddButtons
 
-                    LabeledContent(isAddingToExisting ? "Preço desta compra" : "Preço médio") {
+                    LabeledContent(
+                        isAddingToExisting ? L10n.AddHolding.priceThisPurchase : L10n.AddHolding.averagePrice
+                    ) {
                         TextField("R$ 0,00", value: $price, format: .brlInput)
                             .keyboardType(.decimalPad)
                             .multilineTextAlignment(.trailing)
@@ -79,6 +93,7 @@ struct AddHoldingSheet: View {
                             .focused($focusedField, equals: .price)
                     }
                 }
+                .imobSurface()
 
                 if let projectedPositionText {
                     Section {
@@ -86,30 +101,31 @@ struct AddHoldingSheet: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
+                    .imobSurface()
                 }
             }
+            .imobListCanvas()
             .scrollDismissesKeyboard(.immediately)
-            .safeAreaPadding(.bottom, 20)
-            .navigationTitle(isAddingToExisting ? "Adicionar cotas" : "Adicionar à carteira")
+            .navigationTitle(
+                isAddingToExisting ? L10n.AddHolding.addSharesTitle : L10n.AddHolding.addToPortfolioTitle
+            )
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar") {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(role: .close) {
                         dismiss()
                     }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button(isAddingToExisting ? "Adicionar" : "Salvar") {
-                        save()
-                    }
-                    .disabled(!canSave)
+                    .accessibilityLabel(L10n.Common.close)
                 }
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
-                    Button("OK") {
+                    Button(L10n.Common.ok) {
                         focusedField = nil
                     }
                 }
+            }
+            .safeAreaInset(edge: .bottom) {
+                saveButton
             }
             .onChange(of: selectedFund) { _, fund in
                 guard summary == nil, let fund else { return }
@@ -126,7 +142,10 @@ struct AddHoldingSheet: View {
               let projected = existingHolding.projectedPosition(adding: shares, at: price)
         else { return nil }
 
-        return "Nova posição: \(projected.shares) cotas · nova média \(projected.averagePrice.formatted(.brl))"
+        return L10n.AddHolding.projectedPosition(
+            shares: projected.shares,
+            average: projected.averagePrice.formatted(.brl)
+        )
     }
 
     private var shareQuickAddButtons: some View {
@@ -142,7 +161,7 @@ struct AddHoldingSheet: View {
         }
         .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
         .accessibilityElement(children: .contain)
-        .accessibilityLabel("Atalhos de cotas")
+        .accessibilityLabel(L10n.AddHolding.shareShortcuts)
     }
 
     private func addShares(_ amount: Int) {
@@ -158,14 +177,14 @@ struct AddHoldingSheet: View {
     @ViewBuilder
     private var fundSection: some View {
         if let summary {
-            LabeledContent("Ticker", value: summary.ticker)
-            LabeledContent("Nome", value: summary.displayName)
+            LabeledContent(L10n.Common.ticker, value: summary.ticker)
+            LabeledContent(L10n.Common.name, value: summary.displayName)
         } else if funds.isEmpty {
-            Text("Adicione um fundo pela aba Explorar para começar a montar a carteira.")
+            Text(L10n.AddHolding.emptyFunds)
                 .foregroundStyle(.secondary)
         } else {
-            Picker("Ticker", selection: $selectedFund) {
-                Text("Selecione").tag(nil as Fund?)
+            Picker(L10n.Common.ticker, selection: $selectedFund) {
+                Text(L10n.Common.select).tag(nil as Fund?)
                 ForEach(funds) { fund in
                     Text(fund.ticker).tag(fund as Fund?)
                 }
@@ -173,12 +192,30 @@ struct AddHoldingSheet: View {
         }
     }
 
+    private var saveButton: some View {
+        Button(isAddingToExisting ? L10n.Common.add : L10n.Common.save) {
+            save()
+        }
+        .imobPrimaryButton()
+        .controlSize(.large)
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 16)
+        .padding(.top, 8)
+        .padding(.bottom, 20)
+        .disabled(!canSave)
+    }
+
     private func save() {
         guard let price, price > 0 else { return }
 
         let fund: Fund
         if let summary {
-            fund = FundStore.upsert(summary, indicators: indicators, in: modelContext)
+            fund = FundStore.upsert(
+                summary,
+                indicators: indicators,
+                lastDividend: lastDividend,
+                in: modelContext
+            )
         } else if let selectedFund {
             fund = selectedFund
         } else {

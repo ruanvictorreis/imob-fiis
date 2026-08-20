@@ -15,6 +15,21 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
+    var title: String {
+        switch self {
+        case .logistics: L10n.Segment.logistics
+        case .offices: L10n.Segment.offices
+        case .malls: L10n.Segment.malls
+        case .paper: L10n.Segment.paper
+        case .hybrid: L10n.Segment.hybrid
+        case .fundsOfFunds: L10n.Segment.fundsOfFunds
+        case .urban: L10n.Segment.urban
+        case .residential: L10n.Segment.residential
+        case .fiagro: L10n.Segment.fiagro
+        case .other: L10n.Segment.other
+        }
+    }
+
     var systemImage: String {
         switch self {
         case .logistics: "shippingbox.fill"
@@ -122,6 +137,7 @@ final class Fund {
     var currentPrice: Decimal
     var dividendYield: Double
     var lastDividend: Decimal
+    var lastDividendUpdatedAt: Date?
     var vacancyRate: Double?
 
     @Relationship(deleteRule: .cascade, inverse: \Holding.fund)
@@ -144,6 +160,7 @@ final class Fund {
         currentPrice: Decimal,
         dividendYield: Double,
         lastDividend: Decimal,
+        lastDividendUpdatedAt: Date? = nil,
         vacancyRate: Double? = nil
     ) {
         self.ticker = ticker
@@ -153,6 +170,7 @@ final class Fund {
         self.currentPrice = currentPrice
         self.dividendYield = dividendYield
         self.lastDividend = lastDividend
+        self.lastDividendUpdatedAt = lastDividendUpdatedAt
         self.vacancyRate = vacancyRate
     }
 }

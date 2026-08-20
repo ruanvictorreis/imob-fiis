@@ -6,6 +6,12 @@ struct PortfolioView: View {
     @Query private var holdings: [Holding]
     @State private var addHoldingDestination: AddHoldingDestination?
 
+    private let catalog: any FIICatalogServing
+
+    init(catalog: any FIICatalogServing = BrapiFIICatalogService()) {
+        self.catalog = catalog
+    }
+
     private var sortedHoldings: [Holding] {
         holdings.sorted { lhs, rhs in
             let left = lhs.fund?.ticker ?? ""
@@ -22,10 +28,11 @@ struct PortfolioView: View {
                 holdingsList
             }
         }
-        .navigationTitle("Carteira")
+        .imobCanvas()
+        .navigationTitle(L10n.Portfolio.title)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Adicionar", systemImage: "plus") {
+                Button(L10n.Common.add, systemImage: "plus") {
                     addHoldingDestination = .pickFund
                 }
             }
@@ -45,21 +52,23 @@ struct PortfolioView: View {
             Section {
                 portfolioHeader
             }
+            .imobSurface()
 
-            Section("Posições") {
+            Section(L10n.Portfolio.positions) {
                 ForEach(sortedHoldings) { holding in
                     if let fund = holding.fund {
                         NavigationLink(value: FundSummary(fund: fund)) {
                             HoldingRow(holding: holding)
                         }
+                        .imobSurface()
                         .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                            Button("Adicionar cotas", systemImage: "plus") {
+                            Button(L10n.Portfolio.addShares, systemImage: "plus") {
                                 addHoldingDestination = .fund(FundSummary(fund: fund))
                             }
                             .tint(.accentColor)
                         }
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                            Button("Excluir", systemImage: "trash", role: .destructive) {
+                            Button(L10n.Common.delete, systemImage: "trash", role: .destructive) {
                                 modelContext.delete(holding)
                             }
                         }
@@ -67,15 +76,16 @@ struct PortfolioView: View {
                 }
             }
         }
+        .imobListCanvas()
         .navigationDestination(for: FundSummary.self) { summary in
-            FundDetailView(summary: summary)
+            FundDetailView(summary: summary, catalog: catalog)
         }
     }
 
     private var portfolioHeader: some View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Patrimônio")
+                Text(L10n.Portfolio.netWorth)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Text(holdings.currentValue, format: .brl)
@@ -86,11 +96,11 @@ struct PortfolioView: View {
 
             HStack(spacing: 16) {
                 metric(
-                    title: "Investido",
+                    title: L10n.Portfolio.invested,
                     value: holdings.investedAmount
                 )
                 metric(
-                    title: "Resultado",
+                    title: L10n.Portfolio.result,
                     value: holdings.profitAndLoss,
                     emphasizesSign: true
                 )
@@ -115,14 +125,14 @@ struct PortfolioView: View {
 
     private var emptyState: some View {
         ContentUnavailableView {
-            Label("Sua carteira está vazia", systemImage: "chart.pie")
+            Label(L10n.Portfolio.emptyTitle, systemImage: "chart.pie")
         } description: {
-            Text("Adicione fundos imobiliários para acompanhar cotações, dividend yield e proventos.")
+            Text(L10n.Portfolio.emptyDescription)
         } actions: {
-            Button("Adicionar fundo") {
+            Button(L10n.Portfolio.addFund) {
                 addHoldingDestination = .pickFund
             }
-            .buttonStyle(.glassProminent)
+            .imobPrimaryButton()
         }
     }
 }

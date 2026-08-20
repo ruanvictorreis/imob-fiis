@@ -13,16 +13,20 @@ struct RootTabView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            Tab("Carteira", systemImage: "chart.pie.fill", value: .portfolio) {
+            Tab(value: .portfolio) {
                 NavigationStack {
-                    PortfolioView()
+                    PortfolioView(catalog: exploreViewModel.catalog)
                 }
+            } label: {
+                Label(L10n.Tab.portfolio, systemImage: "chart.pie.fill")
             }
 
-            Tab("Explorar", systemImage: "building.columns.fill", value: .explore) {
+            Tab(value: .explore) {
                 NavigationStack {
                     ExploreView(viewModel: exploreViewModel)
                 }
+            } label: {
+                Label(L10n.Tab.explore, systemImage: "building.columns.fill")
             }
 
             Tab(value: .search, role: .search) {
@@ -33,11 +37,22 @@ struct RootTabView: View {
         }
         .tabBarMinimizeBehavior(.onScrollDown)
         .tabViewBottomAccessory(isEnabled: !holdings.isEmpty) {
-            PortfolioSummaryAccessory(holdings: holdings)
+            PortfolioSummaryAccessory()
         }
+        .background(Color.appBackground.ignoresSafeArea())
         .task {
             FundStore.repairSegments(in: modelContext)
         }
+        .task(id: dividendRefreshKey) {
+            await LastDividendSync.refreshStaleFunds(
+                holdings.compactMap(\.fund),
+                using: exploreViewModel.catalog
+            )
+        }
+    }
+
+    private var dividendRefreshKey: String {
+        holdings.compactMap(\.fund?.ticker).sorted().joined(separator: ",")
     }
 }
 
@@ -48,8 +63,6 @@ private enum AppTab: Hashable {
 }
 
 #Preview {
-    RootTabView(
-        exploreViewModel: ExploreViewModel(catalog: MockFIICatalogService.preview)
-    )
-    .modelContainer(Persistence.makeContainer(inMemory: true))
+    RootTabView()
+        .modelContainer(Persistence.makeContainer(inMemory: true))
 }

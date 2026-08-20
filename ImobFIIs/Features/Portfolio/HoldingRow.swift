@@ -6,10 +6,15 @@ struct HoldingRow: View {
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading, spacing: 4) {
-                Text(holding.fund?.ticker ?? "—")
+                Text(holding.fund?.ticker ?? L10n.Common.dash)
                     .font(.headline)
                     .monospaced()
-                Text("\(holding.shares) cotas · média \(holding.averagePrice.formatted(.brl))")
+                Text(
+                    L10n.Holding.sharesAverage(
+                        shares: holding.shares,
+                        average: holding.averagePrice.formatted(.brl)
+                    )
+                )
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }

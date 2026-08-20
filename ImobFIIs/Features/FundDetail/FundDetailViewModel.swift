@@ -8,6 +8,7 @@ final class FundDetailViewModel {
     var quote: FundQuote?
     var indicators: FIIIndicators?
     var isLoadingMarketData = false
+    var lastDividend: Decimal?
 
     private let catalog: any FIICatalogServing
 
@@ -42,6 +43,7 @@ final class FundDetailViewModel {
 
         async let fetchedQuote = catalog.quote(for: summary.ticker)
         async let fetchedIndicators = catalog.indicators(for: [summary.ticker])
+        async let fetchedDividends = catalog.dividends(for: [summary.ticker])
 
         if let quote = try? await fetchedQuote {
             self.quote = quote
@@ -57,6 +59,13 @@ final class FundDetailViewModel {
                 summary.longName = name
             }
         }
+
+        let dividends = (try? await fetchedDividends) ?? []
+        lastDividend = LastDividend.resolved(
+            dividends: dividends,
+            price: displayPrice,
+            yield1m: indicators?.dividendYield1m
+        )
     }
 
     private func apply(_ quote: FundQuote) {

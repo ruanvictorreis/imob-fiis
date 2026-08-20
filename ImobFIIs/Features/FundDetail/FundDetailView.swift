@@ -2,6 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct FundDetailView: View {
+    @Environment(\.modelContext) private var modelContext
     @Query private var holdings: [Holding]
     @State private var viewModel: FundDetailViewModel
     @State private var isAddingHolding = false
@@ -17,90 +18,119 @@ struct FundDetailView: View {
             Section {
                 header
             }
+            .imobSurface()
 
-            Section("Cotação") {
-                LabeledContent("Preço atual") {
+            Section(L10n.FundDetail.quote) {
+                LabeledContent(L10n.FundDetail.currentPrice) {
                     if let price = viewModel.displayPrice {
                         Text(price, format: .brl)
                             .monospacedDigit()
                     } else {
-                        Text("—")
+                        Text(L10n.Common.dash)
                     }
                 }
                 if let changePercent = viewModel.displayChangePercent {
-                    LabeledContent("Variação") {
+                    LabeledContent(L10n.FundDetail.change) {
                         Text(changePercent, format: .marketChange)
                             .monospacedDigit()
                             .foregroundStyle(changePercent >= 0 ? Color.green : Color.red)
                     }
                 }
                 if let previousClose = viewModel.quote?.previousClose {
-                    LabeledContent("Fechamento anterior") {
+                    LabeledContent(L10n.FundDetail.previousClose) {
                         Text(previousClose, format: .brl)
                             .monospacedDigit()
                     }
                 }
                 if let dayLow = viewModel.quote?.dayLow, let dayHigh = viewModel.quote?.dayHigh {
-                    LabeledContent("Máxima/mínima do dia") {
-                        Text("\(dayLow.formatted(.brl)) – \(dayHigh.formatted(.brl))")
-                            .monospacedDigit()
+                    LabeledContent(L10n.FundDetail.dayRange) {
+                        Text(
+                            L10n.FundDetail.rangeValue(
+                                low: dayLow.formatted(.brl),
+                                high: dayHigh.formatted(.brl)
+                            )
+                        )
+                        .monospacedDigit()
                     }
                 }
                 if let weekLow = viewModel.quote?.fiftyTwoWeekLow, let weekHigh = viewModel.quote?.fiftyTwoWeekHigh {
-                    LabeledContent("Mínima/máxima 52 semanas") {
-                        Text("\(weekLow.formatted(.brl)) – \(weekHigh.formatted(.brl))")
-                            .monospacedDigit()
+                    LabeledContent(L10n.FundDetail.weekRange) {
+                        Text(
+                            L10n.FundDetail.rangeValue(
+                                low: weekLow.formatted(.brl),
+                                high: weekHigh.formatted(.brl)
+                            )
+                        )
+                        .monospacedDigit()
                     }
                 }
                 if let volume = viewModel.displayVolume {
-                    LabeledContent("Volume") {
+                    LabeledContent(L10n.FundDetail.volume) {
                         Text(volume, format: .number.notation(.compactName).locale(Locale(identifier: "pt_BR")))
                     }
                 }
             }
+            .imobSurface()
 
             if let indicators = viewModel.indicators {
-                Section("Indicadores") {
+                Section(L10n.FundDetail.indicators) {
+                    if let lastDividend = viewModel.lastDividend {
+                        LabeledContent(L10n.FundDetail.lastDividend) {
+                            Text(lastDividend, format: .brl)
+                                .monospacedDigit()
+                        }
+                    }
                     if let yield = indicators.dividendYield12m {
-                        LabeledContent("Dividend yield 12m") {
+                        LabeledContent(L10n.FundDetail.dividendYield12m) {
                             Text(yield, format: .fiiYield)
                                 .monospacedDigit()
                         }
                     }
                     if let priceToNav = indicators.priceToNav {
-                        LabeledContent("P/VP") {
+                        LabeledContent(L10n.FundDetail.priceToNav) {
                             Text(priceToNav, format: .number.precision(.fractionLength(2)))
                                 .monospacedDigit()
                         }
                     }
                     if let nav = indicators.navPerShare {
-                        LabeledContent("Valor patrimonial") {
+                        LabeledContent(L10n.FundDetail.nav) {
                             Text(nav, format: .brl)
                                 .monospacedDigit()
                         }
                     }
                     if let investors = indicators.totalInvestors {
-                        LabeledContent("Cotistas") {
+                        LabeledContent(L10n.FundDetail.investors) {
                             Text(investors, format: .number.notation(.compactName).locale(Locale(identifier: "pt_BR")))
                         }
                     }
                     if let vacancyRate = indicators.vacancyRate {
-                        LabeledContent("Vacância") {
+                        LabeledContent(L10n.FundDetail.vacancy) {
                             Text(vacancyRate, format: .fiiYield)
                                 .monospacedDigit()
                         }
                     }
                 }
+                .imobSurface()
+            } else if let lastDividend = viewModel.lastDividend {
+                Section(L10n.FundDetail.indicators) {
+                    LabeledContent(L10n.FundDetail.lastDividend) {
+                        Text(lastDividend, format: .brl)
+                            .monospacedDigit()
+                    }
+                }
+                .imobSurface()
             }
 
-            Section("Sobre") {
-                LabeledContent("Segmento", value: viewModel.summary.segment.rawValue)
+            Section(L10n.FundDetail.about) {
+                LabeledContent(L10n.Common.segment, value: viewModel.summary.segment.title)
                 if let tipoGestao = viewModel.indicators?.tipoGestao {
-                    LabeledContent("Gestão", value: tipoGestao)
+                    LabeledContent(L10n.FundDetail.management, value: tipoGestao)
                 }
-                LabeledContent("Administrador", value: administratorText)
+                LabeledContent(L10n.FundDetail.administrator, value: administratorText)
             }
+            .imobSurface()
         }
+        .imobListCanvas()
         .navigationTitle(viewModel.summary.ticker)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .tabBar)
@@ -109,13 +139,25 @@ struct FundDetailView: View {
         }
         .task {
             await viewModel.loadMarketData()
+            guard !Task.isCancelled else { return }
+            persistCachedFund()
         }
         .sheet(isPresented: $isAddingHolding) {
             AddHoldingSheet(
                 summary: viewModel.summary,
-                indicators: viewModel.indicators
+                indicators: viewModel.indicators,
+                lastDividend: viewModel.lastDividend
             )
         }
+    }
+
+    private func persistCachedFund() {
+        FundStore.upsert(
+            viewModel.summary,
+            indicators: viewModel.indicators,
+            lastDividend: viewModel.lastDividend,
+            in: modelContext
+        )
     }
 
     private var isInPortfolio: Bool {
@@ -123,10 +165,13 @@ struct FundDetailView: View {
     }
 
     private var addToPortfolioButton: some View {
-        Button(isInPortfolio ? "Adicionar cotas" : "Adicionar à carteira", systemImage: "plus") {
+        Button(
+            isInPortfolio ? L10n.FundDetail.addShares : L10n.FundDetail.addToPortfolio,
+            systemImage: "plus"
+        ) {
             isAddingHolding = true
         }
-        .buttonStyle(.glassProminent)
+        .imobPrimaryButton()
         .controlSize(.large)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 16)
@@ -136,12 +181,12 @@ struct FundDetailView: View {
 
     private var administratorText: String {
         let manager = viewModel.manager
-        return manager.isEmpty ? "Não informado" : manager
+        return manager.isEmpty ? L10n.Common.notSpecified : manager
     }
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Label(viewModel.summary.segment.rawValue, systemImage: viewModel.summary.segment.systemImage)
+            Label(viewModel.summary.segment.title, systemImage: viewModel.summary.segment.systemImage)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             Text(viewModel.displayName)
@@ -158,11 +203,9 @@ struct FundDetailView: View {
 }
 
 #Preview {
+    let fund = SampleData.makeCatalog()[0]
     NavigationStack {
-        FundDetailView(
-            summary: MockFIICatalogService.preview.page.funds[0],
-            catalog: MockFIICatalogService.preview
-        )
+        FundDetailView(summary: FundSummary(fund: fund))
     }
     .modelContainer(Persistence.makeContainer(inMemory: true))
 }

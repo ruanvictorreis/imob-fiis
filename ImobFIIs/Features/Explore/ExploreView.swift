@@ -12,23 +12,26 @@ struct ExploreView: View {
                 Section {
                     filterSummary
                 }
+                .imobSurface()
             }
 
             ForEach(viewModel.groupedFunds, id: \.0) { segment, funds in
-                Section(segment.rawValue) {
+                Section(segment.title) {
                     ForEach(funds) { fund in
                         NavigationLink(value: fund) {
                             FundRow(fund: fund)
                         }
+                        .imobSurface()
                     }
                 }
             }
         }
-        .navigationTitle("Explorar")
+        .imobListCanvas()
+        .navigationTitle(L10n.Explore.title)
         .navigationDestination(for: FundSummary.self) { fund in
-            FundDetailView(summary: fund)
+            FundDetailView(summary: fund, catalog: viewModel.catalog)
         }
-        .searchable(text: $viewModel.searchText, prompt: "Ticker ou nome")
+        .searchable(text: $viewModel.searchText, prompt: L10n.Explore.searchPrompt)
         .searchFocused($isSearchFocused)
         .scrollDismissesKeyboard(.immediately)
         .background {
@@ -38,8 +41,8 @@ struct ExploreView: View {
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Menu("Segmento", systemImage: "line.3.horizontal.decrease") {
-                    Button("Todos") {
+                Menu(L10n.Explore.segmentFilter, systemImage: "line.3.horizontal.decrease") {
+                    Button(L10n.Common.all) {
                         viewModel.selectedSegment = nil
                     }
                     Divider()
@@ -47,7 +50,7 @@ struct ExploreView: View {
                         Button {
                             viewModel.selectedSegment = segment
                         } label: {
-                            Label(segment.rawValue, systemImage: segment.systemImage)
+                            Label(segment.title, systemImage: segment.systemImage)
                         }
                     }
                 }
@@ -69,17 +72,17 @@ struct ExploreView: View {
     @ViewBuilder
     private var overlayContent: some View {
         if viewModel.isLoading && viewModel.funds.isEmpty {
-            ProgressView("Carregando FIIs…")
+            ProgressView(L10n.Explore.loading)
         } else if let errorMessage = viewModel.errorMessage, viewModel.funds.isEmpty {
             ContentUnavailableView {
-                Label("Não foi possível carregar os FIIs", systemImage: "wifi.exclamationmark")
+                Label(L10n.Explore.loadError, systemImage: "wifi.exclamationmark")
             } description: {
                 Text(errorMessage)
             } actions: {
-                Button("Tentar novamente") {
+                Button(L10n.Common.retry) {
                     Task { await viewModel.refresh() }
                 }
-                .buttonStyle(.glassProminent)
+                .imobPrimaryButton()
             }
         } else if viewModel.displayedFunds.isEmpty {
             ContentUnavailableView.search(text: viewModel.searchText)
@@ -88,14 +91,14 @@ struct ExploreView: View {
 
     private var filterSummary: some View {
         HStack {
-            Text("\(viewModel.displayedFunds.count) fundos")
+            Text(L10n.Explore.fundsCount(viewModel.displayedFunds.count))
                 .foregroundStyle(.secondary)
             Spacer()
             if let selectedSegment = viewModel.selectedSegment {
                 Button {
                     viewModel.selectedSegment = nil
                 } label: {
-                    Label(selectedSegment.rawValue, systemImage: "xmark")
+                    Label(selectedSegment.title, systemImage: "xmark")
                 }
                 .buttonStyle(.glass)
                 .controlSize(.small)
@@ -106,10 +109,6 @@ struct ExploreView: View {
 
 #Preview {
     NavigationStack {
-        ExploreView(
-            viewModel: ExploreViewModel(
-                catalog: MockFIICatalogService.preview
-            )
-        )
+        ExploreView(viewModel: ExploreViewModel())
     }
 }

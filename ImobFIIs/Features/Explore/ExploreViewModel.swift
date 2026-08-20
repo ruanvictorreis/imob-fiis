@@ -10,7 +10,7 @@ final class ExploreViewModel {
     var isLoading = false
     var errorMessage: String?
 
-    private let catalog: any FIICatalogServing
+    let catalog: any FIICatalogServing
     private var hasLoaded = false
 
     init(catalog: any FIICatalogServing = BrapiFIICatalogService()) {
