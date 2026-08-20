@@ -79,27 +79,16 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
             .lowercased() ?? ""
         guard !blob.isEmpty else { return nil }
 
-        if blob.contains("fiagro")
-            || blob.contains("agronegocio")
-            || blob.contains("agroindustrial")
-            || blob.contains("agricola")
-            || blob.contains("rural")
-            || blob.contains(" agro")
-        {
+        if containsAny(blob, ["fiagro", "agronegocio", "agroindustrial", "agricola", "rural", " agro"]) {
             return .fiagro
         }
-        if blob.contains("fundo de fundos") || blob.contains("fofii") {
+        if containsAny(blob, ["fundo de fundos", "fofii"]) {
             return .fundsOfFunds
         }
-        if blob.contains("securities")
-            || blob.contains("recebiveis")
-            || blob.contains("credito")
-            || blob.contains(" cri")
-            || blob.contains("indice de papel")
-        {
+        if containsAny(blob, ["securities", "recebiveis", "credito", " cri", "indice de papel"]) {
             return .paper
         }
-        if blob.contains("renda urbana") || blob.contains("imoveis urbanos") {
+        if containsAny(blob, ["renda urbana", "imoveis urbanos"]) {
             return .urban
         }
         if blob.contains("residencial") {
@@ -111,12 +100,14 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
         if blob.contains("shopping") {
             return .malls
         }
-        if blob.contains("laje") || blob.contains("lage") || blob.contains("office")
-            || blob.contains("escritorio") || blob.contains("edificios corporativos")
-        {
+        if containsAny(blob, ["laje", "lage", "office", "escritorio", "edificios corporativos"]) {
             return .offices
         }
         return nil
+    }
+
+    private static func containsAny(_ blob: String, _ tokens: [String]) -> Bool {
+        tokens.contains { blob.contains($0) }
     }
 }
 

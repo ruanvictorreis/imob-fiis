@@ -20,6 +20,10 @@ enum SampleData {
     }
 
     static func makeCatalog() -> [Fund] {
+        logistics + offices + malls + paper + other
+    }
+
+    private static var logistics: [Fund] {
         [
             Fund(
                 ticker: "HGLG11",
@@ -51,6 +55,11 @@ enum SampleData {
                 lastDividend: 0.72,
                 vacancyRate: 0.04
             ),
+        ]
+    }
+
+    private static var offices: [Fund] {
+        [
             Fund(
                 ticker: "HGRE11",
                 name: "CSHG Real Estate",
@@ -71,6 +80,11 @@ enum SampleData {
                 lastDividend: 0.58,
                 vacancyRate: 0.08
             ),
+        ]
+    }
+
+    private static var malls: [Fund] {
+        [
             Fund(
                 ticker: "XPML11",
                 name: "XP Malls",
@@ -91,6 +105,11 @@ enum SampleData {
                 lastDividend: 0.86,
                 vacancyRate: 0.04
             ),
+        ]
+    }
+
+    private static var paper: [Fund] {
+        [
             Fund(
                 ticker: "MXRF11",
                 name: "Maxi Renda",
@@ -109,6 +128,11 @@ enum SampleData {
                 dividendYield: 0.121,
                 lastDividend: 1.05
             ),
+        ]
+    }
+
+    private static var other: [Fund] {
+        [
             Fund(
                 ticker: "KNRI11",
                 name: "Kinea Renda Imobiliária",

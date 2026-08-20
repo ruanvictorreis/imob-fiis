@@ -233,7 +233,9 @@ struct ExploreCatalogTests {
 
     @Test
     func proFeatureOnIndicatorsReturnsEmptyList() async throws {
-        let body = #"{"error":true,"message":"Fundos Imobiliários (FIIs) requer o plano Pro.","code":"FEATURE_NOT_AVAILABLE"}"#
+        let body = """
+        {"error":true,"message":"Fundos Imobiliários (FIIs) requer o plano Pro.","code":"FEATURE_NOT_AVAILABLE"}
+        """
         let client = BrapiClient(
             token: "test-token",
             session: MockHTTPClient(data: Data(body.utf8), statusCode: 403)

@@ -52,8 +52,8 @@ enum BrapiEndpoint: Sendable {
 }
 
 struct FIITickerQuery: Sendable, Equatable {
-    var search: String? = nil
-    var subsector: String? = nil
+    var search: String?
+    var subsector: String?
     var subType: String = "fii"
     var page: Int = 1
     var limit: Int = 400
