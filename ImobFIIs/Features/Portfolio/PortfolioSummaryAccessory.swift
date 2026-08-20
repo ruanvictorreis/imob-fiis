@@ -7,12 +7,12 @@ struct PortfolioSummaryAccessory: View {
     @Environment(\.tabViewBottomAccessoryPlacement) private var placement
 
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: Spacing.sm) {
             Image(systemName: "brazilianrealsign.circle.fill")
                 .font(isExpanded ? .title2 : .body)
                 .foregroundStyle(.tint)
 
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: Spacing.xxxs) {
                 Text(L10n.Accessory.estimatedIncome)
                     .font(.caption)
                     .foregroundStyle(Color.appSecondaryText)
@@ -23,14 +23,14 @@ struct PortfolioSummaryAccessory: View {
                 }
             }
 
-            Spacer(minLength: 8)
+            Spacer(minLength: Spacing.xs)
 
             Text(estimatedMonthlyIncome, format: .brl)
                 .font(isExpanded ? .headline : .subheadline.weight(.semibold))
                 .monospacedDigit()
         }
-        .padding(.horizontal)
-        .padding(.vertical, isExpanded ? 8 : 0)
+        .padding(.horizontal, Spacing.md)
+        .padding(.vertical, isExpanded ? Spacing.xs : 0)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(L10n.Accessory.estimatedIncomeAccessibility(estimatedMonthlyIncome.formatted(.brl)))
     }

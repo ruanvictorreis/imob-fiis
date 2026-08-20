@@ -79,6 +79,28 @@ struct ImobFIIsTests {
     }
 
     @Test
+    func replacingPositionOverwritesSharesAndAverage() {
+        let holding = Holding(shares: 120, averagePrice: Decimal(string: "98.5")!)
+        holding.replacePosition(shares: 200, averagePrice: Decimal(string: "87.3")!)
+
+        #expect(holding.shares == 200)
+        #expect(holding.averagePrice == Decimal(string: "87.3"))
+    }
+
+    @Test
+    func replacingPositionIgnoresInvalidValues() {
+        let holding = Holding(shares: 10, averagePrice: 100)
+
+        holding.replacePosition(shares: 0, averagePrice: 90)
+        #expect(holding.shares == 10)
+        #expect(holding.averagePrice == 100)
+
+        holding.replacePosition(shares: 5, averagePrice: 0)
+        #expect(holding.shares == 10)
+        #expect(holding.averagePrice == 100)
+    }
+
+    @Test
     func brlInputFormatsPriceAsBrazilianCurrency() {
         let formatted = Decimal(string: "98.5")!.formatted(.brlInput)
 

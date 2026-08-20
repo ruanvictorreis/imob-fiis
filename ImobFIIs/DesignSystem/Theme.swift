@@ -2,6 +2,8 @@ import SwiftUI
 import UIKit
 
 enum ImobChrome {
+
+    @MainActor
     static func configure() {
         let selected = UIColor(Color.accentColor)
         let normal = UIColor(Color.appSecondaryText)
@@ -19,6 +21,7 @@ enum ImobChrome {
         tabBar.unselectedItemTintColor = normal
     }
 
+    @MainActor
     private static func applyTabItemColors(
         to itemAppearance: UITabBarItemAppearance,
         selected: UIColor,
@@ -61,6 +64,47 @@ extension View {
 
     func imobPrimaryButton() -> some View {
         buttonStyle(.borderedProminent)
-            .tint(Color.appButton)
+            .tint(.accentColor)
+    }
+}
+
+struct ImobExpandingPrimaryButton: View {
+    let title: String
+    let systemImage: String
+    let action: () -> Void
+
+    @State private var isExpanded = false
+    @State private var showsTitle = false
+
+    private let collapsedSize: CGFloat = 56
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: Spacing.xs) {
+                Image(systemName: systemImage)
+                if showsTitle {
+                    Text(title)
+                        .lineLimit(1)
+                        .transition(.opacity)
+                }
+            }
+        }
+        .imobPrimaryButton()
+        .buttonBorderShape(.capsule)
+        .controlSize(.large)
+        .frame(maxWidth: isExpanded ? .infinity : collapsedSize)
+        .frame(height: collapsedSize)
+        .clipShape(Capsule())
+        .accessibilityLabel(title)
+        .task {
+            try? await Task.sleep(for: .milliseconds(280))
+            withAnimation(.smooth(duration: 0.55)) {
+                isExpanded = true
+            }
+            try? await Task.sleep(for: .milliseconds(700))
+            withAnimation(.smooth(duration: 0.25)) {
+                showsTitle = true
+            }
+        }
     }
 }

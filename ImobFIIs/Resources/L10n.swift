@@ -30,6 +30,7 @@ enum L10n {
         static var title: String { text("portfolio.title") }
         static var positions: String { text("portfolio.positions") }
         static var addShares: String { text("portfolio.addShares") }
+        static var editPosition: String { text("portfolio.editPosition") }
         static var netWorth: String { text("portfolio.netWorth") }
         static var invested: String { text("portfolio.invested") }
         static var result: String { text("portfolio.result") }
@@ -85,6 +86,7 @@ enum L10n {
         static var administrator: String { text("fundDetail.administrator") }
         static var addShares: String { text("fundDetail.addShares") }
         static var addToPortfolio: String { text("fundDetail.addToPortfolio") }
+        static var editPosition: String { text("fundDetail.editPosition") }
 
         static func rangeValue(low: String, high: String) -> String {
             format("fundDetail.rangeValue", low, high)
@@ -112,6 +114,12 @@ enum L10n {
         static func projectedPosition(shares: Int, average: String) -> String {
             format("addHolding.projectedPosition", shares, average)
         }
+    }
+
+    enum EditHolding {
+        static var title: String { text("editHolding.title") }
+        static var helper: String { text("editHolding.helper") }
+        static var tapToEdit: String { text("editHolding.tapToEdit") }
     }
 
     enum Segment {

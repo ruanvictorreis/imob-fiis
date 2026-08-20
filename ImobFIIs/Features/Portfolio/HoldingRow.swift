@@ -5,7 +5,7 @@ struct HoldingRow: View {
 
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: Spacing.xxs) {
                 Text(holding.fund?.ticker ?? L10n.Common.dash)
                     .font(.headline)
                     .monospaced()
@@ -19,9 +19,9 @@ struct HoldingRow: View {
                     .foregroundStyle(Color.appSecondaryText)
             }
 
-            Spacer(minLength: 8)
+            Spacer(minLength: Spacing.xs)
 
-            VStack(alignment: .trailing, spacing: 4) {
+            VStack(alignment: .trailing, spacing: Spacing.xxs) {
                 Text(holding.currentValue, format: .brl)
                     .font(.subheadline.weight(.semibold))
                     .monospacedDigit()
@@ -31,6 +31,6 @@ struct HoldingRow: View {
                     .foregroundStyle(holding.profitAndLoss >= 0 ? Color.appPositive : Color.red)
             }
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, Spacing.xxs)
     }
 }

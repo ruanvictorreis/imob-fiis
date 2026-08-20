@@ -6,6 +6,7 @@ struct FundDetailView: View {
     @Query private var holdings: [Holding]
     @State private var viewModel: FundDetailViewModel
     @State private var isAddingHolding = false
+    @State private var isEditingHolding = false
 
     init(summary: FundSummary, catalog: any FIICatalogServing = BrapiFIICatalogService()) {
         _viewModel = State(
@@ -152,6 +153,11 @@ struct FundDetailView: View {
                 lastDividend: viewModel.lastDividend
             )
         }
+        .sheet(isPresented: $isEditingHolding) {
+            if let currentHolding {
+                EditHoldingSheet(holding: currentHolding)
+            }
+        }
     }
 
     private func persistCachedFund() {
@@ -163,23 +169,35 @@ struct FundDetailView: View {
         )
     }
 
+    private var currentHolding: Holding? {
+        holdings.first { $0.fund?.ticker == viewModel.summary.ticker }
+    }
+
     private var isInPortfolio: Bool {
-        holdings.contains { $0.fund?.ticker == viewModel.summary.ticker }
+        currentHolding != nil
     }
 
     private var addToPortfolioButton: some View {
-        Button(
-            isInPortfolio ? L10n.FundDetail.addShares : L10n.FundDetail.addToPortfolio,
-            systemImage: "plus"
-        ) {
-            isAddingHolding = true
+        VStack(spacing: Spacing.xs) {
+            ImobExpandingPrimaryButton(
+                title: isInPortfolio ? L10n.FundDetail.addShares : L10n.FundDetail.addToPortfolio,
+                systemImage: "plus",
+                action: { isAddingHolding = true },
+            )
+
+            if isInPortfolio {
+                Button(L10n.FundDetail.editPosition) {
+                    isEditingHolding = true
+                }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Color.accentColor)
+                .padding(.top, Spacing.xxs)
+                .padding(.bottom, Spacing.xxs)
+            }
         }
-        .imobPrimaryButton()
-        .controlSize(.large)
-        .frame(maxWidth: .infinity)
-        .padding(.horizontal, 16)
-        .padding(.top, 8)
-        .padding(.bottom, 16)
+        .padding(.horizontal, Spacing.md)
+        .padding(.top, Spacing.xs)
+        .padding(.bottom, Spacing.md)
     }
 
     private var administratorText: String {
@@ -188,7 +206,7 @@ struct FundDetailView: View {
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: Spacing.xs) {
             Label(viewModel.summary.segment.title, systemImage: viewModel.summary.segment.systemImage)
                 .font(.subheadline)
                 .foregroundStyle(Color.appSecondaryText)
@@ -200,7 +218,7 @@ struct FundDetailView: View {
                     .transition(.opacity)
             }
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, Spacing.xs)
         .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .combine)
     }

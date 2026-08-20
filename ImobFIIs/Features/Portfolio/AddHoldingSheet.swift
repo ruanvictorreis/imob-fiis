@@ -150,7 +150,7 @@ struct AddHoldingSheet: View {
     }
 
     private var shareQuickAddButtons: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: Spacing.xxs) {
             ForEach([1, 5, 10, 50, 100], id: \.self) { amount in
                 Button("+\(amount)") {
                     addShares(amount)
@@ -161,7 +161,7 @@ struct AddHoldingSheet: View {
                 .frame(maxWidth: .infinity)
             }
         }
-        .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
+        .listRowInsets(EdgeInsets(top: Spacing.xs, leading: Spacing.sm, bottom: Spacing.xs, trailing: Spacing.sm))
         .accessibilityElement(children: .contain)
         .accessibilityLabel(L10n.AddHolding.shareShortcuts)
     }
@@ -201,9 +201,9 @@ struct AddHoldingSheet: View {
         .imobPrimaryButton()
         .controlSize(.large)
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, 16)
-        .padding(.top, 8)
-        .padding(.bottom, 20)
+        .padding(.horizontal, Spacing.md)
+        .padding(.top, Spacing.xs)
+        .padding(.bottom, Spacing.lg)
         .disabled(!canSave)
     }
 

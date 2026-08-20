@@ -17,7 +17,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.039215686274509803" green="0.066666666666666666" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Y5k-bF-splash" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="a1B-c2-ldn"/>
                             <constraint firstAttribute="trailing" secondItem="Y5k-bF-splash" secondAttribute="trailing" id="b2C-d3-trl"/>
@@ -32,6 +32,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SplashPhoto" width="852" height="1846"/>
+        <image name="SplashPhoto" width="853" height="1844"/>
     </resources>
 </document>
