@@ -1,0 +1,35 @@
+included:
+  - ImobFIIs
+  - ImobFIIsTests
+
+excluded:
+  - .build
+  - DerivedData
+
+opt_in_rules:
+  - empty_count
+  - first_where
+  - redundant_nil_coalescing
+
+disabled_rules:
+  - todo
+
+trailing_comma:
+  mandatory_comma: true
+
+line_length:
+  warning: 120
+  error: 160
+  ignores_urls: true
+  ignores_function_declarations: true
+
+identifier_name:
+  min_length:
+    warning: 2
+  excluded:
+    - id
+    - x
+    - y
+
+nesting:
+  type_level: 2

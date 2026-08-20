@@ -49,8 +49,11 @@ struct AddHoldingSheet: View {
 
                 if let existingHolding {
                     Section("Posição atual") {
-                        Text("Você tem \(existingHolding.shares) cotas · média \(existingHolding.averagePrice.formatted(.brl))")
-                            .foregroundStyle(.secondary)
+                        Text(
+                            "Você tem \(existingHolding.shares) cotas · média "
+                                + existingHolding.averagePrice.formatted(.brl)
+                        )
+                        .foregroundStyle(.secondary)
                     }
                 }
 
@@ -207,8 +210,10 @@ struct AddHoldingSheet: View {
 #Preview("Adicionar cotas") {
     let container = Persistence.makeContainer(inMemory: true)
     SampleData.seedIfNeeded(in: container.mainContext)
-    let fund = try! container.mainContext.fetch(FetchDescriptor<Fund>()).first!
-    container.mainContext.insert(Holding(shares: 120, averagePrice: 98.5, fund: fund))
-    return AddHoldingSheet(summary: FundSummary(fund: fund))
+    let fund = try? container.mainContext.fetch(FetchDescriptor<Fund>()).first
+    if let fund {
+        container.mainContext.insert(Holding(shares: 120, averagePrice: 98.5, fund: fund))
+    }
+    return AddHoldingSheet(summary: fund.map(FundSummary.init(fund:)))
         .modelContainer(container)
 }
