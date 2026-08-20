@@ -33,7 +33,7 @@ struct FundDetailView: View {
                     LabeledContent(L10n.FundDetail.change) {
                         Text(changePercent, format: .marketChange)
                             .monospacedDigit()
-                            .foregroundStyle(changePercent >= 0 ? Color.green : Color.red)
+                            .foregroundStyle(changePercent >= 0 ? Color.appPositive : Color.red)
                     }
                 }
                 if let previousClose = viewModel.quote?.previousClose {
@@ -188,7 +188,7 @@ struct FundDetailView: View {
         VStack(alignment: .leading, spacing: 8) {
             Label(viewModel.summary.segment.title, systemImage: viewModel.summary.segment.systemImage)
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.appSecondaryText)
             Text(viewModel.displayName)
                 .font(.title2.weight(.semibold))
             if viewModel.isLoadingMarketData {

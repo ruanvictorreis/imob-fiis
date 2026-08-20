@@ -54,6 +54,7 @@ struct ExploreView: View {
                         }
                     }
                 }
+                .tint(.accentColor)
             }
         }
         .refreshable {
@@ -92,7 +93,7 @@ struct ExploreView: View {
     private var filterSummary: some View {
         HStack {
             Text(L10n.Explore.fundsCount(viewModel.displayedFunds.count))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.appSecondaryText)
             Spacer()
             if let selectedSegment = viewModel.selectedSegment {
                 Button {

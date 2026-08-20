@@ -16,7 +16,7 @@ struct FundRow: View {
                     .monospaced()
                 Text(fund.displayName)
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.appSecondaryText)
                     .lineLimit(1)
             }
 
@@ -30,14 +30,14 @@ struct FundRow: View {
                 } else {
                     Text(L10n.Common.dash)
                         .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.appSecondaryText)
                 }
 
                 if let changePercent = fund.changePercent {
                     Text(changePercent, format: .marketChange)
                         .font(.caption)
                         .monospacedDigit()
-                        .foregroundStyle(changePercent >= 0 ? Color.green : Color.red)
+                        .foregroundStyle(changePercent >= 0 ? Color.appPositive : Color.red)
                 }
             }
         }

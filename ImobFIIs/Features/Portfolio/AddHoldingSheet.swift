@@ -62,7 +62,7 @@ struct AddHoldingSheet: View {
                                 average: existingHolding.averagePrice.formatted(.brl)
                             )
                         )
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.appSecondaryText)
                     }
                     .imobSurface()
                 }
@@ -99,7 +99,7 @@ struct AddHoldingSheet: View {
                     Section {
                         Text(projectedPositionText)
                             .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.appSecondaryText)
                     }
                     .imobSurface()
                 }
@@ -133,7 +133,8 @@ struct AddHoldingSheet: View {
             }
         }
         .presentationDetents([.large])
-        .presentationBackground(.thickMaterial)
+        .presentationBackground(Color.appBackground)
+        .imobAppearance()
     }
 
     private var projectedPositionText: String? {
@@ -155,6 +156,7 @@ struct AddHoldingSheet: View {
                     addShares(amount)
                 }
                 .buttonStyle(.glass)
+                .tint(.accentColor)
                 .controlSize(.small)
                 .frame(maxWidth: .infinity)
             }
@@ -181,7 +183,7 @@ struct AddHoldingSheet: View {
             LabeledContent(L10n.Common.name, value: summary.displayName)
         } else if funds.isEmpty {
             Text(L10n.AddHolding.emptyFunds)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.appSecondaryText)
         } else {
             Picker(L10n.Common.ticker, selection: $selectedFund) {
                 Text(L10n.Common.select).tag(nil as Fund?)

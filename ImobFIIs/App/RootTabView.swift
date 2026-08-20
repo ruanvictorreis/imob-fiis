@@ -13,20 +13,16 @@ struct RootTabView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            Tab(value: .portfolio) {
+            Tab(L10n.Tab.portfolio, systemImage: "chart.pie.fill", value: .portfolio) {
                 NavigationStack {
                     PortfolioView(catalog: exploreViewModel.catalog)
                 }
-            } label: {
-                Label(L10n.Tab.portfolio, systemImage: "chart.pie.fill")
             }
 
-            Tab(value: .explore) {
+            Tab(L10n.Tab.explore, systemImage: "building.columns.fill", value: .explore) {
                 NavigationStack {
                     ExploreView(viewModel: exploreViewModel)
                 }
-            } label: {
-                Label(L10n.Tab.explore, systemImage: "building.columns.fill")
             }
 
             Tab(value: .search, role: .search) {
@@ -40,6 +36,7 @@ struct RootTabView: View {
             PortfolioSummaryAccessory()
         }
         .background(Color.appBackground.ignoresSafeArea())
+        .imobAppearance()
         .task {
             FundStore.repairSegments(in: modelContext)
         }
