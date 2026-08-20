@@ -4,7 +4,7 @@ import SwiftUI
 struct PortfolioView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var holdings: [Holding]
-    @State private var addHoldingDestination: AddHoldingDestination?
+    @State private var positionSheet: PositionSheet?
 
     private let catalog: any FIICatalogServing
 
@@ -33,17 +33,19 @@ struct PortfolioView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(L10n.Common.add, systemImage: "plus") {
-                    addHoldingDestination = .pickFund
+                    positionSheet = .addNew
                 }
                 .tint(.accentColor)
             }
         }
-        .sheet(item: $addHoldingDestination) { destination in
+        .sheet(item: $positionSheet) { destination in
             switch destination {
-            case .pickFund:
+            case .addNew:
                 AddHoldingSheet()
-            case .fund(let summary):
-                AddHoldingSheet(summary: summary)
+            case .edit(let ticker):
+                if let holding = holdings.first(where: { $0.fund?.ticker == ticker }) {
+                    EditHoldingSheet(holding: holding)
+                }
             }
         }
     }
@@ -62,17 +64,15 @@ struct PortfolioView: View {
                             HoldingRow(holding: holding)
                         }
                         .imobSurface()
-                        .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                            Button(L10n.Portfolio.addShares, systemImage: "plus") {
-                                addHoldingDestination = .fund(FundSummary(fund: fund))
-                            }
-                            .tint(.accentColor)
-                        }
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button(L10n.Common.delete, systemImage: "trash", role: .destructive) {
                                 modelContext.delete(holding)
                             }
                             .tint(.red)
+                            Button(L10n.Portfolio.editPosition, systemImage: "pencil") {
+                                presentSheet(.edit(ticker: fund.ticker))
+                            }
+                            .tint(.accentColor)
                         }
                     }
                 }
@@ -81,6 +81,12 @@ struct PortfolioView: View {
         .imobListCanvas()
         .navigationDestination(for: FundSummary.self) { summary in
             FundDetailView(summary: summary, catalog: catalog)
+        }
+    }
+
+    private func presentSheet(_ sheet: PositionSheet) {
+        Task { @MainActor in
+            positionSheet = sheet
         }
     }
 
@@ -132,23 +138,23 @@ struct PortfolioView: View {
             Text(L10n.Portfolio.emptyDescription)
         } actions: {
             Button(L10n.Portfolio.addFund) {
-                addHoldingDestination = .pickFund
+                positionSheet = .addNew
             }
             .imobPrimaryButton()
         }
     }
 }
 
-private enum AddHoldingDestination: Identifiable {
-    case pickFund
-    case fund(FundSummary)
+private enum PositionSheet: Identifiable {
+    case addNew
+    case edit(ticker: String)
 
     var id: String {
         switch self {
-        case .pickFund:
-            "pickFund"
-        case .fund(let summary):
-            summary.ticker
+        case .addNew:
+            "addNew"
+        case .edit(let ticker):
+            "edit-\(ticker)"
         }
     }
 }

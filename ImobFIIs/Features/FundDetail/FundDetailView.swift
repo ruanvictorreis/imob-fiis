@@ -6,6 +6,7 @@ struct FundDetailView: View {
     @Query private var holdings: [Holding]
     @State private var viewModel: FundDetailViewModel
     @State private var isAddingHolding = false
+    @State private var isEditingHolding = false
 
     init(summary: FundSummary, catalog: any FIICatalogServing = BrapiFIICatalogService()) {
         _viewModel = State(
@@ -152,6 +153,11 @@ struct FundDetailView: View {
                 lastDividend: viewModel.lastDividend
             )
         }
+        .sheet(isPresented: $isEditingHolding) {
+            if let currentHolding {
+                EditHoldingSheet(holding: currentHolding)
+            }
+        }
     }
 
     private func persistCachedFund() {
@@ -163,20 +169,36 @@ struct FundDetailView: View {
         )
     }
 
+    private var currentHolding: Holding? {
+        holdings.first { $0.fund?.ticker == viewModel.summary.ticker }
+    }
+
     private var isInPortfolio: Bool {
-        holdings.contains { $0.fund?.ticker == viewModel.summary.ticker }
+        currentHolding != nil
     }
 
     private var addToPortfolioButton: some View {
-        Button(
-            isInPortfolio ? L10n.FundDetail.addShares : L10n.FundDetail.addToPortfolio,
-            systemImage: "plus"
-        ) {
-            isAddingHolding = true
+        VStack(spacing: 8) {
+            Button(
+                isInPortfolio ? L10n.FundDetail.addShares : L10n.FundDetail.addToPortfolio,
+                systemImage: "plus"
+            ) {
+                isAddingHolding = true
+            }
+            .imobPrimaryButton()
+            .controlSize(.large)
+            .frame(maxWidth: .infinity)
+
+            if isInPortfolio {
+                Button(L10n.FundDetail.editPosition) {
+                    isEditingHolding = true
+                }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Color.accentColor)
+                .padding(.top, 4)
+                .padding(.bottom, 4)
+            }
         }
-        .imobPrimaryButton()
-        .controlSize(.large)
-        .frame(maxWidth: .infinity)
         .padding(.horizontal, 16)
         .padding(.top, 8)
         .padding(.bottom, 16)

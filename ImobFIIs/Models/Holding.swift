@@ -45,6 +45,12 @@ final class Holding {
         averagePrice = projected.averagePrice
     }
 
+    func replacePosition(shares: Int, averagePrice: Decimal) {
+        guard shares > 0, averagePrice > 0 else { return }
+        self.shares = shares
+        self.averagePrice = averagePrice
+    }
+
     func projectedPosition(adding additionalShares: Int, at price: Decimal) -> (shares: Int, averagePrice: Decimal)? {
         guard additionalShares > 0, price > 0 else { return nil }
         let totalShares = shares + additionalShares

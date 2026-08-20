@@ -2,6 +2,8 @@ import SwiftUI
 import UIKit
 
 enum ImobChrome {
+
+    @MainActor
     static func configure() {
         let selected = UIColor(Color.accentColor)
         let normal = UIColor(Color.appSecondaryText)
@@ -19,6 +21,7 @@ enum ImobChrome {
         tabBar.unselectedItemTintColor = normal
     }
 
+    @MainActor
     private static func applyTabItemColors(
         to itemAppearance: UITabBarItemAppearance,
         selected: UIColor,
@@ -61,6 +64,6 @@ extension View {
 
     func imobPrimaryButton() -> some View {
         buttonStyle(.borderedProminent)
-            .tint(Color.appButton)
+            .tint(.accentColor)
     }
 }

@@ -208,6 +208,39 @@
         }
       }
     },
+    "editHolding.helper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use o preço médio da corretora. Isso substitui os valores atuais e não registra uma compra."
+          }
+        }
+      }
+    },
+    "editHolding.tapToEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque para editar"
+          }
+        }
+      }
+    },
+    "editHolding.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar posição"
+          }
+        }
+      }
+    },
     "common.add" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -484,6 +517,17 @@
         }
       }
     },
+    "fundDetail.editPosition" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar posição"
+          }
+        }
+      }
+    },
     "fundDetail.dayRange" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -669,6 +713,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Adicionar cotas"
+          }
+        }
+      }
+    },
+    "portfolio.editPosition" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
           }
         }
       }

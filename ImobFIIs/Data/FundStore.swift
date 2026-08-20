@@ -3,6 +3,7 @@ import SwiftData
 
 enum FundStore {
     @MainActor
+    @discardableResult
     static func upsert(
         _ summary: FundSummary,
         indicators: FIIIndicators?,
