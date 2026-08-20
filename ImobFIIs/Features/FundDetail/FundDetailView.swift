@@ -25,6 +25,7 @@ struct FundDetailView: View {
                     if let price = viewModel.displayPrice {
                         Text(price, format: .brl)
                             .monospacedDigit()
+                            .contentTransition(.numericText())
                     } else {
                         Text(L10n.Common.dash)
                     }
@@ -33,6 +34,7 @@ struct FundDetailView: View {
                     LabeledContent(L10n.FundDetail.change) {
                         Text(changePercent, format: .marketChange)
                             .monospacedDigit()
+                            .contentTransition(.numericText())
                             .foregroundStyle(changePercent >= 0 ? Color.appPositive : Color.red)
                     }
                 }
@@ -131,6 +133,7 @@ struct FundDetailView: View {
             .imobSurface()
         }
         .imobListCanvas()
+        .animation(.smooth(duration: 0.4), value: viewModel.isLoadingMarketData)
         .navigationTitle(viewModel.summary.ticker)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .tabBar)
@@ -194,6 +197,7 @@ struct FundDetailView: View {
             if viewModel.isLoadingMarketData {
                 ProgressView()
                     .controlSize(.small)
+                    .transition(.opacity)
             }
         }
         .padding(.vertical, 8)
