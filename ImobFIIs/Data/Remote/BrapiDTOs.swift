@@ -76,3 +76,15 @@ struct QuoteDTO: Decodable, Sendable {
     var marketCap: Double?
     var logourl: String?
 }
+
+struct FIIDividendsResponse: Decodable, Sendable {
+    var dividends: [FIIDividendDTO]
+}
+
+struct FIIDividendDTO: Decodable, Sendable {
+    var symbol: String
+    var label: String?
+    var paymentDate: String?
+    var lastDatePrior: String?
+    var rate: Double?
+}

@@ -5,6 +5,7 @@ struct MockFIICatalogService: FIICatalogServing {
     var page: FIITickerPage
     var indicatorsByTicker: [String: FIIIndicators] = [:]
     var quotesByTicker: [String: FundQuote] = [:]
+    var dividendsByTicker: [String: [FIIDividend]] = [:]
 
     func tickers(_ query: FIITickerQuery) async throws -> FIITickerPage {
         _ = query
@@ -17,6 +18,10 @@ struct MockFIICatalogService: FIICatalogServing {
 
     func indicators(for symbols: [String]) async throws -> [FIIIndicators] {
         symbols.compactMap { indicatorsByTicker[$0] }
+    }
+
+    func dividends(for symbols: [String]) async throws -> [FIIDividend] {
+        symbols.flatMap { dividendsByTicker[$0] ?? [] }
     }
 
     static let preview = MockFIICatalogService(
@@ -89,6 +94,17 @@ struct MockFIICatalogService: FIICatalogServing {
                 fiftyTwoWeekLow: 8.90,
                 marketCap: nil
             ),
+        ],
+        dividendsByTicker: [
+            "MXRF11": [
+                FIIDividend(
+                    ticker: "MXRF11",
+                    label: "RENDIMENTO",
+                    paymentDate: Date(timeIntervalSince1970: 1_762_128_000),
+                    lastDatePrior: Date(timeIntervalSince1970: 1_762_128_000),
+                    rate: Decimal(9) / 100
+                ),
+            ],
         ]
     )
 }

@@ -6,6 +6,7 @@ enum FundStore {
     static func upsert(
         _ summary: FundSummary,
         indicators: FIIIndicators?,
+        lastDividend: Decimal? = nil,
         in context: ModelContext
     ) -> Fund {
         let ticker = summary.ticker
@@ -38,12 +39,29 @@ enum FundStore {
         if let vacancyRate = indicators?.vacancyRate {
             fund.vacancyRate = vacancyRate
         }
+        applyLastDividend(lastDividend, indicators: indicators, summary: summary, to: fund)
 
         if fund.modelContext == nil {
             context.insert(fund)
         }
 
         return fund
+    }
+
+    private static func applyLastDividend(
+        _ lastDividend: Decimal?,
+        indicators: FIIIndicators?,
+        summary: FundSummary,
+        to fund: Fund
+    ) {
+        let resolved = lastDividend ?? LastDividend.estimate(
+            price: indicators?.price ?? summary.currentPrice ?? fund.currentPrice,
+            yield1m: indicators?.dividendYield1m
+        )
+        guard let resolved, resolved > 0 else { return }
+        if lastDividend == nil, fund.lastDividend > 0 { return }
+        fund.lastDividend = resolved
+        fund.lastDividendUpdatedAt = .now
     }
 
     @MainActor

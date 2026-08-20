@@ -1,0 +1,879 @@
+{
+  "sourceLanguage" : "pt-BR",
+  "strings" : {
+    "+%lld" : {
+
+    },
+    "0" : {
+
+    },
+    "accessory.estimatedIncome" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proventos estimados"
+          }
+        }
+      }
+    },
+    "accessory.estimatedIncomeAccessibility" : {
+      "comment" : "VoiceOver da faixa de proventos estimados. %@ é o valor em reais.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proventos estimados %@"
+          }
+        }
+      }
+    },
+    "accessory.estimatedIncomeFormula" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último rendimento × cotas"
+          }
+        }
+      }
+    },
+    "addHolding.addSharesTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar cotas"
+          }
+        }
+      }
+    },
+    "addHolding.addToPortfolioTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar à carteira"
+          }
+        }
+      }
+    },
+    "addHolding.averagePrice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preço médio"
+          }
+        }
+      }
+    },
+    "addHolding.currentPosition" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posição atual"
+          }
+        }
+      }
+    },
+    "addHolding.currentPositionValue" : {
+      "comment" : "%lld cotas atuais; %@ preço médio.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você tem %lld cotas · média %@"
+          }
+        }
+      }
+    },
+    "addHolding.emptyFunds" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione um fundo pela aba Explorar para começar a montar a carteira."
+          }
+        }
+      }
+    },
+    "addHolding.fund" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fundo"
+          }
+        }
+      }
+    },
+    "addHolding.position" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posição"
+          }
+        }
+      }
+    },
+    "addHolding.priceThisPurchase" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preço desta compra"
+          }
+        }
+      }
+    },
+    "addHolding.projectedPosition" : {
+      "comment" : "%lld cotas projetadas; %@ nova média.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova posição: %lld cotas · nova média %@"
+          }
+        }
+      }
+    },
+    "addHolding.shares" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cotas"
+          }
+        }
+      }
+    },
+    "addHolding.shareShortcuts" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atalhos de cotas"
+          }
+        }
+      }
+    },
+    "addHolding.sharesThisPurchase" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cotas nesta compra"
+          }
+        }
+      }
+    },
+    "addHolding.thisPurchase" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nesta compra"
+          }
+        }
+      }
+    },
+    "common.add" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
+          }
+        }
+      }
+    },
+    "common.all" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
+          }
+        }
+      }
+    },
+    "common.close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar"
+          }
+        }
+      }
+    },
+    "common.dash" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "—"
+          }
+        }
+      }
+    },
+    "common.delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir"
+          }
+        }
+      }
+    },
+    "common.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome"
+          }
+        }
+      }
+    },
+    "common.notSpecified" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não informado"
+          }
+        }
+      }
+    },
+    "common.ok" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "common.retry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tentar novamente"
+          }
+        }
+      }
+    },
+    "common.save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
+          }
+        }
+      }
+    },
+    "common.segment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segmento"
+          }
+        }
+      }
+    },
+    "common.select" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione"
+          }
+        }
+      }
+    },
+    "common.ticker" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ticker"
+          }
+        }
+      }
+    },
+    "explore.fundsCount" : {
+      "comment" : "%lld é a quantidade de fundos filtrados.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld fundos"
+          }
+        }
+      }
+    },
+    "explore.loadError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível carregar os FIIs"
+          }
+        }
+      }
+    },
+    "explore.loading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carregando FIIs…"
+          }
+        }
+      }
+    },
+    "explore.searchPrompt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ticker ou nome"
+          }
+        }
+      }
+    },
+    "explore.segmentFilter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segmento"
+          }
+        }
+      }
+    },
+    "explore.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explorar"
+          }
+        }
+      }
+    },
+    "fundDetail.about" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobre"
+          }
+        }
+      }
+    },
+    "fundDetail.addShares" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar cotas"
+          }
+        }
+      }
+    },
+    "fundDetail.addToPortfolio" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar à carteira"
+          }
+        }
+      }
+    },
+    "fundDetail.administrator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Administrador"
+          }
+        }
+      }
+    },
+    "fundDetail.change" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variação"
+          }
+        }
+      }
+    },
+    "fundDetail.currentPrice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preço atual"
+          }
+        }
+      }
+    },
+    "fundDetail.dayRange" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máxima/mínima do dia"
+          }
+        }
+      }
+    },
+    "fundDetail.dividendYield12m" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dividend yield 12m"
+          }
+        }
+      }
+    },
+    "fundDetail.indicators" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indicadores"
+          }
+        }
+      }
+    },
+    "fundDetail.investors" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cotistas"
+          }
+        }
+      }
+    },
+    "fundDetail.lastDividend" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Último rendimento"
+          }
+        }
+      }
+    },
+    "fundDetail.management" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gestão"
+          }
+        }
+      }
+    },
+    "fundDetail.nav" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valor patrimonial"
+          }
+        }
+      }
+    },
+    "fundDetail.previousClose" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechamento anterior"
+          }
+        }
+      }
+    },
+    "fundDetail.priceToNav" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "P/VP"
+          }
+        }
+      }
+    },
+    "fundDetail.quote" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cotação"
+          }
+        }
+      }
+    },
+    "fundDetail.rangeValue" : {
+      "comment" : "Intervalo de preços. Primeiro %@ mínima, segundo %@ máxima.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ – %@"
+          }
+        }
+      }
+    },
+    "fundDetail.vacancy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vacância"
+          }
+        }
+      }
+    },
+    "fundDetail.volume" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume"
+          }
+        }
+      }
+    },
+    "fundDetail.weekRange" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mínima/máxima 52 semanas"
+          }
+        }
+      }
+    },
+    "holding.sharesAverage" : {
+      "comment" : "%lld é a quantidade de cotas; %@ é o preço médio.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld cotas · média %@"
+          }
+        }
+      }
+    },
+    "portfolio.addFund" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar fundo"
+          }
+        }
+      }
+    },
+    "portfolio.addShares" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar cotas"
+          }
+        }
+      }
+    },
+    "portfolio.emptyDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione fundos imobiliários para acompanhar cotações, dividend yield e proventos."
+          }
+        }
+      }
+    },
+    "portfolio.emptyTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua carteira está vazia"
+          }
+        }
+      }
+    },
+    "portfolio.invested" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Investido"
+          }
+        }
+      }
+    },
+    "portfolio.netWorth" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patrimônio"
+          }
+        }
+      }
+    },
+    "portfolio.positions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posições"
+          }
+        }
+      }
+    },
+    "portfolio.result" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resultado"
+          }
+        }
+      }
+    },
+    "portfolio.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carteira"
+          }
+        }
+      }
+    },
+    "R$ 0,00" : {
+
+    },
+    "segment.fiagro" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fiagro"
+          }
+        }
+      }
+    },
+    "segment.fundsOfFunds" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fundo de Fundos"
+          }
+        }
+      }
+    },
+    "segment.hybrid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Híbrido"
+          }
+        }
+      }
+    },
+    "segment.logistics" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logística"
+          }
+        }
+      }
+    },
+    "segment.malls" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shoppings"
+          }
+        }
+      }
+    },
+    "segment.offices" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lajes Corporativas"
+          }
+        }
+      }
+    },
+    "segment.other" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outros"
+          }
+        }
+      }
+    },
+    "segment.paper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Papel"
+          }
+        }
+      }
+    },
+    "segment.residential" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Residencial"
+          }
+        }
+      }
+    },
+    "segment.urban" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renda Urbana"
+          }
+        }
+      }
+    },
+    "tab.explore" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explorar"
+          }
+        }
+      }
+    },
+    "tab.portfolio" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carteira"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

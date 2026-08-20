@@ -38,17 +38,41 @@ struct FundQuote: Sendable, Equatable {
     var marketCap: Decimal?
 }
 
+struct FIIDividend: Sendable, Equatable {
+    var ticker: String
+    var label: String
+    var paymentDate: Date?
+    var lastDatePrior: Date?
+    var rate: Decimal
+
+    var isIncome: Bool {
+        label
+            .folding(options: .diacriticInsensitive, locale: Locale(identifier: "pt_BR"))
+            .localizedCaseInsensitiveContains("rendimento")
+    }
+
+    var sortDate: Date? {
+        paymentDate ?? lastDatePrior
+    }
+}
+
 protocol FIICatalogServing: Sendable {
     func tickers(_ query: FIITickerQuery) async throws -> FIITickerPage
     func quote(for symbol: String) async throws -> FundQuote?
     func indicators(for symbols: [String]) async throws -> [FIIIndicators]
+    func dividends(for symbols: [String]) async throws -> [FIIDividend]
 }
 
 struct BrapiFIICatalogService: FIICatalogServing {
     var client: BrapiClient
+    var dividendFallback: any DividendFallbackServing
 
-    init(client: BrapiClient = BrapiClient()) {
+    init(
+        client: BrapiClient = BrapiClient(),
+        dividendFallback: any DividendFallbackServing = YahooDividendFallback()
+    ) {
         self.client = client
+        self.dividendFallback = dividendFallback
     }
 
     func tickers(_ query: FIITickerQuery) async throws -> FIITickerPage {
@@ -89,6 +113,47 @@ struct BrapiFIICatalogService: FIICatalogServing {
             return response.fiis.map(FIIIndicators.init(dto:))
         } catch let error as BrapiError where error.isOptionalDataUnavailable {
             return []
+        }
+    }
+
+    func dividends(for symbols: [String]) async throws -> [FIIDividend] {
+        let unique = uniqueSymbols(symbols)
+        guard !unique.isEmpty else { return [] }
+
+        var results: [FIIDividend] = []
+        for chunk in unique.chunked(into: 20) {
+            results.append(contentsOf: try await dividendsChunk(chunk))
+        }
+
+        let found = Set(results.map(\.ticker))
+        let missing = unique.filter { !found.contains($0) }
+        if !missing.isEmpty {
+            results.append(contentsOf: await dividendFallback.latestDividends(for: missing))
+        }
+        return results
+    }
+
+    private func dividendsChunk(_ symbols: [String]) async throws -> [FIIDividend] {
+        do {
+            let response: FIIDividendsResponse = try await client.send(.fiiDividends(symbols: symbols))
+            return response.dividends.compactMap(FIIDividend.init(dto:))
+        } catch let error as BrapiError where error.isOptionalDataUnavailable {
+            return []
+        }
+    }
+
+    private func uniqueSymbols(_ symbols: [String]) -> [String] {
+        var seen = Set<String>()
+        return symbols.filter { symbol in
+            !symbol.isEmpty && seen.insert(symbol).inserted
+        }
+    }
+}
+
+private extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        stride(from: 0, to: count, by: size).map {
+            Array(self[$0 ..< Swift.min($0 + size, count)])
         }
     }
 }
@@ -153,6 +218,53 @@ extension FIIIndicators {
         tipoGestao = dto.tipoGestao
         administratorName = dto.administratorName
         vacancyRate = dto.vacancyRate
+    }
+}
+
+extension FIIDividend {
+    init?(dto: FIIDividendDTO) {
+        guard let rawRate = dto.rate else { return nil }
+        let rate = Decimal(rawRate)
+        guard rate > 0 else { return nil }
+
+        ticker = dto.symbol
+        label = dto.label ?? ""
+        paymentDate = BrapiDate.parse(dto.paymentDate)
+        lastDatePrior = BrapiDate.parse(dto.lastDatePrior)
+        self.rate = rate
+    }
+}
+
+enum BrapiDate {
+    static func parse(_ raw: String?) -> Date? {
+        guard var value = raw?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else {
+            return nil
+        }
+
+        if value.contains(" ") {
+            value = value.replacingOccurrences(of: " ", with: "T")
+        }
+        if value.hasSuffix("+00") {
+            value += ":00"
+        }
+
+        let withFractional = ISO8601DateFormatter()
+        withFractional.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        if let date = withFractional.date(from: value) {
+            return date
+        }
+
+        let iso = ISO8601DateFormatter()
+        iso.formatOptions = [.withInternetDateTime]
+        if let date = iso.date(from: value) {
+            return date
+        }
+
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.date(from: value)
     }
 }
 
