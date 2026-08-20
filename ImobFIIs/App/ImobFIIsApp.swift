@@ -7,11 +7,13 @@ struct ImobFIIsApp: App {
 
     init() {
         container = Persistence.makeContainer()
+        ImobChrome.configure()
     }
 
     var body: some Scene {
         WindowGroup {
             RootTabView()
+                .imobAppearance()
         }
         .modelContainer(container)
     }

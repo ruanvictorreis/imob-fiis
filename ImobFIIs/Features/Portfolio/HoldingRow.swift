@@ -16,7 +16,7 @@ struct HoldingRow: View {
                     )
                 )
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.appSecondaryText)
             }
 
             Spacer(minLength: 8)
@@ -28,7 +28,7 @@ struct HoldingRow: View {
                 Text(holding.profitAndLoss, format: .brl)
                     .font(.caption)
                     .monospacedDigit()
-                    .foregroundStyle(holding.profitAndLoss >= 0 ? Color.green : Color.red)
+                    .foregroundStyle(holding.profitAndLoss >= 0 ? Color.appPositive : Color.red)
             }
         }
         .padding(.vertical, 4)

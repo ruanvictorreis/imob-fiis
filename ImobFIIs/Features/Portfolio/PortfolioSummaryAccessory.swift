@@ -15,11 +15,11 @@ struct PortfolioSummaryAccessory: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(L10n.Accessory.estimatedIncome)
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.appSecondaryText)
                 if isExpanded {
                     Text(L10n.Accessory.estimatedIncomeFormula)
                         .font(.caption2)
-                        .foregroundStyle(.tertiary)
+                        .foregroundStyle(Color.appSecondaryText)
                 }
             }
 

@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SwiftUI
 
 @MainActor
 @Observable
@@ -39,32 +40,56 @@ final class FundDetailViewModel {
 
     func loadMarketData() async {
         isLoadingMarketData = true
-        defer { isLoadingMarketData = false }
+        defer {
+            if isLoadingMarketData {
+                isLoadingMarketData = false
+            }
+        }
 
         async let fetchedQuote = catalog.quote(for: summary.ticker)
         async let fetchedIndicators = catalog.indicators(for: [summary.ticker])
         async let fetchedDividends = catalog.dividends(for: [summary.ticker])
 
-        if let quote = try? await fetchedQuote {
+        let quote = try? await fetchedQuote
+        let indicatorsList = try? await fetchedIndicators
+        let dividends = (try? await fetchedDividends) ?? []
+
+        guard !Task.isCancelled else { return }
+
+        withAnimation(.smooth(duration: 0.4)) {
+            applyMarketData(
+                quote: quote,
+                indicators: indicatorsList?.first,
+                dividends: dividends
+            )
+            isLoadingMarketData = false
+        }
+    }
+
+    private func applyMarketData(
+        quote: FundQuote?,
+        indicators: FIIIndicators?,
+        dividends: [FIIDividend]
+    ) {
+        if let quote {
             self.quote = quote
             apply(quote)
         }
 
-        if let indicators = try? await fetchedIndicators {
-            self.indicators = indicators.first
-            if let price = self.indicators?.price {
+        if let indicators {
+            self.indicators = indicators
+            if let price = indicators.price {
                 summary.currentPrice = price
             }
-            if let name = self.indicators?.name, !name.isEmpty {
+            if let name = indicators.name, !name.isEmpty {
                 summary.longName = name
             }
         }
 
-        let dividends = (try? await fetchedDividends) ?? []
         lastDividend = LastDividend.resolved(
             dividends: dividends,
             price: displayPrice,
-            yield1m: indicators?.dividendYield1m
+            yield1m: self.indicators?.dividendYield1m
         )
     }
 

@@ -35,6 +35,7 @@ struct PortfolioView: View {
                 Button(L10n.Common.add, systemImage: "plus") {
                     addHoldingDestination = .pickFund
                 }
+                .tint(.accentColor)
             }
         }
         .sheet(item: $addHoldingDestination) { destination in
@@ -71,6 +72,7 @@ struct PortfolioView: View {
                             Button(L10n.Common.delete, systemImage: "trash", role: .destructive) {
                                 modelContext.delete(holding)
                             }
+                            .tint(.red)
                         }
                     }
                 }
@@ -87,7 +89,7 @@ struct PortfolioView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(L10n.Portfolio.netWorth)
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.appSecondaryText)
                 Text(holdings.currentValue, format: .brl)
                     .font(.largeTitle.weight(.semibold))
                     .monospacedDigit()
@@ -114,11 +116,11 @@ struct PortfolioView: View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title)
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.appSecondaryText)
             Text(value, format: .brl)
                 .font(.subheadline.weight(.semibold))
                 .monospacedDigit()
-                .foregroundStyle(emphasizesSign ? (value >= 0 ? Color.green : Color.red) : .primary)
+                .foregroundStyle(emphasizesSign ? (value >= 0 ? Color.appPositive : Color.red) : Color.appPrimaryText)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
