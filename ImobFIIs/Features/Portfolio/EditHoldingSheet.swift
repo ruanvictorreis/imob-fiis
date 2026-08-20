@@ -124,7 +124,7 @@ struct EditHoldingSheet: View {
             }
             .task {
                 try? await Task.sleep(for: .milliseconds(350))
-                focusedField = .shares
+                focusedField = .price
             }
         }
         .presentationDetents([.large])

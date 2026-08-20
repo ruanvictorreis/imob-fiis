@@ -179,15 +179,11 @@ struct FundDetailView: View {
 
     private var addToPortfolioButton: some View {
         VStack(spacing: 8) {
-            Button(
-                isInPortfolio ? L10n.FundDetail.addShares : L10n.FundDetail.addToPortfolio,
-                systemImage: "plus"
-            ) {
-                isAddingHolding = true
-            }
-            .imobPrimaryButton()
-            .controlSize(.large)
-            .frame(maxWidth: .infinity)
+            ImobExpandingPrimaryButton(
+                title: isInPortfolio ? L10n.FundDetail.addShares : L10n.FundDetail.addToPortfolio,
+                systemImage: "plus",
+                action: { isAddingHolding = true },
+            )
 
             if isInPortfolio {
                 Button(L10n.FundDetail.editPosition) {
