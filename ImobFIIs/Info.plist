@@ -6,5 +6,7 @@
 	<string>$(BRAPI_API_TOKEN)</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Dark</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LuminaSplash</string>
 </dict>
 </plist>
