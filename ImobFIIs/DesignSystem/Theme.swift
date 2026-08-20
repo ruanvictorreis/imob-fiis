@@ -61,6 +61,6 @@ extension View {
 
     func imobPrimaryButton() -> some View {
         buttonStyle(.borderedProminent)
-            .tint(.accentColor)
+            .tint(Color.appButton)
     }
 }
