@@ -72,6 +72,7 @@ struct PortfolioView: View {
                             Button(L10n.Common.delete, systemImage: "trash", role: .destructive) {
                                 modelContext.delete(holding)
                             }
+                            .tint(.red)
                         }
                     }
                 }
