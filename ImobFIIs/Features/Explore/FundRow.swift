@@ -4,13 +4,13 @@ struct FundRow: View {
     let fund: FundSummary
 
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: Spacing.sm) {
             Image(systemName: fund.segment.systemImage)
                 .font(.title3)
                 .foregroundStyle(.tint)
                 .frame(width: 32)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: Spacing.xxs) {
                 Text(fund.ticker)
                     .font(.headline)
                     .monospaced()
@@ -20,9 +20,9 @@ struct FundRow: View {
                     .lineLimit(1)
             }
 
-            Spacer(minLength: 8)
+            Spacer(minLength: Spacing.xs)
 
-            VStack(alignment: .trailing, spacing: 4) {
+            VStack(alignment: .trailing, spacing: Spacing.xxs) {
                 if let price = fund.currentPrice {
                     Text(price, format: .brl)
                         .font(.subheadline.weight(.semibold))
@@ -41,7 +41,7 @@ struct FundRow: View {
                 }
             }
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, Spacing.xxs)
         .accessibilityElement(children: .combine)
     }
 }

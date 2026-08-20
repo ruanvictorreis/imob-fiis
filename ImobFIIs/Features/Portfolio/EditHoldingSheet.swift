@@ -139,9 +139,9 @@ struct EditHoldingSheet: View {
         .imobPrimaryButton()
         .controlSize(.large)
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, 16)
-        .padding(.top, 8)
-        .padding(.bottom, 20)
+        .padding(.horizontal, Spacing.md)
+        .padding(.top, Spacing.xs)
+        .padding(.bottom, Spacing.lg)
         .disabled(!canSave)
     }
 
@@ -170,12 +170,12 @@ private struct EditHoldingField<FieldContent: View>: View {
     @ViewBuilder var field: () -> FieldContent
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: Spacing.xs) {
             Text(title)
                 .font(.subheadline)
                 .foregroundStyle(Color.appSecondaryText)
 
-            HStack(spacing: 8) {
+            HStack(spacing: Spacing.xs) {
                 field()
                     .font(.title3.weight(.semibold))
                     .monospacedDigit()
@@ -189,15 +189,15 @@ private struct EditHoldingField<FieldContent: View>: View {
                 .buttonStyle(.plain)
                 .accessibilityLabel(L10n.EditHolding.tapToEdit)
             }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 10)
+            .padding(.horizontal, Spacing.sm)
+            .padding(.vertical, Spacing.field)
             .background(Color.appBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
                     .strokeBorder(isFocused ? Color.accentColor : .clear, lineWidth: 1)
             }
         }
-        .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+        .listRowInsets(EdgeInsets(top: Spacing.sm, leading: Spacing.md, bottom: Spacing.sm, trailing: Spacing.md))
         .listRowSeparator(.hidden)
     }
 }

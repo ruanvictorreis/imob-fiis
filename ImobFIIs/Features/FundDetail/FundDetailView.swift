@@ -178,7 +178,7 @@ struct FundDetailView: View {
     }
 
     private var addToPortfolioButton: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: Spacing.xs) {
             ImobExpandingPrimaryButton(
                 title: isInPortfolio ? L10n.FundDetail.addShares : L10n.FundDetail.addToPortfolio,
                 systemImage: "plus",
@@ -191,13 +191,13 @@ struct FundDetailView: View {
                 }
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Color.accentColor)
-                .padding(.top, 4)
-                .padding(.bottom, 4)
+                .padding(.top, Spacing.xxs)
+                .padding(.bottom, Spacing.xxs)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 8)
-        .padding(.bottom, 16)
+        .padding(.horizontal, Spacing.md)
+        .padding(.top, Spacing.xs)
+        .padding(.bottom, Spacing.md)
     }
 
     private var administratorText: String {
@@ -206,7 +206,7 @@ struct FundDetailView: View {
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: Spacing.xs) {
             Label(viewModel.summary.segment.title, systemImage: viewModel.summary.segment.systemImage)
                 .font(.subheadline)
                 .foregroundStyle(Color.appSecondaryText)
@@ -218,7 +218,7 @@ struct FundDetailView: View {
                     .transition(.opacity)
             }
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, Spacing.xs)
         .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .combine)
     }

@@ -91,8 +91,8 @@ struct PortfolioView: View {
     }
 
     private var portfolioHeader: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: Spacing.md) {
+            VStack(alignment: .leading, spacing: Spacing.xxs) {
                 Text(L10n.Portfolio.netWorth)
                     .font(.subheadline)
                     .foregroundStyle(Color.appSecondaryText)
@@ -102,7 +102,7 @@ struct PortfolioView: View {
                     .minimumScaleFactor(0.7)
             }
 
-            HStack(spacing: 16) {
+            HStack(spacing: Spacing.md) {
                 metric(
                     title: L10n.Portfolio.invested,
                     value: holdings.investedAmount
@@ -114,12 +114,12 @@ struct PortfolioView: View {
                 )
             }
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, Spacing.xs)
         .accessibilityElement(children: .combine)
     }
 
     private func metric(title: String, value: Decimal, emphasizesSign: Bool = false) -> some View {
-        VStack(alignment: .leading, spacing: 2) {
+        VStack(alignment: .leading, spacing: Spacing.xxxs) {
             Text(title)
                 .font(.caption)
                 .foregroundStyle(Color.appSecondaryText)

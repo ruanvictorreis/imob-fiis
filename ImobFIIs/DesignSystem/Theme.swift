@@ -80,7 +80,7 @@ struct ImobExpandingPrimaryButton: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 8) {
+            HStack(spacing: Spacing.xs) {
                 Image(systemName: systemImage)
                 if showsTitle {
                     Text(title)
