@@ -109,10 +109,6 @@ struct ExploreView: View {
 
 #Preview {
     NavigationStack {
-        ExploreView(
-            viewModel: ExploreViewModel(
-                catalog: MockFIICatalogService.preview
-            )
-        )
+        ExploreView(viewModel: ExploreViewModel())
     }
 }

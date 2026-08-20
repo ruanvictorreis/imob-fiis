@@ -73,7 +73,7 @@ struct LastDividendTests {
     func decodesFIIDividendsFromBrapi() throws {
         let response: FIIDividendsResponse = try JSONDecoder().decode(
             FIIDividendsResponse.self,
-            from: Data(dividendsFixture.utf8)
+            from: Data(HTTPFixtures.dividends.utf8)
         )
         let dividends = response.dividends.compactMap(FIIDividend.init(dto:))
 
@@ -84,8 +84,8 @@ struct LastDividendTests {
     @Test @MainActor
     func upsertCachesLastDividendFromIndicatorsFallback() {
         let container = Persistence.makeContainer(inMemory: true)
-        let summary = MockFIICatalogService.preview.page.funds[0]
-        let indicators = MockFIICatalogService.preview.indicatorsByTicker["MXRF11"]
+        let summary = MockFIICatalogService.sample.page.funds[0]
+        let indicators = MockFIICatalogService.sample.indicatorsByTicker["MXRF11"]
         let fund = FundStore.upsert(summary, indicators: indicators, in: container.mainContext)
 
         #expect(fund.lastDividend == LastDividend.estimate(price: 9.29, yield1m: 0.01))
@@ -95,14 +95,14 @@ struct LastDividendTests {
     @Test @MainActor
     func upsertDoesNotReplaceCachedDividendWithEstimate() {
         let container = Persistence.makeContainer(inMemory: true)
-        let summary = MockFIICatalogService.preview.page.funds[0]
+        let summary = MockFIICatalogService.sample.page.funds[0]
         let fund = FundStore.upsert(
             summary,
             indicators: nil,
             lastDividend: Decimal(11) / 100,
             in: container.mainContext
         )
-        let indicators = MockFIICatalogService.preview.indicatorsByTicker["MXRF11"]
+        let indicators = MockFIICatalogService.sample.indicatorsByTicker["MXRF11"]
 
         _ = FundStore.upsert(summary, indicators: indicators, in: container.mainContext)
 
@@ -112,10 +112,10 @@ struct LastDividendTests {
     @Test @MainActor
     func refreshAppliesDividendRateToStaleFund() async {
         let container = Persistence.makeContainer(inMemory: true)
-        let fund = makeFund(lastDividend: 0)
+        let fund = TestFunds.make(lastDividend: 0)
         container.mainContext.insert(fund)
 
-        await LastDividendSync.refreshStaleFunds([fund], using: MockFIICatalogService.preview)
+        await LastDividendSync.refreshStaleFunds([fund], using: MockFIICatalogService.sample)
 
         #expect(fund.lastDividend == Decimal(9) / 100)
         #expect(fund.lastDividendUpdatedAt != nil)
@@ -125,11 +125,11 @@ struct LastDividendTests {
     @Test @MainActor
     func refreshKeepsCachedRateWhenDividendsAreUnavailable() async {
         let container = Persistence.makeContainer(inMemory: true)
-        let fund = makeFund(ticker: "XPML11", lastDividend: Decimal(82) / 100)
+        let fund = TestFunds.make(ticker: "XPML11", lastDividend: Decimal(82) / 100)
         container.mainContext.insert(fund)
         let catalog = MockFIICatalogService(
-            page: MockFIICatalogService.preview.page,
-            indicatorsByTicker: MockFIICatalogService.preview.indicatorsByTicker
+            page: MockFIICatalogService.sample.page,
+            indicatorsByTicker: MockFIICatalogService.sample.indicatorsByTicker
         )
 
         await LastDividendSync.refreshStaleFunds([fund], using: catalog)
@@ -141,11 +141,11 @@ struct LastDividendTests {
     @Test @MainActor
     func refreshEstimatesWhenFundHasNoCachedDividend() async {
         let container = Persistence.makeContainer(inMemory: true)
-        let fund = makeFund(ticker: "MXRF11", price: 9.29, lastDividend: 0)
+        let fund = TestFunds.make(ticker: "MXRF11", price: 9.29, lastDividend: 0)
         container.mainContext.insert(fund)
         let catalog = MockFIICatalogService(
-            page: MockFIICatalogService.preview.page,
-            indicatorsByTicker: MockFIICatalogService.preview.indicatorsByTicker
+            page: MockFIICatalogService.sample.page,
+            indicatorsByTicker: MockFIICatalogService.sample.indicatorsByTicker
         )
 
         await LastDividendSync.refreshStaleFunds([fund], using: catalog)
@@ -156,10 +156,10 @@ struct LastDividendTests {
     @Test @MainActor
     func skipsFreshCache() async {
         let container = Persistence.makeContainer(inMemory: true)
-        let fund = makeFund(lastDividend: Decimal(2) / 10, updatedAt: .now)
+        let fund = TestFunds.make(lastDividend: Decimal(2) / 10, updatedAt: .now)
         container.mainContext.insert(fund)
 
-        await LastDividendSync.refreshStaleFunds([fund], using: MockFIICatalogService.preview)
+        await LastDividendSync.refreshStaleFunds([fund], using: MockFIICatalogService.sample)
 
         #expect(fund.lastDividend == Decimal(2) / 10)
     }
@@ -167,8 +167,8 @@ struct LastDividendTests {
     @Test @MainActor
     func detailViewModelResolvesLastDividendFromCatalog() async {
         let viewModel = FundDetailViewModel(
-            summary: MockFIICatalogService.preview.page.funds[0],
-            catalog: MockFIICatalogService.preview
+            summary: MockFIICatalogService.sample.page.funds[0],
+            catalog: MockFIICatalogService.sample
         )
 
         await viewModel.loadMarketData()
@@ -183,7 +183,7 @@ struct FIIDividendsCatalogTests {
     func catalogServiceMapsDividendsFromHTTP() async throws {
         let client = BrapiClient(
             token: "test-token",
-            session: DividendHTTPClient(data: Data(dividendsFixture.utf8), statusCode: 200)
+            session: MockHTTPClient(data: Data(HTTPFixtures.dividends.utf8), statusCode: 200)
         )
         let service = BrapiFIICatalogService(client: client, dividendFallback: EmptyDividendFallback())
         let dividends = try await service.dividends(for: ["MXRF11"])
@@ -197,7 +197,7 @@ struct FIIDividendsCatalogTests {
         let body = #"{"error":true,"message":"Token de autenticação não fornecido","code":"MISSING_TOKEN"}"#
         let client = BrapiClient(
             token: nil,
-            session: DividendHTTPClient(data: Data(body.utf8), statusCode: 401)
+            session: MockHTTPClient(data: Data(body.utf8), statusCode: 401)
         )
         let service = BrapiFIICatalogService(client: client, dividendFallback: EmptyDividendFallback())
         let dividends = try await service.dividends(for: ["KNRI11"])
@@ -212,7 +212,7 @@ struct FIIDividendsCatalogTests {
         """
         let client = BrapiClient(
             token: "test-token",
-            session: DividendHTTPClient(data: Data(body.utf8), statusCode: 403)
+            session: MockHTTPClient(data: Data(body.utf8), statusCode: 403)
         )
         let fallback = MockDividendFallback(
             dividends: [
@@ -244,7 +244,7 @@ struct YahooDividendFallbackTests {
     @Test
     func mapsLatestCashDividendFromYahooChart() async {
         let fallback = YahooDividendFallback(
-            session: DividendHTTPClient(data: Data(yahooChartFixture.utf8), statusCode: 200)
+            session: MockHTTPClient(data: Data(HTTPFixtures.yahooChart.utf8), statusCode: 200)
         )
         let dividends = await fallback.latestDividends(for: ["CPTS11"])
 
@@ -254,98 +254,3 @@ struct YahooDividendFallbackTests {
         #expect(dividends[0].isIncome)
     }
 }
-
-private func makeFund(
-    ticker: String = "MXRF11",
-    price: Decimal = 10,
-    lastDividend: Decimal = 0,
-    updatedAt: Date? = nil
-) -> Fund {
-    Fund(
-        ticker: ticker,
-        name: ticker,
-        segment: .paper,
-        manager: "",
-        currentPrice: price,
-        dividendYield: 0,
-        lastDividend: lastDividend,
-        lastDividendUpdatedAt: updatedAt
-    )
-}
-
-private struct MockDividendFallback: DividendFallbackServing {
-    var dividends: [FIIDividend]
-
-    func latestDividends(for symbols: [String]) async -> [FIIDividend] {
-        dividends.filter { symbols.contains($0.ticker) }
-    }
-}
-
-private struct DividendHTTPClient: HTTPPerforming {
-    let data: Data
-    let statusCode: Int
-
-    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
-        guard let url = request.url,
-              let response = HTTPURLResponse(
-                url: url,
-                statusCode: statusCode,
-                httpVersion: nil,
-                headerFields: ["Content-Type": "application/json"]
-              )
-        else {
-            throw BrapiError.invalidResponse
-        }
-        return (data, response)
-    }
-}
-
-private let dividendsFixture = """
-{
-  "dividends": [
-    {
-      "symbol": "MXRF11",
-      "approvedOn": null,
-      "label": "RENDIMENTO",
-      "lastDatePrior": "2025-12-01 00:00:00+00",
-      "paymentDate": "2025-12-01 00:00:00+00",
-      "rate": 0.08941643,
-      "relatedTo": null,
-      "isinCode": null,
-      "remarks": "backfilled from FiiMonthlyReports"
-    },
-    {
-      "symbol": "MXRF11",
-      "approvedOn": null,
-      "label": "RENDIMENTO",
-      "lastDatePrior": "2025-11-01 00:00:00+00",
-      "paymentDate": "2025-11-01 00:00:00+00",
-      "rate": 0.098144606,
-      "relatedTo": null,
-      "isinCode": null,
-      "remarks": "backfilled from FiiMonthlyReports"
-    }
-  ],
-  "requestedAt": "2026-02-08T16:25:19.026Z",
-  "took": 23
-}
-"""
-
-private let yahooChartFixture = """
-{
-  "chart": {
-    "result": [
-      {
-        "meta": { "symbol": "CPTS11.SA" },
-        "events": {
-          "dividends": {
-            "1": { "amount": 0.08, "date": 1 },
-            "1786971600": { "amount": 0.09, "date": 1786971600 }
-          }
-        }
-      }
-    ],
-    "error": null
-  }
-}
-"""

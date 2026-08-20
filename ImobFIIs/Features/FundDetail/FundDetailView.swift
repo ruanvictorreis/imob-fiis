@@ -203,11 +203,9 @@ struct FundDetailView: View {
 }
 
 #Preview {
+    let fund = SampleData.makeCatalog()[0]
     NavigationStack {
-        FundDetailView(
-            summary: MockFIICatalogService.preview.page.funds[0],
-            catalog: MockFIICatalogService.preview
-        )
+        FundDetailView(summary: FundSummary(fund: fund))
     }
     .modelContainer(Persistence.makeContainer(inMemory: true))
 }

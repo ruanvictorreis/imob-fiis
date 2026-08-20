@@ -4,13 +4,6 @@ protocol DividendFallbackServing: Sendable {
     func latestDividends(for symbols: [String]) async -> [FIIDividend]
 }
 
-struct EmptyDividendFallback: DividendFallbackServing {
-    func latestDividends(for symbols: [String]) async -> [FIIDividend] {
-        _ = symbols
-        return []
-    }
-}
-
 struct YahooDividendFallback: DividendFallbackServing {
     var session: any HTTPPerforming
     var baseURL: URL

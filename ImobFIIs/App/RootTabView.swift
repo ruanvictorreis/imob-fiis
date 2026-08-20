@@ -63,8 +63,6 @@ private enum AppTab: Hashable {
 }
 
 #Preview {
-    RootTabView(
-        exploreViewModel: ExploreViewModel(catalog: MockFIICatalogService.preview)
-    )
-    .modelContainer(Persistence.makeContainer(inMemory: true))
+    RootTabView()
+        .modelContainer(Persistence.makeContainer(inMemory: true))
 }

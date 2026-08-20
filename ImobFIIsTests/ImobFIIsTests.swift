@@ -96,7 +96,7 @@ struct ExploreCatalogTests {
     func decodesTickerListFromBrapi() throws {
         let page: TickerListResponse = try JSONDecoder().decode(
             TickerListResponse.self,
-            from: Data(tickerListFixture.utf8)
+            from: Data(HTTPFixtures.tickerList.utf8)
         )
 
         #expect(page.results.count == 1)
@@ -135,7 +135,7 @@ struct ExploreCatalogTests {
 
     @Test @MainActor
     func viewModelLoadsAndFiltersFunds() async {
-        let viewModel = ExploreViewModel(catalog: MockFIICatalogService.preview)
+        let viewModel = ExploreViewModel(catalog: MockFIICatalogService.sample)
         await viewModel.loadIfNeeded()
 
         #expect(viewModel.funds.count == 3)
@@ -210,7 +210,7 @@ struct ExploreCatalogTests {
     func catalogServiceMapsTickersFromHTTP() async throws {
         let client = BrapiClient(
             token: nil,
-            session: MockHTTPClient(data: Data(tickerListFixture.utf8), statusCode: 200)
+            session: MockHTTPClient(data: Data(HTTPFixtures.tickerList.utf8), statusCode: 200)
         )
         let service = BrapiFIICatalogService(client: client)
         let page = try await service.tickers(.allFIIs)
@@ -249,7 +249,7 @@ struct ExploreCatalogTests {
     func catalogServiceMapsQuoteFromHTTP() async throws {
         let client = BrapiClient(
             token: "test-token",
-            session: MockHTTPClient(data: Data(quoteFixture.utf8), statusCode: 200)
+            session: MockHTTPClient(data: Data(HTTPFixtures.quote.utf8), statusCode: 200)
         )
         let service = BrapiFIICatalogService(client: client)
         let quote = try await service.quote(for: "KNRI11")
@@ -262,7 +262,7 @@ struct ExploreCatalogTests {
     @Test @MainActor
     func upsertCreatesFundFromLiveQuote() throws {
         let container = Persistence.makeContainer(inMemory: true)
-        let summary = MockFIICatalogService.preview.page.funds[0]
+        let summary = MockFIICatalogService.sample.page.funds[0]
         let fund = FundStore.upsert(summary, indicators: nil, in: container.mainContext)
 
         #expect(fund.ticker == "MXRF11")
@@ -270,76 +270,3 @@ struct ExploreCatalogTests {
         #expect(try container.mainContext.fetch(FetchDescriptor<Fund>()).count == 1)
     }
 }
-
-private struct MockHTTPClient: HTTPPerforming {
-    let data: Data
-    let statusCode: Int
-
-    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
-        guard let url = request.url,
-              let response = HTTPURLResponse(
-                url: url,
-                statusCode: statusCode,
-                httpVersion: nil,
-                headerFields: ["Content-Type": "application/json"]
-              )
-        else {
-            throw BrapiError.invalidResponse
-        }
-        return (data, response)
-    }
-}
-
-private let tickerListFixture = """
-{
-  "results": [
-    {
-      "symbol": "MXRF11",
-      "name": "MXRF11",
-      "longName": "Maxi Renda Fundo de Investimento Imobiliario Cotas",
-      "assetType": "fund",
-      "subType": "fii",
-      "exchange": "B3",
-      "currency": "BRL",
-      "sector": "Miscellaneous",
-      "subsector": "Logística",
-      "isActive": true,
-      "logoUrl": "https://icons.brapi.dev/icons/BRAPI.svg",
-      "quote": {
-        "lastPrice": 9.29,
-        "changePercent": 0.43,
-        "volume": 1899639,
-        "marketCap": null
-      }
-    }
-  ],
-  "pagination": {
-    "page": 1,
-    "limit": 1,
-    "totalItems": 1,
-    "totalPages": 1,
-    "hasNextPage": false
-  }
-}
-"""
-
-private let quoteFixture = """
-{
-  "results": [
-    {
-      "symbol": "KNRI11",
-      "shortName": "KNRI11",
-      "longName": "Kinea Renda Imobiliaria Fundo de Investimento Imobiliario",
-      "regularMarketPrice": 153.48,
-      "regularMarketChangePercent": 0.97,
-      "regularMarketVolume": 66189,
-      "regularMarketPreviousClose": 152,
-      "regularMarketDayHigh": 154.2,
-      "regularMarketDayLow": 151.8,
-      "fiftyTwoWeekHigh": 170.1,
-      "fiftyTwoWeekLow": 130.4,
-      "marketCap": null
-    }
-  ]
-}
-"""

@@ -158,14 +158,14 @@ private enum AddHoldingDestination: Identifiable {
         container.mainContext.insert(Holding(shares: 120, averagePrice: 98.5, fund: fund))
     }
     return NavigationStack {
-        PortfolioView(catalog: MockFIICatalogService.preview)
+        PortfolioView()
     }
     .modelContainer(container)
 }
 
 #Preview("Vazia") {
     NavigationStack {
-        PortfolioView(catalog: MockFIICatalogService.preview)
+        PortfolioView()
     }
     .modelContainer(Persistence.makeContainer(inMemory: true))
 }

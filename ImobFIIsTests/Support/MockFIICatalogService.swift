@@ -1,5 +1,5 @@
-import SwiftData
-import SwiftUI
+import Foundation
+@testable import ImobFIIs
 
 struct MockFIICatalogService: FIICatalogServing {
     var page: FIITickerPage
@@ -24,7 +24,7 @@ struct MockFIICatalogService: FIICatalogServing {
         symbols.flatMap { dividendsByTicker[$0] ?? [] }
     }
 
-    static let preview = MockFIICatalogService(
+    static let sample = MockFIICatalogService(
         page: FIITickerPage(
             funds: [
                 FundSummary(
