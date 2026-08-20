@@ -7,6 +7,17 @@
     "0" : {
 
     },
+    "app.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lumina"
+          }
+        }
+      }
+    },
     "accessory.estimatedIncome" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -1,6 +1,10 @@
 import Foundation
 
 enum L10n {
+    enum App {
+        static var name: String { text("app.name") }
+    }
+
     enum Common {
         static var dash: String { text("common.dash") }
         static var close: String { text("common.close") }
