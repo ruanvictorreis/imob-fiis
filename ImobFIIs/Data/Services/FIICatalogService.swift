@@ -169,7 +169,7 @@ extension FundSummary {
         segment = FundSegment.fromAPI(
             subsector: dto.subsector,
             subType: dto.subType,
-            name: [dto.longName, dto.name].compactMap { $0 }.joined(separator: " ")
+            name: [dto.symbol, dto.longName, dto.name].compactMap { $0 }.joined(separator: " ")
         )
         currentPrice = dto.quote?.lastPrice.map { Decimal($0) }
         changePercent = dto.quote?.changePercent.map { $0 / 100 }

@@ -58,13 +58,35 @@ struct ImobFIIsTests {
             dividendYield: 0,
             lastDividend: 0
         )
+        let trxf = Fund(
+            ticker: "TRXF11",
+            name: "TRX Real Estate Fundo de Investimento Imobiliario",
+            segment: .hybrid,
+            manager: "",
+            currentPrice: 9,
+            dividendYield: 0,
+            lastDividend: 0
+        )
+        let vrta = Fund(
+            ticker: "VRTA11",
+            name: "Fator Verita Fundo de Investimento Imobiliario - FII Cotas",
+            segment: .other,
+            manager: "",
+            currentPrice: 70,
+            dividendYield: 0,
+            lastDividend: 0
+        )
         context.insert(rura)
         context.insert(cpts)
+        context.insert(trxf)
+        context.insert(vrta)
 
         FundStore.repairSegments(in: context)
 
         #expect(rura.segment == .fiagro)
         #expect(cpts.segment == .paper)
+        #expect(trxf.segment == .urban)
+        #expect(vrta.segment == .paper)
     }
 
     @Test
@@ -151,6 +173,18 @@ struct ExploreCatalogTests {
             FundSegment.fromAPI(
                 subsector: "Outros",
                 name: "Capitania Securities II Fundo de Investimento Imobiliario Cotas"
+            ) == .paper
+        )
+        #expect(
+            FundSegment.fromAPI(
+                subsector: "Híbrido",
+                name: "TRXF11 TRX Real Estate Fundo de Investimento Imobiliario"
+            ) == .urban
+        )
+        #expect(
+            FundSegment.fromAPI(
+                subsector: "Outros",
+                name: "VRTA11 Fator Verita Fundo de Investimento Imobiliario - FII Cotas VRTA11"
             ) == .paper
         )
     }

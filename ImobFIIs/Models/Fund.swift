@@ -51,11 +51,13 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
         }
 
         let fromSubsector = segment(forSubsector: subsector)
+        if let inferred = inferred(from: name), fromSubsector == .other || fromSubsector == .hybrid {
+            return inferred
+        }
         if fromSubsector != .other {
             return fromSubsector
         }
-
-        return inferred(from: name) ?? .other
+        return .other
     }
 
     private static func segment(forSubsector subsector: String?) -> FundSegment {
@@ -100,10 +102,13 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
         if containsAny(blob, ["fundo de fundos", "fofii"]) {
             return .fundsOfFunds
         }
-        if containsAny(blob, ["securities", "recebiveis", "credito", " cri", "indice de papel"]) {
+        if containsAny(
+            blob,
+            ["securities", "recebiveis", "credito", " cri", "indice de papel", "vrta11", "fator verita"]
+        ) {
             return .paper
         }
-        if containsAny(blob, ["renda urbana", "imoveis urbanos"]) {
+        if containsAny(blob, ["renda urbana", "imoveis urbanos", "trx real", "trxf11", "real estate"]) {
             return .urban
         }
         if blob.contains("residencial") {

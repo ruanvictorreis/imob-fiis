@@ -70,7 +70,10 @@ enum FundStore {
         guard let funds = try? context.fetch(FetchDescriptor<Fund>()) else { return }
 
         for fund in funds {
-            let repaired = FundSegment.fromAPI(subsector: fund.segmentRaw, name: fund.name)
+            let repaired = FundSegment.fromAPI(
+                subsector: fund.segmentRaw,
+                name: "\(fund.ticker) \(fund.name)"
+            )
             if fund.segment != repaired {
                 fund.segment = repaired
             }

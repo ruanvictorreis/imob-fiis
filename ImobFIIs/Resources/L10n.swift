@@ -24,6 +24,7 @@ enum L10n {
     enum Tab {
         static var portfolio: String { text("tab.portfolio") }
         static var explore: String { text("tab.explore") }
+        static var insights: String { text("tab.insights") }
     }
 
     enum Portfolio {
@@ -120,6 +121,47 @@ enum L10n {
         static var title: String { text("editHolding.title") }
         static var helper: String { text("editHolding.helper") }
         static var tapToEdit: String { text("editHolding.tapToEdit") }
+    }
+
+    enum Insights {
+        static var title: String { text("insights.title") }
+        static var balancedStrategy: String { text("insights.balancedStrategy") }
+        static var customStrategy: String { text("insights.customStrategy") }
+        static var allocation: String { text("insights.allocation") }
+        static var editAllocation: String { text("insights.editAllocation") }
+        static var editAllocationTitle: String { text("insights.editAllocationTitle") }
+        static var editAllocationHeader: String { text("insights.editAllocationHeader") }
+        static var resetAllocation: String { text("insights.resetAllocation") }
+        static var nextContribution: String { text("insights.nextContribution") }
+        static var otherOptions: String { text("insights.otherOptions") }
+        static var emptyTitle: String { text("insights.emptyTitle") }
+        static var emptyDescription: String { text("insights.emptyDescription") }
+        static var noMatchTitle: String { text("insights.noMatchTitle") }
+        static var noMatchDescription: String { text("insights.noMatchDescription") }
+        static var disclaimer: String { text("insights.disclaimer") }
+        static var lowestWeightInSegment: String { text("insights.lowestWeightInSegment") }
+        static var belowAveragePrice: String { text("insights.belowAveragePrice") }
+        static var nextPurchaseYield: String { text("insights.nextPurchaseYield") }
+
+        static func target(_ percent: String) -> String {
+            format("insights.target", percent)
+        }
+
+        static func segmentGap(segment: String, current: String, target: String) -> String {
+            format("insights.segmentGap", segment, current, target)
+        }
+
+        static func suggestedContribution(_ amount: String) -> String {
+            format("insights.suggestedContribution", amount)
+        }
+
+        static func allocationTotalValid(_ percent: String) -> String {
+            format("insights.allocationTotalValid", percent)
+        }
+
+        static func allocationTotalInvalid(_ percent: String) -> String {
+            format("insights.allocationTotalInvalid", percent)
+        }
     }
 
     enum Segment {

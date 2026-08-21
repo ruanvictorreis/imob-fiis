@@ -19,6 +19,12 @@ struct RootTabView: View {
                 }
             }
 
+            Tab(L10n.Tab.insights, systemImage: "sparkles", value: .insights) {
+                NavigationStack {
+                    InsightsView(catalog: exploreViewModel.catalog)
+                }
+            }
+
             Tab(L10n.Tab.explore, systemImage: "building.columns.fill", value: .explore) {
                 NavigationStack {
                     ExploreView(viewModel: exploreViewModel)
@@ -55,6 +61,7 @@ struct RootTabView: View {
 
 private enum AppTab: Hashable {
     case portfolio
+    case insights
     case explore
     case search
 }
