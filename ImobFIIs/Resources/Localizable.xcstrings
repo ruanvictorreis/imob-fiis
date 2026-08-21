@@ -808,6 +808,264 @@
     "R$ 0,00" : {
 
     },
+    "insights.allocation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alocação"
+          }
+        }
+      }
+    },
+    "insights.allocationTotalInvalid" : {
+      "comment" : "%@ é o total atual das metas, por exemplo 95%.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total: %@. Ajuste para somar 100% antes de salvar."
+          }
+        }
+      }
+    },
+    "insights.allocationTotalValid" : {
+      "comment" : "%@ é o total das metas, por exemplo 100%.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total: %@"
+          }
+        }
+      }
+    },
+    "insights.balancedStrategy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carteira equilibrada"
+          }
+        }
+      }
+    },
+    "insights.belowAveragePrice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abaixo do seu preço médio"
+          }
+        }
+      }
+    },
+    "insights.customStrategy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metas personalizadas"
+          }
+        }
+      }
+    },
+    "insights.disclaimer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insights educativos com base na sua carteira. Não são consultoria de investimentos."
+          }
+        }
+      }
+    },
+    "insights.emptyDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione fundos à carteira para ver onde concentrar o próximo aporte."
+          }
+        }
+      }
+    },
+    "insights.emptyTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem insights ainda"
+          }
+        }
+      }
+    },
+    "insights.editAllocation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar metas"
+          }
+        }
+      }
+    },
+    "insights.editAllocationHeader" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metas por segmento"
+          }
+        }
+      }
+    },
+    "insights.editAllocationTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metas de alocação"
+          }
+        }
+      }
+    },
+    "insights.lowestWeightInSegment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menor peso neste segmento da carteira"
+          }
+        }
+      }
+    },
+    "insights.nextContribution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo aporte"
+          }
+        }
+      }
+    },
+    "insights.nextPurchaseYield" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior dividend yield (12m) no segmento"
+          }
+        }
+      }
+    },
+    "insights.noMatchDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma posição se encaixa nas metas com peso maior que zero. Ajuste as metas ou adicione fundos desses segmentos."
+          }
+        }
+      }
+    },
+    "insights.noMatchTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada encaixa nesta meta"
+          }
+        }
+      }
+    },
+    "insights.otherOptions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outras opções"
+          }
+        }
+      }
+    },
+    "insights.resetAllocation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar metas padrão"
+          }
+        }
+      }
+    },
+    "insights.segmentGap" : {
+      "comment" : "%@ é o segmento, depois o peso atual e a meta, já formatados em percentual.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ está em %@, meta %@"
+          }
+        }
+      }
+    },
+    "insights.suggestedContribution" : {
+      "comment" : "%@ é o valor em reais sugerido para o segmento.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aporte sugerido no segmento: ~%@"
+          }
+        }
+      }
+    },
+    "insights.target" : {
+      "comment" : "%@ é o percentual da meta, por exemplo 30%.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "meta %@"
+          }
+        }
+      }
+    },
+    "insights.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insights"
+          }
+        }
+      }
+    },
     "segment.fiagro" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -936,6 +1194,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carteira"
+          }
+        }
+      }
+    },
+    "tab.insights" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insights"
           }
         }
       }
