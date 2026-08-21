@@ -112,7 +112,7 @@ struct InsightsView: View {
     }
 
     private func allocationRow(_ allocation: SegmentAllocation) -> some View {
-        VStack(alignment: .leading, spacing: Spacing.xxs) {
+        VStack(alignment: .leading, spacing: Spacing.xs) {
             HStack {
                 Label(allocation.segment.title, systemImage: allocation.segment.systemImage)
                 Spacer(minLength: Spacing.xs)
