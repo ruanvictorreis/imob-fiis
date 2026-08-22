@@ -21,7 +21,11 @@ struct RootTabView: View {
 
             Tab(L10n.Tab.insights, systemImage: "sparkles", value: .insights) {
                 NavigationStack {
-                    InsightsView(catalog: exploreViewModel.catalog)
+                    InsightsView(catalog: exploreViewModel.catalog) { segment in
+                        exploreViewModel.searchText = ""
+                        exploreViewModel.selectedSegment = segment
+                        selectedTab = .explore
+                    }
                 }
             }
 
@@ -46,15 +50,20 @@ struct RootTabView: View {
         .task {
             FundStore.repairSegments(in: modelContext)
         }
-        .task(id: dividendRefreshKey) {
+        .task(id: portfolioRefreshKey) {
+            let funds = holdings.compactMap(\.fund)
+            await PortfolioPriceSync.refreshIfNeeded(
+                funds,
+                using: exploreViewModel.catalog
+            )
             await LastDividendSync.refreshStaleFunds(
-                holdings.compactMap(\.fund),
+                funds,
                 using: exploreViewModel.catalog
             )
         }
     }
 
-    private var dividendRefreshKey: String {
+    private var portfolioRefreshKey: String {
         holdings.compactMap(\.fund?.ticker).sorted().joined(separator: ",")
     }
 }

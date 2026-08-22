@@ -3,6 +3,7 @@ import SwiftUI
 
 struct InsightsView: View {
     private let catalog: any FIICatalogServing
+    private let onExploreSegment: ((FundSegment) -> Void)?
 
     @State private var targetsStore: AllocationTargetsStore
     @State private var isEditingTargets = false
@@ -11,9 +12,11 @@ struct InsightsView: View {
 
     init(
         catalog: any FIICatalogServing,
-        targetsStore: AllocationTargetsStore = AllocationTargetsStore()
+        targetsStore: AllocationTargetsStore = AllocationTargetsStore(),
+        onExploreSegment: ((FundSegment) -> Void)? = nil
     ) {
         self.catalog = catalog
+        self.onExploreSegment = onExploreSegment
         _targetsStore = State(initialValue: targetsStore)
     }
 
@@ -25,19 +28,14 @@ struct InsightsView: View {
         InsightEngine.evaluate(holdings, strategy: strategy)
     }
 
-    private var hasStrategyHoldings: Bool {
-        holdings.contains { holding in
-            guard let segment = holding.fund?.segment else { return false }
-            return (strategy.targetWeights[segment] ?? 0) > 0
-        }
+    private var activeAllocations: [SegmentAllocation] {
+        snapshot.allocations.filter { $0.targetWeight > 0 }
     }
 
     var body: some View {
         Group {
             if holdings.isEmpty {
                 emptyPortfolio
-            } else if !hasStrategyHoldings {
-                emptyNoMatch
             } else {
                 insightsList
             }
@@ -81,6 +79,24 @@ struct InsightsView: View {
                 .imobSurface()
             }
 
+            if !snapshot.missingSegments.isEmpty {
+                Section {
+                    ForEach(snapshot.missingSegments) { missing in
+                        MissingSegmentInsightRow(
+                            missing: missing,
+                            onExplore: onExploreSegment.map { explore in
+                                { explore(missing.segment) }
+                            }
+                        )
+                    }
+                } header: {
+                    Text(L10n.Insights.missingSegments)
+                } footer: {
+                    Text(L10n.Insights.missingSegmentsFooter)
+                }
+                .imobSurface()
+            }
+
             disclaimerSection
         }
         .imobListCanvas()
@@ -96,10 +112,6 @@ struct InsightsView: View {
             }
         }
         .imobSurface()
-    }
-
-    private var activeAllocations: [SegmentAllocation] {
-        snapshot.allocations.filter { $0.targetWeight > 0 }
     }
 
     private var disclaimerSection: some View {
@@ -228,14 +240,6 @@ struct InsightsView: View {
             Label(L10n.Insights.emptyTitle, systemImage: "sparkles")
         } description: {
             Text(L10n.Insights.emptyDescription)
-        }
-    }
-
-    private var emptyNoMatch: some View {
-        ContentUnavailableView {
-            Label(L10n.Insights.noMatchTitle, systemImage: "sparkles")
-        } description: {
-            Text(L10n.Insights.noMatchDescription)
         }
     }
 }

@@ -909,6 +909,18 @@
         }
       }
     },
+    "insights.exploreSegment" : {
+      "comment" : "%@ é o nome do segmento, por exemplo Logística.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explorar %@"
+          }
+        }
+      }
+    },
     "insights.editAllocation" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -953,6 +965,40 @@
         }
       }
     },
+    "insights.missingSegmentGap" : {
+      "comment" : "%@ é o segmento, depois o peso atual e a meta, já formatados em percentual.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ está em %@, meta %@. Você ainda não tem nenhum fundo nesse segmento."
+          }
+        }
+      }
+    },
+    "insights.missingSegments" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exposição em falta"
+          }
+        }
+      }
+    },
+    "insights.missingSegmentsFooter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priorizamos os FIIs que você já tem. Para segmentos sem posição, explore o catálogo."
+          }
+        }
+      }
+    },
     "insights.nextContribution" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -971,28 +1017,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Maior dividend yield (12m) no segmento"
-          }
-        }
-      }
-    },
-    "insights.noMatchDescription" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nenhuma posição se encaixa nas metas com peso maior que zero. Ajuste as metas ou adicione fundos desses segmentos."
-          }
-        }
-      }
-    },
-    "insights.noMatchTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nada encaixa nesta meta"
           }
         }
       }

@@ -170,6 +170,52 @@ struct InsightEngineTests {
 
         #expect(snapshot.insights.isEmpty)
         #expect(snapshot.allocations.count == strategy.orderedSegments.count)
+        #expect(snapshot.missingSegments.map(\.segment).contains(.paper))
+        #expect(!snapshot.missingSegments.map(\.segment).contains(.hybrid))
+    }
+
+    @Test @MainActor
+    func prefersExistingHoldingsBeforeMissingSegments() {
+        let paper = makeHolding(
+            ticker: "CPTS11",
+            segment: .paper,
+            shares: 100,
+            price: 10,
+            average: 10
+        )
+        let hybrid = makeHolding(
+            ticker: "HGBS11",
+            segment: .hybrid,
+            shares: 900,
+            price: 10,
+            average: 10
+        )
+
+        let snapshot = InsightEngine.evaluate([paper, hybrid], strategy: strategy)
+
+        #expect(snapshot.insights.map(\.ticker) == ["CPTS11"])
+        let missing = snapshot.missingSegments.map(\.segment)
+        #expect(missing.contains(.logistics))
+        #expect(missing.contains(.urban))
+        #expect(!missing.contains(.paper))
+        #expect(missing.first == .logistics || missing.first == .urban)
+    }
+
+    @Test @MainActor
+    func listsMissingUnderweightSegmentsWithoutHoldings() {
+        let paper = makeHolding(
+            ticker: "CPTS11",
+            segment: .paper,
+            shares: 1_000,
+            price: 10,
+            average: 10
+        )
+
+        let snapshot = InsightEngine.evaluate([paper], strategy: strategy)
+
+        #expect(snapshot.insights.map(\.ticker) == ["CPTS11"])
+        #expect(snapshot.missingSegments.map(\.segment) == [.logistics, .urban, .malls, .offices, .fiagro])
+        #expect(snapshot.missingSegments[0].suggestedContribution == Decimal(2_000))
     }
 
     @Test @MainActor

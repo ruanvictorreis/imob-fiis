@@ -3,6 +3,7 @@ import Foundation
 struct InsightSnapshot: Equatable {
     var allocations: [SegmentAllocation]
     var insights: [InsightItem]
+    var missingSegments: [MissingSegmentInsight]
 }
 
 struct SegmentAllocation: Identifiable, Equatable {
@@ -17,6 +18,17 @@ struct SegmentAllocation: Identifiable, Equatable {
     func isUnderweight(tolerance: Double) -> Bool {
         gap > tolerance
     }
+}
+
+struct MissingSegmentInsight: Identifiable, Equatable {
+    var id: FundSegment { segment }
+
+    var segment: FundSegment
+    var currentWeight: Double
+    var targetWeight: Double
+    var suggestedContribution: Decimal?
+
+    var gap: Double { targetWeight - currentWeight }
 }
 
 struct InsightItem: Identifiable, Equatable {
@@ -63,10 +75,17 @@ enum InsightEngine {
             valueBySegment: valueBySegment,
             allocations: allocations
         )
+        let missingSegments = makeMissingSegments(
+            holdings: holdings,
+            totalValue: totalValue,
+            valueBySegment: valueBySegment,
+            allocations: allocations
+        )
 
         return InsightSnapshot(
             allocations: allocations,
-            insights: insights
+            insights: insights,
+            missingSegments: missingSegments
         )
     }
 
@@ -128,6 +147,40 @@ enum InsightEngine {
             return insight(for: holding, peers: peers, ranking: ranking)
         }
         .sorted(by: isHigherRanked)
+    }
+
+    private static func makeMissingSegments(
+        holdings: [Holding],
+        totalValue: Double,
+        valueBySegment: [FundSegment: Double],
+        allocations: [SegmentAllocation]
+    ) -> [MissingSegmentInsight] {
+        let heldSegments = Set(holdings.compactMap(\.fund?.segment))
+
+        return allocations.compactMap { allocation -> MissingSegmentInsight? in
+            guard allocation.targetWeight > 0 else { return nil }
+            guard allocation.isUnderweight(tolerance: allocationTolerance) else { return nil }
+            guard !heldSegments.contains(allocation.segment) else { return nil }
+
+            let segmentValue = valueBySegment[allocation.segment] ?? 0
+            return MissingSegmentInsight(
+                segment: allocation.segment,
+                currentWeight: allocation.currentWeight,
+                targetWeight: allocation.targetWeight,
+                suggestedContribution: suggestedSegmentContribution(
+                    segmentGap: allocation.gap,
+                    totalValue: totalValue,
+                    targetWeight: allocation.targetWeight,
+                    segmentValue: segmentValue
+                )
+            )
+        }
+        .sorted { lhs, rhs in
+            if lhs.gap != rhs.gap {
+                return lhs.gap > rhs.gap
+            }
+            return lhs.segment.rawValue < rhs.segment.rawValue
+        }
     }
 
     private struct RankingInputs {
