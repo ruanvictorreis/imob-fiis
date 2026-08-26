@@ -3,27 +3,27 @@ import SwiftData
 import Testing
 @testable import ImobFIIs
 
-@Suite("Insights de aporte")
-struct InsightEngineTests {
+@Suite("Insights de aporte — ranking")
+struct InsightEngineRankingTests {
     private let strategy = BalancedRetailStrategy()
 
     @Test @MainActor
     func prefersPaperOverLogisticsWhenValuesAreEqual() {
-        let paper = makeHolding(
+        let paper = makeInsightHolding(
             ticker: "CPTS11",
             segment: .paper,
             shares: 50,
             price: 10,
             average: 10
         )
-        let logistics = makeHolding(
+        let logistics = makeInsightHolding(
             ticker: "XPLG11",
             segment: .logistics,
             shares: 50,
             price: 10,
             average: 10
         )
-        let hybrid = makeHolding(
+        let hybrid = makeInsightHolding(
             ticker: "HGBS11",
             segment: .hybrid,
             shares: 900,
@@ -39,21 +39,21 @@ struct InsightEngineTests {
 
     @Test @MainActor
     func prefersSmallerPositionInsideTheSameSegment() {
-        let smaller = makeHolding(
+        let smaller = makeInsightHolding(
             ticker: "KNCR11",
             segment: .paper,
             shares: 50,
             price: 10,
             average: 10
         )
-        let larger = makeHolding(
+        let larger = makeInsightHolding(
             ticker: "CPTS11",
             segment: .paper,
             shares: 100,
             price: 10,
             average: 10
         )
-        let hybrid = makeHolding(
+        let hybrid = makeInsightHolding(
             ticker: "HGBS11",
             segment: .hybrid,
             shares: 850,
@@ -70,14 +70,14 @@ struct InsightEngineTests {
 
     @Test @MainActor
     func excludesHybridFromRanking() {
-        let hybrid = makeHolding(
+        let hybrid = makeInsightHolding(
             ticker: "HGBS11",
             segment: .hybrid,
             shares: 990,
             price: 10,
             average: 10
         )
-        let paper = makeHolding(
+        let paper = makeInsightHolding(
             ticker: "CPTS11",
             segment: .paper,
             shares: 10,
@@ -94,21 +94,21 @@ struct InsightEngineTests {
 
     @Test @MainActor
     func usesDiscountToBreakInternalWeightTie() {
-        let discounted = makeHolding(
+        let discounted = makeInsightHolding(
             ticker: "KNCR11",
             segment: .paper,
             shares: 50,
             price: 10,
             average: 12
         )
-        let premium = makeHolding(
+        let premium = makeInsightHolding(
             ticker: "CPTS11",
             segment: .paper,
             shares: 100,
             price: 10,
             average: 8
         )
-        let hybrid = makeHolding(
+        let hybrid = makeInsightHolding(
             ticker: "HGBS11",
             segment: .hybrid,
             shares: 850,
@@ -125,7 +125,7 @@ struct InsightEngineTests {
 
     @Test @MainActor
     func usesDividendYield12mWhenDiscountIsTied() {
-        let higherYield = makeHolding(
+        let higherYield = makeInsightHolding(
             ticker: "KNCR11",
             segment: .paper,
             shares: 50,
@@ -133,7 +133,7 @@ struct InsightEngineTests {
             average: 10,
             dividendYield: 0.12
         )
-        let lowerYield = makeHolding(
+        let lowerYield = makeInsightHolding(
             ticker: "CPTS11",
             segment: .paper,
             shares: 100,
@@ -141,7 +141,7 @@ struct InsightEngineTests {
             average: 10,
             dividendYield: 0.08
         )
-        let hybrid = makeHolding(
+        let hybrid = makeInsightHolding(
             ticker: "HGBS11",
             segment: .hybrid,
             shares: 850,
@@ -158,7 +158,7 @@ struct InsightEngineTests {
 
     @Test @MainActor
     func emptyInsightsWhenOnlyOffStrategyHoldingsExist() {
-        let hybrid = makeHolding(
+        let hybrid = makeInsightHolding(
             ticker: "HGBS11",
             segment: .hybrid,
             shares: 100,
@@ -170,111 +170,7 @@ struct InsightEngineTests {
 
         #expect(snapshot.insights.isEmpty)
         #expect(snapshot.allocations.count == strategy.orderedSegments.count)
-    }
-
-    @Test @MainActor
-    func stillRanksWhenGapIsWithinToleranceBand() {
-        let paper = makeHolding(
-            ticker: "CPTS11",
-            segment: .paper,
-            shares: 290,
-            price: 10,
-            average: 10
-        )
-        let hybrid = makeHolding(
-            ticker: "HGBS11",
-            segment: .hybrid,
-            shares: 710,
-            price: 10,
-            average: 10
-        )
-
-        let snapshot = InsightEngine.evaluate([paper, hybrid], strategy: strategy)
-
-        #expect(snapshot.insights.map(\.ticker) == ["CPTS11"])
-        #expect(snapshot.insights[0].suggestedSegmentContribution == nil)
-        #expect(
-            !snapshot.insights[0].reasons.contains {
-                if case .segmentUnderweight = $0 { return true }
-                return false
-            }
-        )
-    }
-
-    @Test @MainActor
-    func stillRanksOverweightSegmentsAsBestAvailableOption() {
-        let paper = makeHolding(
-            ticker: "CPTS11",
-            segment: .paper,
-            shares: 400,
-            price: 10,
-            average: 10
-        )
-        let hybrid = makeHolding(
-            ticker: "HGBS11",
-            segment: .hybrid,
-            shares: 600,
-            price: 10,
-            average: 10
-        )
-
-        let snapshot = InsightEngine.evaluate([paper, hybrid], strategy: strategy)
-
-        #expect(snapshot.insights.map(\.ticker) == ["CPTS11"])
-        #expect(snapshot.insights[0].segmentGap < 0)
-        #expect(snapshot.insights[0].suggestedSegmentContribution == nil)
-    }
-
-    @Test @MainActor
-    func suggestsContributionAmountToCloseSegmentGap() {
-        let paper = makeHolding(
-            ticker: "CPTS11",
-            segment: .paper,
-            shares: 100,
-            price: 10,
-            average: 10
-        )
-        let hybrid = makeHolding(
-            ticker: "HGBS11",
-            segment: .hybrid,
-            shares: 900,
-            price: 10,
-            average: 10
-        )
-
-        let snapshot = InsightEngine.evaluate([paper, hybrid], strategy: strategy)
-
-        #expect(snapshot.insights.count == 1)
-        #expect(snapshot.insights[0].suggestedSegmentContribution == Decimal(2_000))
-        #expect(
-            snapshot.insights[0].reasons.contains {
-                if case .suggestedContribution(let amount) = $0 {
-                    return amount == Decimal(2_000)
-                }
-                return false
-            }
-        )
-    }
-
-    @MainActor
-    private func makeHolding(
-        ticker: String,
-        segment: FundSegment,
-        shares: Int,
-        price: Decimal,
-        average: Decimal,
-        lastDividend: Decimal = 0,
-        dividendYield: Double = 0
-    ) -> Holding {
-        let fund = Fund(
-            ticker: ticker,
-            name: ticker,
-            segment: segment,
-            manager: "",
-            currentPrice: price,
-            dividendYield: dividendYield,
-            lastDividend: lastDividend
-        )
-        return Holding(shares: shares, averagePrice: average, fund: fund)
+        #expect(snapshot.missingSegments.map(\.segment).contains(.paper))
+        #expect(!snapshot.missingSegments.map(\.segment).contains(.hybrid))
     }
 }

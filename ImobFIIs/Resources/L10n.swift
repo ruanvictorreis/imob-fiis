@@ -134,10 +134,10 @@ enum L10n {
         static var resetAllocation: String { text("insights.resetAllocation") }
         static var nextContribution: String { text("insights.nextContribution") }
         static var otherOptions: String { text("insights.otherOptions") }
+        static var missingSegments: String { text("insights.missingSegments") }
+        static var missingSegmentsFooter: String { text("insights.missingSegmentsFooter") }
         static var emptyTitle: String { text("insights.emptyTitle") }
         static var emptyDescription: String { text("insights.emptyDescription") }
-        static var noMatchTitle: String { text("insights.noMatchTitle") }
-        static var noMatchDescription: String { text("insights.noMatchDescription") }
         static var disclaimer: String { text("insights.disclaimer") }
         static var lowestWeightInSegment: String { text("insights.lowestWeightInSegment") }
         static var belowAveragePrice: String { text("insights.belowAveragePrice") }
@@ -149,6 +149,14 @@ enum L10n {
 
         static func segmentGap(segment: String, current: String, target: String) -> String {
             format("insights.segmentGap", segment, current, target)
+        }
+
+        static func missingSegmentGap(segment: String, current: String, target: String) -> String {
+            format("insights.missingSegmentGap", segment, current, target)
+        }
+
+        static func exploreSegment(_ segment: String) -> String {
+            format("insights.exploreSegment", segment)
         }
 
         static func suggestedContribution(_ amount: String) -> String {

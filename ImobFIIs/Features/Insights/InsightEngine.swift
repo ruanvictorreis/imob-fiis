@@ -3,6 +3,7 @@ import Foundation
 struct InsightSnapshot: Equatable {
     var allocations: [SegmentAllocation]
     var insights: [InsightItem]
+    var missingSegments: [MissingSegmentInsight]
 }
 
 struct SegmentAllocation: Identifiable, Equatable {
@@ -17,6 +18,17 @@ struct SegmentAllocation: Identifiable, Equatable {
     func isUnderweight(tolerance: Double) -> Bool {
         gap > tolerance
     }
+}
+
+struct MissingSegmentInsight: Identifiable, Equatable {
+    var id: FundSegment { segment }
+
+    var segment: FundSegment
+    var currentWeight: Double
+    var targetWeight: Double
+    var suggestedContribution: Decimal?
+
+    var gap: Double { targetWeight - currentWeight }
 }
 
 struct InsightItem: Identifiable, Equatable {
@@ -63,10 +75,17 @@ enum InsightEngine {
             valueBySegment: valueBySegment,
             allocations: allocations
         )
+        let missingSegments = makeMissingSegments(
+            holdings: holdings,
+            totalValue: totalValue,
+            valueBySegment: valueBySegment,
+            allocations: allocations
+        )
 
         return InsightSnapshot(
             allocations: allocations,
-            insights: insights
+            insights: insights,
+            missingSegments: missingSegments
         )
     }
 
@@ -130,180 +149,37 @@ enum InsightEngine {
         .sorted(by: isHigherRanked)
     }
 
-    private struct RankingInputs {
-        var totalValue: Double
-        var valueBySegment: [FundSegment: Double]
-        var gapBySegment: [FundSegment: Double]
-        var targetWeights: [FundSegment: Double]
-        var lowestTickers: Set<String>
-        var bestYieldBySegment: [FundSegment: Double]
-    }
-
-    private static func insight(
-        for holding: Holding,
-        peers: Int,
-        ranking: RankingInputs
-    ) -> InsightItem? {
-        guard let fund = holding.fund else { return nil }
-        let segment = fund.segment
-        let segmentValue = ranking.valueBySegment[segment] ?? 0
-        let internalWeight = segmentValue > 0 ? double(from: holding.currentValue) / segmentValue : 0
-        let yield = nextPurchaseYield(holding)
-        let belowAverage = fund.currentPrice > 0 && fund.currentPrice < holding.averagePrice
-        let segmentGap = ranking.gapBySegment[segment] ?? 0
-        let suggestedContribution = suggestedSegmentContribution(
-            segmentGap: segmentGap,
-            totalValue: ranking.totalValue,
-            targetWeight: ranking.targetWeights[segment] ?? 0,
-            segmentValue: segmentValue
-        )
-
-        return InsightItem(
-            ticker: fund.ticker,
-            segment: segment,
-            currentValue: holding.currentValue,
-            segmentGap: segmentGap,
-            internalGap: (1 / Double(max(peers, 1))) - internalWeight,
-            isBelowAverage: belowAverage,
-            nextPurchaseYield: yield,
-            suggestedSegmentContribution: suggestedContribution,
-            reasons: reasons(
-                ReasonContext(
-                    ticker: fund.ticker,
-                    segmentGap: segmentGap,
-                    currentWeight: ranking.totalValue > 0 ? segmentValue / ranking.totalValue : 0,
-                    targetWeight: ranking.targetWeights[segment] ?? 0,
-                    suggestedContribution: suggestedContribution,
-                    flags: ReasonFlags(
-                        belowAverage: belowAverage,
-                        yield: yield,
-                        lowestTickers: ranking.lowestTickers,
-                        bestYield: ranking.bestYieldBySegment[segment]
-                    )
-                )
-            )
-        )
-    }
-
-    private static func suggestedSegmentContribution(
-        segmentGap: Double,
+    private static func makeMissingSegments(
+        holdings: [Holding],
         totalValue: Double,
-        targetWeight: Double,
-        segmentValue: Double
-    ) -> Decimal? {
-        guard segmentGap > allocationTolerance, totalValue > 0 else { return nil }
-        let targetSegmentValue = Decimal(totalValue) * Decimal(targetWeight)
-        let currentSegmentValue = Decimal(segmentValue)
-        let amount = targetSegmentValue - currentSegmentValue
-        guard amount > 0 else { return nil }
-        return roundedCurrency(amount)
-    }
+        valueBySegment: [FundSegment: Double],
+        allocations: [SegmentAllocation]
+    ) -> [MissingSegmentInsight] {
+        let heldSegments = Set(holdings.compactMap(\.fund?.segment))
 
-    private static func roundedCurrency(_ amount: Decimal) -> Decimal {
-        var value = amount
-        var result = Decimal()
-        NSDecimalRound(&result, &value, 2, .plain)
-        return result
-    }
+        return allocations.compactMap { allocation -> MissingSegmentInsight? in
+            guard allocation.targetWeight > 0 else { return nil }
+            guard allocation.isUnderweight(tolerance: allocationTolerance) else { return nil }
+            guard !heldSegments.contains(allocation.segment) else { return nil }
 
-    private struct ReasonContext {
-        var ticker: String
-        var segmentGap: Double
-        var currentWeight: Double
-        var targetWeight: Double
-        var suggestedContribution: Decimal?
-        var flags: ReasonFlags
-    }
-
-    private struct ReasonFlags {
-        var belowAverage: Bool
-        var yield: Double?
-        var lowestTickers: Set<String>
-        var bestYield: Double?
-    }
-
-    private static func reasons(_ context: ReasonContext) -> [InsightReason] {
-        var reasons: [InsightReason] = []
-        if context.segmentGap > allocationTolerance {
-            reasons.append(
-                .segmentUnderweight(
-                    currentWeight: context.currentWeight,
-                    targetWeight: context.targetWeight
+            let segmentValue = valueBySegment[allocation.segment] ?? 0
+            return MissingSegmentInsight(
+                segment: allocation.segment,
+                currentWeight: allocation.currentWeight,
+                targetWeight: allocation.targetWeight,
+                suggestedContribution: suggestedSegmentContribution(
+                    segmentGap: allocation.gap,
+                    totalValue: totalValue,
+                    targetWeight: allocation.targetWeight,
+                    segmentValue: segmentValue
                 )
             )
         }
-        if let suggestedContribution = context.suggestedContribution {
-            reasons.append(.suggestedContribution(amount: suggestedContribution))
-        }
-        if context.flags.lowestTickers.contains(context.ticker) {
-            reasons.append(.lowestWeightInSegment)
-        }
-        if context.flags.belowAverage {
-            reasons.append(.belowAveragePrice)
-        }
-        if let yield = context.flags.yield,
-           let bestYield = context.flags.bestYield,
-           abs(yield - bestYield) < 0.000_000_1 {
-            reasons.append(.nextPurchaseYield)
-        }
-        return reasons
-    }
-
-    private static func lowestWeightTickers(
-        in groups: [FundSegment: [Holding]]
-    ) -> Set<String> {
-        Set(
-            groups.values.compactMap { group -> String? in
-                guard group.count > 1 else { return nil }
-                return group.min { lhs, rhs in
-                    if lhs.currentValue != rhs.currentValue {
-                        return lhs.currentValue < rhs.currentValue
-                    }
-                    return (lhs.fund?.ticker ?? "") < (rhs.fund?.ticker ?? "")
-                }?.fund?.ticker
+        .sorted { lhs, rhs in
+            if lhs.gap != rhs.gap {
+                return lhs.gap > rhs.gap
             }
-        )
-    }
-
-    private static func bestYields(
-        in groups: [FundSegment: [Holding]]
-    ) -> [FundSegment: Double] {
-        groups.reduce(into: [:]) { partial, entry in
-            let yields = entry.value.compactMap(nextPurchaseYield)
-            if let best = yields.max() {
-                partial[entry.key] = best
-            }
+            return lhs.segment.rawValue < rhs.segment.rawValue
         }
-    }
-
-    private static func nextPurchaseYield(_ holding: Holding) -> Double? {
-        guard let fund = holding.fund else { return nil }
-        if fund.dividendYield > 0 {
-            return fund.dividendYield
-        }
-        guard fund.currentPrice > 0, fund.lastDividend > 0 else { return nil }
-        return double(from: fund.lastDividend / fund.currentPrice)
-    }
-
-    private static func isHigherRanked(_ lhs: InsightItem, _ rhs: InsightItem) -> Bool {
-        if lhs.segmentGap != rhs.segmentGap {
-            return lhs.segmentGap > rhs.segmentGap
-        }
-        if lhs.internalGap != rhs.internalGap {
-            return lhs.internalGap > rhs.internalGap
-        }
-        if lhs.isBelowAverage != rhs.isBelowAverage {
-            return lhs.isBelowAverage && !rhs.isBelowAverage
-        }
-        let leftYield = lhs.nextPurchaseYield ?? -1
-        let rightYield = rhs.nextPurchaseYield ?? -1
-        if leftYield != rightYield {
-            return leftYield > rightYield
-        }
-        return lhs.ticker < rhs.ticker
-    }
-
-    private static func double(from decimal: Decimal) -> Double {
-        NSDecimalNumber(decimal: decimal).doubleValue
     }
 }
