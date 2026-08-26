@@ -69,7 +69,7 @@ struct BrapiFIICatalogService: FIICatalogServing {
 
     init(
         client: BrapiClient = BrapiClient(),
-        dividendFallback: any DividendFallbackServing = YahooDividendFallback()
+        dividendFallback: any DividendFallbackServing = YahooMarketDataService()
     ) {
         self.client = client
         self.dividendFallback = dividendFallback

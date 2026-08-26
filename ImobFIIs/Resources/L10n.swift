@@ -38,6 +38,12 @@ enum L10n {
         static var emptyTitle: String { text("portfolio.emptyTitle") }
         static var emptyDescription: String { text("portfolio.emptyDescription") }
         static var addFund: String { text("portfolio.addFund") }
+        static var refresh: String { text("portfolio.refresh") }
+        static var refreshFailed: String { text("portfolio.refreshFailed") }
+
+        static func updatedAt(_ time: String) -> String {
+            format("portfolio.updatedAt", time)
+        }
     }
 
     enum Accessory {

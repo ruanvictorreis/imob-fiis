@@ -794,6 +794,28 @@
         }
       }
     },
+    "portfolio.refresh" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atualizar"
+          }
+        }
+      }
+    },
+    "portfolio.refreshFailed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível atualizar as cotações"
+          }
+        }
+      }
+    },
     "portfolio.title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -801,6 +823,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carteira"
+          }
+        }
+      }
+    },
+    "portfolio.updatedAt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atualizado às %@"
           }
         }
       }

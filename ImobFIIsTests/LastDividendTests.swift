@@ -234,16 +234,16 @@ struct FIIDividendsCatalogTests {
 }
 
 @Suite("Fallback de proventos")
-struct YahooDividendFallbackTests {
+struct YahooMarketDataServiceTests {
     @Test
     func buildsB3YahooSymbol() {
-        #expect(YahooDividendFallback.yahooSymbol(for: "cpts11") == "CPTS11.SA")
-        #expect(YahooDividendFallback.yahooSymbol(for: "CPTS11.SA") == "CPTS11.SA")
+        #expect(YahooMarketDataService.yahooSymbol(for: "cpts11") == "CPTS11.SA")
+        #expect(YahooMarketDataService.yahooSymbol(for: "CPTS11.SA") == "CPTS11.SA")
     }
 
     @Test
     func mapsLatestCashDividendFromYahooChart() async {
-        let fallback = YahooDividendFallback(
+        let fallback = YahooMarketDataService(
             session: MockHTTPClient(data: Data(HTTPFixtures.yahooChart.utf8), statusCode: 200)
         )
         let dividends = await fallback.latestDividends(for: ["CPTS11"])
@@ -252,5 +252,17 @@ struct YahooDividendFallbackTests {
         #expect(dividends[0].ticker == "CPTS11")
         #expect(dividends[0].rate == Decimal(9) / 100)
         #expect(dividends[0].isIncome)
+    }
+
+    @Test
+    func mapsCurrentMarketDataFromYahooChart() async {
+        let fallback = YahooMarketDataService(
+            session: MockHTTPClient(data: Data(HTTPFixtures.yahooChartWithPrice.utf8), statusCode: 200)
+        )
+
+        let snapshots = await fallback.latestMarketData(for: ["CPTS11"])
+
+        #expect(snapshots.first?.price == Decimal(string: "76.42"))
+        #expect(snapshots.first?.lastDividend == Decimal(string: "0.09"))
     }
 }
