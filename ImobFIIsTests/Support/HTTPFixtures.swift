@@ -104,4 +104,23 @@ enum HTTPFixtures {
       }
     }
     """
+
+    static let yahooChartWithPrice = """
+    {
+      "chart": {
+        "result": [
+          {
+            "meta": { "symbol": "CPTS11.SA", "regularMarketPrice": 76.42 },
+            "indicators": { "quote": [{ "close": [75.1, 76.42] }] },
+            "events": {
+              "dividends": {
+                "1786971600": { "amount": 0.09, "date": 1786971600 }
+              }
+            }
+          }
+        ],
+        "error": null
+      }
+    }
+    """
 }

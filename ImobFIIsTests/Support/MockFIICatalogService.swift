@@ -13,7 +13,7 @@ struct MockFIICatalogService: FIICatalogServing {
     }
 
     func quote(for symbol: String) async throws -> FundQuote? {
-        quotesByTicker[symbol]
+        quotesByTicker[symbol.uppercased()]
     }
 
     func indicators(for symbols: [String]) async throws -> [FIIIndicators] {
@@ -84,14 +84,14 @@ struct MockFIICatalogService: FIICatalogServing {
                 ticker: "MXRF11",
                 shortName: "MXRF11",
                 longName: "Maxi Renda Fundo de Investimento Imobiliário",
-                price: 9.29,
+                price: Decimal(string: "9.29"),
                 changePercent: 0.0043,
                 volume: 1_899_639,
-                previousClose: 9.25,
-                dayHigh: 9.35,
-                dayLow: 9.20,
-                fiftyTwoWeekHigh: 10.80,
-                fiftyTwoWeekLow: 8.90,
+                previousClose: Decimal(string: "9.25"),
+                dayHigh: Decimal(string: "9.35"),
+                dayLow: Decimal(string: "9.20"),
+                fiftyTwoWeekHigh: Decimal(string: "10.80"),
+                fiftyTwoWeekLow: Decimal(string: "8.90"),
                 marketCap: nil
             ),
         ],

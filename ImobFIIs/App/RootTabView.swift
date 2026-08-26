@@ -3,6 +3,7 @@ import SwiftUI
 
 struct RootTabView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.scenePhase) private var scenePhase
     @State private var selectedTab: AppTab = .portfolio
     @State private var exploreViewModel: ExploreViewModel
     @Query(sort: \Holding.purchasedAt, order: .reverse) private var holdings: [Holding]
@@ -51,20 +52,28 @@ struct RootTabView: View {
             FundStore.repairSegments(in: modelContext)
         }
         .task(id: portfolioRefreshKey) {
-            let funds = holdings.compactMap(\.fund)
-            await PortfolioPriceSync.refreshIfNeeded(
-                funds,
-                using: exploreViewModel.catalog
-            )
-            await LastDividendSync.refreshStaleFunds(
-                funds,
-                using: exploreViewModel.catalog
-            )
+            await refreshPortfolioData()
+        }
+        .onChange(of: scenePhase) { _, phase in
+            guard phase == .active else { return }
+            Task { await refreshPortfolioData() }
         }
     }
 
     private var portfolioRefreshKey: String {
         holdings.compactMap(\.fund?.ticker).sorted().joined(separator: ",")
+    }
+
+    private func refreshPortfolioData() async {
+        let funds = holdings.compactMap(\.fund)
+        await PortfolioPriceSync.refreshIfNeeded(funds, using: portfolioMarketDataSource)
+    }
+
+    private var portfolioMarketDataSource: FallbackPortfolioMarketDataService {
+        FallbackPortfolioMarketDataService(
+            primary: YahooMarketDataService(),
+            fallback: BrapiQuoteMarketDataService(catalog: exploreViewModel.catalog)
+        )
     }
 }
 

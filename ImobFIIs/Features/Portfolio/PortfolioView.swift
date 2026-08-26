@@ -5,6 +5,9 @@ struct PortfolioView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var holdings: [Holding]
     @State private var positionSheet: PositionSheet?
+    @State private var isRefreshingMarketData = false
+    @State private var lastPriceRefreshDate: Date?
+    @State private var didFailLastRefresh = false
 
     private let catalog: any FIICatalogServing
 
@@ -32,6 +35,19 @@ struct PortfolioView: View {
         .navigationTitle(L10n.Portfolio.title)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    Task { await refreshMarketData() }
+                } label: {
+                    if isRefreshingMarketData {
+                        ProgressView()
+                    } else {
+                        Label(L10n.Portfolio.refresh, systemImage: "arrow.clockwise")
+                    }
+                }
+                .disabled(isRefreshingMarketData || holdings.isEmpty)
+                .accessibilityLabel(L10n.Portfolio.refresh)
+            }
+            ToolbarItem(placement: .topBarTrailing) {
                 Button(L10n.Common.add, systemImage: "plus") {
                     positionSheet = .addNew
                 }
@@ -47,6 +63,13 @@ struct PortfolioView: View {
                     EditHoldingSheet(holding: holding)
                 }
             }
+        }
+        .onAppear {
+            syncRefreshStatusFromStore()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .portfolioMarketDataDidSync)) { notification in
+            let key = PortfolioPriceSync.outcomeUserInfoKey
+            applySyncOutcome(notification.userInfo?[key] as? PortfolioPriceSyncOutcome)
         }
     }
 
@@ -100,6 +123,7 @@ struct PortfolioView: View {
                     .font(.largeTitle.weight(.semibold))
                     .monospacedDigit()
                     .minimumScaleFactor(0.7)
+                marketDataStatusText
             }
 
             HStack(spacing: Spacing.md) {
@@ -129,6 +153,49 @@ struct PortfolioView: View {
                 .foregroundStyle(emphasizesSign ? (value >= 0 ? Color.appPositive : Color.red) : Color.appPrimaryText)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    @ViewBuilder
+    private var marketDataStatusText: some View {
+        if didFailLastRefresh {
+            Text(L10n.Portfolio.refreshFailed)
+                .font(.caption)
+                .foregroundStyle(Color.red)
+        } else if let lastPriceRefreshDate {
+            Text(L10n.Portfolio.updatedAt(lastPriceRefreshDate.formatted(date: .omitted, time: .shortened)))
+                .font(.caption)
+                .foregroundStyle(Color.appSecondaryText)
+        }
+    }
+
+    private func refreshMarketData() async {
+        guard !isRefreshingMarketData else { return }
+        isRefreshingMarketData = true
+        defer { isRefreshingMarketData = false }
+
+        let funds = holdings.compactMap(\.fund)
+        let source = FallbackPortfolioMarketDataService(
+            primary: YahooMarketDataService(),
+            fallback: BrapiQuoteMarketDataService(catalog: catalog)
+        )
+        let outcome = await PortfolioPriceSync.refreshIfNeeded(funds, using: source, force: true)
+        applySyncOutcome(outcome)
+    }
+
+    private func syncRefreshStatusFromStore() {
+        lastPriceRefreshDate = PortfolioPriceSync.lastPriceRefreshDate(for: holdings.compactMap(\.fund))
+    }
+
+    private func applySyncOutcome(_ outcome: PortfolioPriceSyncOutcome?) {
+        syncRefreshStatusFromStore()
+        switch outcome {
+        case .failed:
+            didFailLastRefresh = true
+        case .updated:
+            didFailLastRefresh = false
+        case .skipped, .none:
+            break
+        }
     }
 
     private var emptyState: some View {
