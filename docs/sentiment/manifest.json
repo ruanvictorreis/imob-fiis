@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-02T21:36:00Z",
+  "updatedAt": "2026-09-02T21:40:00Z",
   "segments": {
     "paper": {
       "updatedAt": "2026-09-02T19:49:03Z",
@@ -21,6 +21,11 @@
       "updatedAt": "2026-09-02T21:36:00Z",
       "fundCount": 20,
       "url": "malls.json"
+    },
+    "offices": {
+      "updatedAt": "2026-09-02T21:40:00Z",
+      "fundCount": 20,
+      "url": "offices.json"
     },
     "fiagro": {
       "updatedAt": "2026-09-02T20:02:00Z",
