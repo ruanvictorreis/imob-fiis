@@ -148,6 +148,9 @@ enum L10n {
         static var lowestWeightInSegment: String { text("insights.lowestWeightInSegment") }
         static var belowAveragePrice: String { text("insights.belowAveragePrice") }
         static var nextPurchaseYield: String { text("insights.nextPurchaseYield") }
+        static var sentimentPositive: String { text("insights.sentimentPositive") }
+        static var sentimentNeutral: String { text("insights.sentimentNeutral") }
+        static var sentimentNegative: String { text("insights.sentimentNegative") }
 
         static func target(_ percent: String) -> String {
             format("insights.target", percent)
