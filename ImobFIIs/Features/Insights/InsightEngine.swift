@@ -42,6 +42,10 @@ struct InsightItem: Identifiable, Equatable {
     var isBelowAverage: Bool
     var nextPurchaseYield: Double?
     var suggestedSegmentContribution: Decimal?
+    var sentimentScore: Double?
+    var sentimentLabel: SentimentLabel?
+    var sentimentConfidence: SentimentConfidence?
+    var sentimentSummary: String?
     var reasons: [InsightReason]
 }
 
@@ -51,6 +55,9 @@ enum InsightReason: Equatable {
     case belowAveragePrice
     case nextPurchaseYield
     case suggestedContribution(amount: Decimal)
+    case positiveSentiment
+    case negativeSentiment
+    case neutralSentiment
 }
 
 enum InsightEngine {
@@ -59,7 +66,8 @@ enum InsightEngine {
 
     static func evaluate(
         _ holdings: [Holding],
-        strategy: some AllocationStrategy
+        strategy: some AllocationStrategy,
+        sentiment: SentimentContext = .empty
     ) -> InsightSnapshot {
         let totalValue = max(double(from: holdings.currentValue), 0)
         let valueBySegment = segmentValues(in: holdings)
@@ -69,11 +77,14 @@ enum InsightEngine {
             valueBySegment: valueBySegment
         )
         let insights = makeInsights(
-            holdings: holdings,
-            strategy: strategy,
-            totalValue: totalValue,
-            valueBySegment: valueBySegment,
-            allocations: allocations
+            InsightBuildInputs(
+                holdings: holdings,
+                strategy: strategy,
+                totalValue: totalValue,
+                valueBySegment: valueBySegment,
+                allocations: allocations,
+                sentiment: sentiment
+            )
         )
         let missingSegments = makeMissingSegments(
             holdings: holdings,
@@ -111,13 +122,22 @@ enum InsightEngine {
         }
     }
 
-    private static func makeInsights(
-        holdings: [Holding],
-        strategy: some AllocationStrategy,
-        totalValue: Double,
-        valueBySegment: [FundSegment: Double],
-        allocations: [SegmentAllocation]
-    ) -> [InsightItem] {
+    private struct InsightBuildInputs {
+        var holdings: [Holding]
+        var strategy: any AllocationStrategy
+        var totalValue: Double
+        var valueBySegment: [FundSegment: Double]
+        var allocations: [SegmentAllocation]
+        var sentiment: SentimentContext
+    }
+
+    private static func makeInsights(_ inputs: InsightBuildInputs) -> [InsightItem] {
+        let holdings = inputs.holdings
+        let strategy = inputs.strategy
+        let totalValue = inputs.totalValue
+        let valueBySegment = inputs.valueBySegment
+        let allocations = inputs.allocations
+        let sentiment = inputs.sentiment
         let targetSegments = Set(strategy.orderedSegments)
         let gapBySegment = Dictionary(
             uniqueKeysWithValues: allocations.map { ($0.segment, $0.gap) }
@@ -139,14 +159,34 @@ enum InsightEngine {
             gapBySegment: gapBySegment,
             targetWeights: strategy.targetWeights,
             lowestTickers: lowestTickers,
-            bestYieldBySegment: bestYieldBySegment
+            bestYieldBySegment: bestYieldBySegment,
+            sentiment: sentiment
         )
 
-        return eligible.compactMap { holding in
+        let ranked = eligible.compactMap { holding in
             let peers = eligibleBySegment[holding.fund?.segment ?? .other]?.count ?? 1
             return insight(for: holding, peers: peers, ranking: ranking)
         }
         .sorted(by: isHigherRanked)
+
+        return applyTopPickGuard(ranked)
+    }
+
+    static func applyTopPickGuard(_ insights: [InsightItem]) -> [InsightItem] {
+        guard let firstIndex = insights.firstIndex(where: { !isBlockedTopPick($0) }) else {
+            return insights
+        }
+        guard firstIndex > 0 else { return insights }
+        var reordered = insights
+        let preferred = reordered.remove(at: firstIndex)
+        reordered.insert(preferred, at: 0)
+        return reordered
+    }
+
+    static func isBlockedTopPick(_ item: InsightItem) -> Bool {
+        guard let score = item.sentimentScore,
+              let confidence = item.sentimentConfidence else { return false }
+        return score < -0.4 && confidence != .low
     }
 
     private static func makeMissingSegments(

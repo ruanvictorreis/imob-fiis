@@ -15,6 +15,19 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
+    /// Chave usada nos relatórios de sentimento publicados em GitHub Pages.
+    var sentimentKey: String {
+        switch self {
+        case .paper: "paper"
+        case .urban: "urban"
+        case .logistics: "logistics"
+        case .malls: "malls"
+        case .offices: "offices"
+        case .fiagro: "fiagro"
+        case .hybrid, .fundsOfFunds, .residential, .other: "other"
+        }
+    }
+
     var title: String {
         switch self {
         case .logistics: L10n.Segment.logistics

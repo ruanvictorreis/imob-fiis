@@ -8,6 +8,7 @@ extension InsightEngine {
         var targetWeights: [FundSegment: Double]
         var lowestTickers: Set<String>
         var bestYieldBySegment: [FundSegment: Double]
+        var sentiment: SentimentContext
     }
 
     static func insight(
@@ -17,6 +18,7 @@ extension InsightEngine {
     ) -> InsightItem? {
         guard let fund = holding.fund else { return nil }
         let segment = fund.segment
+        let ticker = fund.ticker.uppercased()
         let segmentValue = ranking.valueBySegment[segment] ?? 0
         let internalWeight = segmentValue > 0 ? double(from: holding.currentValue) / segmentValue : 0
         let yield = nextPurchaseYield(holding)
@@ -28,6 +30,10 @@ extension InsightEngine {
             targetWeight: ranking.targetWeights[segment] ?? 0,
             segmentValue: segmentValue
         )
+        let sentimentScore = ranking.sentiment.scoresByTicker[ticker]
+        let sentimentConfidence = ranking.sentiment.confidenceByTicker[ticker]
+        let sentimentLabel = ranking.sentiment.labelsByTicker[ticker]
+        let sentimentSummary = ranking.sentiment.summariesByTicker[ticker]
 
         return InsightItem(
             ticker: fund.ticker,
@@ -38,6 +44,10 @@ extension InsightEngine {
             isBelowAverage: belowAverage,
             nextPurchaseYield: yield,
             suggestedSegmentContribution: suggestedContribution,
+            sentimentScore: sentimentScore,
+            sentimentLabel: sentimentLabel,
+            sentimentConfidence: sentimentConfidence,
+            sentimentSummary: sentimentSummary,
             reasons: reasons(
                 ReasonContext(
                     ticker: fund.ticker,
@@ -45,6 +55,7 @@ extension InsightEngine {
                     currentWeight: ranking.totalValue > 0 ? segmentValue / ranking.totalValue : 0,
                     targetWeight: ranking.targetWeights[segment] ?? 0,
                     suggestedContribution: suggestedContribution,
+                    sentimentLabel: sentimentLabel,
                     flags: ReasonFlags(
                         belowAverage: belowAverage,
                         yield: yield,
@@ -83,6 +94,7 @@ extension InsightEngine {
         var currentWeight: Double
         var targetWeight: Double
         var suggestedContribution: Decimal?
+        var sentimentLabel: SentimentLabel?
         var flags: ReasonFlags
     }
 
@@ -116,6 +128,16 @@ extension InsightEngine {
            let bestYield = context.flags.bestYield,
            abs(yield - bestYield) < 0.000_000_1 {
             reasons.append(.nextPurchaseYield)
+        }
+        switch context.sentimentLabel {
+        case .positive:
+            reasons.append(.positiveSentiment)
+        case .negative:
+            reasons.append(.negativeSentiment)
+        case .neutral:
+            reasons.append(.neutralSentiment)
+        case nil:
+            break
         }
         return reasons
     }
@@ -170,6 +192,11 @@ extension InsightEngine {
         let rightYield = rhs.nextPurchaseYield ?? -1
         if leftYield != rightYield {
             return leftYield > rightYield
+        }
+        let leftSentiment = lhs.sentimentScore ?? 0
+        let rightSentiment = rhs.sentimentScore ?? 0
+        if leftSentiment != rightSentiment {
+            return leftSentiment > rightSentiment
         }
         return lhs.ticker < rhs.ticker
     }

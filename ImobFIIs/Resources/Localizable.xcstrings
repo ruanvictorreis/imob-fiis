@@ -1054,6 +1054,39 @@
         }
       }
     },
+    "insights.sentimentPositive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentimento positivo"
+          }
+        }
+      }
+    },
+    "insights.sentimentNeutral" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentimento neutro"
+          }
+        }
+      }
+    },
+    "insights.sentimentNegative" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sentimento negativo"
+          }
+        }
+      }
+    },
     "insights.otherOptions" : {
       "extractionState" : "manual",
       "localizations" : {
