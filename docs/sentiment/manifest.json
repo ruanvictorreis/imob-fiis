@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-02T11:00:00Z",
+  "segments": {
+    "paper": {
+      "updatedAt": "2026-09-02T11:00:00Z",
+      "fundCount": 2,
+      "url": "paper.json"
+    }
+  }
+}

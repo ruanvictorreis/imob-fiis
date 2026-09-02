@@ -1,0 +1,9 @@
+{
+  "segmentKey": "fiagro",
+  "segmentName": "Fiagro",
+  "tickers": [
+    "KNCA11", "SNAG11", "RBRF11", "SNCI11", "XPCA11", "VGIA11", "BTAG11",
+    "ZAVI11", "KNHF11", "SNFZ11", "AGRX11", "CPTR11", "FGAA11", "NCHB11",
+    "CRAA11", "RURA11", "SNAG11", "KNSC11", "KDIF11", "VGIR11"
+  ]
+}

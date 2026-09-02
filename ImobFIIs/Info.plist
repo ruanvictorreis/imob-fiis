@@ -4,6 +4,8 @@
 <dict>
 	<key>BRAPI_API_TOKEN</key>
 	<string>$(BRAPI_API_TOKEN)</string>
+	<key>SENTIMENT_BASE_URL</key>
+	<string>https://ruanvictorreis.github.io/imob-fiis/sentiment/</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Dark</string>
 	<key>UILaunchStoryboardName</key>

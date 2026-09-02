@@ -3,19 +3,23 @@ import SwiftUI
 
 struct InsightsView: View {
     private let catalog: any FIICatalogServing
+    private let sentimentService: SentimentReportService
     private let onExploreSegment: ((FundSegment) -> Void)?
 
     @State private var targetsStore: AllocationTargetsStore
     @State private var isEditingTargets = false
+    @State private var sentimentContext = SentimentContext.empty
 
     @Query private var holdings: [Holding]
 
     init(
         catalog: any FIICatalogServing,
+        sentimentService: SentimentReportService = SentimentReportService(),
         targetsStore: AllocationTargetsStore = AllocationTargetsStore(),
         onExploreSegment: ((FundSegment) -> Void)? = nil
     ) {
         self.catalog = catalog
+        self.sentimentService = sentimentService
         self.onExploreSegment = onExploreSegment
         _targetsStore = State(initialValue: targetsStore)
     }
@@ -25,7 +29,7 @@ struct InsightsView: View {
     }
 
     private var snapshot: InsightSnapshot {
-        InsightEngine.evaluate(holdings, strategy: strategy)
+        InsightEngine.evaluate(holdings, strategy: strategy, sentiment: sentimentContext)
     }
 
     private var activeAllocations: [SegmentAllocation] {
@@ -53,6 +57,9 @@ struct InsightsView: View {
         }
         .sheet(isPresented: $isEditingTargets) {
             EditAllocationTargetsView(store: targetsStore)
+        }
+        .task(id: sentimentTaskKey) {
+            await loadSentiment()
         }
         .navigationDestination(for: FundSummary.self) { summary in
             FundDetailView(summary: summary, catalog: catalog)
@@ -168,56 +175,33 @@ struct InsightsView: View {
         Group {
             if let summary = fundSummary(for: insight.ticker) {
                 NavigationLink(value: summary) {
-                    insightRow(insight)
+                    InsightsInsightRow(insight: insight)
                 }
             } else {
-                insightRow(insight)
+                InsightsInsightRow(insight: insight)
             }
         }
     }
 
-    private func insightRow(_ insight: InsightItem) -> some View {
-        VStack(alignment: .leading, spacing: Spacing.xxs) {
-            HStack(alignment: .firstTextBaseline) {
-                Text(insight.ticker)
-                    .font(.headline)
-                    .monospaced()
-                Spacer(minLength: Spacing.xs)
-                Text(insight.currentValue, format: .brl)
-                    .font(.subheadline.weight(.semibold))
-                    .monospacedDigit()
-            }
-            Text(insight.segment.title)
-                .font(.caption)
-                .foregroundStyle(Color.appSecondaryText)
-            ForEach(reasonTexts(for: insight), id: \.self) { reason in
-                Text(reason)
-                    .font(.caption)
-                    .foregroundStyle(Color.appSecondaryText)
-            }
-        }
-        .padding(.vertical, Spacing.xxs)
+    private var sentimentTaskKey: String {
+        let segments = holdings.compactMap(\.fund?.segment)
+            .filter { (strategy.targetWeights[$0] ?? 0) > 0 }
+            .map(\.sentimentKey)
+        return segments.sorted().joined(separator: ",")
     }
 
-    private func reasonTexts(for insight: InsightItem) -> [String] {
-        insight.reasons.map { reason in
-            switch reason {
-            case .segmentUnderweight(let currentWeight, let targetWeight):
-                L10n.Insights.segmentGap(
-                    segment: insight.segment.title,
-                    current: percentText(currentWeight),
-                    target: percentText(targetWeight)
-                )
-            case .lowestWeightInSegment:
-                L10n.Insights.lowestWeightInSegment
-            case .belowAveragePrice:
-                L10n.Insights.belowAveragePrice
-            case .nextPurchaseYield:
-                L10n.Insights.nextPurchaseYield
-            case .suggestedContribution(let amount):
-                L10n.Insights.suggestedContribution(amount.formatted(.brl))
-            }
+    private func loadSentiment() async {
+        let segmentKeys = Set(
+            holdings.compactMap(\.fund?.segment)
+                .filter { (strategy.targetWeights[$0] ?? 0) > 0 }
+                .map(\.sentimentKey)
+                .filter { $0 != "other" }
+        )
+        guard !segmentKeys.isEmpty else {
+            sentimentContext = .empty
+            return
         }
+        sentimentContext = await sentimentService.reports(for: Array(segmentKeys))
     }
 
     private func percentText(_ value: Double) -> String {

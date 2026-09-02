@@ -1,0 +1,9 @@
+{
+  "segmentKey": "paper",
+  "segmentName": "Papel",
+  "tickers": [
+    "KNCR11", "CPTS11", "RBRR11", "VRTA11", "MCCI11", "HGCR11", "IRDM11",
+    "KNIP11", "KNSC11", "RECR11", "KDIF11", "VGIR11", "ARRI11", "HABT11",
+    "HGRE11", "CXAG11", "MFII11", "RBRY11", "CARE11", "AFHI11"
+  ]
+}

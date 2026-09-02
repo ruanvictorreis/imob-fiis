@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "segment": "Papel",
+  "segmentKey": "paper",
+  "generatedAt": "2026-09-02T11:00:00Z",
+  "lookbackDays": 14,
+  "sources": ["clube.fii", "fundsexplorer.com.br", "statusinvest.com.br"],
+  "funds": [
+    {
+      "ticker": "KNCR11",
+      "sentiment": "positive",
+      "score": 0.55,
+      "confidence": "medium",
+      "summary": "Cobertura recente destaca estabilidade de crédito e manutenção de proventos.",
+      "articleCount": 3,
+      "topHeadlines": [
+        {
+          "title": "KNCR11 mantém distribuição mensal",
+          "url": "https://www.fundsexplorer.com.br/funds/kncr11",
+          "publishedAt": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "ticker": "CPTS11",
+      "sentiment": "neutral",
+      "score": 0.05,
+      "confidence": "low",
+      "summary": "Poucas notícias específicas na janela analisada.",
+      "articleCount": 1,
+      "topHeadlines": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(agents/fii-sentiment/**)",
+      "Read(docs/sentiment/**)",
+      "Write(docs/sentiment/**)",
+      "WebFetch(clube.fii)",
+      "WebFetch(www.clube.fii)",
+      "WebFetch(fundsexplorer.com.br)",
+      "WebFetch(www.fundsexplorer.com.br)",
+      "WebFetch(statusinvest.com.br)",
+      "WebFetch(www.statusinvest.com.br)",
+      "WebFetch(suno.com.br)",
+      "WebFetch(www.suno.com.br)",
+      "WebFetch(infomoney.com.br)",
+      "WebFetch(www.infomoney.com.br)",
+      "WebFetch(fiis.com.br)",
+      "WebFetch(www.fiis.com.br)",
+      "WebFetch(moneytimes.com.br)",
+      "WebFetch(www.moneytimes.com.br)"
+    ],
+    "deny": [
+      "Write(ImobFIIs/**)",
+      "Write(ImobFIIsTests/**)",
+      "Write(.github/**)",
+      "Read(.env*)",
+      "Write(**/*.swift)"
+    ]
+  }
+}
