@@ -1,0 +1,356 @@
+{
+  "version": 1,
+  "segment": "Shoppings",
+  "segmentKey": "malls",
+  "generatedAt": "2026-09-02T21:36:00Z",
+  "lookbackDays": 14,
+  "sources": [
+    "clube.fii",
+    "fundsexplorer.com.br",
+    "statusinvest.com.br",
+    "suno.com.br",
+    "infomoney.com.br",
+    "fiis.com.br",
+    "moneytimes.com.br"
+  ],
+  "funds": [
+    {
+      "ticker": "XPML11",
+      "sentiment": "positive",
+      "score": 0.65,
+      "confidence": "high",
+      "summary": "XP Malls assinou memorando para adquirir 60% do São Bernardo Plaza por R$ 331 mi, expandindo carteira com 26 shoppings; mantém guidance de R$ 0,83–R$ 0,92/cota no 2º semestre.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "XPML11 fecha acordo para compra de 60% do São Bernardo Plaza",
+          "url": "https://www.fundsexplorer.com.br/noticias/xpml11-fecha-acordo-para-compra-de-60-do-sao-bernardo-plaza",
+          "publishedAt": "2026-08-14"
+        },
+        {
+          "title": "FIIs de shopping superam IFIX com alta de 25,2%",
+          "url": "https://www.fundsexplorer.com.br/noticias/fiis-shopping-centers-superam-ifix-2025-2026",
+          "publishedAt": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "ticker": "HSML11",
+      "sentiment": "positive",
+      "score": 0.55,
+      "confidence": "high",
+      "summary": "HSI Malls manteve R$ 0,75 por cota, registrou ganho de capital com venda parcial do Pátio Maceió e projeta alavancagem líquida em ~17,7% com ocupação de 96,2%.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Novos proventos do HSML11 são anunciados para setembro",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hsml11-pagamento",
+          "publishedAt": "2026-09-01"
+        },
+        {
+          "title": "Venda de shopping impulsiona HSML11, que sobe 56% no resultado",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hsml11-julho-2026",
+          "publishedAt": "2026-08-01"
+        }
+      ]
+    },
+    {
+      "ticker": "VISC11",
+      "sentiment": "positive",
+      "score": 0.45,
+      "confidence": "medium",
+      "summary": "Vinci Shopping Centers manteve R$ 0,84 por cota em agosto, com vendas/m² +12,7% a/a, NOI +11,7% e guidance de R$ 0,84–R$ 0,90 até dezembro.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "VISC11 divulga proventos; saiba quem tem direito ao pagamento",
+          "url": "https://www.fundsexplorer.com.br/noticias/rendimentos-do-visc11-agosto",
+          "publishedAt": "2026-08-04"
+        }
+      ]
+    },
+    {
+      "ticker": "MALL11",
+      "sentiment": "neutral",
+      "score": 0.0,
+      "confidence": "low",
+      "summary": "Ticker migrado para PMLL11 (Patria Malls); não há cobertura recente específica para MALL11 nos portais consultados na janela de 14 dias.",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
+      "ticker": "ABCP11",
+      "sentiment": "neutral",
+      "score": 0.1,
+      "confidence": "low",
+      "summary": "Grand Plaza Shopping manteve R$ 0,55 por cota em agosto, 15º mês consecutivo no mesmo patamar, sem eventos corporativos relevantes na janela.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "ABCP11 - Grand Plaza Shopping: dividendos e cotação",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/abcp11",
+          "publishedAt": "2026-08-07"
+        }
+      ]
+    },
+    {
+      "ticker": "XPCM11",
+      "sentiment": "negative",
+      "score": -0.35,
+      "confidence": "low",
+      "summary": "XP Corporate Macaé não distribui proventos desde janeiro de 2024 (R$ 0,02/cota) e acumula queda de ~1% no ano, sem comunicados recentes na janela.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "XPCM11 - XP Corporate Macaé: dividendos e cotação",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/xpcm11",
+          "publishedAt": "2026-08-01"
+        }
+      ]
+    },
+    {
+      "ticker": "PQDP11",
+      "sentiment": "neutral",
+      "score": 0.15,
+      "confidence": "low",
+      "summary": "Parque Dom Pedro concluiu 6ª emissão de R$ 348,3 mi em julho, reforçando capital para investimentos; sem novos fatos relevantes na janela de 14 dias.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "FII conclui oferta de R$ 348,3 milhões e reforça capacidade para novos investimentos",
+          "url": "https://www.fundsexplorer.com.br/noticias/fii-conclui-oferta-de-r-3483-milhoes-e-reforca-capacidade-para-novos-investimentos",
+          "publishedAt": "2026-07-02"
+        }
+      ]
+    },
+    {
+      "ticker": "VSHO11",
+      "sentiment": "neutral",
+      "score": 0.2,
+      "confidence": "medium",
+      "summary": "Votorantim Shopping manteve R$ 0,70 por cota em agosto (DY ~0,93%), preservando estabilidade de distribuição no segmento de shoppings.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "MXRF11, BRCO11 e mais 180 FIIs pagam dividendos na semana",
+          "url": "https://fiis.com.br/noticias/mxrf11-brco11-mais-fundos-imobiliarios-pagam-dividendos-nesta-semana-agosto-jj/",
+          "publishedAt": "2026-08-10"
+        },
+        {
+          "title": "VSHO11 - FII VOT SHOP",
+          "url": "https://fiis.com.br/vsho11/",
+          "publishedAt": "2026-08-10"
+        }
+      ]
+    },
+    {
+      "ticker": "MCCI11",
+      "sentiment": "neutral",
+      "score": 0.15,
+      "confidence": "low",
+      "summary": "Mauá Capital Recebíveis manteve política de R$ 1,00/cota nos meses anteriores, mas ainda não divulgou proventos de agosto na janela consultada.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "MCCI11 anuncia proventos com retorno de 1,06% no mês",
+          "url": "https://www.fundsexplorer.com.br/noticias/mcci11-dividendos-junho-2026",
+          "publishedAt": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "ticker": "RBRR11",
+      "sentiment": "neutral",
+      "score": 0.1,
+      "confidence": "medium",
+      "summary": "RBR Rendimento High Grade pagou R$ 0,90/cota em agosto (DY ~1,19%), com carteira diversificada em CRIs e FIIs; sem novidades setoriais de shoppings.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "RBRR11 divulga proventos para agosto e yield chega a 1,19%",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-rbrr11-agosto-2026",
+          "publishedAt": "2026-08-12"
+        },
+        {
+          "title": "Rendimentos de cinco FIIs caem na conta nesta terça; yield vai a 1,28%",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hoje-rbrr11-rbry11",
+          "publishedAt": "2026-08-18"
+        }
+      ]
+    },
+    {
+      "ticker": "HGLG11",
+      "sentiment": "positive",
+      "score": 0.65,
+      "confidence": "high",
+      "summary": "CSHG Logística elevou distribuição para R$ 1,17/cota, concluiu venda de ativo em Itapevi com lucro de ~R$ 0,98/cota e mantém vacância física em 3,1%.",
+      "articleCount": 3,
+      "topHeadlines": [
+        {
+          "title": "Dividendos do HGLG11 são anunciados para setembro",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hglg11-setembro",
+          "publishedAt": "2026-08-31"
+        },
+        {
+          "title": "Rendimento do HGLG11 é o maior em três anos; confira a distribuição",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hglg11-agosto-2026",
+          "publishedAt": "2026-08-04"
+        },
+        {
+          "title": "HGLG11 aumenta os rendimentos para R$ 1,17: veja o que mudou no fundo",
+          "url": "https://www.fundsexplorer.com.br/artigos/hglg11-aumenta-os-rendimentos-para-r-117-veja-o-que-mudou-no-fundo/",
+          "publishedAt": "2026-07-31"
+        }
+      ]
+    },
+    {
+      "ticker": "PVBI11",
+      "sentiment": "neutral",
+      "score": 0.05,
+      "confidence": "low",
+      "summary": "VBI Prime Properties pagou R$ 0,40/cota em 7 de agosto, mantendo distribuição estável; cota acumula queda de ~16% no ano sem fatos relevantes recentes.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "PVBI11 - FDO. INV. IMOB. VBI PRIME PROPERTIES",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/pvbi11",
+          "publishedAt": "2026-08-07"
+        }
+      ]
+    },
+    {
+      "ticker": "BRCR11",
+      "sentiment": "neutral",
+      "score": 0.0,
+      "confidence": "medium",
+      "summary": "BTG Corporate Office manteve R$ 0,41/cota pelo 15º mês seguido, com vacância física de 10,4% concentrada em ativos específicos do portfólio corporativo.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "Provento do BRCR11 chega a 1,02% ao mês; saiba os detalhes aos cotistas",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-brcr11-agosto-2026",
+          "publishedAt": "2026-08-01"
+        }
+      ]
+    },
+    {
+      "ticker": "KNRI11",
+      "sentiment": "neutral",
+      "score": 0.1,
+      "confidence": "low",
+      "summary": "Kinea Renda Imobiliária segue com distribuição estável de R$ 1,10/cota nos meses anteriores, mas sem comunicados específicos na janela de 14 dias.",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
+      "ticker": "VRTA11",
+      "sentiment": "positive",
+      "score": 0.35,
+      "confidence": "medium",
+      "summary": "Fator Verita indica retorno potencial de IPCA + 20,97% com cota a desconto, reserva de R$ 1,00/cota e guidance de R$ 0,85–R$ 0,95 no 2º semestre.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "VRTA11: carteira do fundo imobiliário tem retorno potencial de IPCA + 20,97%",
+          "url": "https://www.suno.com.br/noticias/vrta11-carteira-do-fundo-imobiliario-tem-retorno-potencial-de-ipca-2097/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "JSRE11",
+      "sentiment": "neutral",
+      "score": 0.2,
+      "confidence": "medium",
+      "summary": "JS Real Estate Multigestão pagou R$ 0,50/cota em 14 de agosto (DY ~0,84%), dentro da faixa de guidance de R$ 0,48–R$ 0,56 por cota.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "MXRF11, BRCO11 e mais 180 FIIs pagam dividendos na semana",
+          "url": "https://fiis.com.br/noticias/mxrf11-brco11-mais-fundos-imobiliarios-pagam-dividendos-nesta-semana-agosto-jj/",
+          "publishedAt": "2026-08-10"
+        },
+        {
+          "title": "JSRE11 paga R$ 0,48 e reduz alavancagem",
+          "url": "https://www.suno.com.br/noticias/jsre11-distribui-0-48-reduz-alavancagem-portfolio/",
+          "publishedAt": "2026-03-01"
+        }
+      ]
+    },
+    {
+      "ticker": "ALZR11",
+      "sentiment": "positive",
+      "score": 0.5,
+      "confidence": "medium",
+      "summary": "Alianza Trust registrou maior lucro em 12 meses (R$ 0,101/cota) e elevou dividendos para R$ 0,084, no teto do guidance S2 2026 de R$ 0,082–R$ 0,084.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "ALZR11: fundo imobiliário tem maior lucro em 12 meses e eleva dividendos",
+          "url": "https://www.fundsexplorer.com.br/noticias/alzr11-fundo-imobiliario-tem-maior-lucro-em-12-meses-e-eleva-dividendos",
+          "publishedAt": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "ticker": "RBRP11",
+      "sentiment": "negative",
+      "score": -0.35,
+      "confidence": "medium",
+      "summary": "RBR Properties reduziu dividendos de R$ 0,40 para R$ 0,35/cota em agosto, sinalizando ajuste na política de distribuição após patamar anterior.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "RBRP11 anuncia novos dividendos para agosto; saiba o valor",
+          "url": "https://www.suno.com.br/noticias/rbrp11-dividendos-agosto-2026-yield/",
+          "publishedAt": "2026-08-12"
+        }
+      ]
+    },
+    {
+      "ticker": "XPPR11",
+      "sentiment": "negative",
+      "score": -0.5,
+      "confidence": "medium",
+      "summary": "XP Properties (VPPR11) segue sem dividendos desde janeiro de 2025 e aprovou 3ª emissão de até R$ 185,9 mi para investidores profissionais, em reestruturação.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "FII lança nova oferta milionária; confira quem participa",
+          "url": "https://www.suno.com.br/noticias/fundo-imobiliario-vppr11-3a-emissao/",
+          "publishedAt": "2026-08-26"
+        },
+        {
+          "title": "Sem dividendos desde janeiro, FII tenta retomar consistência",
+          "url": "https://www.suno.com.br/noticias/dividendos-zero-fii-vppr-retomada/",
+          "publishedAt": "2026-06-01"
+        }
+      ]
+    },
+    {
+      "ticker": "PMLL11",
+      "sentiment": "positive",
+      "score": 0.6,
+      "confidence": "high",
+      "summary": "Patria Malls avançou 82% no resultado de julho, pagou R$ 1,00/cota e firmou aquisição de 10% do Shopping Jardim Sul por R$ 67 mi, com ocupação de 96,2%.",
+      "articleCount": 4,
+      "topHeadlines": [
+        {
+          "title": "PMLL11 avança 82% no resultado de julho; veja valor",
+          "url": "https://www.suno.com.br/noticias/rendimentos-do-pmll11-sobem-82/",
+          "publishedAt": "2026-08-27"
+        },
+        {
+          "title": "PMLL11 negocia fatia de shopping consolidado por R$ 67 milhões",
+          "url": "https://www.fundsexplorer.com.br/noticias/pmll11-shopping-jardim-sul",
+          "publishedAt": "2026-08-06"
+        },
+        {
+          "title": "PMLL11 investe \"milhões\" em compra de shopping; entenda",
+          "url": "https://www.suno.com.br/noticias/pmll11-compra-10-shopping-jardim/",
+          "publishedAt": "2026-08-05"
+        }
+      ]
+    }
+  ]
+}

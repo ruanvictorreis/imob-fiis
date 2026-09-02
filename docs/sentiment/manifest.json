@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-02T20:24:00Z",
+  "updatedAt": "2026-09-02T21:36:00Z",
   "segments": {
     "paper": {
       "updatedAt": "2026-09-02T19:49:03Z",
@@ -16,6 +16,11 @@
       "updatedAt": "2026-09-02T20:24:00Z",
       "fundCount": 19,
       "url": "logistics.json"
+    },
+    "malls": {
+      "updatedAt": "2026-09-02T21:36:00Z",
+      "fundCount": 20,
+      "url": "malls.json"
     },
     "fiagro": {
       "updatedAt": "2026-09-02T20:02:00Z",
