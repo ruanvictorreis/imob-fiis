@@ -1,11 +1,16 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-02T19:49:03Z",
+  "updatedAt": "2026-09-02T20:00:00Z",
   "segments": {
     "paper": {
       "updatedAt": "2026-09-02T19:49:03Z",
       "fundCount": 20,
       "url": "paper.json"
+    },
+    "urban": {
+      "updatedAt": "2026-09-02T20:00:00Z",
+      "fundCount": 20,
+      "url": "urban.json"
     }
   }
 }

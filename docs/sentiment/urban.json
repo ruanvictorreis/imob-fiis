@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "segment": "Renda Urbana",
+  "segmentKey": "urban",
+  "generatedAt": "2026-09-02T20:00:00Z",
+  "lookbackDays": 14,
+  "sources": [
+    "clube.fii",
+    "fundsexplorer.com.br",
+    "statusinvest.com.br",
+    "suno.com.br",
+    "infomoney.com.br",
+    "fiis.com.br",
+    "moneytimes.com.br"
+  ],
+  "funds": [
+    {
+      "ticker": "HGLG11",
+      "sentiment": "positive",
+      "score": 0.65,
+      "confidence": "high",
+      "summary": "CSHG Logística elevou a distribuição para R$ 1,17 por cota, concluiu venda de ativo em Itapevi com lucro de ~R$ 0,98/cota e iniciou a 12ª emissão de cotas; vacância física permanece em 3,1%.",
+      "articleCount": 5,
+      "topHeadlines": [
+        {
+          "title": "Rendimento do HGLG11 é o maior em três anos; confira a distribuição",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hglg11-agosto-2026",
+          "publishedAt": "2026-08-04"
+        },
+        {
+          "title": "HGLG11 aumenta os rendimentos para R$ 1,17: veja o que mudou no fundo",
+          "url": "https://www.fundsexplorer.com.br/artigos/hglg11-aumenta-os-rendimentos-para-r-117-veja-o-que-mudou-no-fundo/",
+          "publishedAt": "2026-08-01"
+        },
+        {
+          "title": "Dividendos do HGLG11 são anunciados para setembro",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hglg11-setembro",
+          "publishedAt": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "ticker": "HSML11",
+      "sentiment": "positive",
+      "score": 0.55,
+      "confidence": "medium",
+      "summary": "HSI Malls manteve R$ 0,75 por cota, registrou ganho de capital com venda parcial do Pátio Maceió e projeta redução da alavancagem para ~17,7% após antecipação de dívidas.",
+      "articleCount": 3,
+      "topHeadlines": [
+        {
+          "title": "Novos proventos do HSML11 são anunciados para setembro",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hsml11-pagamento",
+          "publishedAt": "2026-08-31"
+        },
+        {
+          "title": "Venda de shopping impulsiona HSML11, que sobe 56% no resultado",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hsml11-julho-2026",
+          "publishedAt": "2026-08-07"
+        },
+        {
+          "title": "Sai o rendimento do HSML11; saiba quem entra no pagamento",
+          "url": "https://www.suno.com.br/noticias/dividendos-do-hsml11-agosto-2026/",
+          "publishedAt": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "ticker": "PVBI11",
+      "sentiment": "negative",
+      "score": -0.45,
+      "confidence": "medium",
+      "summary": "VBI Prime Properties reduziu o provento para R$ 0,37 por cota em agosto (de R$ 0,40) e projeta vacância subindo para 24,9% com saída do Banco ABC; cota acumula queda de ~7% no ano.",
+      "articleCount": 3,
+      "topHeadlines": [
+        {
+          "title": "PVBI11 já revelou quanto vai pagar de dividendos em julho; saiba o valor",
+          "url": "https://www.suno.com.br/noticias/pvbi11-ja-revelou-quanto-vai-pagar-de-dividendos-em-julho-saiba-o-valor/",
+          "publishedAt": "2026-07-01"
+        },
+        {
+          "title": "PVBI11 - FDO. INV. IMOB. VBI PRIME PROPERTIES",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/pvbi11",
+          "publishedAt": "2026-08-31"
+        },
+        {
+          "title": "Funds Explorer - Explore os Fiis de forma inteligente",
+          "url": "https://www.fundsexplorer.com.br/funds/pvbi11",
+          "publishedAt": "2026-09-02"
+        }
+      ]
+    },
+    {
+      "ticker": "BRCR11",
+      "sentiment": "neutral",
+      "score": 0.05,
+      "confidence": "medium",
+      "summary": "BTG Pactual Corporate Office manteve R$ 0,41 por cota pelo 15º mês consecutivo; vacância física de 10,4% persiste em ativos como Torre Almirante e MV9.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Provento do BRCR11 chega a 1,02% ao mês; saiba os detalhes aos cotistas",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-brcr11-agosto-2026",
+          "publishedAt": "2026-08-07"
+        },
+        {
+          "title": "Dividendos do MXRF11 e BRCO11: veja os FIIs que pagam hoje",
+          "url": "https://www.suno.com.br/noticias/dividendos-hoje-fiis-pagam-proventos/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "TRXF11",
+      "sentiment": "negative",
+      "score": -0.25,
+      "confidence": "high",
+      "summary": "TRX Real Estate acelera expansão com aquisições de shoppings Iguatemi e ParkShopping Barigui, mas a cota recua ~20% em 12 meses, cancelou compras do Pátio Victor Malzoni e Cyrela, e lançou 13ª emissão de até R$ 5 bi.",
+      "articleCount": 5,
+      "topHeadlines": [
+        {
+          "title": "TRXF11 acelera expansão para shoppings",
+          "url": "https://www.fundsexplorer.com.br/artigos/trxf11-expansao-shoppings/",
+          "publishedAt": "2026-08-20"
+        },
+        {
+          "title": "TRXF11: FII lucra R$ 60 milhões e acelera expansão com aquisições em logística",
+          "url": "https://www.fundsexplorer.com.br/noticias/trxf11-fii-lucra-r-60-milhoes-e-acelera-expansao-com-aquisicoes-em-logistica",
+          "publishedAt": "2026-08-14"
+        },
+        {
+          "title": "TRXF11 desiste de compra do \"prédio do Google\" e de imóveis da Cyrela; o que explica?",
+          "url": "https://www.infomoney.com.br/onde-investir/transacoes-negociadas-pelo-fii-trxf11-podem-nao-acontecer-com-a-cota-depreciada/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "VILG11",
+      "sentiment": "positive",
+      "score": 0.50,
+      "confidence": "medium",
+      "summary": "Vinci Logística apurou resultado 19% maior em julho (R$ 0,92/cota), manteve distribuição de R$ 0,82 e guidance de R$ 0,80–0,87 até dezembro; continua desinvestimento em HGLG11.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "FII tem lucro 19% maior e detalha venda de cotas do HGLG11",
+          "url": "https://fiis.com.br/noticias/vilg11-fundo-imobiliario-resultado-julho-alta-venda-hglg11-carteira-galpoes-jj/",
+          "publishedAt": "2026-08-14"
+        },
+        {
+          "title": "Mais de 30 FIIs pagam dividendos hoje; veja valores de XPLG11, MXRF11 e JSAF11",
+          "url": "https://www.infomoney.com.br/onde-investir/mais-de-30-fiis-pagam-dividendos-hoje-veja-valores-de-xplg11-mxrf11-e-jsaf11/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "TGAR11",
+      "sentiment": "positive",
+      "score": 0.45,
+      "confidence": "medium",
+      "summary": "TG Ativo Real manteve R$ 0,72 por cota (yield ~1,42%) e preservou guidance de R$ 0,70–1,00 para o 2º semestre, com reserva acumulada de R$ 0,12/cota.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "TGAR11 pagará dividendos com yield de 1,42%; confira detalhes",
+          "url": "https://www.suno.com.br/noticias/tgar11-pagara-dividendos-com-yield-de-142-confira-detalhes/",
+          "publishedAt": "2026-08-01"
+        },
+        {
+          "title": "TGAR11 pagará dividendos com yield de 1,42%; saiba mais",
+          "url": "https://www.fundsexplorer.com.br/noticias/tgar11-pagara-dividendos-com-yield-de-142-saiba-mais",
+          "publishedAt": "2026-08-01"
+        }
+      ]
+    },
+    {
+      "ticker": "VTLT11",
+      "sentiment": "neutral",
+      "score": 0.0,
+      "confidence": "low",
+      "summary": "Sem notícias nos portais consultados na janela de 14 dias; fundo em processo de liquidação após alienação do único ativo.",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
+      "ticker": "RZAK11",
+      "sentiment": "positive",
+      "score": 0.50,
+      "confidence": "medium",
+      "summary": "RZ Real Estate distribuiu R$ 1,05 por cota (DY ~1,28%) e manteve guidance de R$ 1,00–1,10 nos próximos três meses.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "Dividendos do RZAK11 rendem 1,28% no mês; entenda a distribuição",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-rzak11-rendem-128-no-mes-entenda-a-distribuicao",
+          "publishedAt": "2026-08-18"
+        }
+      ]
+    },
+    {
+      "ticker": "RBVA11",
+      "sentiment": "neutral",
+      "score": 0.20,
+      "confidence": "medium",
+      "summary": "Rio Bravo Renda Varejo manteve R$ 0,09 por cota, lucrou R$ 10,2 mi em agosto e avança em negociações para venda de cinco imóveis (até R$ 114 mi) e novas locações.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "RBVA11 lucra mais de R$ 10 milhões e negocia venda de imóveis",
+          "url": "https://www.suno.com.br/noticias/fundo-imobiliario-rbva11-lucra-mais-10-milhoes-negocia-venda-imoveis-jj/",
+          "publishedAt": "2026-08-31"
+        },
+        {
+          "title": "RBVA11: dividendos de R$ 0,09 em maio de 2026",
+          "url": "https://www.fundsexplorer.com.br/noticias/rbva11-dividendos-maio-2026",
+          "publishedAt": "2026-05-01"
+        }
+      ]
+    },
+    {
+      "ticker": "JSAF11",
+      "sentiment": "neutral",
+      "score": 0.05,
+      "confidence": "medium",
+      "summary": "JS Ativos Financeiros distribuiu R$ 0,08 por cota referente a julho/setembro sem eventos materiais além da rotina de proventos.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
+        },
+        {
+          "title": "Mais de 30 FIIs pagam dividendos hoje; veja valores de XPLG11, MXRF11 e JSAF11",
+          "url": "https://www.infomoney.com.br/onde-investir/mais-de-30-fiis-pagam-dividendos-hoje-veja-valores-de-xplg11-mxrf11-e-jsaf11/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "XPPR11",
+      "sentiment": "negative",
+      "score": -0.55,
+      "confidence": "medium",
+      "summary": "XP Properties enfrenta alta alavancagem (~99% do PL), vacância média de 44,85% e proposta de venda de 30% do Faria Lima Plaza para reduzir dívida; cota caiu mais de 10% após convocação de AGE.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "FII endividado despenca após anunciar possível venda milionária",
+          "url": "https://fiis.com.br/noticias/fii-endividado-despenca-possivel-venda-fc/",
+          "publishedAt": "2026-08-18"
+        }
+      ]
+    },
+    {
+      "ticker": "URPR11",
+      "sentiment": "neutral",
+      "score": -0.10,
+      "confidence": "low",
+      "summary": "Urca Prime Renda confirmou R$ 0,30 por cota para setembro, mas a cota acumula queda de ~46% no ano; sem relatórios gerenciais recentes na cobertura consultada.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
+        },
+        {
+          "title": "Mais de 30 FIIs pagam dividendos hoje; veja valores de XPLG11, MXRF11 e JSAF11",
+          "url": "https://www.infomoney.com.br/onde-investir/mais-de-30-fiis-pagam-dividendos-hoje-veja-valores-de-xplg11-mxrf11-e-jsaf11/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "FEXC11",
+      "sentiment": "neutral",
+      "score": 0.0,
+      "confidence": "low",
+      "summary": "Sem notícias relevantes nos portais consultados na janela de 14 dias; fundo de CRI do BTG Pactual sem comunicados materiais recentes.",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
+      "ticker": "VRTA11",
+      "sentiment": "positive",
+      "score": 0.45,
+      "confidence": "medium",
+      "summary": "Fator Verita registrou resultado de R$ 12,7 mi em junho, manteve R$ 0,85/cota e reforçou alocação em CRIs (IPCA+8,46% a.a.) com redução gradual de posição em SNME11.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "VRTA11 registra resultado de R$ 12,7 milhões e reforça carteira de CRIs",
+          "url": "https://www.suno.com.br/noticias/vrta11-registra-resultado-de-r-127-milhoes-e-reforca-carteira-de-cris/",
+          "publishedAt": "2026-07-29"
+        },
+        {
+          "title": "Vale a pena investir no VRTA11? Saiba mais sobre o FII",
+          "url": "https://www.suno.com.br/noticias/vrta11-fator-verita-carteira-dividendos/",
+          "publishedAt": "2026-08-15"
+        }
+      ]
+    },
+    {
+      "ticker": "BTLG11",
+      "sentiment": "positive",
+      "score": 0.40,
+      "confidence": "medium",
+      "summary": "BTG Pactual Logística manteve R$ 0,81 por cota e concluiu a 16ª emissão com captação de R$ 1,81 bi para alocação em novos ativos logísticos.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "BTLG11 anuncia novos dividendos; confira",
+          "url": "https://www.fundsexplorer.com.br/noticias/btlg11-anuncia-novos-dividendos-confira",
+          "publishedAt": "2026-08-14"
+        },
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "ticker": "XPLG11",
+      "sentiment": "positive",
+      "score": 0.35,
+      "confidence": "medium",
+      "summary": "XP Log manteve R$ 0,82 por cota desde fevereiro/2025, com inadimplência de 1,0% e patrimônio de R$ 5,4 bi; distribuição confirmada para setembro.",
+      "articleCount": 3,
+      "topHeadlines": [
+        {
+          "title": "XPLG11: FII anuncia novos dividendos para setembro; confira o valor",
+          "url": "https://www.fundsexplorer.com.br/noticias/xplg11-fii-anuncia-novos-dividendos-para-setembro-confira-o-valor",
+          "publishedAt": "2026-08-31"
+        },
+        {
+          "title": "XPLG11 anuncia novos rendimentos; confira a distribuição",
+          "url": "https://www.fundsexplorer.com.br/noticias/xplg11-rendimentos-agosto-2026",
+          "publishedAt": "2026-08-01"
+        },
+        {
+          "title": "Mais de 30 FIIs pagam dividendos hoje; veja valores de XPLG11, MXRF11 e JSAF11",
+          "url": "https://www.infomoney.com.br/onde-investir/mais-de-30-fiis-pagam-dividendos-hoje-veja-valores-de-xplg11-mxrf11-e-jsaf11/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "HGRU11",
+      "sentiment": "positive",
+      "score": 0.50,
+      "confidence": "medium",
+      "summary": "Pátria Renda Urbana manteve R$ 0,95 por cota com vacância de 0,8% e WALE de 9,4 anos; iniciou 7ª emissão de até R$ 1,1 bi com preferência até 11/09.",
+      "articleCount": 3,
+      "topHeadlines": [
+        {
+          "title": "HGRU11 - 7ª Emissão de Cotas",
+          "url": "https://www.fundsexplorer.com.br/emissoes-ipos/hgru11-7a-emissao-de-cotas",
+          "publishedAt": "2026-08-26"
+        },
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
+        },
+        {
+          "title": "Os dividendos do HGRU11 já saíram; veja valor e quem vai receber os proventos",
+          "url": "https://www.suno.com.br/noticias/os-dividendos-do-hgru11-ja-sairam-veja-valor-e-quem-vai-receber-os-proventos/",
+          "publishedAt": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "ticker": "SDIL11",
+      "sentiment": "neutral",
+      "score": 0.10,
+      "confidence": "low",
+      "summary": "SDI Logística Rio pagou R$ 0,75 por cota em agosto (data-base 31/07); cobertura editorial limitada na janela, sem eventos corporativos materiais.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "SDIL11 - FII SDI LOG - Fiis",
+          "url": "https://fiis.com.br/sdil11/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "GGRC11",
+      "sentiment": "positive",
+      "score": 0.55,
+      "confidence": "medium",
+      "summary": "Zagros Renda Imobiliária distribuiu R$ 0,10/cota, registrou volume recorde de R$ 307 mi em julho, concluiu quatro aquisições (~R$ 510 mi) e firmou MoU para venda de 10 imóveis por R$ 530 mi.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "FII GGRC11 anuncia proventos com yield de 1%; veja detalhes",
+          "url": "https://www.fundsexplorer.com.br/noticias/fii-ggrc11-anuncia-proventos-com-yield-de-1-veja-detalhes",
+          "publishedAt": "2026-08-03"
+        },
+        {
+          "title": "GGRC11 movimenta R$ 307 mi em julho",
+          "url": "https://www.fundsexplorer.com.br/noticias/ggrc11-movimenta-r-307-mi-em-julho",
+          "publishedAt": "2026-08-07"
+        }
+      ]
+    }
+  ]
+}
