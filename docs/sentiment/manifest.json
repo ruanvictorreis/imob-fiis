@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-02T20:00:00Z",
+  "updatedAt": "2026-09-02T20:02:00Z",
   "segments": {
     "paper": {
       "updatedAt": "2026-09-02T19:49:03Z",
@@ -11,6 +11,11 @@
       "updatedAt": "2026-09-02T20:00:00Z",
       "fundCount": 20,
       "url": "urban.json"
+    },
+    "fiagro": {
+      "updatedAt": "2026-09-02T20:02:00Z",
+      "fundCount": 19,
+      "url": "fiagro.json"
     }
   }
 }

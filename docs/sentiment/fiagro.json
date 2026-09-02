@@ -1,0 +1,361 @@
+{
+  "version": 1,
+  "segment": "Fiagro",
+  "segmentKey": "fiagro",
+  "generatedAt": "2026-09-02T20:02:00Z",
+  "lookbackDays": 14,
+  "sources": [
+    "clube.fii",
+    "fundsexplorer.com.br",
+    "statusinvest.com.br",
+    "suno.com.br",
+    "infomoney.com.br",
+    "fiis.com.br",
+    "moneytimes.com.br"
+  ],
+  "funds": [
+    {
+      "ticker": "KNCA11",
+      "sentiment": "negative",
+      "score": -0.35,
+      "confidence": "medium",
+      "summary": "Kinea Crédito Agro anunciou R$ 0,85 por cota para setembro (queda de 15% vs. R$ 1,00 em agosto), após resultado de julho recuar 31,4%; yield mensal cai para 0,96%.",
+      "articleCount": 3,
+      "topHeadlines": [
+        {
+          "title": "Fiagros divulgam dividendos com yield de até 1,77%; veja valores",
+          "url": "https://fiis.com.br/noticias/fiagros-divulgam-dividendos-mes-setembro-2026-yield-vcra11-lista-fundos-agro-jj/",
+          "publishedAt": "2026-09-02"
+        },
+        {
+          "title": "KNCA11 vê resultado cair 31,4%; dividendo volta para R$ 1 por cota",
+          "url": "https://www.suno.com.br/noticias/knca11-ve-resultado-cair-314-dividendo-volta-para-r-1-por-cota/",
+          "publishedAt": "2026-08-10"
+        },
+        {
+          "title": "Fiagros anunciam rendimentos de até 1,77%; confira valores",
+          "url": "https://www.suno.com.br/noticias/dividendos-de-fiagros-setembro-2026/",
+          "publishedAt": "2026-09-02"
+        }
+      ]
+    },
+    {
+      "ticker": "SNAG11",
+      "sentiment": "positive",
+      "score": 0.70,
+      "confidence": "high",
+      "summary": "Suno Agro manteve R$ 0,12 por cota, carteira 100% adimplente, base de cotistas próxima de 140 mil e guidance de R$ 0,115–0,125 para o trimestre; fundo atingiu máxima histórica ajustada por proventos.",
+      "articleCount": 5,
+      "topHeadlines": [
+        {
+          "title": "SNAG11 gera R$ 11,5 milhões em julho; Fiagro se aproxima de 140 mil cotistas",
+          "url": "https://www.suno.com.br/noticias/snag11-gera-r-115-milhoes-em-julho-fiagro-se-aproxima-de-140-mil-cotistas/",
+          "publishedAt": "2026-08-26"
+        },
+        {
+          "title": "SNAG11: Fiagro pagará novos dividendos em agosto, com yield superior a 1,2%",
+          "url": "https://www.suno.com.br/noticias/snag11-fiagro-pagara-novos-dividendos-em-agosto-com-yield-superior-a-12/",
+          "publishedAt": "2026-08-14"
+        },
+        {
+          "title": "SNAG11 | Suno Agro FIAGRO | Funds Explorer",
+          "url": "https://www.fundsexplorer.com.br/fiagros/snag11",
+          "publishedAt": "2026-08-25"
+        }
+      ]
+    },
+    {
+      "ticker": "RBRF11",
+      "sentiment": "neutral",
+      "score": 0.0,
+      "confidence": "low",
+      "summary": "Sem cobertura recente nos portais permitidos; o fundo foi incorporado ao RBRX11 e deixou de negociar na B3 em outubro de 2025.",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
+      "ticker": "SNCI11",
+      "sentiment": "neutral",
+      "score": 0.15,
+      "confidence": "medium",
+      "summary": "FII de papel manteve distribuição de R$ 1,00 por cota em agosto com caixa robusto (R$ 35,8 mi), mas gestão monitora créditos em tratamento especial e impacto de juros elevados na carteira.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "SNCI11: fundo imobiliário tem resultado de R$ 3,14 milhões e fecha julho com R$ 35,8 mi em caixa",
+          "url": "https://www.fundsexplorer.com.br/noticias/snci11-fundo-imobiliario-tem-resultado-de-r-314-milhoes-e-fecha-julho-com-r-358-mi-em-caixa",
+          "publishedAt": "2026-08-26"
+        },
+        {
+          "title": "Dividendos de FIIs caem na conta hoje; SNCI11 e BTLG11 estão na lista",
+          "url": "https://www.suno.com.br/noticias/dividendos-hoje-13-fiis-pagam/",
+          "publishedAt": "2026-08-25"
+        }
+      ]
+    },
+    {
+      "ticker": "XPCA11",
+      "sentiment": "positive",
+      "score": 0.45,
+      "confidence": "medium",
+      "summary": "XP Crédito Agro anunciou R$ 0,10 por cota com dividend yield de 1,33% na rodada de setembro, entre os Fiagros com retorno mensal acima de 1%.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Fiagros anunciam rendimentos de até 1,77%; confira valores",
+          "url": "https://www.suno.com.br/noticias/dividendos-de-fiagros-setembro-2026/",
+          "publishedAt": "2026-09-02"
+        },
+        {
+          "title": "Fiagros divulgam dividendos com yield de até 1,77%; veja valores",
+          "url": "https://fiis.com.br/noticias/fiagros-divulgam-dividendos-mes-setembro-2026-yield-vcra11-lista-fundos-agro-jj/",
+          "publishedAt": "2026-09-02"
+        }
+      ]
+    },
+    {
+      "ticker": "VGIA11",
+      "sentiment": "neutral",
+      "score": 0.10,
+      "confidence": "medium",
+      "summary": "Valora CRA manteve R$ 0,13 por cota em agosto (yield ~1,57%), porém a cota acumula queda de ~8% no ano, indicando desconto persistente sobre o valor patrimonial.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "VGIA11 | Valora CRA | Funds Explorer",
+          "url": "https://www.fundsexplorer.com.br/fiagros/vgia11",
+          "publishedAt": "2026-08-19"
+        },
+        {
+          "title": "VGIA11 - VALORA CRA FDO INV NAS CAD PROD AGRO",
+          "url": "https://statusinvest.com.br/fiagros/vgia11",
+          "publishedAt": "2026-08-19"
+        }
+      ]
+    },
+    {
+      "ticker": "BTAG11",
+      "sentiment": "positive",
+      "score": 0.50,
+      "confidence": "medium",
+      "summary": "BTG Pactual Crédito Agrícola manteve distribuição estável de R$ 1,30 por cota em agosto, reforçando previsibilidade de proventos no segmento de direitos creditórios do agro.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "BTAG11 - BTG PACTUAL CRÉDITO AGRÍCOLA FIAGRO - DIREITOS CREDITÓRIOS",
+          "url": "https://statusinvest.com.br/fiagros/btag11",
+          "publishedAt": "2026-08-14"
+        },
+        {
+          "title": "BTAG11 | BTG Pactual Crédito Agrícola | Funds Explorer",
+          "url": "https://www.fundsexplorer.com.br/fiagros/btag11",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "ZAVI11",
+      "sentiment": "positive",
+      "score": 0.30,
+      "confidence": "low",
+      "summary": "Zavit Real Estate elevou provento para R$ 0,12 por cota em agosto (yield ~1,23%), mantendo distribuição regular apesar de leve queda patrimonial no ano.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "ZAVI11 | Zavi Real Estate FII | Funds Explorer",
+          "url": "https://www.fundsexplorer.com.br/funds/zavi11",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "KNHF11",
+      "sentiment": "neutral",
+      "score": 0.25,
+      "confidence": "low",
+      "summary": "Kinea Hedge Fund manteve R$ 1,00 por cota em agosto com data-base em 31/08; cobertura limitada a comunicados de distribuição, sem eventos materiais adicionais.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "KNHF11 - KINEA HEDGE FUND FDO DE INV IMOB: dividendos",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/knhf11",
+          "publishedAt": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "ticker": "SNFZ11",
+      "sentiment": "positive",
+      "score": 0.65,
+      "confidence": "high",
+      "summary": "Suno Fazendas concluiu compra de três fazendas no MT, superou 16 mil cotistas e manteve R$ 0,10 por cota com guidance trimestral de R$ 0,095–0,105 e vacância zero.",
+      "articleCount": 3,
+      "topHeadlines": [
+        {
+          "title": "SNFZ11 conclui compra de três fazendas no MT e chega a 16 mil cotistas",
+          "url": "https://www.fundsexplorer.com.br/noticias/snfz11-conclui-compra-de-tres-fazendas-no-mt-e-chega-a-16-mil-cotistas",
+          "publishedAt": "2026-08-26"
+        },
+        {
+          "title": "SNFZ11 avança 0,75% nesta sexta depois de anunciar novos dividendos",
+          "url": "https://www.suno.com.br/noticias/snfz11-avanca-075-nesta-sexta-depois-de-anunciar-novos-dividendos/",
+          "publishedAt": "2026-08-14"
+        },
+        {
+          "title": "Após anúncio de dividendos, SNFZ11 sobe 0,75% no pregão",
+          "url": "https://www.fundsexplorer.com.br/noticias/apos-anuncio-de-dividendos-snfz11-sobe-075-no-pregao",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "AGRX11",
+      "sentiment": "positive",
+      "score": 0.45,
+      "confidence": "low",
+      "summary": "Exes Araguaia distribuiu R$ 0,12 por cota em agosto com dividend yield de 1,49%, mantendo patamar elevado de proventos no ciclo agro.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "AGRX11 - FIAGRO AGRX - Fiis",
+          "url": "https://fiis.com.br/agrx11/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "CPTR11",
+      "sentiment": "neutral",
+      "score": 0.35,
+      "confidence": "low",
+      "summary": "Capitânia Agro Strategies manteve R$ 0,11 por cota em agosto (yield ~1,40%), com distribuição estável e patrimônio de R$ 405 mi.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "CPTR11 - FIAGRO CPTR - Fiis",
+          "url": "https://fiis.com.br/cptr11/",
+          "publishedAt": "2026-08-19"
+        }
+      ]
+    },
+    {
+      "ticker": "FGAA11",
+      "sentiment": "neutral",
+      "score": 0.05,
+      "confidence": "low",
+      "summary": "Fator Agro manteve R$ 0,11 por cota em agosto, mas a cota acumula queda de ~10% no ano, limitando o sentimento apesar da regularidade dos proventos.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "FGAA11 FII - Cotação, Dividendos, Gráficos e Resultados",
+          "url": "https://fiis.com.br/fgaa11/",
+          "publishedAt": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "ticker": "NCHB11",
+      "sentiment": "neutral",
+      "score": 0.0,
+      "confidence": "low",
+      "summary": "Sem notícias nos últimos 14 dias nos portais consultados; último provento divulgado remonta a março de 2026 (R$ 0,11 por cota).",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
+      "ticker": "CRAA11",
+      "sentiment": "neutral",
+      "score": -0.10,
+      "confidence": "low",
+      "summary": "Sparta Fiagro pagou R$ 1,00 por cota em julho (queda vs. R$ 1,15–1,25 nos meses anteriores); sem cobertura editorial recente além de dados de proventos.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "CRAA11 - FIAGRO CRAA - Fiis",
+          "url": "https://fiis.com.br/craa11/",
+          "publishedAt": "2026-07-14"
+        }
+      ]
+    },
+    {
+      "ticker": "RURA11",
+      "sentiment": "positive",
+      "score": 0.50,
+      "confidence": "medium",
+      "summary": "Itaú Asset Rural anunciou R$ 0,105 por cota para setembro com yield de 1,29%, entre os Fiagros com retorno mensal acima de 1% na rodada de agosto.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Fiagros anunciam rendimentos de até 1,77%; confira valores",
+          "url": "https://www.suno.com.br/noticias/dividendos-de-fiagros-setembro-2026/",
+          "publishedAt": "2026-09-02"
+        },
+        {
+          "title": "Fiagros divulgam dividendos com yield de até 1,77%; veja valores",
+          "url": "https://fiis.com.br/noticias/fiagros-divulgam-dividendos-mes-setembro-2026-yield-vcra11-lista-fundos-agro-jj/",
+          "publishedAt": "2026-09-02"
+        }
+      ]
+    },
+    {
+      "ticker": "KNSC11",
+      "sentiment": "negative",
+      "score": -0.30,
+      "confidence": "medium",
+      "summary": "Kinea Securities reduziu provento de R$ 0,11 para R$ 0,09 por cota no ciclo de agosto/setembro, queda de ~18% na distribuição mensal.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "KNSC11 - KINEA SECURITIES FDO. DE INV. IMOB. - FII",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/knsc11",
+          "publishedAt": "2026-08-31"
+        },
+        {
+          "title": "Funds Explorer - KNSC11 próximo provento",
+          "url": "https://www.fundsexplorer.com.br/funds/knsc11",
+          "publishedAt": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "ticker": "KDIF11",
+      "sentiment": "negative",
+      "score": -0.35,
+      "confidence": "medium",
+      "summary": "Kinea Infra cortou distribuição para R$ 1,00 por cota em julho/agosto (vs. R$ 1,45 nos meses anteriores), redução de ~31% nos proventos mensais.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "KDIF11 - KINEA INFRA - FDO INV COTAS FDO INC. INV INF RF CP",
+          "url": "https://statusinvest.com.br/fiinfras/kdif11",
+          "publishedAt": "2026-08-07"
+        },
+        {
+          "title": "KDIF11 | KINEA INFRAF | Funds Explorer",
+          "url": "https://www.fundsexplorer.com.br/fiinfras/kdif11",
+          "publishedAt": "2026-08-07"
+        }
+      ]
+    },
+    {
+      "ticker": "VGIR11",
+      "sentiment": "positive",
+      "score": 0.55,
+      "confidence": "medium",
+      "summary": "Valora CRI apurou resultado de R$ 19,4 mi em julho (+12,7% vs. junho), manteve R$ 0,13 por cota e carteira 100% indexada ao CDI+ com base de 277 mil cotistas.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "VGIR11 mantém carteira 100% no CDI e cresce no resultado; saiba mais",
+          "url": "https://www.fundsexplorer.com.br/noticias/vgir11-resultado-julho-dy",
+          "publishedAt": "2026-08-26"
+        },
+        {
+          "title": "VGIR11: cotação, dividendos, resultados e gráficos do FII",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/vgir11",
+          "publishedAt": "2026-08-19"
+        }
+      ]
+    }
+  ]
+}
