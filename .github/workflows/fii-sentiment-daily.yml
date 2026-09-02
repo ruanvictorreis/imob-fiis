@@ -1,0 +1,107 @@
+name: FII Sentiment Daily
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+    inputs:
+      segment:
+        description: "Segment key override (paper, urban, logistics, malls, offices, fiagro, manifest)"
+        required: false
+        type: choice
+        options:
+          - ""
+          - paper
+          - urban
+          - logistics
+          - malls
+          - offices
+          - fiagro
+          - manifest
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fii-sentiment-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sentiment:
+    name: Sentiment report
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install -r agents/fii-sentiment/requirements.txt
+
+      - name: Resolve segment
+        id: segment
+        run: |
+          SEGMENT_ARG=""
+          if [ -n "${{ github.event.inputs.segment }}" ]; then
+            SEGMENT_ARG="--segment ${{ github.event.inputs.segment }}"
+          fi
+          python agents/fii-sentiment/scripts/resolve_segment.py $SEGMENT_ARG --github-output
+
+      - name: Install Cursor CLI
+        if: steps.segment.outputs.segment_key != 'manifest'
+        run: |
+          curl https://cursor.com/install -fsS | bash
+          echo "$HOME/.cursor/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Run sentiment agent
+        if: steps.segment.outputs.segment_key != 'manifest'
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+        run: |
+          if [ -z "${CURSOR_API_KEY:-}" ]; then
+            echo "CURSOR_API_KEY secret is not configured."
+            exit 1
+          fi
+          SEGMENT_KEY="${{ steps.segment.outputs.segment_key }}"
+          SEGMENT_NAME="${{ steps.segment.outputs.segment_name }}"
+          PROMPT=$(sed \
+            -e "s/{{SEGMENT_KEY}}/${SEGMENT_KEY}/g" \
+            -e "s/{{SEGMENT_NAME}}/${SEGMENT_NAME}/g" \
+            agents/fii-sentiment/prompt.md)
+          cursor-agent --force --output-format=text --print "$PROMPT"
+
+      - name: Validate segment report
+        if: steps.segment.outputs.segment_key != 'manifest'
+        run: |
+          python agents/fii-sentiment/scripts/validate_report.py \
+            "docs/sentiment/${{ steps.segment.outputs.segment_key }}.json"
+
+      - name: Validate existing segment reports
+        if: steps.segment.outputs.segment_key == 'manifest'
+        run: |
+          for key in paper urban logistics malls offices fiagro; do
+            if [ -f "docs/sentiment/${key}.json" ]; then
+              python agents/fii-sentiment/scripts/validate_report.py "docs/sentiment/${key}.json"
+            fi
+          done
+
+      - name: Update manifest
+        run: python agents/fii-sentiment/scripts/merge_manifest.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/sentiment/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(sentiment): update ${{ steps.segment.outputs.segment_key }} report"
+          git push

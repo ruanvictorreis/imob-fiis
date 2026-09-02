@@ -1,0 +1,9 @@
+{
+  "segmentKey": "logistics",
+  "segmentName": "Logística",
+  "tickers": [
+    "XPLG11", "HGLG11", "VILG11", "BTLG11", "LVBI11", "HGRU11", "SDIL11",
+    "GGRC11", "XPCI11", "BRCO11", "HGBS11", "KNRI11", "XPML11", "PVBI11",
+    "TRXF11", "RZAK11", "VRTA11", "JSRE11", "ALZR11", "RBRP11"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "segmentKey": "malls",
+  "segmentName": "Shoppings",
+  "tickers": [
+    "XPML11", "HSML11", "VISC11", "MALL11", "ABCP11", "XPCM11", "PQDP11",
+    "VSHO11", "HSML11", "MCCI11", "RBRR11", "HGLG11", "PVBI11", "BRCR11",
+    "KNRI11", "VRTA11", "JSRE11", "ALZR11", "RBRP11", "XPPR11"
+  ]
+}
