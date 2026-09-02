@@ -1,0 +1,6 @@
+{
+  "comment": "Tickers que pertencem a um único segmento no app (FundSegment.sentimentKey).",
+  "assignments": {
+    "TRXF11": "urban"
+  }
+}

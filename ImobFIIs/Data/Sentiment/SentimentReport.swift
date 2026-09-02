@@ -56,27 +56,36 @@ struct SentimentManifest: Codable, Equatable, Sendable {
     var segments: [String: SegmentEntry]
 }
 
-struct SentimentContext: Equatable, Sendable {
-    var scoresByTicker: [String: Double]
-    var confidenceByTicker: [String: SentimentConfidence]
-    var summariesByTicker: [String: String]
-    var labelsByTicker: [String: SentimentLabel]
+struct SentimentFundSnapshot: Equatable, Sendable {
+    var score: Double
+    var confidence: SentimentConfidence
+    var label: SentimentLabel
+    var summary: String
+}
 
-    static let empty = SentimentContext(
-        scoresByTicker: [:],
-        confidenceByTicker: [:],
-        summariesByTicker: [:],
-        labelsByTicker: [:]
-    )
+struct SentimentContext: Equatable, Sendable {
+    /// segmentKey normalizado -> ticker normalizado -> snapshot
+    var fundsBySegment: [String: [String: SentimentFundSnapshot]]
+
+    static let empty = SentimentContext(fundsBySegment: [:])
 
     mutating func merge(_ report: SentimentSegmentReport) {
+        let segmentKey = report.segmentKey.lowercased()
+        var segmentFunds = fundsBySegment[segmentKey] ?? [:]
         for fund in report.funds {
             let ticker = fund.ticker.uppercased()
-            scoresByTicker[ticker] = fund.score
-            confidenceByTicker[ticker] = fund.confidence
-            summariesByTicker[ticker] = fund.summary
-            labelsByTicker[ticker] = fund.sentiment
+            segmentFunds[ticker] = SentimentFundSnapshot(
+                score: fund.score,
+                confidence: fund.confidence,
+                label: fund.sentiment,
+                summary: fund.summary
+            )
         }
+        fundsBySegment[segmentKey] = segmentFunds
+    }
+
+    func fund(for ticker: String, segmentKey: String) -> SentimentFundSnapshot? {
+        fundsBySegment[segmentKey.lowercased()]?[ticker.uppercased()]
     }
 }
 

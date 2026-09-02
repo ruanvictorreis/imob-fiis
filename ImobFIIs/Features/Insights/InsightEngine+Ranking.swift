@@ -30,10 +30,14 @@ extension InsightEngine {
             targetWeight: ranking.targetWeights[segment] ?? 0,
             segmentValue: segmentValue
         )
-        let sentimentScore = ranking.sentiment.scoresByTicker[ticker]
-        let sentimentConfidence = ranking.sentiment.confidenceByTicker[ticker]
-        let sentimentLabel = ranking.sentiment.labelsByTicker[ticker]
-        let sentimentSummary = ranking.sentiment.summariesByTicker[ticker]
+        let sentimentSnapshot = ranking.sentiment.fund(
+            for: ticker,
+            segmentKey: segment.sentimentKey
+        )
+        let sentimentScore = sentimentSnapshot?.score
+        let sentimentConfidence = sentimentSnapshot?.confidence
+        let sentimentLabel = sentimentSnapshot?.label
+        let sentimentSummary = sentimentSnapshot?.summary
 
         return InsightItem(
             ticker: fund.ticker,

@@ -43,6 +43,9 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r agents/fii-sentiment/requirements.txt
 
+      - name: Validate ticker lists
+        run: python agents/fii-sentiment/scripts/validate_ticker_lists.py
+
       - name: Resolve segment
         id: segment
         run: |

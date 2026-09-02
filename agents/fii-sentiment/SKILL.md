@@ -21,7 +21,9 @@ Use WebFetch nesses domínios. Janela de notícias: **7–14 dias**.
 
 ## Tickers-alvo
 
-Leia `agents/fii-sentiment/tickers/{segmentKey}.json`. Analise **todos** os tickers listados.
+Leia `agents/fii-sentiment/tickers/{segmentKey}.json`. Analise **todos** os tickers listados — e **somente** esses tickers.
+
+Tickers exclusivos de um segmento (ex.: `TRXF11` → `urban`) estão em `agents/fii-sentiment/tickers/exclusive.json`. Não inclua esses tickers em outros segmentos.
 
 ## Classificação por FII
 

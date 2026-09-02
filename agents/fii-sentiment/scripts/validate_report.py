@@ -16,6 +16,28 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "schema" / "segment-report.schema.json"
+TICKERS_DIR = ROOT / "tickers"
+
+
+def validate_tickers_match_segment(report: dict) -> None:
+    segment_key = str(report.get("segmentKey", "")).lower()
+    tickers_path = TICKERS_DIR / f"{segment_key}.json"
+    if not tickers_path.is_file():
+        print(f"Ticker list not found for segment: {segment_key}", file=sys.stderr)
+        sys.exit(1)
+
+    tickers_data = json.loads(tickers_path.read_text(encoding="utf-8"))
+    allowed = {ticker.upper() for ticker in tickers_data.get("tickers", [])}
+    found = {fund["ticker"].upper() for fund in report.get("funds", [])}
+
+    extra = sorted(found - allowed)
+    missing = sorted(allowed - found)
+    if extra or missing:
+        if extra:
+            print(f"Unexpected tickers in report: {', '.join(extra)}", file=sys.stderr)
+        if missing:
+            print(f"Missing tickers in report: {', '.join(missing)}", file=sys.stderr)
+        sys.exit(1)
 
 
 def main() -> None:
@@ -35,6 +57,8 @@ def main() -> None:
     except jsonschema.ValidationError as error:
         print(f"Validation failed: {error.message}", file=sys.stderr)
         sys.exit(1)
+
+    validate_tickers_match_segment(report)
 
     print(f"Valid report: {args.report} ({len(report.get('funds', []))} funds)")
 
