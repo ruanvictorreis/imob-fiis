@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ruanvictorreis.github.io/imob-fiis/sentiment/segment-report.schema.json",
+  "title": "FIISegmentSentimentReport",
+  "type": "object",
+  "required": [
+    "version",
+    "segment",
+    "segmentKey",
+    "generatedAt",
+    "lookbackDays",
+    "sources",
+    "funds"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "segment": { "type": "string", "minLength": 1 },
+    "segmentKey": {
+      "type": "string",
+      "enum": ["paper", "urban", "logistics", "malls", "offices", "fiagro"]
+    },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "lookbackDays": { "type": "integer", "minimum": 1, "maximum": 30 },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "funds": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/fundSentiment" }
+    }
+  },
+  "$defs": {
+    "fundSentiment": {
+      "type": "object",
+      "required": [
+        "ticker",
+        "sentiment",
+        "score",
+        "confidence",
+        "summary",
+        "articleCount",
+        "topHeadlines"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ticker": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]{4,6}11$"
+        },
+        "sentiment": {
+          "type": "string",
+          "enum": ["positive", "neutral", "negative"]
+        },
+        "score": { "type": "number", "minimum": -1, "maximum": 1 },
+        "confidence": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "summary": { "type": "string", "minLength": 1 },
+        "articleCount": { "type": "integer", "minimum": 0 },
+        "topHeadlines": {
+          "type": "array",
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/headline" }
+        }
+      }
+    },
+    "headline": {
+      "type": "object",
+      "required": ["title", "url"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "publishedAt": { "type": "string", "format": "date" }
+      }
+    }
+  }
+}
