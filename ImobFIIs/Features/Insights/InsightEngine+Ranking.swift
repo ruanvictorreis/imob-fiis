@@ -30,10 +30,10 @@ extension InsightEngine {
             targetWeight: ranking.targetWeights[segment] ?? 0,
             segmentValue: segmentValue
         )
-        let sentimentScore = ranking.sentiment.scoresByTicker[ticker]
-        let sentimentConfidence = ranking.sentiment.confidenceByTicker[ticker]
-        let sentimentLabel = ranking.sentiment.labelsByTicker[ticker]
-        let sentimentSummary = ranking.sentiment.summariesByTicker[ticker]
+        let sentimentSnapshot = ranking.sentiment.fund(
+            for: ticker,
+            segmentKey: segment.sentimentKey
+        )
 
         return InsightItem(
             ticker: fund.ticker,
@@ -44,25 +44,51 @@ extension InsightEngine {
             isBelowAverage: belowAverage,
             nextPurchaseYield: yield,
             suggestedSegmentContribution: suggestedContribution,
-            sentimentScore: sentimentScore,
-            sentimentLabel: sentimentLabel,
-            sentimentConfidence: sentimentConfidence,
-            sentimentSummary: sentimentSummary,
-            reasons: reasons(
-                ReasonContext(
-                    ticker: fund.ticker,
-                    segmentGap: segmentGap,
-                    currentWeight: ranking.totalValue > 0 ? segmentValue / ranking.totalValue : 0,
-                    targetWeight: ranking.targetWeights[segment] ?? 0,
-                    suggestedContribution: suggestedContribution,
-                    sentimentLabel: sentimentLabel,
-                    flags: ReasonFlags(
-                        belowAverage: belowAverage,
-                        yield: yield,
-                        lowestTickers: ranking.lowestTickers,
-                        bestYield: ranking.bestYieldBySegment[segment]
-                    )
-                )
+            sentimentScore: sentimentSnapshot?.score,
+            sentimentLabel: sentimentSnapshot?.label,
+            sentimentConfidence: sentimentSnapshot?.confidence,
+            sentimentSummary: sentimentSnapshot?.summary,
+            reasons: reasons(reasonContext(from: InsightReasonInputs(
+                fund: fund,
+                segment: segment,
+                segmentGap: segmentGap,
+                segmentValue: segmentValue,
+                suggestedContribution: suggestedContribution,
+                sentimentLabel: sentimentSnapshot?.label,
+                ranking: ranking,
+                belowAverage: belowAverage,
+                yield: yield
+            )))
+        )
+    }
+
+    private struct InsightReasonInputs {
+        var fund: Fund
+        var segment: FundSegment
+        var segmentGap: Double
+        var segmentValue: Double
+        var suggestedContribution: Decimal?
+        var sentimentLabel: SentimentLabel?
+        var ranking: RankingInputs
+        var belowAverage: Bool
+        var yield: Double?
+    }
+
+    private static func reasonContext(from inputs: InsightReasonInputs) -> ReasonContext {
+        ReasonContext(
+            ticker: inputs.fund.ticker,
+            segmentGap: inputs.segmentGap,
+            currentWeight: inputs.ranking.totalValue > 0
+                ? inputs.segmentValue / inputs.ranking.totalValue
+                : 0,
+            targetWeight: inputs.ranking.targetWeights[inputs.segment] ?? 0,
+            suggestedContribution: inputs.suggestedContribution,
+            sentimentLabel: inputs.sentimentLabel,
+            flags: ReasonFlags(
+                belowAverage: inputs.belowAverage,
+                yield: inputs.yield,
+                lowestTickers: inputs.ranking.lowestTickers,
+                bestYield: inputs.ranking.bestYieldBySegment[inputs.segment]
             )
         )
     }

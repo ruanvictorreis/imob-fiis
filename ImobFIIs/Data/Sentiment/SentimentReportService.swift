@@ -44,7 +44,7 @@ struct SentimentReportService {
 
     func reports(for segmentKeys: [String], now: Date = .now) async -> SentimentContext {
         var context = SentimentContext.empty
-        for key in Set(segmentKeys.map { $0.lowercased() }) {
+        for key in Set(segmentKeys.map { $0.lowercased() }).sorted() {
             guard let report = await report(for: key, now: now) else { continue }
             context.merge(report)
         }

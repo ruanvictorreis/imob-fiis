@@ -30,9 +30,31 @@ struct SentimentReportDecodingTests {
         var context = SentimentContext.empty
         context.merge(report)
 
-        #expect(context.scoresByTicker["KNCR11"] == 0.55)
-        #expect(context.labelsByTicker["CPTS11"] == .neutral)
-        #expect(context.summariesByTicker["KNCR11"]?.isEmpty == false)
+        #expect(context.fund(for: "KNCR11", segmentKey: "paper")?.score == 0.55)
+        #expect(context.fund(for: "CPTS11", segmentKey: "paper")?.label == .neutral)
+        #expect(context.fund(for: "KNCR11", segmentKey: "paper")?.summary.isEmpty == false)
+    }
+
+    @Test
+    func usesSegmentSpecificSentimentWhenTickerAppearsInMultipleReports() throws {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+
+        let urban = try decoder.decode(
+            SentimentSegmentReport.self,
+            from: SentimentFixtures.urbanTRXFReportJSON.data(using: .utf8)!
+        )
+        let logistics = try decoder.decode(
+            SentimentSegmentReport.self,
+            from: SentimentFixtures.logisticsTRXFReportJSON.data(using: .utf8)!
+        )
+
+        var context = SentimentContext.empty
+        context.merge(logistics)
+        context.merge(urban)
+
+        #expect(context.fund(for: "TRXF11", segmentKey: "urban")?.label == .negative)
+        #expect(context.fund(for: "TRXF11", segmentKey: "logistics")?.label == .positive)
     }
 }
 
@@ -68,6 +90,50 @@ enum SentimentFixtures {
           "confidence": "low",
           "summary": "Sem destaque.",
           "articleCount": 0,
+          "topHeadlines": []
+        }
+      ]
+    }
+    """
+
+    static let urbanTRXFReportJSON = """
+    {
+      "version": 1,
+      "segment": "Renda Urbana",
+      "segmentKey": "urban",
+      "generatedAt": "2026-09-02T11:00:00Z",
+      "lookbackDays": 14,
+      "sources": ["clube.fii"],
+      "funds": [
+        {
+          "ticker": "TRXF11",
+          "sentiment": "negative",
+          "score": -0.25,
+          "confidence": "high",
+          "summary": "Queda da cota e cancelamentos.",
+          "articleCount": 2,
+          "topHeadlines": []
+        }
+      ]
+    }
+    """
+
+    static let logisticsTRXFReportJSON = """
+    {
+      "version": 1,
+      "segment": "Logística",
+      "segmentKey": "logistics",
+      "generatedAt": "2026-09-02T11:00:00Z",
+      "lookbackDays": 14,
+      "sources": ["clube.fii"],
+      "funds": [
+        {
+          "ticker": "TRXF11",
+          "sentiment": "positive",
+          "score": 0.5,
+          "confidence": "medium",
+          "summary": "Expansão logística.",
+          "articleCount": 2,
           "topHeadlines": []
         }
       ]

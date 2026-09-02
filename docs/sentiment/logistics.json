@@ -294,26 +294,6 @@
       ]
     },
     {
-      "ticker": "TRXF11",
-      "sentiment": "positive",
-      "score": 0.5,
-      "confidence": "medium",
-      "summary": "TRX Real Estate distribuiu R$ 0,93 por cota em agosto, com lucro de R$ 60 mi e aceleração de aquisições no segmento logístico; DY anualizado de 12,25%.",
-      "articleCount": 2,
-      "topHeadlines": [
-        {
-          "title": "TRXF11 divulga novos dividendos para agosto; veja yield e valor",
-          "url": "https://fiis.com.br/noticias/trxf11-divulga-novos-dividendos-agosto-veja-yield-valor/",
-          "publishedAt": "2026-08-01"
-        },
-        {
-          "title": "TRXF11 lucra R$ 60 mi e acelera expansão com aquisições no logístico",
-          "url": "https://fiis.com.br/noticias/trxf11-lucra-60-mi-acelera-expansao-com-aquisicoes-segmento-logistico/",
-          "publishedAt": "2026-08-01"
-        }
-      ]
-    },
-    {
       "ticker": "RZAK11",
       "sentiment": "positive",
       "score": 0.45,

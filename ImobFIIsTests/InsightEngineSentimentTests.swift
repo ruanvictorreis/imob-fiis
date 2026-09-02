@@ -30,13 +30,10 @@ struct InsightEngineSentimentTests {
             average: 10
         )
 
-        var sentiment = SentimentContext.empty
-        sentiment.scoresByTicker["KNCR11"] = 0.6
-        sentiment.labelsByTicker["KNCR11"] = .positive
-        sentiment.confidenceByTicker["KNCR11"] = .medium
-        sentiment.scoresByTicker["CPTS11"] = -0.5
-        sentiment.labelsByTicker["CPTS11"] = .negative
-        sentiment.confidenceByTicker["CPTS11"] = .high
+        let sentiment = makeSentimentContext([
+            SentimentEntry(ticker: "KNCR11", segmentKey: "paper", score: 0.6, label: .positive, confidence: .medium),
+            SentimentEntry(ticker: "CPTS11", segmentKey: "paper", score: -0.5, label: .negative, confidence: .high),
+        ])
 
         let snapshot = InsightEngine.evaluate(
             [negative, positive, hybrid],
@@ -59,13 +56,10 @@ struct InsightEngineSentimentTests {
             ticker: "HGBS11", segment: .hybrid, shares: 850, price: 10, average: 10
         )
 
-        var sentiment = SentimentContext.empty
-        sentiment.scoresByTicker["CPTS11"] = -0.55
-        sentiment.labelsByTicker["CPTS11"] = .negative
-        sentiment.confidenceByTicker["CPTS11"] = .high
-        sentiment.scoresByTicker["KNCR11"] = 0.0
-        sentiment.labelsByTicker["KNCR11"] = .neutral
-        sentiment.confidenceByTicker["KNCR11"] = .medium
+        let sentiment = makeSentimentContext([
+            SentimentEntry(ticker: "CPTS11", segmentKey: "paper", score: -0.55, label: .negative, confidence: .high),
+            SentimentEntry(ticker: "KNCR11", segmentKey: "paper", score: 0.0, label: .neutral, confidence: .medium),
+        ])
 
         let snapshot = InsightEngine.evaluate([negative, neutral, hybrid], strategy: strategy, sentiment: sentiment)
 
@@ -129,5 +123,62 @@ struct InsightEngineSentimentTests {
         let reordered = InsightEngine.applyTopPickGuard([blocked, allowed])
 
         #expect(reordered.first?.ticker == "BBB11")
+    }
+
+    @Test @MainActor
+    func keepsUrbanSentimentWhenTickerAlsoExistsInLogisticsReport() throws {
+        let trxf = makeInsightHolding(
+            ticker: "TRXF11",
+            segment: .urban,
+            shares: 100,
+            price: 10,
+            average: 10
+        )
+        let logistics = makeInsightHolding(
+            ticker: "HGLG11",
+            segment: .logistics,
+            shares: 100,
+            price: 10,
+            average: 10
+        )
+
+        var sentiment = SentimentContext.empty
+        sentiment.merge(try decodedReport(SentimentFixtures.logisticsTRXFReportJSON))
+        sentiment.merge(try decodedReport(SentimentFixtures.urbanTRXFReportJSON))
+
+        let snapshot = InsightEngine.evaluate([trxf, logistics], strategy: strategy, sentiment: sentiment)
+        let trxfInsight = snapshot.insights.first { $0.ticker == "TRXF11" }
+
+        #expect(trxfInsight?.sentimentLabel == .negative)
+        #expect(trxfInsight?.sentimentScore == -0.25)
+    }
+
+    private struct SentimentEntry {
+        var ticker: String
+        var segmentKey: String
+        var score: Double
+        var label: SentimentLabel
+        var confidence: SentimentConfidence
+    }
+
+    private func makeSentimentContext(_ entries: [SentimentEntry]) -> SentimentContext {
+        var context = SentimentContext.empty
+        for entry in entries {
+            var segmentFunds = context.fundsBySegment[entry.segmentKey] ?? [:]
+            segmentFunds[entry.ticker.uppercased()] = SentimentFundSnapshot(
+                score: entry.score,
+                confidence: entry.confidence,
+                label: entry.label,
+                summary: ""
+            )
+            context.fundsBySegment[entry.segmentKey] = segmentFunds
+        }
+        return context
+    }
+
+    private func decodedReport(_ json: String) throws -> SentimentSegmentReport {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return try decoder.decode(SentimentSegmentReport.self, from: json.data(using: .utf8)!)
     }
 }
