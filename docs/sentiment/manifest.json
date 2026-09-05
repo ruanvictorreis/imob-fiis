@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-04T14:50:00Z",
+  "updatedAt": "2026-09-05T13:45:00Z",
   "segments": {
     "paper": {
       "updatedAt": "2026-09-02T19:49:03Z",
@@ -28,7 +28,7 @@
       "url": "offices.json"
     },
     "fiagro": {
-      "updatedAt": "2026-09-02T20:02:00Z",
+      "updatedAt": "2026-09-05T13:45:00Z",
       "fundCount": 19,
       "url": "fiagro.json"
     }
