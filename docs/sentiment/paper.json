@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Papel",
   "segmentKey": "paper",
-  "generatedAt": "2026-09-02T19:49:03Z",
+  "generatedAt": "2026-09-07T16:18:54Z",
   "lookbackDays": 14,
   "sources": [
     "clube.fii",
@@ -17,25 +17,25 @@
     {
       "ticker": "KNCR11",
       "sentiment": "positive",
-      "score": 0.55,
-      "confidence": "medium",
-      "summary": "Kinea Rendimentos manteve distribuição de R$ 1,15 por cota (yield ~1,06%) e publicou informe trimestral em agosto; cobertura da Suno destaca continuidade dos proventos.",
-      "articleCount": 4,
+      "score": 0.65,
+      "confidence": "high",
+      "summary": "KNCR11 anuncia R$ 1,15/cota para 14/09 (yield ~1,06%) e lidera recomendações de setembro com nove indicações de analistas, sustentado por carteira high grade indexada ao CDI.",
+      "articleCount": 5,
       "topHeadlines": [
         {
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
+        },
+        {
           "title": "Com yield de 1,16%, KNCR11 anuncia dividendos aos cotistas; confira",
-          "url": "https://www.suno.com.br/noticias/?s=KNCR11",
+          "url": "https://www.suno.com.br/noticias/dividendos-do-kncr11-setembro-2026/",
           "publishedAt": "2026-09-01"
         },
         {
-          "title": "KNCR11 informou distribuição de R$ 1,15 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/kncr11",
+          "title": "KNCR11: dividendos já foram divulgados; veja valor",
+          "url": "https://www.fundsexplorer.com.br/noticias/kncr11-dividendos-ja-foram-divulgados-veja-valor",
           "publishedAt": "2026-08-31"
-        },
-        {
-          "title": "Informe Trimestral - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/kncr11",
-          "publishedAt": "2026-08-21"
         }
       ]
     },
@@ -43,329 +43,246 @@
       "ticker": "CPTS11",
       "sentiment": "neutral",
       "score": 0.05,
-      "confidence": "medium",
-      "summary": "Capitania Securities manteve provento mensal de R$ 0,09 e publicou relatório gerencial em setembro; sem eventos materiais além da rotina de distribuição.",
-      "articleCount": 3,
+      "confidence": "low",
+      "summary": "Capitânia Securities manteve a rotina de R$ 0,09 por cota no ciclo de agosto; na janela recente não houve fato material além da distribuição estável registrada nos portais.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Relatório Gerencial - 09/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/cpts11",
+          "title": "CPTS11: cotação, dividendos, resultados e gráficos do FII",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/cpts11",
           "publishedAt": "2026-09-01"
-        },
-        {
-          "title": "CPTS11 informou distribuição de R$ 0,09 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/cpts11",
-          "publishedAt": "2026-08-14"
-        },
-        {
-          "title": "Informe Mensal - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/cpts11",
-          "publishedAt": "2026-08-14"
         }
       ]
     },
     {
       "ticker": "RBRR11",
       "sentiment": "negative",
-      "score": -0.30,
+      "score": -0.35,
       "confidence": "medium",
-      "summary": "RBR Rendimento High Grade paga R$ 0,90 por cota, mas a cota acumula queda de ~11% no ano e negocia com desconto de 20% sobre o VP; AGE convocada em agosto.",
-      "articleCount": 4,
+      "summary": "Pátria propõe incorporar a carteira do RBRR11 ao PCIP11 com liquidação do fundo; assembleias seguem até meados de setembro, elevando incerteza estrutural para cotistas.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "FII RBRR11 confirma dividendos com retorno de 1,19% no mês",
-          "url": "https://www.suno.com.br/noticias/?s=RBRR11",
-          "publishedAt": "2026-08-14"
+          "title": "Patria planeja consolidar FIIs de IPCA e, depois, criar veículo híbrido e de CDI",
+          "url": "https://www.infomoney.com.br/onde-investir/patria-planeja-consolidar-fiis-de-ipca-e-depois-criar-veiculo-hibrido-e-de-cdi/",
+          "publishedAt": "2026-08-27"
         },
         {
-          "title": "Fatos Relevantes - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/rbrr11",
-          "publishedAt": "2026-08-21"
-        },
-        {
-          "title": "RBRR11 informou distribuição de R$ 0,90 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/rbrr11",
-          "publishedAt": "2026-08-11"
+          "title": "Rendimentos de cinco FIIs caem na conta nesta terça; yield vai a 1,28%",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hoje-rbrr11-rbry11",
+          "publishedAt": "2026-08-18"
         }
       ]
     },
     {
       "ticker": "VRTA11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.4,
       "confidence": "medium",
-      "summary": "Fator Verita manteve provento estável de R$ 0,85 por cota e divulgou relatório de rentabilidade em agosto, sinalizando regularidade na geração de caixa.",
+      "summary": "Fator Verità confirma R$ 0,85/cota (yield 1,15%) para 15/09, amplia carteira com R$ 25,4 mi em CRIs e mantém guidance de R$ 0,85–0,95; CRI Via Varejo segue adimplente sob monitoramento.",
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "VRTA11 informou distribuição de R$ 0,85 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/vrta11",
-          "publishedAt": "2026-08-31"
+          "title": "VRTA11: FII apresenta novos dividendos com yield de 1,15%; confira valor",
+          "url": "https://www.fundsexplorer.com.br/noticias/vrta11-fii-apresenta-novos-dividendos-com-yield-de-115-confira-valor",
+          "publishedAt": "2026-09-03"
         },
         {
-          "title": "Outras Informações, Rentabilidade - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/vrta11",
-          "publishedAt": "2026-08-26"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         },
         {
-          "title": "VRTA11 informou distribuição de R$ 0,85 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/vrta11",
-          "publishedAt": "2026-07-31"
+          "title": "MXRF11, HGLG11, KNCR11 e dividendos são destaques do Bom Dia FIIs (1º/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-010926/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "MCCI11",
       "sentiment": "positive",
-      "score": 0.45,
+      "score": 0.55,
       "confidence": "medium",
-      "summary": "Mauá Capital Recebíveis manteve R$ 1,00 por cota e acumula valorização de ~12% no ano, com informes mensais publicados em agosto.",
+      "summary": "Mauá Capital reitera guidance de R$ 0,90–1,00/cota no 2º semestre, com expectativa de permanecer no topo até dezembro; CRIs 100% adimplentes e fundo aparece entre os mais recomendados de setembro.",
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "MCCI11 informou distribuição de R$ 1,00 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/mcci11",
-          "publishedAt": "2026-08-12"
+          "title": "MCCI11 projeta dividendos de até R$ 1 por cota até o fim de 2026",
+          "url": "https://fiis.com.br/noticias/mcci11-projeta-dividendos-de-ate-r-1-por-cota-ate-o-fim-de-2026/",
+          "publishedAt": "2026-09-01"
         },
         {
-          "title": "Informe Mensal - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/mcci11",
-          "publishedAt": "2026-08-12"
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
         },
         {
-          "title": "Comunicado - 24/08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/mcci11",
-          "publishedAt": "2026-08-24"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "HGCR11",
       "sentiment": "positive",
-      "score": 0.40,
+      "score": 0.45,
       "confidence": "medium",
-      "summary": "Pátria Recebíveis elevou distribuição para R$ 1,00 por cota em agosto (antes R$ 0,95) e publicou informes trimestral e gerencial no período.",
-      "articleCount": 4,
+      "summary": "Pátria Recebíveis eleva a distribuição de setembro para R$ 1,00 por cota (DY ~1,05%), alinhada à expectativa da gestão de subir o patamar de proventos no trimestre.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "HGCR11 informou distribuição de R$ 1,00 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/hgcr11",
-          "publishedAt": "2026-08-31"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         },
         {
-          "title": "Informe Trimestral - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/hgcr11",
-          "publishedAt": "2026-08-13"
-        },
-        {
-          "title": "Relatório Gerencial - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/hgcr11",
-          "publishedAt": "2026-08-12"
+          "title": "HGCR11 - Pátria Recebíveis Imobiliários | Status Invest",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/hgcr11",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "IRDM11",
-      "sentiment": "negative",
-      "score": -0.65,
+      "sentiment": "neutral",
+      "score": 0,
       "confidence": "low",
-      "summary": "Iridium Recebíveis permanece sem negociação na B3 após processo de incorporação; na janela analisada só houve laudo de avaliação de julho, sem novos proventos.",
-      "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "Laudo de Avaliação - 07/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/irdm11",
-          "publishedAt": "2026-07-14"
-        }
-      ]
+      "summary": "Sem cobertura editorial relevante nos portais permitidos na janela de 14 dias; o ticker não apresentou novos fatos materiais recentes após o ciclo de incorporação histórico.",
+      "articleCount": 0,
+      "topHeadlines": []
     },
     {
       "ticker": "KNIP11",
       "sentiment": "negative",
-      "score": -0.25,
+      "score": -0.3,
       "confidence": "medium",
-      "summary": "Kinea Índice de Preços reduziu provento de R$ 0,95 para R$ 0,65 por cota em agosto, embora tenha publicado informe trimestral no período.",
-      "articleCount": 4,
+      "summary": "Kinea Índices de Preços corta o provento de setembro para R$ 0,65/cota (ante R$ 0,95 em agosto), com yield mensal ~0,71%, refletindo pressão da inflação mais fraca sobre a carteira IPCA+.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "KNIP11, KNCR11 e outros FIIs pagam dividendos hoje (13)",
-          "url": "https://www.suno.com.br/noticias/?s=KNIP11",
-          "publishedAt": "2026-08-13"
-        },
-        {
-          "title": "KNIP11 informou distribuição de R$ 0,65 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/knip11",
+          "title": "KNIP11: cotação, dividendos, gráficos e resultados",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/knip11",
           "publishedAt": "2026-08-31"
         },
         {
-          "title": "Informe Trimestral - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/knip11",
-          "publishedAt": "2026-08-21"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "KNSC11",
-      "sentiment": "neutral",
-      "score": -0.10,
+      "sentiment": "negative",
+      "score": -0.35,
       "confidence": "medium",
-      "summary": "Kinea Securities reduziu provento para R$ 0,09 por cota e segue com 6ª emissão de cotas em andamento; informes de agosto publicados normalmente.",
-      "articleCount": 4,
+      "summary": "Kinea Scalable reduz a distribuição de setembro para R$ 0,09/cota, abaixo dos R$ 0,11 da competência anterior, com yield mensal de ~0,98% sobre o fechamento de agosto.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "KNSC11 informou distribuição de R$ 0,09 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/knsc11",
-          "publishedAt": "2026-08-31"
+          "title": "KNSC11 divulga dividendos de quase 1% ao mês; confira o valor",
+          "url": "https://fiis.com.br/noticias/knsc11-fundo-imobiliario-pagamento-dividendos-setembro-2026-queda-data-base-jj/",
+          "publishedAt": "2026-09-01"
         },
         {
-          "title": "Informe Trimestral - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/knsc11",
-          "publishedAt": "2026-08-21"
-        },
-        {
-          "title": "KNSC11 6ª emissão em andamento",
-          "url": "https://www.fundsexplorer.com.br/funds/knsc11",
-          "publishedAt": "2026-08-27"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "RECR11",
       "sentiment": "positive",
-      "score": 0.40,
-      "confidence": "medium",
-      "summary": "REC Recebíveis manteve R$ 1,10 por cota (yield ~1,42%) e publicou informes mensal e trimestral em agosto, com cotação estável no mês.",
-      "articleCount": 3,
+      "score": 0.35,
+      "confidence": "low",
+      "summary": "Relatório gerencial de julho destacou resultado de caixa maior e distribuição de R$ 1,0987/cota (~146% do CDI líquido); na janela mais recente a cobertura editorial ficou limitada.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "RECR11 informou distribuição de R$ 1,10 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/recr11",
-          "publishedAt": "2026-08-07"
-        },
-        {
-          "title": "Informe Trimestral - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/recr11",
-          "publishedAt": "2026-08-13"
-        },
-        {
-          "title": "Informe Mensal - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/recr11",
-          "publishedAt": "2026-08-14"
-        }
-      ]
-    },
-    {
-      "ticker": "KDIF11",
-      "sentiment": "negative",
-      "score": -0.35,
-      "confidence": "medium",
-      "summary": "Kinea Infra cortou provento de R$ 1,45 para R$ 1,00 por cota em julho/agosto e a cota acumula queda de ~4,4% no ano.",
-      "articleCount": 2,
-      "topHeadlines": [
-        {
-          "title": "KDIF11 informou distribuição de R$ 1,00 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/kdif11",
-          "publishedAt": "2026-07-31"
-        },
-        {
-          "title": "KDIF11 informou distribuição de R$ 1,45 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/kdif11",
-          "publishedAt": "2026-06-30"
-        }
-      ]
-    },
-    {
-      "ticker": "VGIR11",
-      "sentiment": "positive",
-      "score": 0.50,
-      "confidence": "medium",
-      "summary": "Valora RE III elevou provento para R$ 0,13 por cota (antes R$ 0,11) e acumula alta de ~8,3% no ano, com DY de 15,88% nos últimos 12 meses.",
-      "articleCount": 2,
-      "topHeadlines": [
-        {
-          "title": "VGIR11 informou distribuição de R$ 0,13 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/vgir11",
-          "publishedAt": "2026-08-12"
-        },
-        {
-          "title": "Comunicado - 20/08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/vgir11",
+          "title": "RECR11 aumenta resultado e rende 146% do CDI no mês; veja",
+          "url": "https://www.fundsexplorer.com.br/noticias/recr11-relatorio-gerencial-julho-2026",
           "publishedAt": "2026-08-20"
         }
       ]
     },
     {
+      "ticker": "KDIF11",
+      "sentiment": "neutral",
+      "score": 0,
+      "confidence": "low",
+      "summary": "Sem notícias editoriais recentes nos portais permitidos na janela de 14 dias; indicadores de proventos nos agregadores não trouxeram fatos novos além da rotina de distribuição.",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
+      "ticker": "VGIR11",
+      "sentiment": "neutral",
+      "score": 0,
+      "confidence": "low",
+      "summary": "Ausência de cobertura relevante nos portais permitidos na janela analisada; não houve anúncio material de resultados ou eventos além do fluxo rotineiro de rendimentos.",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
       "ticker": "ARRI11",
       "sentiment": "negative",
-      "score": -0.55,
+      "score": -0.25,
       "confidence": "medium",
-      "summary": "Átrio REIT reduziu provento de R$ 0,07 para R$ 0,05 por cota e a cota caiu ~29% no ano, negociando a 52% do valor patrimonial.",
-      "articleCount": 3,
+      "summary": "Átrio anuncia R$ 0,05/cota para 08/09, abaixo dos R$ 0,07 pagos no ciclo anterior; a cota acumula forte queda no ano, apesar do yield mensal ainda próximo de 1%.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "ARRI11 informou distribuição de R$ 0,05 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/arri11",
+          "title": "ARRI11 - FII ATRIO | Dividendos e cotação",
+          "url": "https://fiis.com.br/arri11/",
           "publishedAt": "2026-08-31"
         },
         {
-          "title": "ARRI11 informou distribuição de R$ 0,07 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/arri11",
-          "publishedAt": "2026-07-31"
-        },
-        {
-          "title": "Comunicados - 14/08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/arri11",
-          "publishedAt": "2026-08-14"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "HABT11",
-      "sentiment": "neutral",
-      "score": 0.10,
+      "sentiment": "positive",
+      "score": 0.5,
       "confidence": "medium",
-      "summary": "Habitat II manteve R$ 0,95 por cota em agosto e publicou relatório gerencial; cota com leve queda no ano (~3,5%).",
-      "articleCount": 4,
+      "summary": "Habitat Recebíveis Pulverizados figura entre os maiores yields de setembro, com R$ 0,95/cota (DY ~1,41%) e pagamento previsto para 11/09, sustentando leitura positiva de renda.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "HABT11 informou distribuição de R$ 0,95 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/habt11",
-          "publishedAt": "2026-08-31"
-        },
-        {
-          "title": "Relatório Gerencial - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/habt11",
-          "publishedAt": "2026-08-21"
-        },
-        {
-          "title": "Relatórios - 09/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/habt11",
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
           "publishedAt": "2026-09-01"
+        },
+        {
+          "title": "HABT11 - Habitat Recebíveis | Status Invest",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/habt11",
+          "publishedAt": "2026-08-31"
         }
       ]
     },
     {
       "ticker": "HGRE11",
-      "sentiment": "neutral",
-      "score": 0.15,
+      "sentiment": "negative",
+      "score": -0.2,
       "confidence": "medium",
-      "summary": "Pátria Escritórios manteve R$ 0,85 por cota e anunciou oferta pública de cotas em setembro; fatos relevantes de agosto sobre operação.",
-      "articleCount": 4,
+      "summary": "Pátria Edifícios Corporativos lança 10ª emissão de até ~R$ 700 mi a R$ 146,71/cota enquanto a B3 questiona oscilação atípica; no mesmo dia informou venda do Edifício Alegria (100% vago) por R$ 115 mi.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "Oferta Pública de Distribuição de Cotas - 09/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/hgre11",
-          "publishedAt": "2026-09-01"
-        },
-        {
-          "title": "Fatos Relevantes - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/hgre11",
+          "title": "HGRE11 lança emissão de até R$ 700 milhões; nova cota terá preço de R$ 146,71",
+          "url": "https://fiis.com.br/noticias/hgre11-lanca-emissao-de-ate-r-700-milhoes-nova-cota-tera-preco-de-r-14671/",
           "publishedAt": "2026-08-28"
         },
         {
-          "title": "HGRE11 informou distribuição de R$ 0,85 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/hgre11",
-          "publishedAt": "2026-08-31"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
@@ -373,124 +290,93 @@
       "ticker": "CXAG11",
       "sentiment": "neutral",
       "score": 0.05,
-      "confidence": "medium",
-      "summary": "Caixa Agências manteve provento estável de R$ 0,72 por cota e publicou informes mensais e trimestrais em agosto.",
-      "articleCount": 4,
+      "confidence": "low",
+      "summary": "Caixa Agências mantém distribuição estável de R$ 0,72/cota no histórico recente; na janela de 14 dias não surgiu cobertura editorial com novos eventos materiais.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "CXAG11 informou distribuição de R$ 0,72 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/cxag11",
-          "publishedAt": "2026-08-31"
-        },
-        {
-          "title": "Informe Trimestral - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/cxag11",
-          "publishedAt": "2026-08-13"
-        },
-        {
-          "title": "Relatório Gerencial - 07/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/cxag11",
-          "publishedAt": "2026-07-22"
+          "title": "CXAG11 - FII CAIXA AGÊNCIAS: dividendos e cotação",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/cxag11",
+          "publishedAt": "2026-08-18"
         }
       ]
     },
     {
       "ticker": "MFII11",
       "sentiment": "negative",
-      "score": -0.70,
+      "score": -0.4,
       "confidence": "medium",
-      "summary": "Mérito Desenvolvimento Imobiliário cortou provento de R$ 0,91 para R$ 0,30 por cota e a cota despencou ~46% no ano, com P/VP de 0,36.",
-      "articleCount": 3,
+      "summary": "Mérito Desenvolvimento reduziu fortemente o provento para R$ 0,30/cota (ante patamares próximos de R$ 0,91) e a cota acumula queda acentuada no ano, conforme dados dos agregadores.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "MFII11 informou distribuição de R$ 0,30 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/mfii11",
+          "title": "MFII11 - Mérito Desenvolvimento Imobiliário: dividendos",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/mfii11",
           "publishedAt": "2026-08-31"
         },
         {
-          "title": "MFII11 informou distribuição de R$ 0,30 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/mfii11",
-          "publishedAt": "2026-07-31"
-        },
-        {
-          "title": "Comunicado - 25/08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/mfii11",
-          "publishedAt": "2026-08-25"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "RBRY11",
       "sentiment": "neutral",
-      "score": 0.15,
-      "confidence": "medium",
-      "summary": "RBR Private Crédito manteve R$ 1,00 por cota em agosto e publicou relatório gerencial; cota com leve queda no ano (~5,8%).",
-      "articleCount": 3,
+      "score": 0.05,
+      "confidence": "low",
+      "summary": "RBR High Yield manteve distribuição recente de R$ 1,00/cota no ciclo de agosto; na janela analisada não houve novos fatos relevantes além do pagamento rotineiro.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "RBRY11 informou distribuição de R$ 1,00 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/rbry11",
-          "publishedAt": "2026-08-11"
-        },
-        {
-          "title": "Relatório Gerencial - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/rbry11",
-          "publishedAt": "2026-08-20"
-        },
-        {
-          "title": "Informe Mensal - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/rbry11",
-          "publishedAt": "2026-08-12"
+          "title": "Rendimentos de cinco FIIs caem na conta nesta terça; yield vai a 1,28%",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hoje-rbrr11-rbry11",
+          "publishedAt": "2026-08-18"
         }
       ]
     },
     {
       "ticker": "CARE11",
       "sentiment": "neutral",
-      "score": -0.05,
-      "confidence": "medium",
-      "summary": "Brazilian Graveyard realizou AGE em agosto e publicou informes trimestrais; proventos simbólicos e baixa liquidez persistem.",
-      "articleCount": 4,
+      "score": 0,
+      "confidence": "low",
+      "summary": "Sem notícias recentes nos portais permitidos na janela de 7–14 dias; ausência de cobertura editorial impede leitura direcional do sentimento.",
+      "articleCount": 0,
+      "topHeadlines": []
+    },
+    {
+      "ticker": "AFHI11",
+      "sentiment": "neutral",
+      "score": 0.1,
+      "confidence": "low",
+      "summary": "AF Invest CRI distribuiu R$ 1,00/cota em agosto (leve ajuste ante R$ 1,03); cobertura na janela recente ficou restrita a dados de proventos nos agregadores, sem novos eventos materiais.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Assembleia, AGE (Ata da Assembleia) - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/care11",
-          "publishedAt": "2026-08-03"
-        },
-        {
-          "title": "Fatos Relevantes - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/care11",
-          "publishedAt": "2026-08-03"
-        },
-        {
-          "title": "Informe Trimestral - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/care11",
-          "publishedAt": "2026-08-26"
+          "title": "AFHI11 - AF INVEST CRI: dividendos e cotação",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/afhi11",
+          "publishedAt": "2026-08-21"
         }
       ]
     },
     {
-      "ticker": "AFHI11",
+      "ticker": "BTCI11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.5,
       "confidence": "medium",
-      "summary": "AF Invest CRI manteve R$ 1,00 por cota em agosto e acumula alta de ~5,9% no ano, com relatório gerencial publicado no período.",
-      "articleCount": 3,
+      "summary": "BTG Pactual Crédito Imobiliário reportou lucro líquido 25% maior em julho (R$ 11,59 mi) e distribuição de R$ 0,103/cota com yield mensal de 1,15%, com carteira concentrada em CRIs.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "AFHI11 informou distribuição de R$ 1,00 por cota",
-          "url": "https://www.fundsexplorer.com.br/funds/afhi11",
-          "publishedAt": "2026-08-14"
+          "title": "BTCI11 tem lucro 25% maior e dividendos rendem 1,15%; veja valores",
+          "url": "https://fiis.com.br/noticias/btci11-fundo-imobiliario-anuncia-resultado-julho-2026-alta-lucro-carteira-cri-jj/",
+          "publishedAt": "2026-09-04"
         },
         {
-          "title": "Relatório Gerencial - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/afhi11",
-          "publishedAt": "2026-08-28"
-        },
-        {
-          "title": "Informes Periódicos - 08/2026",
-          "url": "https://www.fundsexplorer.com.br/funds/afhi11",
-          "publishedAt": "2026-08-14"
+          "title": "BTCI11 | BTG Pactual Crédito Imobiliário | Status Invest",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/btci11",
+          "publishedAt": "2026-09-04"
         }
       ]
     }
