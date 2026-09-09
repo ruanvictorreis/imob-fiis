@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Logística",
   "segmentKey": "logistics",
-  "generatedAt": "2026-09-02T20:24:00Z",
+  "generatedAt": "2026-09-09T15:03:20Z",
   "lookbackDays": 14,
   "sources": [
     "clube.fii",
@@ -17,25 +17,25 @@
     {
       "ticker": "XPLG11",
       "sentiment": "positive",
-      "score": 0.45,
+      "score": 0.55,
       "confidence": "high",
-      "summary": "XP Log manteve R$ 0,82 por cota em agosto e setembro, com vacância física recuando para 3,9% após novas locações; inadimplência permanece em 1,0% da receita.",
+      "summary": "XP Log manteve R$ 0,82 por cota (pagamento em 15/09) e reduziu a vacância física a 3,9% após locações em Seropédica e no CD Imigrantes V; DY mensal de ~0,89%.",
       "articleCount": 4,
       "topHeadlines": [
-        {
-          "title": "XPLG11: FII anuncia novos dividendos para setembro; confira o valor",
-          "url": "https://www.fundsexplorer.com.br/noticias/xplg11-fii-anuncia-novos-dividendos-para-setembro-confira-o-valor",
-          "publishedAt": "2026-08-31"
-        },
         {
           "title": "XPLG11 anuncia novos dividendos para setembro; veja quanto",
           "url": "https://fiis.com.br/noticias/fundo-imobiliario-xplg11-anuncia-novos-dividendos-para-setembro-de-2026-jj/",
           "publishedAt": "2026-08-31"
         },
         {
-          "title": "XPLG11 anuncia novos rendimentos; confira a distribuição",
-          "url": "https://www.fundsexplorer.com.br/noticias/xplg11-rendimentos-agosto-2026",
-          "publishedAt": "2026-08-01"
+          "title": "Fundo imobiliário XPLG11 aluga galpão em São Bernardo e reduz vacância para 3,9%",
+          "url": "https://www.suno.com.br/noticias/fundo-imobiliario-xplg11-aluga-galpao-em-sao-bernardo-e-reduz-vacancia-para-39/",
+          "publishedAt": "2026-08-18"
+        },
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
@@ -44,8 +44,8 @@
       "sentiment": "positive",
       "score": 0.65,
       "confidence": "high",
-      "summary": "CSHG Logística elevou a distribuição para R$ 1,17 por cota, concluiu venda de ativo em Itapevi com lucro de ~R$ 0,98/cota e firmou BTS com Mercado Livre em Itupeva G400; vacância física em 2,9%.",
-      "articleCount": 5,
+      "summary": "CSHG Logística confirma R$ 1,17 por cota em setembro, com vacância física em 2,9% após novas locações e ganho da venda de Itapevi; BTS com Mercado Livre em Itupeva G400 avança.",
+      "articleCount": 3,
       "topHeadlines": [
         {
           "title": "Dividendos do HGLG11: veja quanto o FII vai pagar em setembro",
@@ -53,14 +53,9 @@
           "publishedAt": "2026-08-31"
         },
         {
-          "title": "HGLG11 eleva dividendos e projeta R$1,17 por cota no 2º semestre",
-          "url": "https://fiis.com.br/noticias/hglg11-eleva-dividendos-em-64-e-projeta-r-117-por-cota-no-2o-semestre/",
-          "publishedAt": "2026-08-01"
-        },
-        {
-          "title": "HGLG11 aumenta os rendimentos, saiba o valor",
-          "url": "https://www.fundsexplorer.com.br/artigos/hglg11-aumenta-os-rendimentos-para-r-117-veja-o-que-mudou-no-fundo/",
-          "publishedAt": "2026-07-31"
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
         }
       ]
     },
@@ -68,84 +63,89 @@
       "ticker": "VILG11",
       "sentiment": "positive",
       "score": 0.5,
-      "confidence": "medium",
-      "summary": "Vinci Logística manteve R$ 0,82 por cota em agosto e setembro, entre os maiores da série histórica, com guidance de R$ 0,80–R$ 0,87 para o 1º semestre de 2026.",
-      "articleCount": 2,
+      "confidence": "high",
+      "summary": "Vinci Logística manteve R$ 0,82 por cota (pagamento 15/09), com vacância financeira de 0,5% e guidance de R$ 0,80–R$ 0,87 até dez/2026; ficou entre os cinco FIIs mais recomendados de setembro.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "VILG11 paga R$ 0,82 e projeta R$ 0,80–R$ 0,87",
-          "url": "https://statusinvest.com.br/noticias/vilg11-paga-082-e-projeta-080-087-2026/",
-          "publishedAt": "2026-08-14"
+          "title": "VILG11 informa quanto vai distribuir em proventos",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-vilg11-agosto-2026",
+          "publishedAt": "2026-09-03"
         },
         {
-          "title": "VILG11: cotação, dividendos, resultados e gráficos do FII",
-          "url": "https://statusinvest.com.br/fundos-imobiliarios/vilg11",
-          "publishedAt": "2026-08-31"
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
+        },
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "BTLG11",
       "sentiment": "positive",
-      "score": 0.55,
+      "score": 0.7,
       "confidence": "high",
-      "summary": "BTG Pactual Logística manteve R$ 0,81 por cota, concluiu a 16ª emissão com captação de R$ 1,81 bi e reporta vacância financeira de 2,6% com novas locações em Cabreúva.",
-      "articleCount": 3,
+      "summary": "BTG Logística comprou o BTLG Guarulhos I por R$ 375 mi (100% locado, cap rate ~9,1%), quitou antecipadamente Mauá II/Osasco e lidera recomendações de logística em setembro após captação de R$ 1,81 bi.",
+      "articleCount": 5,
       "topHeadlines": [
         {
-          "title": "BTLG11 anuncia novos dividendos; confira",
-          "url": "https://www.fundsexplorer.com.br/noticias/btlg11-anuncia-novos-dividendos-confira",
-          "publishedAt": "2026-08-14"
+          "title": "BTLG11 fecha compra milionária de galpão logístico em SP",
+          "url": "https://www.suno.com.br/noticias/btlg11-compra-galpao-em-guarulhos/",
+          "publishedAt": "2026-08-27"
         },
         {
-          "title": "BTLG11: R$ 0,81 em maio e yield de 0,78%",
-          "url": "https://www.fundsexplorer.com.br/noticias/btlg11-dividendos-maio-2026",
-          "publishedAt": "2026-05-15"
+          "title": "BTLG11 antecipa pagamento de R$ 51,8 milhões e quita aquisição",
+          "url": "https://fiis.com.br/noticias/btlg11-antecipa-pagamento-de-r-518-milhoes-e-quita-compra-de-galpoes-em-sp/",
+          "publishedAt": "2026-09-01"
         },
         {
-          "title": "Dividendos de FIIs caem na conta hoje; veja fundos da lista",
-          "url": "https://www.suno.com.br/noticias/dividendos-hoje-13-fiis-pagam/",
-          "publishedAt": "2026-08-25"
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
         }
       ]
     },
     {
       "ticker": "LVBI11",
-      "sentiment": "neutral",
-      "score": 0.1,
+      "sentiment": "positive",
+      "score": 0.45,
       "confidence": "medium",
-      "summary": "VBI Logístico preserva R$ 0,75 por cota com vacância zerada, mas a cota acumula queda de ~8% no ano; gestão projeta vacância marginal de 1,1% a partir de setembro.",
+      "summary": "VBI Logístico elevou o guidance do 2º semestre a R$ 0,80 por cota para paridade com HGLG11 na consolidação Pátria; vacância física em 0,4% e financeira em 0,3% ao fim de julho.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "LVBI11 | VBI Logistico | Funds Explorer",
-          "url": "https://www.fundsexplorer.com.br/funds/lvbi11",
-          "publishedAt": "2026-08-07"
+          "title": "LVBI11 tem vacância abaixo de 1% e revisa projeção de dividendos",
+          "url": "https://fiis.com.br/noticias/lvbi11-fundo-imobiliario-resultado-julho-guidance-consolidacao-carteira-galpoes-jj/",
+          "publishedAt": "2026-08-28"
         },
         {
-          "title": "LVBI11 paga R$ 0,75 por cota em junho/2026",
-          "url": "https://www.fundsexplorer.com.br/noticias/lvbi11-dividendos-junho-2026",
-          "publishedAt": "2026-06-01"
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
         }
       ]
     },
     {
       "ticker": "HGRU11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.4,
       "confidence": "medium",
-      "summary": "CSHG Recebíveis Imobiliários mantém R$ 0,95 por cota com vacância física e financeira em 0,8%; fundo possui 98 ativos e alavancagem de 5,5% do PL.",
+      "summary": "CSHG Renda Urbana mantém R$ 0,95 por cota (pagamento 15/09), vacância em 0,8% e aprovou 7ª emissão de até R$ 1,1 bi para novas aquisições; carteira chegou a 104 imóveis.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "Os dividendos do HGRU11 já saíram; veja valor e quem vai receber os proventos",
-          "url": "https://www.suno.com.br/noticias/os-dividendos-do-hgru11-ja-sairam-veja-valor-e-quem-vai-receber-os-proventos/",
-          "publishedAt": "2026-06-30"
+          "title": "Dividendos do HGRU11 já saíram; saiba quanto será pago",
+          "url": "https://fiis.com.br/noticias/hgru11-fundo-imobiliario-divulga-dividendos-setembro-2026-data-base-jj/",
+          "publishedAt": "2026-09-01"
         },
         {
-          "title": "HGRU11 paga R$ 0,95 e vacância segue em 0,8%",
-          "url": "https://statusinvest.com.br/noticias/hgru11-paga-095-vacancia-08-abril-2026/",
-          "publishedAt": "2026-05-15"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
@@ -154,67 +154,67 @@
       "sentiment": "neutral",
       "score": 0,
       "confidence": "low",
-      "summary": "SDI Rio Bravo Renda Logística não teve cobertura relevante nos portais consultados na janela de 14 dias; fundo segue com política de distribuição mínima de 95% do resultado em caixa.",
+      "summary": "SDI Logística não teve cobertura relevante nos portais consultados na janela de 14 dias.",
       "articleCount": 0,
       "topHeadlines": []
     },
     {
       "ticker": "GGRC11",
-      "sentiment": "neutral",
-      "score": 0.2,
-      "confidence": "low",
-      "summary": "GGR Covest manteve R$ 0,10 por cota mensalmente no 1º semestre de 2026, com DY de 13,33% sobre cota de R$ 8,99; carteira focada em galpões logísticos e contratos atípicos.",
-      "articleCount": 1,
+      "sentiment": "positive",
+      "score": 0.35,
+      "confidence": "medium",
+      "summary": "GGR Covest distribui R$ 0,10 por cota (DY ~1,10%, pagamento 09/09) com vacância física de 1,40% e carteira majoritariamente logística sob contratos atípicos.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "GGRC11: raio-x do FII de logística - conheça estratégia e dividendos",
-          "url": "https://fiis.com.br/noticias/ggrc11-fundo-imobiliario-raio-x-carteira-contratos-inquilinos-dividendos-jj/",
-          "publishedAt": "2026-06-15"
+          "title": "GGRC11 pagará dividendos com yield de 1,10%; veja valor e data",
+          "url": "https://fiis.com.br/noticias/ggrc11-pagara-dividendos-com-yield-de-110-veja-valor-data-vi/",
+          "publishedAt": "2026-09-02"
+        },
+        {
+          "title": "VISC11, GGRC11 e TGAR11 são destaques do Bom Dia FIIs (3/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-030926/",
+          "publishedAt": "2026-09-03"
         }
       ]
     },
     {
       "ticker": "XPCI11",
       "sentiment": "positive",
-      "score": 0.5,
-      "confidence": "medium",
-      "summary": "XP Crédito Imobiliário distribuiu R$ 0,93 por cota em agosto (DY anualizado ~14%), com carteira majoritariamente em CRIs e reserva de correção monetária de R$ 0,50/cota.",
-      "articleCount": 2,
+      "score": 0.35,
+      "confidence": "low",
+      "summary": "XP Crédito Imobiliário figura no calendário de setembro com R$ 0,90 por cota (DY ~1,14%, pagamento 15/09); cobertura específica limitada além das listas de proventos.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "XPCI11 - FII XP CRED - Cotações e Dividendos",
-          "url": "https://fiis.com.br/xpci11/",
-          "publishedAt": "2026-08-14"
-        },
-        {
-          "title": "XPCI11 eleva resultado e entrega dividendos de 14,3% ao ano; veja valores",
-          "url": "https://fiis.com.br/noticias/xpci11-fundo-imobiliario-resultado-junho-alta-cri-trx-mateus-carteira-jj/",
-          "publishedAt": "2026-08-04"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "BRCO11",
       "sentiment": "positive",
-      "score": 0.55,
-      "confidence": "medium",
-      "summary": "Bresco Logística manteve R$ 0,91 por cota em agosto e setembro, com lucro caixa de R$ 17,5 mi em julho e reserva acumulada de R$ 1,68/cota.",
+      "score": 0.45,
+      "confidence": "high",
+      "summary": "Bresco manteve R$ 0,91 por cota e locou 100% do Bresco Resende ao Mercado Livre; vacância física em 5,9%, com alerta de rescisão antecipada do GPA CD04 a monitorar.",
       "articleCount": 3,
       "topHeadlines": [
         {
           "title": "BRCO11 comunica novos dividendos; confira valor e quem recebe",
           "url": "https://fiis.com.br/noticias/brco11-fundo-imobiliario-anuncia-pagamento-dividendos-setembro-2026-jj/",
-          "publishedAt": "2026-08-31"
+          "publishedAt": "2026-09-01"
         },
         {
-          "title": "BRCO11 registra lucro de R$ 17,5 mi e acumula R$ 30 mi em reserva",
-          "url": "https://fiis.com.br/noticias/brco11-registra-lucro-r-175-mi-acumula-30-mi-reserva-vi/",
-          "publishedAt": "2026-08-15"
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
         },
         {
-          "title": "MXRF11, BRCO11 e mais 180 FIIs pagam dividendos na semana",
-          "url": "https://fiis.com.br/noticias/mxrf11-brco11-mais-fundos-imobiliarios-pagam-dividendos-nesta-semana-agosto-jj/",
-          "publishedAt": "2026-08-10"
+          "title": "VISC11, GGRC11 e TGAR11 são destaques do Bom Dia FIIs (3/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-030926/",
+          "publishedAt": "2026-09-03"
         }
       ]
     },
@@ -222,19 +222,24 @@
       "ticker": "HGBS11",
       "sentiment": "positive",
       "score": 0.4,
-      "confidence": "medium",
-      "summary": "CSHG Brasil Shopping manteve R$ 0,17 por cota em agosto, reforçou posição no Parque Dom Pedro e iniciou 12ª emissão de até R$ 307,5 mi para investidores profissionais.",
-      "articleCount": 2,
+      "confidence": "high",
+      "summary": "Hedge Brasil Shopping mantém R$ 0,17 por cota (6º mês) e aparece com cinco recomendações em setembro; avança na compra de 75% do Jaraguá Araraquara e MOU de venda no Jardim Sul.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "HGBS11 | Hedge Brasil Shopping | Funds Explorer",
-          "url": "https://www.fundsexplorer.com.br/funds/hgbs11",
-          "publishedAt": "2026-08-14"
+          "title": "Quanto rende o HGBS11? Fundo revela próximo dividendo",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hgbs11",
+          "publishedAt": "2026-09-04"
         },
         {
-          "title": "HGBS11 anuncia 12ª emissão de cotas de até R$ 307,5 milhões para investidores profissionais",
-          "url": "https://www.fundsexplorer.com.br/noticias/hgbs11-anuncia-12a-emissao-de-cotas-de-ate-r-3075-milhoes-para-investidores-profissionais",
-          "publishedAt": "2026-07-20"
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
+        },
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
@@ -242,68 +247,73 @@
       "ticker": "KNRI11",
       "sentiment": "positive",
       "score": 0.55,
-      "confidence": "medium",
-      "summary": "Kinea Renda Imobiliária apurou resultado 88% maior em julho (R$ 45,3 mi) com venda de ativo, manteve R$ 1,10 por cota e reforça reciclagem de portfólio logístico e corporativo.",
-      "articleCount": 2,
+      "confidence": "high",
+      "summary": "Kinea Renda Imobiliária manteve R$ 1,10 por cota e acertou venda do CD PIB Sumaré 36% acima da avaliação; vacância física pode cair para ~1,7% após a conclusão.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "KNRI11 divulga resultado 88% maior; confira os dividendos do mês",
-          "url": "https://fiis.com.br/noticias/knri11-fundo-imobiliario-resultado-julho-alta-venda-ativo-vacancia-carteira-jj/",
-          "publishedAt": "2026-08-14"
+          "title": "KNRI11 vende imóvel 36% acima da avaliação e vacância pode cair para menos de 2%",
+          "url": "https://fiis.com.br/noticias/knri11-vende-imovel-36-acima-da-avaliacao-e-vacancia-pode-cair-para-menos-de-2/",
+          "publishedAt": "2026-09-04"
         },
         {
-          "title": "KNRI11 paga R$ 1,10 em junho; yield de 0,68%",
-          "url": "https://www.fundsexplorer.com.br/noticias/knri11-dividendos-maio-2026",
-          "publishedAt": "2026-06-01"
+          "title": "Próximo pagamento do KNRI11 já foi anunciado",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-knri11-setembro",
+          "publishedAt": "2026-09-03"
         }
       ]
     },
     {
       "ticker": "XPML11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.4,
       "confidence": "medium",
-      "summary": "XP Malls manteve R$ 0,92 por cota em agosto (competência julho), com DY anualizado de 11,27% e portfólio de shoppings estável.",
+      "summary": "XP Malls foi o shopping mais recomendado de setembro (sete indicações), com portfólio de 26 empreendimentos e tese de reciclagem de ativos; dividendos recentes estáveis em R$ 0,92.",
       "articleCount": 2,
       "topHeadlines": [
+        {
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
+        },
         {
           "title": "XPML11 anuncia novo pagamento de dividendos; descubra o valor",
           "url": "https://fiis.com.br/noticias/fundo-imobiliario-xpml11-anuncia-novo-pagamento-dividendos-agosto-2026-jj/",
           "publishedAt": "2026-08-18"
-        },
-        {
-          "title": "Dividendos de FIIs caem na conta hoje; veja fundos da lista",
-          "url": "https://www.suno.com.br/noticias/dividendos-hoje-13-fiis-pagam/",
-          "publishedAt": "2026-08-25"
         }
       ]
     },
     {
       "ticker": "PVBI11",
       "sentiment": "negative",
-      "score": -0.45,
+      "score": -0.5,
       "confidence": "medium",
-      "summary": "VBI Prime Properties reduziu o provento para R$ 0,37 por cota (de R$ 0,40) em função do aumento de desocupações; gestão projeta vacância subindo com saída do Banco ABC.",
-      "articleCount": 1,
+      "summary": "VBI Prime cortou o provento para R$ 0,37 (de R$ 0,40) por aumento de desocupações; vacância física projetada sobe a 20% com saída do Banco ABC e guidance do semestre no novo patamar.",
+      "articleCount": 2,
       "topHeadlines": [
         {
           "title": "Novos dividendos do PVBI11 já foram anunciados; saiba quanto",
           "url": "https://fiis.com.br/noticias/pvbi11-fundo-imobiliario-dividendos-agosto-queda-vacancia-data-base-jj/",
-          "publishedAt": "2026-08-31"
+          "publishedAt": "2026-09-02"
+        },
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "RZAK11",
       "sentiment": "positive",
-      "score": 0.45,
-      "confidence": "medium",
-      "summary": "Riza Arctium Real Estate pagou R$ 1,05 por cota em agosto (DY mensal 1,28%) e manteve guidance de R$ 1,00–R$ 1,10 para os próximos três meses.",
+      "score": 0.35,
+      "confidence": "low",
+      "summary": "Riza Arctium manteve R$ 1,05 por cota (DY mensal 1,28%) com guidance de R$ 1,00–R$ 1,10; cobertura na janela recente ficou limitada a anúncios de agosto.",
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Dividendos do RZAK11 rendem 1,28% no mês; entenda a distribuição",
-          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-rzak11-rendem-128-no-mes-entenda-a-distribuicao",
+          "title": "Fundo imobiliário vai pagar dividendos de 1,28% ao mês; veja valor",
+          "url": "https://fiis.com.br/noticias/rzak11-fundo-imobiliario-vai-pagar-dividendos-agosto-2026-pagamento-anuncio-jj/",
           "publishedAt": "2026-08-18"
         }
       ]
@@ -311,70 +321,89 @@
     {
       "ticker": "VRTA11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.4,
       "confidence": "medium",
-      "summary": "Fator Verità mantém R$ 0,85 por cota há 12 meses consecutivos, com DY de 14,44% e projeção de R$ 0,85–R$ 0,95 para o 2º semestre de 2026.",
-      "articleCount": 1,
+      "summary": "Fator Verità distribui R$ 0,85 por cota (DY 1,15%, pagamento 15/09) dentro do guidance de R$ 0,85–R$ 0,95, com novas alocações em CRIs e reserva de R$ 1,20/cota.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "VRTA11 sob análise: como está o fundo de CRIs da Fator",
-          "url": "https://www.fundsexplorer.com.br/noticias/vrta11-carteira-dividendos",
-          "publishedAt": "2026-07-31"
+          "title": "VRTA11: FII apresenta novos dividendos com yield de 1,15%; confira valor",
+          "url": "https://www.fundsexplorer.com.br/noticias/vrta11-fii-apresenta-novos-dividendos-com-yield-de-115-confira-valor",
+          "publishedAt": "2026-09-03"
+        },
+        {
+          "title": "VRTA11, EXES11 e ROCA11 são destaques do Bom Dia FIIs (4/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-040926/",
+          "publishedAt": "2026-09-04"
+        },
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "JSRE11",
       "sentiment": "neutral",
-      "score": 0.15,
+      "score": 0,
       "confidence": "low",
-      "summary": "JS Real Estate Multigestão mantém R$ 0,48 por cota com guidance de R$ 0,48–R$ 0,56; sem novidades operacionais relevantes na janela recente.",
-      "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "MXRF11, BRCO11 e mais FIIs pagam dividendos hoje; veja quais",
-          "url": "https://www.suno.com.br/noticias/dividendos-hoje-23-fundos-imobiliarios/",
-          "publishedAt": "2026-07-14"
-        }
-      ]
+      "summary": "JS Real Estate Multigestão não teve cobertura relevante nos portais consultados na janela de 14 dias.",
+      "articleCount": 0,
+      "topHeadlines": []
     },
     {
       "ticker": "ALZR11",
       "sentiment": "positive",
       "score": 0.4,
       "confidence": "medium",
-      "summary": "Alianza Trust elevou dividendos para R$ 0,084/cota (maior lucro em 12 meses) e convocou cotistas para troca de administrador para Vórtx, com votação até 31/08.",
-      "articleCount": 3,
+      "summary": "Alianza Trust elevou dividendos a R$ 0,084 por cota após o maior lucro em 12 meses e ajustou o guidance do 2º semestre para R$ 0,082–R$ 0,084.",
+      "articleCount": 2,
       "topHeadlines": [
         {
           "title": "ALZR11: fundo imobiliário tem maior lucro em 12 meses e eleva dividendos",
           "url": "https://www.fundsexplorer.com.br/noticias/alzr11-fundo-imobiliario-tem-maior-lucro-em-12-meses-e-eleva-dividendos",
-          "publishedAt": "2026-08-19"
+          "publishedAt": "2026-08-20"
         },
         {
-          "title": "Fundo imobiliário ALZR11 convoca cotistas para mudança de administradora",
-          "url": "https://www.fundsexplorer.com.br/noticias/fundo-imobiliario-alzr11-convoca-cotistas-para-mudanca-de-administradora",
-          "publishedAt": "2026-08-14"
-        },
-        {
-          "title": "Veja os FIIs que pagam dividendos hoje (25)",
-          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hoje-fiis-4",
-          "publishedAt": "2026-08-25"
+          "title": "ALZR11 divulga dividendos de agosto; veja valor",
+          "url": "https://www.suno.com.br/noticias/alzr11-distribui-0084-eleva-guidance/",
+          "publishedAt": "2026-08-20"
         }
       ]
     },
     {
       "ticker": "RBRP11",
-      "sentiment": "neutral",
-      "score": -0.1,
+      "sentiment": "negative",
+      "score": -0.4,
       "confidence": "low",
-      "summary": "RBR Properties mantém R$ 0,40 por cota, porém com vacância física de 23,8% e financeira de 21,5%; ganhos pontuais com venda do imóvel João Dias sustentam distribuição.",
+      "summary": "RBR Properties cortou o provento para R$ 0,35 (de R$ 0,40), com vacância física de 24,1% e inadimplência em locatários do River One; cobertura concentrada em agosto.",
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "RBRP11 paga R$ 0,40 por cota em 15 de junho",
-          "url": "https://www.fundsexplorer.com.br/noticias/rbrp11-dividendos-junho-2026",
-          "publishedAt": "2026-06-01"
+          "title": "RBRP11 divulga novo pagamento de dividendos; veja o valor",
+          "url": "https://fiis.com.br/noticias/rbrp11-fundo-imobiliario-divulga-novo-pagamento-dividendos-agosto-2026-jj/",
+          "publishedAt": "2026-08-11"
+        }
+      ]
+    },
+    {
+      "ticker": "BTAL11",
+      "sentiment": "positive",
+      "score": 0.45,
+      "confidence": "medium",
+      "summary": "BTAL11 elevou o resultado de julho em 10,2% e distribuiu R$ 1,00 por cota (DY ~1,19%), com carteira 100% adimplente, vacância zerada e reforço de alocação em crédito privado.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Resultado do BTAL11 sobe 10,2% após alocação em crédito; entenda",
+          "url": "https://www.suno.com.br/noticias/btal11-resultado-julho-2026-distribuicao/",
+          "publishedAt": "2026-08-26"
+        },
+        {
+          "title": "BTAL11: Fiagro anuncia novos dividendos com yield de 1,19%",
+          "url": "https://fiis.com.br/noticias/btal11-fiagro-anuncia-novos-dividendos-agosto-2026-yield-data-base-carteira-agro-jj/",
+          "publishedAt": "2026-08-20"
         }
       ]
     }
