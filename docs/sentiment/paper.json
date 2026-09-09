@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Papel",
   "segmentKey": "paper",
-  "generatedAt": "2026-09-07T16:18:54Z",
+  "generatedAt": "2026-09-09T18:49:38Z",
   "lookbackDays": 14,
   "sources": [
     "clube.fii",
@@ -17,9 +17,9 @@
     {
       "ticker": "KNCR11",
       "sentiment": "positive",
-      "score": 0.65,
+      "score": 0.7,
       "confidence": "high",
-      "summary": "KNCR11 anuncia R$ 1,15/cota para 14/09 (yield ~1,06%) e lidera recomendações de setembro com nove indicações de analistas, sustentado por carteira high grade indexada ao CDI.",
+      "summary": "KNCR11 confirma R$ 1,15/cota para 14/09 (yield ~1,06%) e lidera as recomendações de setembro com nove indicações de analistas, sustentado por carteira high grade majoritariamente indexada ao CDI.",
       "articleCount": 5,
       "topHeadlines": [
         {
@@ -28,27 +28,32 @@
           "publishedAt": "2026-09-05"
         },
         {
-          "title": "Com yield de 1,16%, KNCR11 anuncia dividendos aos cotistas; confira",
-          "url": "https://www.suno.com.br/noticias/dividendos-do-kncr11-setembro-2026/",
-          "publishedAt": "2026-09-01"
+          "title": "Os dividendos do KNCR11 já foram divulgados; confira quanto",
+          "url": "https://fiis.com.br/noticias/kncr11-fundo-imobiliario-dividendos-setembro-2026-yield-data-base-carteira-cri-jj/",
+          "publishedAt": "2026-08-31"
         },
         {
-          "title": "KNCR11: dividendos já foram divulgados; veja valor",
-          "url": "https://www.fundsexplorer.com.br/noticias/kncr11-dividendos-ja-foram-divulgados-veja-valor",
-          "publishedAt": "2026-08-31"
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "CPTS11",
       "sentiment": "neutral",
-      "score": 0.05,
-      "confidence": "low",
-      "summary": "Capitânia Securities manteve a rotina de R$ 0,09 por cota no ciclo de agosto; na janela recente não houve fato material além da distribuição estável registrada nos portais.",
-      "articleCount": 1,
+      "score": 0.15,
+      "confidence": "medium",
+      "summary": "Capitânia manteve R$ 0,09/cota (115,9% do CDI) apesar de resultado de julho menor; guidance central permanece em R$ 0,09 (faixa R$ 0,08–0,10), com CRIs 100% adimplentes e carteira high grade.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "CPTS11: cotação, dividendos, resultados e gráficos do FII",
+          "title": "CPTS11 paga dividendos de 115,9% do CDI; veja resultados",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-fii-cpts11-paga-dividendos-acima-cdi-resultados-julho-2026-jj/",
+          "publishedAt": "2026-09-08"
+        },
+        {
+          "title": "CPTS11 - Capitânia Securities | Status Invest",
           "url": "https://statusinvest.com.br/fundos-imobiliarios/cpts11",
           "publishedAt": "2026-09-01"
         }
@@ -59,7 +64,7 @@
       "sentiment": "negative",
       "score": -0.35,
       "confidence": "medium",
-      "summary": "Pátria propõe incorporar a carteira do RBRR11 ao PCIP11 com liquidação do fundo; assembleias seguem até meados de setembro, elevando incerteza estrutural para cotistas.",
+      "summary": "Pátria propõe incorporar RBRR11 (junto a VCJR11 e RPRI11) ao PCIP11, com assembleias mirando aprovação até cerca de 25/09; a reorganização eleva incerteza estrutural e de liquidez para cotistas.",
       "articleCount": 2,
       "topHeadlines": [
         {
@@ -68,18 +73,18 @@
           "publishedAt": "2026-08-27"
         },
         {
-          "title": "Rendimentos de cinco FIIs caem na conta nesta terça; yield vai a 1,28%",
-          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hoje-rbrr11-rbry11",
-          "publishedAt": "2026-08-18"
+          "title": "Quais FIIs comprar em setembro? Veja a carteira recomendada pelo BB",
+          "url": "https://www.moneytimes.com.br/quais-fiis-comprar-em-setembro-veja-a-carteira-recomendada-pelo-bb/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "VRTA11",
       "sentiment": "positive",
-      "score": 0.4,
+      "score": 0.45,
       "confidence": "medium",
-      "summary": "Fator Verità confirma R$ 0,85/cota (yield 1,15%) para 15/09, amplia carteira com R$ 25,4 mi em CRIs e mantém guidance de R$ 0,85–0,95; CRI Via Varejo segue adimplente sob monitoramento.",
+      "summary": "Fator Verità confirma R$ 0,85/cota (yield 1,15%) para 15/09, amplia carteira com R$ 25,4 mi em CRIs e mantém guidance de R$ 0,85–0,95; CRI Via Varejo segue adimplente sob monitoramento após RJ da Casas Bahia.",
       "articleCount": 3,
       "topHeadlines": [
         {
@@ -93,19 +98,19 @@
           "publishedAt": "2026-09-01"
         },
         {
-          "title": "MXRF11, HGLG11, KNCR11 e dividendos são destaques do Bom Dia FIIs (1º/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-010926/",
-          "publishedAt": "2026-09-01"
+          "title": "VRTA11, EXES11 e ROCA11 são destaques do Bom Dia FIIs (4/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-040926/",
+          "publishedAt": "2026-09-04"
         }
       ]
     },
     {
       "ticker": "MCCI11",
       "sentiment": "positive",
-      "score": 0.55,
-      "confidence": "medium",
-      "summary": "Mauá Capital reitera guidance de R$ 0,90–1,00/cota no 2º semestre, com expectativa de permanecer no topo até dezembro; CRIs 100% adimplentes e fundo aparece entre os mais recomendados de setembro.",
-      "articleCount": 3,
+      "score": 0.6,
+      "confidence": "high",
+      "summary": "Mauá reitera guidance de R$ 0,90–1,00/cota no 2º semestre, com expectativa de permanecer no topo até dezembro; CRIs 100% adimplentes, aporte de R$ 22,3 mi no CRI Superfrio e cinco indicações nas carteiras de setembro.",
+      "articleCount": 5,
       "topHeadlines": [
         {
           "title": "MCCI11 projeta dividendos de até R$ 1 por cota até o fim de 2026",
@@ -127,14 +132,19 @@
     {
       "ticker": "HGCR11",
       "sentiment": "positive",
-      "score": 0.45,
+      "score": 0.5,
       "confidence": "medium",
-      "summary": "Pátria Recebíveis eleva a distribuição de setembro para R$ 1,00 por cota (DY ~1,05%), alinhada à expectativa da gestão de subir o patamar de proventos no trimestre.",
-      "articleCount": 2,
+      "summary": "Pátria Recebíveis aparece no calendário de setembro com R$ 1,00/cota (DY ~1,05%) e permanece na carteira de renda do BB, que destaca exposição ao CDI e estabilidade de distribuição após estreia positiva em agosto.",
+      "articleCount": 3,
       "topHeadlines": [
         {
           "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
           "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
+        },
+        {
+          "title": "Quais FIIs comprar em setembro? Veja a carteira recomendada pelo BB",
+          "url": "https://www.moneytimes.com.br/quais-fiis-comprar-em-setembro-veja-a-carteira-recomendada-pelo-bb/",
           "publishedAt": "2026-09-01"
         },
         {
@@ -149,7 +159,7 @@
       "sentiment": "neutral",
       "score": 0,
       "confidence": "low",
-      "summary": "Sem cobertura editorial relevante nos portais permitidos na janela de 14 dias; o ticker não apresentou novos fatos materiais recentes após o ciclo de incorporação histórico.",
+      "summary": "Sem cobertura editorial relevante nos portais permitidos na janela de 14 dias; o ticker não apresentou novos fatos materiais após a incorporação histórica pelo IRIM11.",
       "articleCount": 0,
       "topHeadlines": []
     },
@@ -158,13 +168,18 @@
       "sentiment": "negative",
       "score": -0.3,
       "confidence": "medium",
-      "summary": "Kinea Índices de Preços corta o provento de setembro para R$ 0,65/cota (ante R$ 0,95 em agosto), com yield mensal ~0,71%, refletindo pressão da inflação mais fraca sobre a carteira IPCA+.",
-      "articleCount": 2,
+      "summary": "Kinea Índices de Preços corta o provento de setembro para R$ 0,65/cota (ante R$ 0,95 em agosto), com yield mensal ~0,71%, refletindo pressão da inflação mais fraca; o fundo segue, porém, na carteira de renda do BB.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "KNIP11: cotação, dividendos, gráficos e resultados",
-          "url": "https://statusinvest.com.br/fundos-imobiliarios/knip11",
+          "title": "KNIP11 | Kinea Indices Precos | Funds Explorer",
+          "url": "https://www.fundsexplorer.com.br/funds/knip11",
           "publishedAt": "2026-08-31"
+        },
+        {
+          "title": "Quais FIIs comprar em setembro? Veja a carteira recomendada pelo BB",
+          "url": "https://www.moneytimes.com.br/quais-fiis-comprar-em-setembro-veja-a-carteira-recomendada-pelo-bb/",
+          "publishedAt": "2026-09-01"
         },
         {
           "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
@@ -197,14 +212,19 @@
       "ticker": "RECR11",
       "sentiment": "positive",
       "score": 0.35,
-      "confidence": "low",
-      "summary": "Relatório gerencial de julho destacou resultado de caixa maior e distribuição de R$ 1,0987/cota (~146% do CDI líquido); na janela mais recente a cobertura editorial ficou limitada.",
-      "articleCount": 1,
+      "confidence": "medium",
+      "summary": "REC Recebíveis permanece na carteira de ganho do BB para setembro; a casa mantém exposição a crédito com gestores consolidados após o Ifix ter recuado 1,46% em agosto.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "RECR11 aumenta resultado e rende 146% do CDI no mês; veja",
-          "url": "https://www.fundsexplorer.com.br/noticias/recr11-relatorio-gerencial-julho-2026",
-          "publishedAt": "2026-08-20"
+          "title": "Quais FIIs comprar em setembro? Veja a carteira recomendada pelo BB",
+          "url": "https://www.moneytimes.com.br/quais-fiis-comprar-em-setembro-veja-a-carteira-recomendada-pelo-bb/",
+          "publishedAt": "2026-09-01"
+        },
+        {
+          "title": "RECR11 - REC Recebíveis Imobiliários | Status Invest",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/recr11",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
@@ -219,25 +239,36 @@
     },
     {
       "ticker": "VGIR11",
-      "sentiment": "neutral",
-      "score": 0,
-      "confidence": "low",
-      "summary": "Ausência de cobertura relevante nos portais permitidos na janela analisada; não houve anúncio material de resultados ou eventos além do fluxo rotineiro de rendimentos.",
-      "articleCount": 0,
-      "topHeadlines": []
+      "sentiment": "positive",
+      "score": 0.4,
+      "confidence": "medium",
+      "summary": "Valora reportou resultado de julho 12,7% maior (R$ 19,4 mi), distribuição de R$ 0,13/cota (DY ~1,37%) e carteira 100% CDI+, com novas alocações e base de cotistas em expansão.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "VGIR11 mantém carteira 100% no CDI e cresce no lucro; saiba mais",
+          "url": "https://www.fundsexplorer.com.br/noticias/vgir11-resultado-julho-dy",
+          "publishedAt": "2026-08-26"
+        },
+        {
+          "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
+          "publishedAt": "2026-09-08"
+        }
+      ]
     },
     {
       "ticker": "ARRI11",
       "sentiment": "negative",
-      "score": -0.25,
+      "score": -0.2,
       "confidence": "medium",
-      "summary": "Átrio anuncia R$ 0,05/cota para 08/09, abaixo dos R$ 0,07 pagos no ciclo anterior; a cota acumula forte queda no ano, apesar do yield mensal ainda próximo de 1%.",
+      "summary": "Átrio figura no calendário de setembro com R$ 0,05/cota (DY ~1,04%) pago em 08/09, patamar inferior ao ciclo anterior, sem novos fatos operacionais positivos na cobertura recente.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "ARRI11 - FII ATRIO | Dividendos e cotação",
-          "url": "https://fiis.com.br/arri11/",
-          "publishedAt": "2026-08-31"
+          "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
+          "publishedAt": "2026-09-08"
         },
         {
           "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
@@ -251,13 +282,18 @@
       "sentiment": "positive",
       "score": 0.5,
       "confidence": "medium",
-      "summary": "Habitat Recebíveis Pulverizados figura entre os maiores yields de setembro, com R$ 0,95/cota (DY ~1,41%) e pagamento previsto para 11/09, sustentando leitura positiva de renda.",
-      "articleCount": 2,
+      "summary": "Habitat Recebíveis Pulverizados figura entre os maiores yields de setembro, com R$ 0,95/cota (DY ~1,41%) e pagamento em 11/09, sustentando leitura positiva de renda na janela analisada.",
+      "articleCount": 3,
       "topHeadlines": [
         {
           "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
           "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
           "publishedAt": "2026-09-01"
+        },
+        {
+          "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
+          "publishedAt": "2026-09-08"
         },
         {
           "title": "HABT11 - Habitat Recebíveis | Status Invest",
@@ -269,14 +305,19 @@
     {
       "ticker": "HGRE11",
       "sentiment": "negative",
-      "score": -0.2,
+      "score": -0.25,
       "confidence": "medium",
       "summary": "Pátria Edifícios Corporativos lança 10ª emissão de até ~R$ 700 mi a R$ 146,71/cota enquanto a B3 questiona oscilação atípica; no mesmo dia informou venda do Edifício Alegria (100% vago) por R$ 115 mi.",
-      "articleCount": 2,
+      "articleCount": 3,
       "topHeadlines": [
         {
           "title": "HGRE11 lança emissão de até R$ 700 milhões; nova cota terá preço de R$ 146,71",
           "url": "https://fiis.com.br/noticias/hgre11-lanca-emissao-de-ate-r-700-milhoes-nova-cota-tera-preco-de-r-14671/",
+          "publishedAt": "2026-08-28"
+        },
+        {
+          "title": "Fundo imobiliário HGRE11 lança emissão de até R$ 700 milhões",
+          "url": "https://www.suno.com.br/noticias/fundo-imobiliario-hgre11-lanca-emissao-de-ate-r-700-milhoes/",
           "publishedAt": "2026-08-28"
         },
         {
@@ -289,24 +330,18 @@
     {
       "ticker": "CXAG11",
       "sentiment": "neutral",
-      "score": 0.05,
+      "score": 0,
       "confidence": "low",
-      "summary": "Caixa Agências mantém distribuição estável de R$ 0,72/cota no histórico recente; na janela de 14 dias não surgiu cobertura editorial com novos eventos materiais.",
-      "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "CXAG11 - FII CAIXA AGÊNCIAS: dividendos e cotação",
-          "url": "https://statusinvest.com.br/fundos-imobiliarios/cxag11",
-          "publishedAt": "2026-08-18"
-        }
-      ]
+      "summary": "Sem cobertura editorial material nos portais permitidos na janela de 14 dias; agregadores indicam continuidade da rotina de distribuição sem novos eventos destacados.",
+      "articleCount": 0,
+      "topHeadlines": []
     },
     {
       "ticker": "MFII11",
       "sentiment": "negative",
       "score": -0.4,
       "confidence": "medium",
-      "summary": "Mérito Desenvolvimento reduziu fortemente o provento para R$ 0,30/cota (ante patamares próximos de R$ 0,91) e a cota acumula queda acentuada no ano, conforme dados dos agregadores.",
+      "summary": "Mérito Desenvolvimento mantém provento reduzido em R$ 0,30/cota para pagamento em 15/09 (ante patamares próximos de R$ 0,91 até junho), sinalizando compressão relevante da renda distribuída.",
       "articleCount": 2,
       "topHeadlines": [
         {
@@ -326,13 +361,13 @@
       "sentiment": "neutral",
       "score": 0.05,
       "confidence": "low",
-      "summary": "RBR High Yield manteve distribuição recente de R$ 1,00/cota no ciclo de agosto; na janela analisada não houve novos fatos relevantes além do pagamento rotineiro.",
+      "summary": "Na janela de 14 dias não houve novos fatos relevantes além da rotina de distribuição; cobertura editorial específica do fundo ficou limitada nos portais permitidos.",
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Rendimentos de cinco FIIs caem na conta nesta terça; yield vai a 1,28%",
-          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hoje-rbrr11-rbry11",
-          "publishedAt": "2026-08-18"
+          "title": "RBRY11 - Pátria High Yield | Status Invest",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/rbry11",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
@@ -348,9 +383,9 @@
     {
       "ticker": "AFHI11",
       "sentiment": "neutral",
-      "score": 0.1,
+      "score": 0.05,
       "confidence": "low",
-      "summary": "AF Invest CRI distribuiu R$ 1,00/cota em agosto (leve ajuste ante R$ 1,03); cobertura na janela recente ficou restrita a dados de proventos nos agregadores, sem novos eventos materiais.",
+      "summary": "Cobertura na janela recente ficou restrita a dados de proventos nos agregadores, sem novos eventos materiais além da continuidade da distribuição mensal.",
       "articleCount": 1,
       "topHeadlines": [
         {
@@ -363,9 +398,9 @@
     {
       "ticker": "BTCI11",
       "sentiment": "positive",
-      "score": 0.5,
+      "score": 0.55,
       "confidence": "medium",
-      "summary": "BTG Pactual Crédito Imobiliário reportou lucro líquido 25% maior em julho (R$ 11,59 mi) e distribuição de R$ 0,103/cota com yield mensal de 1,15%, com carteira concentrada em CRIs.",
+      "summary": "BTG Pactual Crédito Imobiliário reportou lucro líquido ~25% maior em julho (R$ 11,59 mi) e distribuição de R$ 0,103/cota com yield mensal de 1,15%, com carteira concentrada em CRIs adimplentes.",
       "articleCount": 2,
       "topHeadlines": [
         {
