@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Shoppings",
   "segmentKey": "malls",
-  "generatedAt": "2026-09-09T19:28:16Z",
+  "generatedAt": "2026-09-10T14:52:54Z",
   "lookbackDays": 14,
   "sources": [
     "clube.fii",
@@ -17,10 +17,10 @@
     {
       "ticker": "XPML11",
       "sentiment": "positive",
-      "score": 0.7,
-      "confidence": "medium",
-      "summary": "XP Malls lidera recomendações de shoppings em setembro (7 casas no Money Times) e permanece na carteira de renda do BB; manteve R$ 0,92/cota (pagamento 25/08) com DY ~0,91%.",
-      "articleCount": 4,
+      "score": 0.75,
+      "confidence": "high",
+      "summary": "XP Malls lidera recomendações de shoppings em setembro (7 casas no Money Times) e entra nas compras do Itaú BBA por portfólio premium, diversificação e reserva de R$ 2,35/cota; manteve R$ 0,92/cota em agosto.",
+      "articleCount": 5,
       "topHeadlines": [
         {
           "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
@@ -28,9 +28,9 @@
           "publishedAt": "2026-09-05"
         },
         {
-          "title": "Quais FIIs comprar em setembro? Veja a carteira recomendada pelo BB",
-          "url": "https://www.moneytimes.com.br/quais-fiis-comprar-em-setembro-veja-a-carteira-recomendada-pelo-bb/",
-          "publishedAt": "2026-09-02"
+          "title": "FIIs de shoppings: Itaú BBA vê oportunidades em 4 fundos; confira as recomendações",
+          "url": "https://www.infomoney.com.br/onde-investir/fiis-de-shoppings-itau-bba-ve-oportunidades-em-4-fundos-confira-as-recomendacoes/",
+          "publishedAt": "2026-08-26"
         },
         {
           "title": "Dia de dividendos: FIIs ALZR11, XPML11 e SNEL11 fazem pagamento hoje; veja valores",
@@ -41,11 +41,11 @@
     },
     {
       "ticker": "HSML11",
-      "sentiment": "neutral",
-      "score": 0.15,
+      "sentiment": "positive",
+      "score": 0.35,
       "confidence": "high",
-      "summary": "HSI Malls manteve R$ 0,75/cota (pagamento 08/09, DY ~0,89%) e aparece com 5 indicações no ranking de setembro, mas Empiricus retirou o fundo e o BTG reduziu a posição em 2 p.p.",
-      "articleCount": 5,
+      "summary": "HSI Malls pagou R$ 0,75/cota em 08/09 (DY ~0,88–0,89%), aparece com 5 indicações e compra do Itaú BBA (ocupação 96,2%), apesar de redução de peso no BTG e saída na Empiricus.",
+      "articleCount": 6,
       "topHeadlines": [
         {
           "title": "HSML11 anuncia novos dividendos para setembro; veja valor",
@@ -53,9 +53,9 @@
           "publishedAt": "2026-08-31"
         },
         {
-          "title": "FIIs descontados criam oportunidade? Empiricus troca dois fundos na carteira de setembro",
-          "url": "https://www.moneytimes.com.br/fiis-descontados-criam-oportunidade-empiricus-troca-dois-fundos-na-carteira-de-setembro/",
-          "publishedAt": "2026-09-02"
+          "title": "FIIs de shoppings: Itaú BBA vê oportunidades em 4 fundos; confira as recomendações",
+          "url": "https://www.infomoney.com.br/onde-investir/fiis-de-shoppings-itau-bba-ve-oportunidades-em-4-fundos-confira-as-recomendacoes/",
+          "publishedAt": "2026-08-26"
         },
         {
           "title": "Para setembro, BTG aumenta posição em VISC11 e FIIs da Kinea",
@@ -67,15 +67,15 @@
     {
       "ticker": "VISC11",
       "sentiment": "positive",
-      "score": 0.75,
+      "score": 0.8,
       "confidence": "high",
-      "summary": "Vinci Shopping Centers ganhou peso no BTG (4%→6%) e na Empiricus (20%), com teses de shoppings maduros, P/VP ~0,89x e reciclagem; paga R$ 0,84/cota em 15/09 (DY ~0,82%).",
-      "articleCount": 5,
+      "summary": "Vinci Shopping Centers ganhou peso no BTG (4%→6%) e recomendação de compra do Itaú BBA, com reserva de R$ 1,23/cota e NOI/m² +11,8%; mantém R$ 0,84/cota (pagamento 15/09, DY ~0,82%).",
+      "articleCount": 6,
       "topHeadlines": [
         {
-          "title": "BTG recomenda aumento de posição em VISC11; entenda o racional",
-          "url": "https://fiis.com.br/noticias/btg-aumenta-posicao-visc11-fiis-kiena-carteira-recomendada-setembro-vi/",
-          "publishedAt": "2026-09-02"
+          "title": "VISC11, TRXF11 e TGAR11 são destaques do Bom Dia FIIs (9/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-090926/",
+          "publishedAt": "2026-09-09"
         },
         {
           "title": "Para setembro, BTG aumenta posição em VISC11 e FIIs da Kinea",
@@ -83,9 +83,9 @@
           "publishedAt": "2026-09-03"
         },
         {
-          "title": "FIIs descontados criam oportunidade? Empiricus troca dois fundos na carteira de setembro",
-          "url": "https://www.moneytimes.com.br/fiis-descontados-criam-oportunidade-empiricus-troca-dois-fundos-na-carteira-de-setembro/",
-          "publishedAt": "2026-09-02"
+          "title": "FIIs de shoppings: Itaú BBA vê oportunidades em 4 fundos; confira as recomendações",
+          "url": "https://www.infomoney.com.br/onde-investir/fiis-de-shoppings-itau-bba-ve-oportunidades-em-4-fundos-confira-as-recomendacoes/",
+          "publishedAt": "2026-08-26"
         }
       ]
     },
@@ -103,7 +103,7 @@
       "sentiment": "neutral",
       "score": 0.2,
       "confidence": "medium",
-      "summary": "Grand Plaza Shopping mantém R$ 0,55/cota (pagamento 08/09, DY 0,74%), com distribuição estável e sem fatos corporativos relevantes na janela.",
+      "summary": "Grand Plaza Shopping manteve R$ 0,55/cota (pagamento 08/09, DY 0,74%), com distribuição estável e sem fatos corporativos relevantes na janela.",
       "articleCount": 2,
       "topHeadlines": [
         {
@@ -139,9 +139,9 @@
     {
       "ticker": "VSHO11",
       "sentiment": "positive",
-      "score": 0.3,
+      "score": 0.35,
       "confidence": "medium",
-      "summary": "Votorantim Shopping distribui R$ 0,70/cota em 09/09 (data-com 31/08), com DY de 0,96%, mantendo estabilidade de proventos no segmento.",
+      "summary": "Votorantim Shopping distribuiu R$ 0,70/cota em 09/09 (data-com 31/08), com DY de ~0,96–0,97%, mantendo estabilidade de proventos no segmento.",
       "articleCount": 2,
       "topHeadlines": [
         {
@@ -161,7 +161,7 @@
       "sentiment": "positive",
       "score": 0.55,
       "confidence": "medium",
-      "summary": "Mauá Capital Recebíveis aparece com 5 indicações no ranking de setembro do Money Times e permanece com 10% na carteira da Empiricus, reforçando demanda institucional por crédito high grade.",
+      "summary": "Mauá Capital Recebíveis aparece com 5 indicações no ranking de setembro do Money Times e permanece com peso relevante em carteiras institucionais, reforçando demanda por crédito high grade.",
       "articleCount": 3,
       "topHeadlines": [
         {
@@ -175,9 +175,9 @@
           "publishedAt": "2026-09-02"
         },
         {
-          "title": "BTG recomenda aumento de posição em VISC11; entenda o racional",
-          "url": "https://fiis.com.br/noticias/btg-aumenta-posicao-visc11-fiis-kiena-carteira-recomendada-setembro-vi/",
-          "publishedAt": "2026-09-02"
+          "title": "Para setembro, BTG aumenta posição em VISC11 e FIIs da Kinea",
+          "url": "https://www.suno.com.br/noticias/para-setembro-btg-aumenta-posicao-em-visc11-e-fiis-da-kinea/",
+          "publishedAt": "2026-09-03"
         }
       ]
     },
@@ -190,14 +190,14 @@
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "BTG recomenda aumento de posição em VISC11; entenda o racional",
-          "url": "https://fiis.com.br/noticias/btg-aumenta-posicao-visc11-fiis-kiena-carteira-recomendada-setembro-vi/",
-          "publishedAt": "2026-09-02"
-        },
-        {
           "title": "Para setembro, BTG aumenta posição em VISC11 e FIIs da Kinea",
           "url": "https://www.suno.com.br/noticias/para-setembro-btg-aumenta-posicao-em-visc11-e-fiis-da-kinea/",
           "publishedAt": "2026-09-03"
+        },
+        {
+          "title": "BTG recomenda aumento de posição em VISC11; entenda o racional",
+          "url": "https://fiis.com.br/noticias/btg-aumenta-posicao-visc11-fiis-kiena-carteira-recomendada-setembro-vi/",
+          "publishedAt": "2026-09-02"
         },
         {
           "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
@@ -236,7 +236,7 @@
       "sentiment": "negative",
       "score": -0.45,
       "confidence": "medium",
-      "summary": "VBI Prime Properties elevou o resultado de julho, mas projeta R$ 0,37/cota no 2º semestre por aumento de desocupações; vacância física pode chegar a 20% em agosto e o pagamento de setembro já veio a R$ 0,37.",
+      "summary": "VBI Prime Properties elevou o resultado de julho, mas projeta R$ 0,37/cota no 2º semestre por aumento de desocupações; vacância física pode chegar a 20% e o pagamento de setembro já veio a R$ 0,37 (DY 0,54%).",
       "articleCount": 3,
       "topHeadlines": [
         {
@@ -245,25 +245,36 @@
           "publishedAt": "2026-08-31"
         },
         {
-          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
-          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
-          "publishedAt": "2026-09-01"
-        },
-        {
           "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
           "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
           "publishedAt": "2026-09-07"
+        },
+        {
+          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
+          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
+          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "BRCR11",
-      "sentiment": "neutral",
-      "score": 0.0,
-      "confidence": "low",
-      "summary": "BTG Corporate Office não teve notícias específicas novas na janela de 14 dias; permanece citado em carteiras institucionais sem eventos operacionais recentes nos portais consultados.",
-      "articleCount": 0,
-      "topHeadlines": []
+      "sentiment": "positive",
+      "score": 0.45,
+      "confidence": "medium",
+      "summary": "BTG Corporate Office anuncia R$ 0,41/cota (pagamento 15/09, DY ~1,02%), com avanço de locações (vacância em Pinheiros <9%) e reajustes de aluguel em SP e RJ no relatório de agosto.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "BRCR11 anuncia novos dividendos com retorno acima de 1%",
+          "url": "https://fiis.com.br/noticias/brcr11-fundo-imobiliario-dividendos-setembro-2026-yield-data-locacoes-carteira-jj/",
+          "publishedAt": "2026-09-09"
+        },
+        {
+          "title": "KNCR11, BTLG11 e as principais recomendações de FIIs para setembro, segundo 13 analistas",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-as-principais-recomendacoes-de-fiis-para-setembro-segundo-13-analistas-jcav/",
+          "publishedAt": "2026-09-05"
+        }
+      ]
     },
     {
       "ticker": "KNRI11",
@@ -313,18 +324,24 @@
     {
       "ticker": "JSRE11",
       "sentiment": "neutral",
-      "score": 0.0,
+      "score": 0.15,
       "confidence": "low",
-      "summary": "JS Real Estate Multigestão não apresentou cobertura específica de resultados ou proventos nos portais permitidos na janela de 14 dias.",
-      "articleCount": 0,
-      "topHeadlines": []
+      "summary": "JS Real Estate Multigestão mantém R$ 0,50/cota (pagamento 15/09, data-com 31/08) segundo Status Invest, sem notícias analíticas novas nos demais portais na janela.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "JSRE11 - JS Real Estate Multigestão: dividendos",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/jsre11",
+          "publishedAt": "2026-09-01"
+        }
+      ]
     },
     {
       "ticker": "ALZR11",
       "sentiment": "positive",
       "score": 0.45,
       "confidence": "medium",
-      "summary": "Alianza Trust permanece com 10% na carteira da Empiricus e pagou R$ 0,084/cota em 25/08 (DY ~0,86%), reforçando presença em recomendações de tijolo híbrido.",
+      "summary": "Alianza Trust permanece em carteiras recomendadas (ex.: Empiricus) e pagou R$ 0,084/cota em 25/08; simulação recente aponta DY ~10% em 12 meses com P/VP ~0,92.",
       "articleCount": 2,
       "topHeadlines": [
         {
@@ -351,11 +368,16 @@
     {
       "ticker": "XPPR11",
       "sentiment": "negative",
-      "score": -0.45,
-      "confidence": "low",
-      "summary": "XP Properties (negociado como VPPR11) aprovou 3ª emissão de até R$ 185,9 mi só para investidores profissionais (preferência até mid-setembro), em contexto de ausência prolongada de dividendos.",
-      "articleCount": 1,
+      "score": -0.4,
+      "confidence": "medium",
+      "summary": "XP Properties (negociado como VPPR11) segue na 3ª emissão de até R$ 185,9 mi só para investidores profissionais, com preferência até 11–14/09, em contexto de ausência prolongada de dividendos.",
+      "articleCount": 2,
       "topHeadlines": [
+        {
+          "title": "VPPR11: fundo imobiliário aprova oferta que pode captar R$ 185,9 milhões",
+          "url": "https://fiis.com.br/noticias/vppr11-fundo-imobiliario-3-emissao-cotas-oferta-direito-preferencia-jj/",
+          "publishedAt": "2026-08-25"
+        },
         {
           "title": "FII lança nova oferta milionária; confira quem participa",
           "url": "https://www.suno.com.br/noticias/fundo-imobiliario-vppr11-3a-emissao/",
@@ -368,7 +390,7 @@
       "sentiment": "positive",
       "score": 0.7,
       "confidence": "medium",
-      "summary": "Patria Malls avançou 82% no resultado de julho (R$ 1,59/cota distribuível), mantém guidance de R$ 1,00/cota no 2º semestre, com ocupação de 96,2% e MoU para 10% do Shopping Jardim Sul.",
+      "summary": "Patria Malls avançou 82% no resultado de julho (R$ 1,59/cota distribuível), mantém guidance de R$ 1,00/cota no 2º semestre (pagamento 15/09), com ocupação de 96,2% e MoU para 10% do Shopping Jardim Sul.",
       "articleCount": 2,
       "topHeadlines": [
         {
