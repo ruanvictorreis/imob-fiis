@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Papel",
   "segmentKey": "paper",
-  "generatedAt": "2026-09-09T18:49:38Z",
+  "generatedAt": "2026-09-14T16:49:10Z",
   "lookbackDays": 14,
   "sources": [
     "clube.fii",
@@ -17,9 +17,9 @@
     {
       "ticker": "KNCR11",
       "sentiment": "positive",
-      "score": 0.7,
+      "score": 0.55,
       "confidence": "high",
-      "summary": "KNCR11 confirma R$ 1,15/cota para 14/09 (yield ~1,06%) e lidera as recomendações de setembro com nove indicações de analistas, sustentado por carteira high grade majoritariamente indexada ao CDI.",
+      "summary": "KNCR11 paga R$ 1,15/cota em 14/09 (DY ~1,06%), abaixo dos R$ 1,25 de agosto, mas segue o FII mais recomendado de setembro com nove indicações e carteira high grade majoritariamente CDI.",
       "articleCount": 5,
       "topHeadlines": [
         {
@@ -28,14 +28,14 @@
           "publishedAt": "2026-09-05"
         },
         {
-          "title": "Os dividendos do KNCR11 já foram divulgados; confira quanto",
-          "url": "https://fiis.com.br/noticias/kncr11-fundo-imobiliario-dividendos-setembro-2026-yield-data-base-carteira-cri-jj/",
+          "title": "KNCR11: dividendos já foram divulgados; veja valor",
+          "url": "https://www.fundsexplorer.com.br/noticias/kncr11-dividendos-ja-foram-divulgados-veja-valor",
           "publishedAt": "2026-08-31"
         },
         {
-          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
-          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
-          "publishedAt": "2026-09-01"
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
@@ -62,15 +62,20 @@
     {
       "ticker": "RBRR11",
       "sentiment": "negative",
-      "score": -0.35,
+      "score": -0.3,
       "confidence": "medium",
-      "summary": "Pátria propõe incorporar RBRR11 (junto a VCJR11 e RPRI11) ao PCIP11, com assembleias mirando aprovação até cerca de 25/09; a reorganização eleva incerteza estrutural e de liquidez para cotistas.",
-      "articleCount": 2,
+      "summary": "RBRR11 anuncia R$ 0,90/cota (DY ~1,22%) para 17/09, mas a gestão segue avançando na consolidação com PCIP11, sujeita a assembleias, o que eleva incerteza estrutural para cotistas.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "Patria planeja consolidar FIIs de IPCA e, depois, criar veículo híbrido e de CDI",
-          "url": "https://www.infomoney.com.br/onde-investir/patria-planeja-consolidar-fiis-de-ipca-e-depois-criar-veiculo-hibrido-e-de-cdi/",
-          "publishedAt": "2026-08-27"
+          "title": "RBRR11 anuncia novo pagamento de dividendos; veja valor",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-rbrr11-anuncia-novo-pagamento-dividendos-setembro-2026-jj/",
+          "publishedAt": "2026-09-11"
+        },
+        {
+          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
+          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
+          "publishedAt": "2026-09-14"
         },
         {
           "title": "Quais FIIs comprar em setembro? Veja a carteira recomendada pelo BB",
@@ -82,15 +87,15 @@
     {
       "ticker": "VRTA11",
       "sentiment": "positive",
-      "score": 0.45,
+      "score": 0.4,
       "confidence": "medium",
-      "summary": "Fator Verità confirma R$ 0,85/cota (yield 1,15%) para 15/09, amplia carteira com R$ 25,4 mi em CRIs e mantém guidance de R$ 0,85–0,95; CRI Via Varejo segue adimplente sob monitoramento após RJ da Casas Bahia.",
+      "summary": "Fator Verità confirma R$ 0,85/cota (DY 1,15%) para 15/09, amplia carteira com R$ 25,4 mi em CRIs e mantém guidance de R$ 0,85–0,95; CRI Via Varejo segue adimplente sob monitoramento após RJ da Casas Bahia.",
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "VRTA11: FII apresenta novos dividendos com yield de 1,15%; confira valor",
-          "url": "https://www.fundsexplorer.com.br/noticias/vrta11-fii-apresenta-novos-dividendos-com-yield-de-115-confira-valor",
-          "publishedAt": "2026-09-03"
+          "title": "VRTA11, EXES11 e ROCA11 são destaques do Bom Dia FIIs (4/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-040926/",
+          "publishedAt": "2026-09-04"
         },
         {
           "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
@@ -98,18 +103,18 @@
           "publishedAt": "2026-09-01"
         },
         {
-          "title": "VRTA11, EXES11 e ROCA11 são destaques do Bom Dia FIIs (4/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-040926/",
-          "publishedAt": "2026-09-04"
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
     {
       "ticker": "MCCI11",
       "sentiment": "positive",
-      "score": 0.6,
+      "score": 0.65,
       "confidence": "high",
-      "summary": "Mauá reitera guidance de R$ 0,90–1,00/cota no 2º semestre, com expectativa de permanecer no topo até dezembro; CRIs 100% adimplentes, aporte de R$ 22,3 mi no CRI Superfrio e cinco indicações nas carteiras de setembro.",
+      "summary": "Mauá confirma R$ 1,00/cota para 18/09 (DY ~1,06%), reitera guidance de permanecer no topo da faixa R$ 0,90–1,00 até dezembro e aparece com cinco indicações nas carteiras de setembro.",
       "articleCount": 5,
       "topHeadlines": [
         {
@@ -123,9 +128,9 @@
           "publishedAt": "2026-09-05"
         },
         {
-          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
-          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
-          "publishedAt": "2026-09-01"
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
@@ -134,7 +139,7 @@
       "sentiment": "positive",
       "score": 0.5,
       "confidence": "medium",
-      "summary": "Pátria Recebíveis aparece no calendário de setembro com R$ 1,00/cota (DY ~1,05%) e permanece na carteira de renda do BB, que destaca exposição ao CDI e estabilidade de distribuição após estreia positiva em agosto.",
+      "summary": "Pátria Recebíveis paga R$ 1,00/cota em 15/09 (DY ~1,05%) e permanece na carteira de renda do BB, que destaca exposição ao CDI e estabilidade de distribuição.",
       "articleCount": 3,
       "topHeadlines": [
         {
@@ -148,9 +153,9 @@
           "publishedAt": "2026-09-01"
         },
         {
-          "title": "HGCR11 - Pátria Recebíveis Imobiliários | Status Invest",
-          "url": "https://statusinvest.com.br/fundos-imobiliarios/hgcr11",
-          "publishedAt": "2026-09-01"
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
@@ -168,13 +173,13 @@
       "sentiment": "negative",
       "score": -0.3,
       "confidence": "medium",
-      "summary": "Kinea Índices de Preços corta o provento de setembro para R$ 0,65/cota (ante R$ 0,95 em agosto), com yield mensal ~0,71%, refletindo pressão da inflação mais fraca; o fundo segue, porém, na carteira de renda do BB.",
+      "summary": "Kinea Índices de Preços corta o provento de setembro para R$ 0,65/cota (DY ~0,71%), ante R$ 0,95 em agosto; o fundo permanece na carteira de renda do BB apesar da compressão do rendimento.",
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "KNIP11 | Kinea Indices Precos | Funds Explorer",
-          "url": "https://www.fundsexplorer.com.br/funds/knip11",
-          "publishedAt": "2026-08-31"
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         },
         {
           "title": "Quais FIIs comprar em setembro? Veja a carteira recomendada pelo BB",
@@ -182,9 +187,9 @@
           "publishedAt": "2026-09-01"
         },
         {
-          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
-          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
-          "publishedAt": "2026-09-01"
+          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
+          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
@@ -194,75 +199,91 @@
       "score": -0.35,
       "confidence": "medium",
       "summary": "Kinea Scalable reduz a distribuição de setembro para R$ 0,09/cota, abaixo dos R$ 0,11 da competência anterior, com yield mensal de ~0,98% sobre o fechamento de agosto.",
-      "articleCount": 2,
+      "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "KNSC11 reduz dividendos após pagamento maior no mês anterior",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-knsc11-setembro",
+          "publishedAt": "2026-09-02"
+        },
         {
           "title": "KNSC11 divulga dividendos de quase 1% ao mês; confira o valor",
           "url": "https://fiis.com.br/noticias/knsc11-fundo-imobiliario-pagamento-dividendos-setembro-2026-queda-data-base-jj/",
           "publishedAt": "2026-09-01"
         },
         {
-          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
-          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
-          "publishedAt": "2026-09-01"
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
     {
       "ticker": "RECR11",
-      "sentiment": "positive",
-      "score": 0.35,
+      "sentiment": "negative",
+      "score": -0.25,
       "confidence": "medium",
-      "summary": "REC Recebíveis permanece na carteira de ganho do BB para setembro; a casa mantém exposição a crédito com gestores consolidados após o Ifix ter recuado 1,46% em agosto.",
-      "articleCount": 2,
+      "summary": "REC Recebíveis paga R$ 0,7373/cota em 15/09 (DY ~0,94%), patamar inferior ao provento de agosto (~R$ 1,10); permanece na carteira de ganho do BB apesar da compressão mensal.",
+      "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
+        },
         {
           "title": "Quais FIIs comprar em setembro? Veja a carteira recomendada pelo BB",
           "url": "https://www.moneytimes.com.br/quais-fiis-comprar-em-setembro-veja-a-carteira-recomendada-pelo-bb/",
           "publishedAt": "2026-09-01"
         },
         {
-          "title": "RECR11 - REC Recebíveis Imobiliários | Status Invest",
-          "url": "https://statusinvest.com.br/fundos-imobiliarios/recr11",
-          "publishedAt": "2026-09-01"
+          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
+          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
     {
       "ticker": "KDIF11",
       "sentiment": "neutral",
-      "score": 0,
+      "score": 0.05,
       "confidence": "low",
-      "summary": "Sem notícias editoriais recentes nos portais permitidos na janela de 14 dias; indicadores de proventos nos agregadores não trouxeram fatos novos além da rotina de distribuição.",
-      "articleCount": 0,
-      "topHeadlines": []
-    },
-    {
-      "ticker": "VGIR11",
-      "sentiment": "positive",
-      "score": 0.4,
-      "confidence": "medium",
-      "summary": "Valora reportou resultado de julho 12,7% maior (R$ 19,4 mi), distribuição de R$ 0,13/cota (DY ~1,37%) e carteira 100% CDI+, com novas alocações e base de cotistas em expansão.",
-      "articleCount": 2,
+      "summary": "Kinea Infra manteve R$ 1,00/cota (pagamento em 08/09, DY ~0,87%) sem cobertura editorial nova nos portais permitidos além de dados de proventos nos agregadores.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "VGIR11 mantém carteira 100% no CDI e cresce no lucro; saiba mais",
-          "url": "https://www.fundsexplorer.com.br/noticias/vgir11-resultado-julho-dy",
-          "publishedAt": "2026-08-26"
-        },
-        {
-          "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
-          "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
+          "title": "KDIF11 - KINEA INFRAF | Fiis",
+          "url": "https://fiis.com.br/kdif11/",
           "publishedAt": "2026-09-08"
         }
       ]
     },
     {
-      "ticker": "ARRI11",
-      "sentiment": "negative",
-      "score": -0.2,
+      "ticker": "VGIR11",
+      "sentiment": "positive",
+      "score": 0.35,
       "confidence": "medium",
-      "summary": "Átrio figura no calendário de setembro com R$ 0,05/cota (DY ~1,04%) pago em 08/09, patamar inferior ao ciclo anterior, sem novos fatos operacionais positivos na cobertura recente.",
+      "summary": "Valora CRI CDI confirma R$ 0,13/cota para 18/09 (DY ~1,36%), sustentando leitura positiva de renda na semana; cobertura recente concentra-se no calendário de proventos.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
+          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
+          "publishedAt": "2026-09-14"
+        }
+      ]
+    },
+    {
+      "ticker": "ARRI11",
+      "sentiment": "neutral",
+      "score": 0.05,
+      "confidence": "medium",
+      "summary": "Átrio figura no calendário de setembro com R$ 0,05/cota (DY ~1,04%) pago em 08/09, sem novos fatos operacionais destacados além da rotina de distribuição.",
       "articleCount": 2,
       "topHeadlines": [
         {
@@ -304,62 +325,68 @@
     },
     {
       "ticker": "HGRE11",
-      "sentiment": "negative",
-      "score": -0.25,
-      "confidence": "medium",
-      "summary": "Pátria Edifícios Corporativos lança 10ª emissão de até ~R$ 700 mi a R$ 146,71/cota enquanto a B3 questiona oscilação atípica; no mesmo dia informou venda do Edifício Alegria (100% vago) por R$ 115 mi.",
-      "articleCount": 3,
+      "sentiment": "neutral",
+      "score": 0,
+      "confidence": "low",
+      "summary": "Na janela de 14 dias a cobertura limita-se ao calendário de proventos, com R$ 0,85/cota (DY ~0,72%) para 15/09, sem novos fatos editoriais materiais nos portais permitidos.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "HGRE11 lança emissão de até R$ 700 milhões; nova cota terá preço de R$ 146,71",
-          "url": "https://fiis.com.br/noticias/hgre11-lanca-emissao-de-ate-r-700-milhoes-nova-cota-tera-preco-de-r-14671/",
-          "publishedAt": "2026-08-28"
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         },
         {
-          "title": "Fundo imobiliário HGRE11 lança emissão de até R$ 700 milhões",
-          "url": "https://www.suno.com.br/noticias/fundo-imobiliario-hgre11-lanca-emissao-de-ate-r-700-milhoes/",
-          "publishedAt": "2026-08-28"
-        },
-        {
-          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
-          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
-          "publishedAt": "2026-09-01"
+          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
+          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
     {
       "ticker": "CXAG11",
       "sentiment": "neutral",
-      "score": 0,
-      "confidence": "low",
-      "summary": "Sem cobertura editorial material nos portais permitidos na janela de 14 dias; agregadores indicam continuidade da rotina de distribuição sem novos eventos destacados.",
-      "articleCount": 0,
-      "topHeadlines": []
+      "score": 0.1,
+      "confidence": "medium",
+      "summary": "Caixa Agências mantém R$ 0,72/cota (DY ~1,00%) com pagamento em 17/09, repetindo o patamar recente sem novos eventos operacionais destacados na cobertura.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
+          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
+          "publishedAt": "2026-09-14"
+        }
+      ]
     },
     {
       "ticker": "MFII11",
       "sentiment": "negative",
       "score": -0.4,
       "confidence": "medium",
-      "summary": "Mérito Desenvolvimento mantém provento reduzido em R$ 0,30/cota para pagamento em 15/09 (ante patamares próximos de R$ 0,91 até junho), sinalizando compressão relevante da renda distribuída.",
+      "summary": "Mérito Desenvolvimento mantém provento reduzido em R$ 0,30/cota para pagamento em 15/09 (DY ~0,83%), sinalizando compressão relevante da renda distribuída frente a patamares anteriores.",
       "articleCount": 2,
       "topHeadlines": [
+        {
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
+        },
         {
           "title": "MFII11 - Mérito Desenvolvimento Imobiliário: dividendos",
           "url": "https://statusinvest.com.br/fundos-imobiliarios/mfii11",
           "publishedAt": "2026-08-31"
-        },
-        {
-          "title": "Setembro recheado de dividendos: veja os FIIs que estão pagando mais",
-          "url": "https://www.infomoney.com.br/onde-investir/setembro-recheado-de-dividendos-veja-os-fiis-que-estao-pagando-mais/",
-          "publishedAt": "2026-09-01"
         }
       ]
     },
     {
       "ticker": "RBRY11",
       "sentiment": "neutral",
-      "score": 0.05,
+      "score": 0,
       "confidence": "low",
       "summary": "Na janela de 14 dias não houve novos fatos relevantes além da rotina de distribuição; cobertura editorial específica do fundo ficou limitada nos portais permitidos.",
       "articleCount": 1,
@@ -383,35 +410,40 @@
     {
       "ticker": "AFHI11",
       "sentiment": "neutral",
-      "score": 0.05,
+      "score": 0,
       "confidence": "low",
-      "summary": "Cobertura na janela recente ficou restrita a dados de proventos nos agregadores, sem novos eventos materiais além da continuidade da distribuição mensal.",
+      "summary": "Cobertura na janela recente ficou restrita a dados de proventos nos agregadores (último rendimento R$ 1,00 em agosto), sem novos eventos materiais além da continuidade da distribuição mensal.",
       "articleCount": 1,
       "topHeadlines": [
         {
           "title": "AFHI11 - AF INVEST CRI: dividendos e cotação",
           "url": "https://statusinvest.com.br/fundos-imobiliarios/afhi11",
-          "publishedAt": "2026-08-21"
+          "publishedAt": "2026-08-31"
         }
       ]
     },
     {
       "ticker": "BTCI11",
       "sentiment": "positive",
-      "score": 0.55,
+      "score": 0.5,
       "confidence": "medium",
-      "summary": "BTG Pactual Crédito Imobiliário reportou lucro líquido ~25% maior em julho (R$ 11,59 mi) e distribuição de R$ 0,103/cota com yield mensal de 1,15%, com carteira concentrada em CRIs adimplentes.",
-      "articleCount": 2,
+      "summary": "BTG Pactual Crédito Imobiliário confirma R$ 0,101/cota para 15/09 (DY ~1,09–1,12%), com 95,1% do PL em 32 operações e carteira majoritariamente IPCA+ adimplente.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "BTCI11 tem lucro 25% maior e dividendos rendem 1,15%; veja valores",
-          "url": "https://fiis.com.br/noticias/btci11-fundo-imobiliario-anuncia-resultado-julho-2026-alta-lucro-carteira-cri-jj/",
-          "publishedAt": "2026-09-04"
+          "title": "BTCI11 já anunciou quanto vai pagar de dividendos em setembro; saiba valor",
+          "url": "https://fiis.com.br/noticias/btci11-fundo-imobiliario-dividendos-setembro-2026-yield-data-corte-carteira-cri-jj/",
+          "publishedAt": "2026-09-09"
+        },
+        {
+          "title": "Dividendos de FIIs: MXRF11, BRCO11 e mais 177 fundos pagam nesta semana; veja lista",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         },
         {
           "title": "BTCI11 | BTG Pactual Crédito Imobiliário | Status Invest",
           "url": "https://statusinvest.com.br/fundos-imobiliarios/btci11",
-          "publishedAt": "2026-09-04"
+          "publishedAt": "2026-09-09"
         }
       ]
     }
