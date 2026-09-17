@@ -103,7 +103,7 @@ Config/                xcconfig compartilhado e secrets locais
 |----------|---------|--------|
 | **CI** | Pull request | SwiftLint + testes |
 | **FII Sentiment Daily** | Cron + manual | Gera relatórios de sentimento por segmento |
-| **GitHub Pages** | Push em `docs/**` | Publica JSONs de sentimento |
+| **GitHub Pages** | Push em `docs/**`, manual, ou após **FII Sentiment Daily** | Publica JSONs de sentimento |
 
 ### Secrets necessários (Actions)
 
