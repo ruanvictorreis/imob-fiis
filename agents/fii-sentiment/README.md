@@ -26,6 +26,8 @@ Pipeline diário que usa o **Cursor CLI** para pesquisar notícias de FIIs e pub
 
 Actions → **FII Sentiment Daily** → Run workflow → escolha o segmento.
 
+Após sucesso, o workflow **GitHub Pages** roda automaticamente (`workflow_run`) e publica `docs/` em Pages. Commits do bot com `GITHUB_TOKEN` não disparam o deploy via `push` — por isso o encadeamento.
+
 ## Validação local
 
 ```bash
