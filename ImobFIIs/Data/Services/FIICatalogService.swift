@@ -76,11 +76,11 @@ struct BrapiFIICatalogService: FIICatalogServing {
     }
 
     func tickers(_ query: FIITickerQuery) async throws -> FIITickerPage {
-        async let fiiResponse: TickerListResponse = client.send(.tickers(query.with(subType: "fii")))
-        async let fiagroResponse: TickerListResponse = client.send(.tickers(query.with(subType: "fi-agro")))
-        async let etfResponse: TickerListResponse = client.send(.tickers(query.with(subType: "etf")))
+        // Plano gratuito da brapi limita concorrência a 1 request — sequencial evita 429.
+        let fiis: TickerListResponse = try await client.send(.tickers(query.with(subType: "fii")))
+        let fiagros: TickerListResponse = try await client.send(.tickers(query.with(subType: "fi-agro")))
+        let etfs: TickerListResponse = try await client.send(.tickers(query.with(subType: "etf")))
 
-        let (fiis, fiagros, etfs) = try await (fiiResponse, fiagroResponse, etfResponse)
         let combined = fiis.results + fiagros.results + etfs.results
         var seen = Set<String>()
         let funds = combined.compactMap { dto -> FundSummary? in
