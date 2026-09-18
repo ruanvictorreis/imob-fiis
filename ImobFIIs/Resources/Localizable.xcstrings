@@ -909,13 +909,24 @@
         }
       }
     },
+    "insights.analysisNotice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Análise descritiva da sua carteira, calculada a partir das metas que você definiu. Não é recomendação de investimento."
+          }
+        }
+      }
+    },
     "insights.disclaimer" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Insights educativos com base na sua carteira. Não são consultoria de investimentos."
+            "value" : "O Lumina é uma ferramenta de organização e acompanhamento da sua carteira. Os números mostram desvios em relação às metas que você mesmo definiu e não constituem recomendação, oferta, consultoria ou análise de valores mobiliários. Os dados podem estar incompletos ou desatualizados. Toda decisão de investimento é sua."
           }
         }
       }
@@ -926,7 +937,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adicione fundos à carteira para ver onde concentrar o próximo aporte."
+            "value" : "Adicione fundos à carteira para ver os desvios em relação às suas metas."
           }
         }
       }
@@ -937,7 +948,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sem insights ainda"
+            "value" : "Sem análise ainda"
           }
         }
       }
@@ -1016,7 +1027,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exposição em falta"
+            "value" : "Segmentos sem posição"
           }
         }
       }
@@ -1027,18 +1038,18 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Priorizamos os FIIs que você já tem. Para segmentos sem posição, explore o catálogo."
+            "value" : "Esta análise considera apenas os FIIs que você já tem em carteira. Para segmentos sem posição, consulte o catálogo."
           }
         }
       }
     },
-    "insights.nextContribution" : {
+    "insights.largestGap" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Próximo aporte"
+            "value" : "Maior desvio vs sua meta"
           }
         }
       }
@@ -1060,7 +1071,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sentimento positivo"
+            "value" : "Notícias positivas"
           }
         }
       }
@@ -1071,7 +1082,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sentimento neutro"
+            "value" : "Notícias neutras"
           }
         }
       }
@@ -1082,18 +1093,51 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sentimento negativo"
+            "value" : "Notícias negativas"
           }
         }
       }
     },
-    "insights.otherOptions" : {
+    "insights.otherPositions" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Outras opções"
+            "value" : "Demais posições analisadas"
+          }
+        }
+      }
+    },
+    "insights.setTargetsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Defina as metas da sua carteira"
+          }
+        }
+      }
+    },
+    "insights.setTargetsDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A análise compara a alocação atual com as metas que você escolher. Até lá, usamos uma distribuição inicial só como referência."
+          }
+        }
+      }
+    },
+    "insights.setTargetsAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir metas"
           }
         }
       }
@@ -1121,14 +1165,14 @@
         }
       }
     },
-    "insights.suggestedContribution" : {
-      "comment" : "%@ é o valor em reais sugerido para o segmento.",
+    "insights.gapToTarget" : {
+      "comment" : "%@ é a diferença em reais entre a posição atual no segmento e a meta definida pelo usuário.",
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aporte sugerido no segmento: ~%@"
+            "value" : "Gap estimado até a meta: ~%@"
           }
         }
       }

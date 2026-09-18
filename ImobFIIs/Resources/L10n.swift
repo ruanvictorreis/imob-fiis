@@ -138,12 +138,16 @@ enum L10n {
         static var editAllocationTitle: String { text("insights.editAllocationTitle") }
         static var editAllocationHeader: String { text("insights.editAllocationHeader") }
         static var resetAllocation: String { text("insights.resetAllocation") }
-        static var nextContribution: String { text("insights.nextContribution") }
-        static var otherOptions: String { text("insights.otherOptions") }
+        static var largestGap: String { text("insights.largestGap") }
+        static var otherPositions: String { text("insights.otherPositions") }
         static var missingSegments: String { text("insights.missingSegments") }
         static var missingSegmentsFooter: String { text("insights.missingSegmentsFooter") }
         static var emptyTitle: String { text("insights.emptyTitle") }
         static var emptyDescription: String { text("insights.emptyDescription") }
+        static var analysisNotice: String { text("insights.analysisNotice") }
+        static var setTargetsTitle: String { text("insights.setTargetsTitle") }
+        static var setTargetsDescription: String { text("insights.setTargetsDescription") }
+        static var setTargetsAction: String { text("insights.setTargetsAction") }
         static var disclaimer: String { text("insights.disclaimer") }
         static var lowestWeightInSegment: String { text("insights.lowestWeightInSegment") }
         static var belowAveragePrice: String { text("insights.belowAveragePrice") }
@@ -168,8 +172,8 @@ enum L10n {
             format("insights.exploreSegment", segment)
         }
 
-        static func suggestedContribution(_ amount: String) -> String {
-            format("insights.suggestedContribution", amount)
+        static func gapToTarget(_ amount: String) -> String {
+            format("insights.gapToTarget", amount)
         }
 
         static func allocationTotalValid(_ percent: String) -> String {

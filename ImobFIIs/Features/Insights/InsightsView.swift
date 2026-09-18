@@ -58,6 +58,9 @@ struct InsightsView: View {
         .sheet(isPresented: $isEditingTargets) {
             EditAllocationTargetsView(store: targetsStore)
         }
+        .onAppear {
+            presentTargetsEditorIfNeeded()
+        }
         .task(id: sentimentTaskKey) {
             await loadSentiment()
         }
@@ -68,17 +71,23 @@ struct InsightsView: View {
 
     private var insightsList: some View {
         List {
+            if !targetsStore.hasSavedTargets {
+                setTargetsPromptSection
+            }
+
+            analysisNoticeSection
+
             allocationSection
 
             if let first = snapshot.insights.first {
-                Section(L10n.Insights.nextContribution) {
+                Section(L10n.Insights.largestGap) {
                     insightLink(first)
                 }
                 .imobSurface()
             }
 
             if snapshot.insights.count > 1 {
-                Section(L10n.Insights.otherOptions) {
+                Section(L10n.Insights.otherPositions) {
                     ForEach(snapshot.insights.dropFirst()) { insight in
                         insightLink(insight)
                     }
@@ -107,6 +116,34 @@ struct InsightsView: View {
             disclaimerSection
         }
         .imobListCanvas()
+    }
+
+    private var setTargetsPromptSection: some View {
+        Section {
+            VStack(alignment: .leading, spacing: Spacing.xs) {
+                Text(L10n.Insights.setTargetsTitle)
+                    .font(.headline)
+                Text(L10n.Insights.setTargetsDescription)
+                    .font(.caption)
+                    .foregroundStyle(Color.appSecondaryText)
+                Button(L10n.Insights.setTargetsAction) {
+                    isEditingTargets = true
+                }
+                .imobPrimaryButton()
+                .controlSize(.small)
+            }
+            .padding(.vertical, Spacing.xxs)
+        }
+        .imobSurface()
+    }
+
+    private var analysisNoticeSection: some View {
+        Section {
+            Text(L10n.Insights.analysisNotice)
+                .font(.caption)
+                .foregroundStyle(Color.appSecondaryText)
+        }
+        .imobSurface()
     }
 
     private var allocationSection: some View {
@@ -219,11 +256,24 @@ struct InsightsView: View {
             .map(FundSummary.init(fund:))
     }
 
+    private func presentTargetsEditorIfNeeded() {
+        guard targetsStore.shouldAutoPresentTargetsEditor else { return }
+        targetsStore.markTargetsPrompted()
+        isEditingTargets = true
+    }
+
     private var emptyPortfolio: some View {
         ContentUnavailableView {
             Label(L10n.Insights.emptyTitle, systemImage: "sparkles")
         } description: {
             Text(L10n.Insights.emptyDescription)
+        } actions: {
+            if !targetsStore.hasSavedTargets {
+                Button(L10n.Insights.setTargetsAction) {
+                    isEditingTargets = true
+                }
+                .imobPrimaryButton()
+            }
         }
     }
 }

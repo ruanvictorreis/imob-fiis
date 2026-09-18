@@ -29,7 +29,7 @@ struct MissingSegmentInsightRow: View {
             .foregroundStyle(Color.appSecondaryText)
 
             if let amount = missing.suggestedContribution {
-                Text(L10n.Insights.suggestedContribution(amount.formatted(.brl)))
+                Text(L10n.Insights.gapToTarget(amount.formatted(.brl)))
                     .font(.caption)
                     .foregroundStyle(Color.appSecondaryText)
             }

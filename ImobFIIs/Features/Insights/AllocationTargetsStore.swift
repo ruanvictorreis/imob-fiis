@@ -4,9 +4,12 @@ import Observation
 @Observable
 final class AllocationTargetsStore {
     static let storageKey = "insights.allocationTargets"
+    static let promptKey = "insights.didPromptForTargets"
 
     private let defaults: UserDefaults
     private(set) var targetWeights: [FundSegment: Double]
+    private(set) var hasSavedTargets: Bool
+    private(set) var didPromptForTargets: Bool
 
     var strategy: CustomAllocationStrategy {
         CustomAllocationStrategy(targetWeights: targetWeights)
@@ -20,9 +23,20 @@ final class AllocationTargetsStore {
         targetWeights == Self.defaultWeights
     }
 
+    var shouldAutoPresentTargetsEditor: Bool {
+        !hasSavedTargets && !didPromptForTargets
+    }
+
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
         self.targetWeights = Self.load(from: defaults) ?? Self.defaultWeights
+        self.hasSavedTargets = defaults.object(forKey: Self.storageKey) != nil
+        self.didPromptForTargets = defaults.bool(forKey: Self.promptKey)
+    }
+
+    func markTargetsPrompted() {
+        didPromptForTargets = true
+        defaults.set(true, forKey: Self.promptKey)
     }
 
     func weight(for segment: FundSegment) -> Double {
@@ -49,16 +63,21 @@ final class AllocationTargetsStore {
             uniqueKeysWithValues: targetWeights.map { ($0.key.rawValue, $0.value) }
         )
         defaults.set(payload, forKey: Self.storageKey)
+        hasSavedTargets = true
+        markTargetsPrompted()
         return true
     }
 
     func resetToDefaults() {
         targetWeights = Self.defaultWeights
         defaults.removeObject(forKey: Self.storageKey)
+        hasSavedTargets = false
     }
 
     func reload() {
         targetWeights = Self.load(from: defaults) ?? Self.defaultWeights
+        hasSavedTargets = defaults.object(forKey: Self.storageKey) != nil
+        didPromptForTargets = defaults.bool(forKey: Self.promptKey)
     }
 
     static var defaultWeights: [FundSegment: Double] {

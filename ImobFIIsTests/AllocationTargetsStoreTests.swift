@@ -11,6 +11,8 @@ struct AllocationTargetsStoreTests {
 
         #expect(store.targetWeights == AllocationTargetsStore.defaultWeights)
         #expect(store.isUsingDefaults)
+        #expect(!store.hasSavedTargets)
+        #expect(store.shouldAutoPresentTargetsEditor)
         #expect(store.strategy.targetWeights[.paper] == 0.30)
         #expect(store.orderedSegments.count == FundSegment.allCases.count)
         #expect(store.weight(for: .hybrid) == 0)
@@ -40,6 +42,22 @@ struct AllocationTargetsStoreTests {
         #expect(reloaded.weight(for: .urban) == 0.25)
         #expect(reloaded.weight(for: .fiagro) == 0.10)
         #expect(!reloaded.isUsingDefaults)
+        #expect(reloaded.hasSavedTargets)
+        #expect(!reloaded.shouldAutoPresentTargetsEditor)
+    }
+
+    @Test
+    func autoPresentStopsAfterPromptWithoutSaving() {
+        let defaults = UserDefaults(suiteName: UUID().uuidString)!
+        let store = AllocationTargetsStore(defaults: defaults)
+
+        store.markTargetsPrompted()
+        #expect(!store.hasSavedTargets)
+        #expect(!store.shouldAutoPresentTargetsEditor)
+
+        let reloaded = AllocationTargetsStore(defaults: defaults)
+        #expect(!reloaded.shouldAutoPresentTargetsEditor)
+        #expect(!reloaded.hasSavedTargets)
     }
 
     @Test
