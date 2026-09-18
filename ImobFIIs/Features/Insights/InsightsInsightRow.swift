@@ -57,7 +57,7 @@ struct InsightsInsightRow: View {
             case .nextPurchaseYield:
                 L10n.Insights.nextPurchaseYield
             case .suggestedContribution(let amount):
-                L10n.Insights.suggestedContribution(amount.formatted(.brl))
+                L10n.Insights.gapToTarget(amount.formatted(.brl))
             }
         }
     }

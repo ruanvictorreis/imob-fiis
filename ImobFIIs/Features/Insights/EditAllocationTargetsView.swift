@@ -26,6 +26,10 @@ struct EditAllocationTargetsView: View {
         }
     }
 
+    private var canSave: Bool {
+        isValid && (hasChanges || !store.hasSavedTargets)
+    }
+
     var body: some View {
         NavigationStack {
             Form {
@@ -61,7 +65,7 @@ struct EditAllocationTargetsView: View {
                     Button(L10n.Common.save) {
                         save()
                     }
-                    .disabled(!isValid || !hasChanges)
+                    .disabled(!canSave)
                 }
             }
             .onAppear {

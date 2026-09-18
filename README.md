@@ -1,6 +1,6 @@
 # ImobFIIs
 
-App iOS para acompanhar carteira de **FIIs e Fiagros**, explorar fundos e receber sugestões de aporte com base em alocação por segmento e sentimento de notícias recentes.
+App iOS para acompanhar carteira de **FIIs e Fiagros**, explorar fundos e analisar desvios da carteira em relação às metas de alocação definidas pelo usuário, com contexto de notícias recentes.
 
 ## Funcionalidades
 
@@ -15,14 +15,14 @@ App iOS para acompanhar carteira de **FIIs e Fiagros**, explorar fundos e recebe
 - Detalhes do fundo com indicadores
 
 ### Insights
-- Metas de alocação por segmento (editáveis)
-- Ranking de candidatos a próximo aporte com base em:
+- Metas de alocação por segmento (definidas pelo usuário)
+- Ordenação descritiva das posições por desvio em relação às metas, considerando:
   - gap de segmento vs meta
   - menor peso dentro do segmento
   - preço abaixo da média
   - dividend yield
-  - **sentimento** de notícias (badge + resumo)
-- Bloqueio do top pick quando o sentimento é fortemente negativo (com confiança média/alta)
+  - tom das **notícias** recentes (badge + resumo)
+- Posições com cobertura de notícias fortemente negativa não aparecem em destaque no topo
 
 ### Sentimento (automático)
 Relatórios JSON publicados diariamente via GitHub Actions + Cursor CLI e consumidos pelo app com cache local de 24h.
@@ -119,4 +119,4 @@ Config/                xcconfig compartilhado e secrets locais
 
 ## Aviso
 
-Este app é uma ferramenta pessoal de apoio à decisão. Não constitui recomendação de investimento.
+O Lumina é uma ferramenta de organização e acompanhamento de carteira. As análises descrevem desvios em relação às metas definidas pelo próprio usuário e não constituem recomendação, oferta, consultoria ou análise de valores mobiliários. Os dados podem estar incompletos ou desatualizados. Toda decisão de investimento é do usuário.
