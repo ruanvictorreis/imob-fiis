@@ -55,9 +55,6 @@ enum InsightReason: Equatable {
     case belowAveragePrice
     case nextPurchaseYield
     case suggestedContribution(amount: Decimal)
-    case positiveSentiment
-    case negativeSentiment
-    case neutralSentiment
 }
 
 enum InsightEngine {

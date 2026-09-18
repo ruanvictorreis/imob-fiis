@@ -9,27 +9,33 @@ struct InsightsInsightRow: View {
                 Text(insight.ticker)
                     .font(.headline)
                     .monospaced()
+
                 Spacer(minLength: Spacing.xs)
+
                 if let label = insight.sentimentLabel {
                     InsightSentimentBadge(label: label)
                 }
+
                 Text(insight.currentValue, format: .brl)
                     .font(.subheadline.weight(.semibold))
                     .monospacedDigit()
             }
+
             Text(insight.segment.title)
                 .font(.caption)
                 .foregroundStyle(Color.appSecondaryText)
+
             if let summary = insight.sentimentSummary {
                 Text(summary)
                     .font(.caption)
                     .foregroundStyle(Color.appSecondaryText)
-                    .lineLimit(2)
-            }
-            ForEach(reasonTexts, id: \.self) { reason in
-                Text(reason)
-                    .font(.caption)
-                    .foregroundStyle(Color.appSecondaryText)
+                    .lineLimit(5)
+            } else {
+                ForEach(reasonTexts, id: \.self) { reason in
+                    Text(reason)
+                        .font(.caption)
+                        .foregroundStyle(Color.appSecondaryText)
+                }
             }
         }
         .padding(.vertical, Spacing.xxs)
@@ -52,12 +58,6 @@ struct InsightsInsightRow: View {
                 L10n.Insights.nextPurchaseYield
             case .suggestedContribution(let amount):
                 L10n.Insights.suggestedContribution(amount.formatted(.brl))
-            case .positiveSentiment:
-                L10n.Insights.sentimentPositive
-            case .negativeSentiment:
-                L10n.Insights.sentimentNegative
-            case .neutralSentiment:
-                L10n.Insights.sentimentNeutral
             }
         }
     }

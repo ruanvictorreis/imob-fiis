@@ -155,16 +155,7 @@ extension InsightEngine {
            abs(yield - bestYield) < 0.000_000_1 {
             reasons.append(.nextPurchaseYield)
         }
-        switch context.sentimentLabel {
-        case .positive:
-            reasons.append(.positiveSentiment)
-        case .negative:
-            reasons.append(.negativeSentiment)
-        case .neutral:
-            reasons.append(.neutralSentiment)
-        case nil:
-            break
-        }
+
         return reasons
     }
 
