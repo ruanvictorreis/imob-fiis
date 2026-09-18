@@ -25,7 +25,7 @@ struct AddHoldingSheet: View {
         self.summary = summary
         self.indicators = indicators
         self.lastDividend = lastDividend
-        _price = State(initialValue: summary?.currentPrice)
+        _price = State(initialValue: Self.suggestedAveragePrice(summary: summary, indicators: indicators))
     }
 
     private var shares: Int {
@@ -83,15 +83,16 @@ struct AddHoldingSheet: View {
 
                     shareQuickAddButtons
 
-                    LabeledContent(
-                        isAddingToExisting ? L10n.AddHolding.priceThisPurchase : L10n.AddHolding.averagePrice
-                    ) {
-                        TextField("R$ 0,00", value: $price, format: .brlInput)
-                            .keyboardType(.decimalPad)
-                            .multilineTextAlignment(.trailing)
-                            .monospacedDigit()
-                            .focused($focusedField, equals: .price)
-                    }
+                    HoldingInputField(
+                        title: isAddingToExisting ? L10n.AddHolding.priceThisPurchase : L10n.AddHolding.averagePrice,
+                        isFocused: focusedField == .price,
+                        onSelect: { focusedField = .price },
+                        field: {
+                            BRLCurrencyTextField(amount: $price)
+                                .multilineTextAlignment(.trailing)
+                                .focused($focusedField, equals: .price)
+                        }
+                    )
                 }
                 .imobSurface()
 
@@ -129,7 +130,9 @@ struct AddHoldingSheet: View {
             }
             .onChange(of: selectedFund) { _, fund in
                 guard summary == nil, let fund else { return }
-                price = fund.currentPrice
+                if fund.currentPrice > 0 {
+                    price = fund.currentPrice
+                }
             }
         }
         .presentationDetents([.large])
@@ -168,6 +171,16 @@ struct AddHoldingSheet: View {
 
     private func addShares(_ amount: Int) {
         sharesText = sanitizedShareCount(from: String(min(shares + amount, 1_000_000)))
+    }
+
+    private static func suggestedAveragePrice(summary: FundSummary?, indicators: FIIIndicators?) -> Decimal? {
+        if let price = summary?.currentPrice, price > 0 {
+            return price
+        }
+        if let price = indicators?.price, price > 0 {
+            return price
+        }
+        return nil
     }
 
     private func sanitizedShareCount(from raw: String) -> String {

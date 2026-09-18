@@ -132,6 +132,19 @@ struct ImobFIIsTests {
         let thousands = Decimal(string: "1234.5")!.formatted(.brlInput)
         #expect(thousands.contains("1.234,50"))
     }
+
+    @Test
+    func currencyMaskTreatsTypedDigitsAsCents() {
+        #expect(BRLCurrencyMask.cents(fromTypedText: "9850") == 9_850)
+        #expect(BRLCurrencyMask.amount(fromCents: 9_850) == Decimal(string: "98.50"))
+        #expect(BRLCurrencyMask.cents(fromAmount: Decimal(string: "98.5")) == 9_850)
+        #expect(BRLCurrencyMask.formatted(cents: 9_850).contains("98,50"))
+
+        #expect(BRLCurrencyMask.cents(fromTypedText: "R$ 98,501") == 98_501)
+        #expect(BRLCurrencyMask.amount(fromCents: 98_501) == Decimal(string: "985.01"))
+        #expect(BRLCurrencyMask.cents(fromTypedText: "") == 0)
+        #expect(BRLCurrencyMask.amount(fromCents: 0) == nil)
+    }
 }
 
 @Suite("Explorar / brapi")
