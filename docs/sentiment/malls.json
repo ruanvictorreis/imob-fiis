@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Shoppings",
   "segmentKey": "malls",
-  "generatedAt": "2026-09-17T15:27:50Z",
+  "generatedAt": "2026-09-24T15:44:56Z",
   "lookbackDays": 14,
   "sources": [
     "clube.fii",
@@ -19,7 +19,7 @@
       "sentiment": "positive",
       "score": 0.75,
       "confidence": "high",
-      "summary": "XP Malls aprovou a 15ª emissão (R$ 400 mi iniciais, até R$ 800 mi) para aquisições e expansão, com preferência a cotistas em 17/09; permanece na carteira Top FIIs do Safra (2,5%).",
+      "summary": "XP Malls iniciou a 15ª emissão (R$ 400 mi iniciais, até R$ 800 mi) para aquisições e expansão, manteve R$ 0,92/cota (pagamento 25/09) e segue com MOU para 60% do São Bernardo Plaza; permanece na carteira Top FIIs do Safra (2,5%).",
       "articleCount": 5,
       "topHeadlines": [
         {
@@ -28,9 +28,9 @@
           "publishedAt": "2026-09-15"
         },
         {
-          "title": "FII XPML11 aprova nova emissão de até R$ 800 milhões para investir em novos ativos",
-          "url": "https://www.infomoney.com.br/onde-investir/fii-xpml11-aprova-nova-emissao-de-ate-r-800-milhoes-para-investir-em-novos-ativos/",
-          "publishedAt": "2026-09-15"
+          "title": "XPML11 divulga novos dividendos para setembro; confira quanto",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-xpml11-divulga-novos-dividendos-para-setembro-de-2026-jj/",
+          "publishedAt": "2026-09-21"
         },
         {
           "title": "XPML11 abre nova emissão de R$ 400 milhões; confira o preço",
@@ -42,7 +42,7 @@
     {
       "ticker": "HSML11",
       "sentiment": "neutral",
-      "score": 0.15,
+      "score": 0.2,
       "confidence": "high",
       "summary": "HSI Malls manteve R$ 0,75/cota com resultado recorrente de R$ 0,64 em agosto (efeitos da venda do Pátio Maceió); ocupação em 96,4% e vendas +5% a/a, e o Safra incluiu o fundo (2,5%).",
       "articleCount": 5,
@@ -58,9 +58,9 @@
           "publishedAt": "2026-09-15"
         },
         {
-          "title": "Para setembro, BTG aumenta posição em VISC11 e FIIs da Kinea",
-          "url": "https://www.suno.com.br/noticias/para-setembro-btg-aumenta-posicao-em-visc11-e-fiis-da-kinea/",
-          "publishedAt": "2026-09-03"
+          "title": "HSML11 anuncia novos dividendos para setembro; veja valor",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-hsml11-pagamento-dividendos-setembro-2026-fii-shoppings-jj/",
+          "publishedAt": "2026-08-31"
         }
       ]
     },
@@ -69,23 +69,23 @@
       "sentiment": "positive",
       "score": 0.8,
       "confidence": "high",
-      "summary": "Vinci Shopping Centers ganhou peso no BTG (4%→6%) e entrou na carteira Top FIIs do Safra (3,75%), com tese de reciclagem de ativos e diversificação; manteve R$ 0,84/cota (pagamento 15/09).",
+      "summary": "Vinci Shopping Centers avançou na reciclagem de nove ativos (~R$ 340 mi de caixa líquido, alavancagem projetada de ~23% para ~5%), ganhou peso no BTG (6%) e entrou na carteira Top FIIs do Safra (3,75%); manteve R$ 0,84/cota.",
       "articleCount": 5,
       "topHeadlines": [
+        {
+          "title": "VISC11: gestor do FII explica venda de shoppings",
+          "url": "https://www.fundsexplorer.com.br/noticias/visc11-gestor-do-fii-explica-venda-de-shoppings",
+          "publishedAt": "2026-09-21"
+        },
         {
           "title": "VISC11 entra na carteira do Safra com aposta na recuperação dos FIIs",
           "url": "https://fiis.com.br/noticias/visc11-entra-carteira-safra-recuperacao-fundos-imobiliarios-vi/",
           "publishedAt": "2026-09-15"
         },
         {
-          "title": "Para setembro, BTG aumenta posição em VISC11 e FIIs da Kinea",
-          "url": "https://www.suno.com.br/noticias/para-setembro-btg-aumenta-posicao-em-visc11-e-fiis-da-kinea/",
+          "title": "BTG recomenda aumento de posição em VISC11; entenda o racional",
+          "url": "https://fiis.com.br/noticias/btg-aumenta-posicao-visc11-fiis-kiena-carteira-recomendada-setembro-vi/",
           "publishedAt": "2026-09-03"
-        },
-        {
-          "title": "KNSC11, ALZR11, BRCO11 e ALZC11 são destaques do Bom Dia FIIs (17/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-170926/",
-          "publishedAt": "2026-09-17"
         }
       ]
     },
@@ -101,14 +101,14 @@
     {
       "ticker": "ABCP11",
       "sentiment": "neutral",
-      "score": 0.15,
+      "score": 0.1,
       "confidence": "low",
       "summary": "Grand Plaza Shopping manteve R$ 0,55/cota (pagamento 08/09, DY ~0,74%), com distribuição estável e sem fatos corporativos relevantes na janela.",
       "articleCount": 1,
       "topHeadlines": [
         {
           "title": "ABCP11 - Grand Plaza Shopping: dividendos e cotação",
-          "url": "https://fiis.com.br/abcp11/",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/abcp11",
           "publishedAt": "2026-09-08"
         }
       ]
@@ -125,35 +125,35 @@
     {
       "ticker": "PQDP11",
       "sentiment": "negative",
-      "score": -0.25,
+      "score": -0.3,
       "confidence": "medium",
-      "summary": "Parque Dom Pedro reduz o rendimento a R$ 13,01/cota (pagamento 18/09, DY 0,52%), abaixo dos R$ 17,65 do mês anterior, apesar da alta acumulada no ano.",
+      "summary": "Parque Dom Pedro reduziu o rendimento a R$ 13,01/cota (pagamento 18/09, DY 0,52%), abaixo dos R$ 17,65 do mês anterior, apesar da alta acumulada no ano.",
       "articleCount": 2,
       "topHeadlines": [
         {
           "title": "PQDP11 - Parque Dom Pedro Shopping Center: dividendos",
           "url": "https://fiis.com.br/pqdp11/",
-          "publishedAt": "2026-09-17"
+          "publishedAt": "2026-09-18"
         },
         {
-          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
-          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
-          "publishedAt": "2026-09-15"
+          "title": "MCCI11, VGIP11: cotistas de FIIs vão receber dividendos hoje; veja quais",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-fiis-mcci11-vgip11-agenda-rendimento-dividendos-18092026/",
+          "publishedAt": "2026-09-18"
         }
       ]
     },
     {
       "ticker": "VSHO11",
       "sentiment": "positive",
-      "score": 0.3,
+      "score": 0.45,
       "confidence": "medium",
-      "summary": "Votorantim Shopping manteve R$ 0,70/cota (pagamento 09/09, DY ~0,96%), com proventos estáveis e sem novos fatos negativos na janela.",
+      "summary": "Votorantim Shopping concluiu a venda de 20% em dois ativos (R$ 37 mi no total) e recebeu R$ 18,5 mi à vista em 14/09; carteira segue em três shoppings, com vacância consolidada em 10,3%.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
-          "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
-          "publishedAt": "2026-09-07"
+          "title": "Fundo imobiliário conclui venda em dois ativos e recebe R$ 18,5 milhões",
+          "url": "https://fiis.com.br/noticias/vsho11-fundo-imobiliario-venda-participacoes-dois-ativos-recebimento-confira-mais-jj/",
+          "publishedAt": "2026-09-15"
         },
         {
           "title": "VSHO11 - Votorantim Shopping: dividendos",
@@ -165,34 +165,34 @@
     {
       "ticker": "MCCI11",
       "sentiment": "positive",
-      "score": 0.55,
+      "score": 0.5,
       "confidence": "medium",
-      "summary": "Mauá Capital Recebíveis mantém R$ 1,00/cota (pagamento 18/09, DY ~1,06%) e figura com 10% na carteira Top FIIs do Safra, reforçando demanda por crédito high grade.",
+      "summary": "Mauá Capital Recebíveis pagou R$ 1,00/cota em 18/09 (DY ~1,06%) e figura com 10% na carteira Top FIIs do Safra, reforçando demanda por crédito high grade.",
       "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "MCCI11, VGIP11: cotistas de FIIs vão receber dividendos hoje; veja quais",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-fiis-mcci11-vgip11-agenda-rendimento-dividendos-18092026/",
+          "publishedAt": "2026-09-18"
+        },
         {
           "title": "VISC11 entra na carteira do Safra com aposta na recuperação dos FIIs",
           "url": "https://fiis.com.br/noticias/visc11-entra-carteira-safra-recuperacao-fundos-imobiliarios-vi/",
           "publishedAt": "2026-09-15"
         },
         {
-          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
-          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
-          "publishedAt": "2026-09-15"
-        },
-        {
-          "title": "KNSC11, ALZR11, BRCO11 e ALZC11 são destaques do Bom Dia FIIs (17/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-170926/",
-          "publishedAt": "2026-09-17"
+          "title": "ALZR11, BRCO11, VVRI11 e PORD11 são destaques do Bom Dia FIIs (24/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-240926/",
+          "publishedAt": "2026-09-24"
         }
       ]
     },
     {
       "ticker": "RBRR11",
-      "sentiment": "negative",
-      "score": -0.3,
+      "sentiment": "neutral",
+      "score": -0.1,
       "confidence": "medium",
-      "summary": "RBR Rendimento High Grade paga R$ 0,90/cota em 17/09 (DY ~1,22%), mas segue fora da carteira do BTG diante da possível incorporação pelo PCIP11, que pode alterar liquidez e perfil de risco.",
+      "summary": "RBR Rendimento High Grade pagou R$ 0,90/cota em 17/09 (DY ~1,22%), mas prorrogou até 05/10 a consulta formal sobre consolidação high grade do Pátria, mantendo incerteza sobre liquidez e perfil.",
       "articleCount": 3,
       "topHeadlines": [
         {
@@ -214,10 +214,10 @@
     },
     {
       "ticker": "HGLG11",
-      "sentiment": "positive",
-      "score": 0.55,
+      "sentiment": "neutral",
+      "score": 0.25,
       "confidence": "medium",
-      "summary": "Pátria Log manteve R$ 1,17/cota (pagamento 15/09) e teve peso ampliado na carteira Top FIIs do Safra (10%), com vacância física em torno de 2,9% no relatório recente.",
+      "summary": "Pátria Log manteve R$ 1,17/cota (pagamento 15/09) com resultado de agosto em R$ 1,02/cota e reserva em queda para R$ 0,93/cota; vacância física em 2,9% e peso ampliado no Safra (10%).",
       "articleCount": 3,
       "topHeadlines": [
         {
@@ -226,25 +226,35 @@
           "publishedAt": "2026-09-15"
         },
         {
-          "title": "KNSC11, ALZR11, BRCO11 e ALZC11 são destaques do Bom Dia FIIs (17/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-170926/",
-          "publishedAt": "2026-09-17"
+          "title": "HGLG11 e mais 5 FIIs anunciam rebalanceamento de índices; veja",
+          "url": "https://fiis.com.br/noticias/fundos-imoobiliarios-hglg11-alzr11-ggrc11-fiis-rebalanceamento-indices-jj/",
+          "publishedAt": "2026-09-18"
         },
         {
-          "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
-          "url": "https://www.moneytimes.com.br/dividendos-a-vista-211-fundos-imobiliarios-pagam-ate-r-47-por-cota-nesta-semana-veja-a-lista-igdl/",
-          "publishedAt": "2026-09-15"
+          "title": "TRXF11, GGRC11 e VRTA11 são destaques do Bom dia FIIs (21/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-210926/",
+          "publishedAt": "2026-09-21"
         }
       ]
     },
     {
       "ticker": "PVBI11",
       "sentiment": "negative",
-      "score": -0.4,
-      "confidence": "low",
-      "summary": "VBI Prime Properties pagou R$ 0,37/cota em 08/09 (DY 0,54%), patamar abaixo do rendimento anterior e alinhado ao guidance pressionado por desocupações.",
-      "articleCount": 1,
+      "score": -0.45,
+      "confidence": "medium",
+      "summary": "VBI Prime Properties cortou o rendimento para R$ 0,37/cota (pagamento 08/09) e projeta vacância física de 20% a partir de agosto, apesar de novas locações que recomuseram devoluções de UBS e Banco ABC.",
+      "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "PVBI11 reduz dividendos: confira o valor divulgado",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-pvbi11-agosto-2026",
+          "publishedAt": "2026-09-03"
+        },
+        {
+          "title": "HGLG11 e mais 5 FIIs anunciam rebalanceamento de índices; veja",
+          "url": "https://fiis.com.br/noticias/fundos-imoobiliarios-hglg11-alzr11-ggrc11-fiis-rebalanceamento-indices-jj/",
+          "publishedAt": "2026-09-18"
+        },
         {
           "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
           "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
@@ -275,15 +285,15 @@
     {
       "ticker": "KNRI11",
       "sentiment": "positive",
-      "score": 0.6,
+      "score": 0.55,
       "confidence": "medium",
-      "summary": "Kinea Renda Imobiliária vendeu o CD PIB Sumaré por R$ 26 mi (36,3% acima da avaliação), o que pode reduzir a vacância física para ~1,74%; mantém R$ 1,10/cota sem extraordinário da venda.",
+      "summary": "Kinea Renda Imobiliária manteve R$ 1,10/cota (pagamento 15/09) após compromisso de venda do PIB Sumaré por R$ 26 mi (36,3% acima da avaliação), operação que pode reduzir a vacância física em ~2,17 p.p.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "KNRI11 vende imóvel 36% acima da avaliação e vacância pode cair para menos de 2%",
-          "url": "https://fiis.com.br/noticias/knri11-vende-imovel-36-acima-da-avaliacao-e-vacancia-pode-cair-para-menos-de-2/",
-          "publishedAt": "2026-09-04"
+          "title": "Dividendos do KNRI11: cotistas já sabem quanto vão receber",
+          "url": "https://fiis.com.br/noticias/knri11-fundo-imobiliario-pagamento-dividendos-setembro-2026-data-base-jj/",
+          "publishedAt": "2026-09-01"
         },
         {
           "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
@@ -295,15 +305,15 @@
     {
       "ticker": "VRTA11",
       "sentiment": "positive",
-      "score": 0.45,
+      "score": 0.5,
       "confidence": "medium",
-      "summary": "Fator Verità distribuiu R$ 0,85/cota (pagamento 15/09), mantendo o patamar dentro do guidance do 2º semestre, sem fatos negativos novos na janela.",
+      "summary": "Fator Verità distribuiu R$ 0,85/cota (DY 1,16%) e, com a cota em desconto, a carteira de CRIs aponta retorno potencial de até IPCA + 20% a.a., destaque do Bom Dia FIIs de 21/09.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "VRTA11, EXES11 e ROCA11 são destaques do Bom Dia FIIs (4/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-040926/",
-          "publishedAt": "2026-09-04"
+          "title": "TRXF11, GGRC11 e VRTA11 são destaques do Bom dia FIIs (21/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-210926/",
+          "publishedAt": "2026-09-21"
         },
         {
           "title": "Dividendos: 211 fundos imobiliários (FIIs) pagam até R$ 47 por cota nesta semana; veja a lista",
@@ -317,7 +327,7 @@
       "sentiment": "positive",
       "score": 0.4,
       "confidence": "medium",
-      "summary": "JS Real Estate mantém R$ 0,50/cota (pagamento 15/09) e figura com 10% na carteira Top FIIs do Safra, com peso relevante na alocação de escritórios da casa.",
+      "summary": "JS Real Estate mantém peso de 10% na carteira Top FIIs do Safra e proventos estáveis em torno de R$ 0,50/cota, com tese de recuperação de escritórios na alocação da casa.",
       "articleCount": 2,
       "topHeadlines": [
         {
@@ -335,20 +345,25 @@
     {
       "ticker": "ALZR11",
       "sentiment": "positive",
-      "score": 0.65,
-      "confidence": "medium",
-      "summary": "Gestor do Alianza Trust descreve um dos momentos mais positivos do fundo (caixa após 8ª emissão, contratos longos e foco em renda); ALZR11 foi destaque do Bom Dia FIIs em 17/09.",
-      "articleCount": 2,
+      "score": 0.7,
+      "confidence": "high",
+      "summary": "Alianza Trust reforçou reservas (R$ 0,035/cota), manteve R$ 0,084/cota no teto do guidance e elevou o resultado recorrente de agosto; foi destaque do Bom Dia FIIs em 24/09.",
+      "articleCount": 4,
       "topHeadlines": [
         {
-          "title": "“Priorizar a renda”: gestor do ALZR11 revela estratégia e momento do fundo",
-          "url": "https://fiis.com.br/noticias/priorizar-renda-gestor-alzr11-revela-estrategia-momento-fundo-vi/",
-          "publishedAt": "2026-09-16"
+          "title": "ALZR11, BRCO11, VVRI11 e PORD11 são destaques do Bom Dia FIIs (24/9)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-240926/",
+          "publishedAt": "2026-09-24"
         },
         {
-          "title": "KNSC11, ALZR11, BRCO11 e ALZC11 são destaques do Bom Dia FIIs (17/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-170926/",
-          "publishedAt": "2026-09-17"
+          "title": "FII ALZR11 divulgou novos dividendos; confira valor e data",
+          "url": "https://www.fundsexplorer.com.br/noticias/fii-alzr11-divulgou-novos-dividendos-confira-valor-e-data",
+          "publishedAt": "2026-09-21"
+        },
+        {
+          "title": "HGLG11 e mais 5 FIIs anunciam rebalanceamento de índices; veja",
+          "url": "https://fiis.com.br/noticias/fundos-imoobiliarios-hglg11-alzr11-ggrc11-fiis-rebalanceamento-indices-jj/",
+          "publishedAt": "2026-09-18"
         }
       ]
     },
@@ -357,9 +372,14 @@
       "sentiment": "negative",
       "score": -0.35,
       "confidence": "medium",
-      "summary": "RBR Properties anunciou R$ 0,35/cota (pagamento 15/09, DY ~0,77%), mas a carteira segue com vacância física/financeira em torno de 25,7% após reciclagem e desocupações.",
-      "articleCount": 1,
+      "summary": "RBR Properties anunciou R$ 0,35/cota (pagamento 15/09, DY ~0,75%), patamar abaixo dos R$ 0,40 pagos até junho, em cenário ainda pressionado por vacância elevada após reciclagem de ativos.",
+      "articleCount": 2,
       "topHeadlines": [
+        {
+          "title": "Dividendos do RBRP11 são anunciados; veja valor do pagamento",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-rbrp11-anuncia-dividendos-setembro-2026-pagamento-cotistas-jj/",
+          "publishedAt": "2026-09-10"
+        },
         {
           "title": "RBRP11 já anunciou novos dividendos; saiba quanto será pago",
           "url": "https://www.suno.com.br/noticias/dividendos-do-rbrp11-setembro-2026/",
@@ -372,27 +392,32 @@
       "sentiment": "neutral",
       "score": 0.0,
       "confidence": "low",
-      "summary": "XP Properties (VPPR11) não teve novas notícias nos portais consultados na janela de 14 dias; cobertura anterior à janela tratava de emissão restrita a profissionais.",
+      "summary": "XP Properties não teve novas notícias nos portais consultados na janela de 14 dias; cobertura anterior à janela tratava de emissão restrita a profissionais.",
       "articleCount": 0,
       "topHeadlines": []
     },
     {
       "ticker": "PMLL11",
       "sentiment": "positive",
-      "score": 0.6,
-      "confidence": "medium",
-      "summary": "Patria Malls manteve R$ 1,00/cota (pagamento 15/09, DY ~0,98%) e guidance estável para o 2º semestre, após resultado de julho impulsionado por parcela da venda do Park Sul.",
-      "articleCount": 2,
+      "score": 0.85,
+      "confidence": "high",
+      "summary": "Patria Malls encerrou a 7ª emissão com R$ 718,2 mi (92% institucionais) e fechou aquisições de R$ 257 mi em cinco shoppings (17/09), ampliando a carteira para 22 participações.",
+      "articleCount": 5,
       "topHeadlines": [
         {
-          "title": "PMLL11 - Patria Malls: dividendos e cotação",
-          "url": "https://fiis.com.br/mall11/",
-          "publishedAt": "2026-09-15"
+          "title": "PMLL11 finaliza emissão milionária após distribuir 6,1 milhões de cotas",
+          "url": "https://www.fundsexplorer.com.br/noticias/pmll11-encerra-7a-emissao",
+          "publishedAt": "2026-09-23"
         },
         {
-          "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
-          "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
-          "publishedAt": "2026-09-07"
+          "title": "FII PMLL11 encerra 7ª emissão com captação de R$ 718 mi; fundos colaboram com 92%",
+          "url": "https://www.infomoney.com.br/onde-investir/fii-pmll11-encerra-7a-emissao-com-captacao-de-r-718-mi-fundos-colaboram-com-92/",
+          "publishedAt": "2026-09-22"
+        },
+        {
+          "title": "PMLL11 conclui negócio de R$ 257 milhões envolvendo 5 shoppings",
+          "url": "https://www.fundsexplorer.com.br/noticias/pmll11-aquisicoes-7a-emissao",
+          "publishedAt": "2026-09-21"
         }
       ]
     }
