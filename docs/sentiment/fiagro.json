@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Fiagro",
   "segmentKey": "fiagro",
-  "generatedAt": "2026-09-19T14:30:00Z",
+  "generatedAt": "2026-09-26T14:53:00Z",
   "lookbackDays": 14,
   "sources": [
     "clube.fii",
@@ -192,9 +192,9 @@
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Dividendos de FIIs: 57 fundos pagam rendimentos na semana; veja lista",
-          "url": "https://fiis.com.br/noticias/dividendos-fiis-57-fundos-imobiliario-pagam-rendimentos-semana-setembro-lista-jj/",
-          "publishedAt": "2026-09-08"
+          "title": "KNHF11 - FII KINEA HF - Fiis",
+          "url": "https://fiis.com.br/knhf11/",
+          "publishedAt": "2026-09-11"
         }
       ]
     },
@@ -246,7 +246,7 @@
     {
       "ticker": "CPTR11",
       "sentiment": "neutral",
-      "score": 0.1,
+      "score": 0.15,
       "confidence": "low",
       "summary": "Capitânia Agro Strategies manteve R$ 0,11/cota (data-com 11/09, pagamento 18/09, yield 1,36%); distribuição estável sem matérias editoriais novas na janela.",
       "articleCount": 1,
@@ -351,9 +351,9 @@
           "publishedAt": "2026-09-16"
         },
         {
-          "title": "KNSC11 divulga dividendos de quase 1% ao mês; confira o valor",
-          "url": "https://fiis.com.br/noticias/knsc11-fundo-imobiliario-pagamento-dividendos-setembro-2026-queda-data-base-jj/",
-          "publishedAt": "2026-09-01"
+          "title": "Dividendos de FIIs: MXRF11 e mais 178 fundos pagam na semana",
+          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
+          "publishedAt": "2026-09-14"
         }
       ]
     },
