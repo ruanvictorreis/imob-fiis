@@ -14,6 +14,8 @@ except ImportError:
     print("Install dependencies: pip install -r agents/fii-sentiment/requirements.txt", file=sys.stderr)
     sys.exit(1)
 
+from report_rules import allowed_domains, semantic_errors
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "schema" / "segment-report.schema.json"
 TICKERS_DIR = ROOT / "tickers"
@@ -59,6 +61,12 @@ def main() -> None:
         sys.exit(1)
 
     validate_tickers_match_segment(report)
+
+    errors = semantic_errors(report, allowed_domains())
+    if errors:
+        for error in errors:
+            print(f"Validation failed: {error}", file=sys.stderr)
+        sys.exit(1)
 
     print(f"Valid report: {args.report} ({len(report.get('funds', []))} funds)")
 

@@ -59,4 +59,13 @@ Schema: `agents/fii-sentiment/schema/segment-report.schema.json`
 - **Neutro**: notícias administrativas ou mix equilibrado
 - **Negativo**: vacância, inadimplência, corte de provento, risco regulatório
 
-Se não houver notícias para um ticker, use `neutral`, `score: 0`, `confidence: low`, `articleCount: 0`, `summary` explicando ausência de cobertura.
+Se não houver notícias para um ticker, use `neutral`, `score: 0`, `confidence: low`, `articleCount: 0`, `topHeadlines: []` e `summary` explicando ausência de cobertura.
+
+## Validação automática
+
+Depois que você escreve o arquivo, o workflow roda `normalize_report.py` e `validate_report.py` (regras em `scripts/report_rules.py`):
+
+- **Corrigido automaticamente:** manchetes com `publishedAt` anterior a `generatedAt − lookbackDays` são removidas; `confidence` é recalculada a partir de `articleCount`; `score` vira 0 em fundos neutros sem notícias.
+- **Reprova o relatório:** manchete de domínio fora da lista de portais; `publishedAt` inválido (use `AAAA-MM-DD`) ou mais de 1 dia depois de `generatedAt`; fundo com `articleCount: 0` que não seja neutro com score 0 ou que liste manchetes.
+
+Por isso, cite em `topHeadlines` apenas notícias dentro da janela e de portais permitidos.

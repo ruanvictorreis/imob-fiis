@@ -85,17 +85,24 @@ jobs:
             agents/fii-sentiment/prompt.md)
           cursor-agent --force --output-format=text --print "$PROMPT"
 
+      - name: Normalize segment report
+        if: steps.segment.outputs.segment_key != 'manifest'
+        run: |
+          python agents/fii-sentiment/scripts/normalize_report.py \
+            "docs/sentiment/${{ steps.segment.outputs.segment_key }}.json"
+
       - name: Validate segment report
         if: steps.segment.outputs.segment_key != 'manifest'
         run: |
           python agents/fii-sentiment/scripts/validate_report.py \
             "docs/sentiment/${{ steps.segment.outputs.segment_key }}.json"
 
-      - name: Validate existing segment reports
+      - name: Normalize and validate existing segment reports
         if: steps.segment.outputs.segment_key == 'manifest'
         run: |
           for key in paper urban logistics malls offices fiagro; do
             if [ -f "docs/sentiment/${key}.json" ]; then
+              python agents/fii-sentiment/scripts/normalize_report.py "docs/sentiment/${key}.json"
               python agents/fii-sentiment/scripts/validate_report.py "docs/sentiment/${key}.json"
             fi
           done
