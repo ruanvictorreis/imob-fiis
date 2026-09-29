@@ -38,8 +38,7 @@ struct PortfolioSummaryAccessory: View {
     private var estimatedMonthlyIncome: Decimal {
         let rates = Dictionary(uniqueKeysWithValues: funds.map { ($0.ticker, $0.lastDividend) })
         return holdings.reduce(0) { partial, holding in
-            let ticker = holding.fund?.ticker
-            let rate = ticker.flatMap { rates[$0] } ?? 0
+            let rate = rates[holding.ticker] ?? 0
             return partial + (rate * Decimal(holding.shares))
         }
     }

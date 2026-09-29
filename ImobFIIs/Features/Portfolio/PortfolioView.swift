@@ -17,9 +17,7 @@ struct PortfolioView: View {
 
     private var sortedHoldings: [Holding] {
         holdings.sorted { lhs, rhs in
-            let left = lhs.fund?.ticker ?? ""
-            let right = rhs.fund?.ticker ?? ""
-            return left.localizedStandardCompare(right) == .orderedAscending
+            lhs.ticker.localizedStandardCompare(rhs.ticker) == .orderedAscending
         }
     }
 
@@ -59,7 +57,7 @@ struct PortfolioView: View {
             case .addNew:
                 AddHoldingSheet()
             case .edit(let ticker):
-                if let holding = holdings.first(where: { $0.fund?.ticker == ticker }) {
+                if let holding = holdings.first(where: { $0.ticker == ticker }) {
                     EditHoldingSheet(holding: holding)
                 }
             }
@@ -82,21 +80,25 @@ struct PortfolioView: View {
 
             Section(L10n.Portfolio.positions) {
                 ForEach(sortedHoldings) { holding in
-                    if let fund = holding.fund {
-                        NavigationLink(value: FundSummary(fund: fund)) {
+                    Group {
+                        if let fund = holding.fund {
+                            NavigationLink(value: FundSummary(fund: fund)) {
+                                HoldingRow(holding: holding)
+                            }
+                        } else {
                             HoldingRow(holding: holding)
                         }
-                        .imobSurface()
-                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                            Button(L10n.Common.delete, systemImage: "trash", role: .destructive) {
-                                modelContext.delete(holding)
-                            }
-                            .tint(.red)
-                            Button(L10n.Portfolio.editPosition, systemImage: "pencil") {
-                                presentSheet(.edit(ticker: fund.ticker))
-                            }
-                            .tint(.accentColor)
+                    }
+                    .imobSurface()
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button(L10n.Common.delete, systemImage: "trash", role: .destructive) {
+                            modelContext.delete(holding)
                         }
+                        .tint(.red)
+                        Button(L10n.Portfolio.editPosition, systemImage: "pencil") {
+                            presentSheet(.edit(ticker: holding.ticker))
+                        }
+                        .tint(.accentColor)
                     }
                 }
             }

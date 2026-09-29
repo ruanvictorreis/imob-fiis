@@ -44,9 +44,40 @@ enum FundStore {
 
         if fund.modelContext == nil {
             context.insert(fund)
+            FundCacheRevision.shared.fundInserted()
         }
 
         return fund
+    }
+
+    /// Posições sincronizadas de outro aparelho chegam só com o ticker; busca os fundos
+    /// que ainda não estão no cache local.
+    @MainActor
+    static func cacheMissingFunds(
+        for tickers: [String],
+        using catalog: any FIICatalogServing,
+        in context: ModelContext
+    ) async {
+        let cached = Set(((try? context.fetch(FetchDescriptor<Fund>())) ?? []).map(\.ticker))
+        let missing = Set(tickers.filter { !$0.isEmpty }).subtracting(cached)
+        guard !missing.isEmpty,
+              let indicators = try? await catalog.indicators(for: missing.sorted())
+        else { return }
+
+        for item in indicators where missing.contains(item.ticker) {
+            let name = item.name ?? item.ticker
+            let summary = FundSummary(
+                ticker: item.ticker,
+                name: name,
+                segment: FundSegment.fromAPI(
+                    subsector: item.segmentoAtuacao,
+                    subType: item.segmentType,
+                    name: "\(item.ticker) \(name)"
+                ),
+                currentPrice: item.price
+            )
+            upsert(summary, indicators: item, in: context)
+        }
     }
 
     private static func applyLastDividend(

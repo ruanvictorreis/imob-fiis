@@ -6,7 +6,7 @@ struct HoldingRow: View {
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading, spacing: Spacing.xxs) {
-                Text(holding.fund?.ticker ?? L10n.Common.dash)
+                Text(holding.ticker.isEmpty ? L10n.Common.dash : holding.ticker)
                     .font(.headline)
                     .monospaced()
                 Text(

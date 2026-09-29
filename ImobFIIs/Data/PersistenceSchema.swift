@@ -1,13 +1,15 @@
 import Foundation
 import SwiftData
 
-/// Versão 1: formato dos dados publicado até a introdução do versionamento.
+/// Versão 2: carteira (`Holding`, sincronizada via CloudKit) separada do cache local de fundos.
 ///
-/// Ao alterar `Fund` ou `Holding`, congele esta versão antes: copie as definições atuais
-/// dos modelos para dentro deste enum (`SchemaV1.Fund`, `SchemaV1.Holding`), crie um
-/// `SchemaV2` apontando para os modelos novos e adicione a etapa em `ImobMigrationPlan`.
-enum SchemaV1: VersionedSchema {
-    static let versionIdentifier = Schema.Version(1, 0, 0)
+/// A versão 1 era um banco único local (`default.store`) com `Holding` apontando para `Fund`;
+/// ela é lida pelo `LegacyStoreImporter`, não por uma etapa de migração.
+///
+/// O schema de produção do CloudKit só aceita mudanças aditivas: novos atributos precisam
+/// ser opcionais ou ter valor padrão, e nada pode ser renomeado ou removido.
+enum SchemaV2: VersionedSchema {
+    static let versionIdentifier = Schema.Version(2, 0, 0)
 
     static var models: [any PersistentModel.Type] {
         [Fund.self, Holding.self]
@@ -16,7 +18,7 @@ enum SchemaV1: VersionedSchema {
 
 enum ImobMigrationPlan: SchemaMigrationPlan {
     static var schemas: [any VersionedSchema.Type] {
-        [SchemaV1.self]
+        [SchemaV2.self]
     }
 
     static var stages: [MigrationStage] {

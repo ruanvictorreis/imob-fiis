@@ -61,10 +61,15 @@ struct RootTabView: View {
     }
 
     private var portfolioRefreshKey: String {
-        holdings.compactMap(\.fund?.ticker).sorted().joined(separator: ",")
+        holdings.map(\.ticker).sorted().joined(separator: ",")
     }
 
     private func refreshPortfolioData() async {
+        await FundStore.cacheMissingFunds(
+            for: holdings.map(\.ticker),
+            using: exploreViewModel.catalog,
+            in: modelContext
+        )
         let funds = holdings.compactMap(\.fund)
         await PortfolioPriceSync.refreshIfNeeded(funds, using: portfolioMarketDataSource)
     }

@@ -34,7 +34,7 @@ struct AddHoldingSheet: View {
 
     private var existingHolding: Holding? {
         guard let ticker = summary?.ticker ?? selectedFund?.ticker else { return nil }
-        return holdings.first { $0.fund?.ticker == ticker }
+        return holdings.first { $0.ticker == ticker }
     }
 
     private var isAddingToExisting: Bool {
@@ -237,7 +237,7 @@ struct AddHoldingSheet: View {
             return
         }
 
-        if let existing = fund.holdings.first {
+        if let existing = holdings.first(where: { $0.ticker == fund.ticker }) {
             existing.addShares(shares, at: price)
         } else {
             modelContext.insert(Holding(shares: shares, averagePrice: price, fund: fund))
