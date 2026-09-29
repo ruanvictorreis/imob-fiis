@@ -10,6 +10,10 @@ Pipeline diário que usa o **Cursor CLI** para pesquisar notícias de FIIs e pub
    ```
 2. Habilite **GitHub Pages** em Settings → Pages → Deploy from branch `main`, folder `/docs`.
 
+## Permissões do agente
+
+`agents/fii-sentiment/cli.json` restringe o agente (escrita apenas em `docs/sentiment/**` e WebFetch nos portais permitidos). O workflow copia esse arquivo para `.cursor/cli.json` antes de rodar o `cursor-agent`, então as restrições valem só no CI e não afetam o desenvolvimento local.
+
 ## Rodízio de segmentos (UTC)
 
 | Dia | Segmento |
