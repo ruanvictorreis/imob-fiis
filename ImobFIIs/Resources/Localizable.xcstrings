@@ -605,6 +605,52 @@
         }
       }
     },
+    "fundDetail.news" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notícias recentes"
+          }
+        }
+      }
+    },
+    "fundDetail.newsArticles" : {
+      "comment" : "%lld é a quantidade de notícias consideradas no resumo.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notícias consideradas: %lld"
+          }
+        }
+      }
+    },
+    "fundDetail.newsFooter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resumo gerado automaticamente a partir de portais de notícias. Não constitui recomendação de investimento."
+          }
+        }
+      }
+    },
+    "fundDetail.newsUpdated" : {
+      "comment" : "%@ é a data relativa da atualização, por exemplo \"há 2 dias\" ou \"ontem\".",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "atualizado %@"
+          }
+        }
+      }
+    },
     "fundDetail.previousClose" : {
       "extractionState" : "manual",
       "localizations" : {

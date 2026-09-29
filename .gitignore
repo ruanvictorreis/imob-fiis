@@ -22,6 +22,9 @@ xcuserdata/
 # Secrets
 Config/Secrets.xcconfig
 
+# Cursor CLI permissions (copied from agents/fii-sentiment/cli.json in CI)
+.cursor/cli.json
+
 # Fastlane
 fastlane/report.xml
 fastlane/Preview.html

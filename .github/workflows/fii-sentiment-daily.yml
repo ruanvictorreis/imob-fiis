@@ -62,6 +62,12 @@ jobs:
           echo "$HOME/.cursor/bin" >> "$GITHUB_PATH"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
+      - name: Install agent permissions
+        if: steps.segment.outputs.segment_key != 'manifest'
+        run: |
+          mkdir -p .cursor
+          cp agents/fii-sentiment/cli.json .cursor/cli.json
+
       - name: Run sentiment agent
         if: steps.segment.outputs.segment_key != 'manifest'
         env:
