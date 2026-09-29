@@ -639,6 +639,52 @@
         }
       }
     },
+    "fundDetail.newsLoadFailed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível carregar a análise de notícias agora."
+          }
+        }
+      }
+    },
+    "fundDetail.newsSegmentNotCovered" : {
+      "comment" : "%@ é o nome do segmento, por exemplo Híbrido.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ainda não há análise de notícias para fundos do segmento %@."
+          }
+        }
+      }
+    },
+    "fundDetail.newsStale" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Análise com mais de uma semana; pode não refletir fatos recentes."
+          }
+        }
+      }
+    },
+    "fundDetail.newsTickerNotCovered" : {
+      "comment" : "%@ é o nome do segmento, por exemplo Papel.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este fundo ainda não está entre os acompanhados na análise de notícias de %@."
+          }
+        }
+      }
+    },
     "fundDetail.newsUpdated" : {
       "comment" : "%@ é a data relativa da atualização, por exemplo \"há 2 dias\" ou \"ontem\".",
       "extractionState" : "manual",
@@ -1100,6 +1146,41 @@
         }
       }
     },
+    "insights.newsCoverage" : {
+      "comment" : "%1$lld é a quantidade de posições com análise; %2$lld é o total de posições listadas.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Análise de notícias: %1$lld de %2$lld posições cobertas."
+          }
+        }
+      }
+    },
+    "insights.newsStale" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parte da análise de notícias tem mais de uma semana."
+          }
+        }
+      }
+    },
+    "insights.newsUpdated" : {
+      "comment" : "%@ é a data relativa, por exemplo \"há 3 dias\".",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Análise mais antiga atualizada %@."
+          }
+        }
+      }
+    },
     "insights.nextPurchaseYield" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1140,6 +1221,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notícias negativas"
+          }
+        }
+      }
+    },
+    "insights.noNewsCoverage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem análise de notícias"
           }
         }
       }
@@ -1352,6 +1444,84 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Renda Urbana"
+          }
+        }
+      }
+    },
+    "simulator.amount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valor do aporte"
+          }
+        }
+      }
+    },
+    "simulator.amountFooter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veja como o valor se distribuiria entre os segmentos para aproximar a carteira das metas que você definiu."
+          }
+        }
+      }
+    },
+    "simulator.disclaimer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulação baseada apenas nas suas metas de alocação. Não considera fundos específicos e não constitui recomendação de investimento."
+          }
+        }
+      }
+    },
+    "simulator.distribution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distribuição simulada"
+          }
+        }
+      }
+    },
+    "simulator.open" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simular aporte"
+          }
+        }
+      }
+    },
+    "simulator.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simular aporte"
+          }
+        }
+      }
+    },
+    "simulator.weightChange" : {
+      "comment" : "%1$@ é o peso atual do segmento, %2$@ o peso após o aporte e %3$@ a meta.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ → %2$@ · meta %3$@"
           }
         }
       }

@@ -96,6 +96,8 @@ enum L10n {
         static var editPosition: String { text("fundDetail.editPosition") }
         static var news: String { text("fundDetail.news") }
         static var newsFooter: String { text("fundDetail.newsFooter") }
+        static var newsLoadFailed: String { text("fundDetail.newsLoadFailed") }
+        static var newsStale: String { text("fundDetail.newsStale") }
 
         static func rangeValue(low: String, high: String) -> String {
             format("fundDetail.rangeValue", low, high)
@@ -107,6 +109,14 @@ enum L10n {
 
         static func newsUpdated(_ relative: String) -> String {
             format("fundDetail.newsUpdated", relative)
+        }
+
+        static func newsTickerNotCovered(_ segment: String) -> String {
+            format("fundDetail.newsTickerNotCovered", segment)
+        }
+
+        static func newsSegmentNotCovered(_ segment: String) -> String {
+            format("fundDetail.newsSegmentNotCovered", segment)
         }
     }
 
@@ -165,6 +175,16 @@ enum L10n {
         static var sentimentPositive: String { text("insights.sentimentPositive") }
         static var sentimentNeutral: String { text("insights.sentimentNeutral") }
         static var sentimentNegative: String { text("insights.sentimentNegative") }
+        static var noNewsCoverage: String { text("insights.noNewsCoverage") }
+        static var newsStale: String { text("insights.newsStale") }
+
+        static func newsCoverage(covered: Int, total: Int) -> String {
+            format("insights.newsCoverage", covered, total)
+        }
+
+        static func newsUpdated(_ relative: String) -> String {
+            format("insights.newsUpdated", relative)
+        }
 
         static func target(_ percent: String) -> String {
             format("insights.target", percent)
@@ -192,6 +212,19 @@ enum L10n {
 
         static func allocationTotalInvalid(_ percent: String) -> String {
             format("insights.allocationTotalInvalid", percent)
+        }
+    }
+
+    enum Simulator {
+        static var title: String { text("simulator.title") }
+        static var open: String { text("simulator.open") }
+        static var amount: String { text("simulator.amount") }
+        static var amountFooter: String { text("simulator.amountFooter") }
+        static var distribution: String { text("simulator.distribution") }
+        static var disclaimer: String { text("simulator.disclaimer") }
+
+        static func weightChange(current: String, projected: String, target: String) -> String {
+            format("simulator.weightChange", current, projected, target)
         }
     }
 

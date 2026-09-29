@@ -4,31 +4,35 @@ struct BRLCurrencyTextField: View {
     @Binding var amount: Decimal?
     var placeholder: String = "R$ 0,00"
 
-    @State private var cents = 0
+    @State private var text = ""
 
     var body: some View {
-        TextField(placeholder, text: textBinding)
+        TextField(placeholder, text: $text)
             .keyboardType(.numberPad)
             .monospacedDigit()
-            .onAppear(perform: syncCentsFromAmount)
+            .onAppear(perform: syncTextFromAmount)
+            .onChange(of: text) { _, newValue in
+                applyMask(to: newValue)
+            }
             .onChange(of: amount) { _, _ in
-                syncCentsFromAmount()
+                syncTextFromAmount()
             }
     }
 
-    private var textBinding: Binding<String> {
-        Binding(
-            get: { cents == 0 ? "" : BRLCurrencyMask.formatted(cents: cents) },
-            set: { newValue in
-                cents = BRLCurrencyMask.cents(fromTypedText: newValue)
-                amount = BRLCurrencyMask.amount(fromCents: cents)
-            }
-        )
+    private func applyMask(to newValue: String) {
+        let masked = BRLCurrencyMask.maskedText(fromTypedText: newValue)
+        if masked != newValue {
+            text = masked
+        }
+        let newAmount = BRLCurrencyMask.amount(fromCents: BRLCurrencyMask.cents(fromTypedText: masked))
+        if newAmount != amount {
+            amount = newAmount
+        }
     }
 
-    private func syncCentsFromAmount() {
-        let parsed = BRLCurrencyMask.cents(fromAmount: amount)
-        guard parsed != cents else { return }
-        cents = parsed
+    private func syncTextFromAmount() {
+        let cents = BRLCurrencyMask.cents(fromAmount: amount)
+        guard cents != BRLCurrencyMask.cents(fromTypedText: text) else { return }
+        text = cents == 0 ? "" : BRLCurrencyMask.formatted(cents: cents)
     }
 }

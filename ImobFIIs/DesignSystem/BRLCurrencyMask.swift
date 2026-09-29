@@ -26,4 +26,10 @@ enum BRLCurrencyMask {
     static func formatted(cents: Int) -> String {
         (Decimal(cents) / 100).formatted(.brlInput)
     }
+
+    /// Texto exibido no campo: vazio quando não há valor, para o placeholder aparecer.
+    static func maskedText(fromTypedText text: String) -> String {
+        let cents = cents(fromTypedText: text)
+        return cents == 0 ? "" : formatted(cents: cents)
+    }
 }

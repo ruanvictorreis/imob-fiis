@@ -48,6 +48,7 @@ extension InsightEngine {
             sentimentLabel: sentimentSnapshot?.label,
             sentimentConfidence: sentimentSnapshot?.confidence,
             sentimentSummary: sentimentSnapshot?.summary,
+            sentimentGeneratedAt: sentimentSnapshot?.generatedAt,
             reasons: reasons(reasonContext(from: InsightReasonInputs(
                 fund: fund,
                 segment: segment,

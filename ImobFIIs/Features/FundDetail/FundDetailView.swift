@@ -124,9 +124,7 @@ struct FundDetailView: View {
                 .imobSurface()
             }
 
-            if let sentiment = viewModel.sentiment {
-                FundNewsSection(sentiment: sentiment, generatedAt: viewModel.sentimentGeneratedAt)
-            }
+            FundNewsSection(coverage: viewModel.newsCoverage, segment: viewModel.summary.segment)
 
             Section(L10n.FundDetail.about) {
                 LabeledContent(L10n.Common.segment, value: viewModel.summary.segment.title)

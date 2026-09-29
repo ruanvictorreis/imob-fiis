@@ -8,7 +8,9 @@ struct InsightsView: View {
 
     @State private var targetsStore: AllocationTargetsStore
     @State private var isEditingTargets = false
+    @State private var isSimulatingContribution = false
     @State private var sentimentContext = SentimentContext.empty
+    @State private var hasLoadedSentiment = false
 
     @Query private var holdings: [Holding]
 
@@ -57,6 +59,9 @@ struct InsightsView: View {
         }
         .sheet(isPresented: $isEditingTargets) {
             EditAllocationTargetsView(store: targetsStore)
+        }
+        .sheet(isPresented: $isSimulatingContribution) {
+            ContributionSimulatorView(holdings: holdings, strategy: strategy)
         }
         .onAppear {
             presentTargetsEditorIfNeeded()
@@ -142,6 +147,9 @@ struct InsightsView: View {
             Text(L10n.Insights.analysisNotice)
                 .font(.caption)
                 .foregroundStyle(Color.appSecondaryText)
+            if hasLoadedSentiment {
+                InsightsNewsCoverageNote(insights: snapshot.insights)
+            }
         }
         .imobSurface()
     }
@@ -152,7 +160,12 @@ struct InsightsView: View {
                 .font(.caption)
                 .foregroundStyle(Color.appSecondaryText)
             ForEach(activeAllocations) { allocation in
-                allocationRow(allocation)
+                SegmentAllocationRow(allocation: allocation)
+            }
+            Button {
+                isSimulatingContribution = true
+            } label: {
+                Label(L10n.Simulator.open, systemImage: "banknote")
             }
         }
         .imobSurface()
@@ -167,55 +180,14 @@ struct InsightsView: View {
         .imobSurface()
     }
 
-    private func allocationRow(_ allocation: SegmentAllocation) -> some View {
-        VStack(alignment: .leading, spacing: Spacing.xs) {
-            HStack {
-                Label(allocation.segment.title, systemImage: allocation.segment.systemImage)
-                Spacer(minLength: Spacing.xs)
-                Text(percentText(allocation.currentWeight))
-                    .monospacedDigit()
-                    .foregroundStyle(
-                        allocation.isUnderweight(tolerance: InsightEngine.allocationTolerance)
-                            ? Color.accentColor
-                            : Color.appPrimaryText
-                    )
-                Text(L10n.Insights.target(percentText(allocation.targetWeight)))
-                    .font(.caption)
-                    .foregroundStyle(Color.appSecondaryText)
-            }
-            allocationBar(allocation)
-        }
-        .padding(.vertical, Spacing.xxs)
-        .accessibilityElement(children: .combine)
-    }
-
-    private func allocationBar(_ allocation: SegmentAllocation) -> some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .leading) {
-                Capsule()
-                    .fill(Color.appBackground)
-                Capsule()
-                    .fill(Color.accentColor)
-                    .frame(width: geometry.size.width * targetProgress(allocation))
-            }
-        }
-        .frame(height: 6)
-        .accessibilityHidden(true)
-    }
-
-    private func targetProgress(_ allocation: SegmentAllocation) -> Double {
-        guard allocation.targetWeight > 0 else { return 0 }
-        return min(max(allocation.currentWeight / allocation.targetWeight, 0), 1)
-    }
-
     private func insightLink(_ insight: InsightItem) -> some View {
         Group {
             if let summary = fundSummary(for: insight.ticker) {
                 NavigationLink(value: summary) {
-                    InsightsInsightRow(insight: insight)
+                    InsightsInsightRow(insight: insight, showsMissingNews: hasLoadedSentiment)
                 }
             } else {
-                InsightsInsightRow(insight: insight)
+                InsightsInsightRow(insight: insight, showsMissingNews: hasLoadedSentiment)
             }
         }
     }
@@ -236,9 +208,13 @@ struct InsightsView: View {
         )
         guard !segmentKeys.isEmpty else {
             sentimentContext = .empty
+            hasLoadedSentiment = true
             return
         }
-        sentimentContext = await sentimentService.reports(for: Array(segmentKeys))
+        let context = await sentimentService.reports(for: Array(segmentKeys))
+        guard !Task.isCancelled else { return }
+        sentimentContext = context
+        hasLoadedSentiment = true
     }
 
     private func percentText(_ value: Double) -> String {
