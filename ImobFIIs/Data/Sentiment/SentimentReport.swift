@@ -61,6 +61,16 @@ struct SentimentFundSnapshot: Equatable, Sendable {
     var confidence: SentimentConfidence
     var label: SentimentLabel
     var summary: String
+    var generatedAt: Date?
+}
+
+enum SentimentFreshness {
+    /// Os segmentos são atualizados em rodízio semanal; acima disso o relatório está atrasado.
+    static let staleAfter: TimeInterval = 8 * 24 * 60 * 60
+
+    static func isStale(_ generatedAt: Date, now: Date = .now) -> Bool {
+        now.timeIntervalSince(generatedAt) > staleAfter
+    }
 }
 
 struct SentimentContext: Equatable, Sendable {
@@ -78,7 +88,8 @@ struct SentimentContext: Equatable, Sendable {
                 score: fund.score,
                 confidence: fund.confidence,
                 label: fund.sentiment,
-                summary: fund.summary
+                summary: fund.summary,
+                generatedAt: report.generatedAt
             )
         }
         fundsBySegment[segmentKey] = segmentFunds

@@ -2,6 +2,14 @@ import Foundation
 import Observation
 import SwiftUI
 
+enum FundNewsCoverage: Equatable {
+    case loading
+    case covered(FundSentiment, generatedAt: Date)
+    case tickerNotCovered
+    case segmentNotCovered
+    case unavailable
+}
+
 @MainActor
 @Observable
 final class FundDetailViewModel {
@@ -10,8 +18,7 @@ final class FundDetailViewModel {
     var indicators: FIIIndicators?
     var isLoadingMarketData = false
     var lastDividend: Decimal?
-    var sentiment: FundSentiment?
-    var sentimentGeneratedAt: Date?
+    var newsCoverage: FundNewsCoverage = .loading
 
     private let catalog: any FIICatalogServing
     private let sentimentService: SentimentReportService
@@ -76,12 +83,22 @@ final class FundDetailViewModel {
 
     func loadSentiment() async {
         let segmentKey = summary.segment.sentimentKey
-        guard segmentKey != "other" else { return }
-        guard let report = await sentimentService.report(for: segmentKey) else { return }
+        guard segmentKey != "other" else {
+            newsCoverage = .segmentNotCovered
+            return
+        }
+        let report = await sentimentService.report(for: segmentKey)
         guard !Task.isCancelled else { return }
 
-        sentiment = report.sentiment(for: summary.ticker)
-        sentimentGeneratedAt = sentiment == nil ? nil : report.generatedAt
+        guard let report else {
+            newsCoverage = .unavailable
+            return
+        }
+        if let sentiment = report.sentiment(for: summary.ticker) {
+            newsCoverage = .covered(sentiment, generatedAt: report.generatedAt)
+        } else {
+            newsCoverage = .tickerNotCovered
+        }
     }
 
     private func applyMarketData(

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct InsightsInsightRow: View {
     let insight: InsightItem
+    var showsMissingNews = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.xxs) {
@@ -24,6 +25,12 @@ struct InsightsInsightRow: View {
             Text(insight.segment.title)
                 .font(.caption)
                 .foregroundStyle(Color.appSecondaryText)
+
+            if showsMissingNews, insight.sentimentLabel == nil {
+                Label(L10n.Insights.noNewsCoverage, systemImage: "newspaper")
+                    .font(.caption2)
+                    .foregroundStyle(Color.appSecondaryText)
+            }
 
             if let summary = insight.sentimentSummary {
                 Text(summary)

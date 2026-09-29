@@ -46,6 +46,7 @@ struct InsightItem: Identifiable, Equatable {
     var sentimentLabel: SentimentLabel?
     var sentimentConfidence: SentimentConfidence?
     var sentimentSummary: String?
+    var sentimentGeneratedAt: Date?
     var reasons: [InsightReason]
 }
 
