@@ -21,9 +21,8 @@ struct ContributionSimulatorTests {
         let result = ContributionSimulator.simulate(amount: 100, holdings: holdings, strategy: strategy)
 
         // Total projetado R$ 1.100: faltam Logística 30 e Shoppings 220 (Papel já passa da meta).
-        #expect(result.map(\.segment) == [.malls, .logistics])
-        #expect(result.first { $0.segment == .malls }?.amount == 88)
-        #expect(result.first { $0.segment == .logistics }?.amount == 12)
+        #expect(result.map(\.segment) == [.paper, .logistics, .malls])
+        #expect(result.map(\.amount) == [0, 12, 88])
         #expect(total(result) == 100)
     }
 
@@ -64,8 +63,23 @@ struct ContributionSimulatorTests {
     }
 
     @Test @MainActor
-    func returnsNothingWithoutAmountOrTargets() {
-        #expect(ContributionSimulator.simulate(amount: 0, holdings: [], strategy: strategy).isEmpty)
+    func listsEveryTargetSegmentWithCurrentWeightsWhenAmountIsZero() {
+        let holdings = [
+            makeInsightHolding(ticker: "KNCR11", segment: .paper, shares: 7, price: 100, average: 100),
+            makeInsightHolding(ticker: "HGLG11", segment: .logistics, shares: 3, price: 100, average: 100),
+        ]
+
+        let result = ContributionSimulator.simulate(amount: 0, holdings: holdings, strategy: strategy)
+
+        #expect(result.map(\.segment) == [.paper, .logistics, .malls])
+        #expect(result.allSatisfy { $0.amount == 0 })
+        #expect(result.map(\.projectedWeight) == result.map(\.currentWeight))
+        let empty = ContributionSimulator.simulate(amount: 0, holdings: [], strategy: strategy)
+        #expect(empty.map(\.projectedWeight) == [0, 0, 0])
+    }
+
+    @Test @MainActor
+    func returnsNothingWithoutTargets() {
         #expect(
             ContributionSimulator.simulate(
                 amount: 100,

@@ -7,13 +7,15 @@ struct ContributionSimulatorView: View {
     let strategy: any AllocationStrategy
 
     @State private var amount: Decimal?
-
-    private var contributions: [SegmentContribution] {
-        guard let amount else { return [] }
-        return ContributionSimulator.simulate(amount: amount, holdings: holdings, strategy: strategy)
-    }
+    @State private var simulatedAmount: Decimal = 0
 
     var body: some View {
+        let contributions = ContributionSimulator.simulate(
+            amount: simulatedAmount,
+            holdings: holdings,
+            strategy: strategy
+        )
+
         NavigationStack {
             Form {
                 Section {
@@ -26,18 +28,22 @@ struct ContributionSimulatorView: View {
                 }
                 .imobSurface()
 
-                if !contributions.isEmpty {
-                    Section {
-                        ForEach(contributions) { contribution in
-                            contributionRow(contribution)
-                        }
-                    } header: {
-                        Text(L10n.Simulator.distribution)
-                    } footer: {
-                        Text(L10n.Simulator.disclaimer)
+                Section {
+                    ForEach(contributions) { contribution in
+                        contributionRow(contribution)
                     }
-                    .imobSurface()
+                } header: {
+                    Text(L10n.Simulator.distribution)
+                } footer: {
+                    Text(L10n.Simulator.disclaimer)
                 }
+                .imobSurface()
+            }
+            .task(id: amount) {
+                // Recalcular a lista a cada tecla atrasa a atualização da máscara enquanto o campo está em edição.
+                try? await Task.sleep(for: .milliseconds(250))
+                guard !Task.isCancelled else { return }
+                simulatedAmount = amount ?? 0
             }
             .imobListCanvas()
             .scrollDismissesKeyboard(.interactively)
@@ -62,6 +68,7 @@ struct ContributionSimulatorView: View {
                 Text(contribution.amount, format: .brl)
                     .font(.subheadline.weight(.semibold))
                     .monospacedDigit()
+                    .foregroundStyle(contribution.amount > 0 ? Color.appPrimaryText : Color.appSecondaryText)
             }
             Text(
                 L10n.Simulator.weightChange(

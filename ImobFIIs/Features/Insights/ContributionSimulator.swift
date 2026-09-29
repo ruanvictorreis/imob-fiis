@@ -13,14 +13,15 @@ struct SegmentContribution: Identifiable, Equatable {
 enum ContributionSimulator {
     /// Distribui o aporte entre os segmentos com meta, primeiro reduzindo as diferenças para a meta
     /// (calculadas sobre o patrimônio já somado ao aporte) e depois, se sobrar, na proporção das metas.
+    /// Retorna todos os segmentos com meta, na ordem da estratégia, inclusive os que não recebem nada.
     static func simulate(
         amount: Decimal,
         holdings: [Holding],
         strategy: some AllocationStrategy
     ) -> [SegmentContribution] {
-        let amountCents = cents(from: amount)
+        let amountCents = max(cents(from: amount), 0)
         let segments = strategy.orderedSegments.filter { (strategy.targetWeights[$0] ?? 0) > 0 }
-        guard amountCents > 0, !segments.isEmpty else { return [] }
+        guard !segments.isEmpty else { return [] }
 
         let valueBySegment = holdings.reduce(into: [FundSegment: Double]()) { partial, holding in
             guard let segment = holding.fund?.segment else { return }
@@ -30,32 +31,30 @@ enum ContributionSimulator {
         let contribution = Double(amountCents) / 100
         let projectedTotal = totalValue + contribution
 
-        let shares = rawShares(
-            segments: segments,
-            targets: strategy.targetWeights,
-            valueBySegment: valueBySegment,
-            contribution: contribution,
-            projectedTotal: projectedTotal
-        )
-        let centsBySegment = roundedCents(shares, totalCents: amountCents, order: segments)
+        let centsBySegment: [FundSegment: Int] = amountCents > 0
+            ? roundedCents(
+                rawShares(
+                    segments: segments,
+                    targets: strategy.targetWeights,
+                    valueBySegment: valueBySegment,
+                    contribution: contribution,
+                    projectedTotal: projectedTotal
+                ),
+                totalCents: amountCents,
+                order: segments
+            )
+            : [:]
 
-        return segments.compactMap { segment -> SegmentContribution? in
-            guard let segmentCents = centsBySegment[segment], segmentCents > 0 else { return nil }
+        return segments.map { segment in
             let value = valueBySegment[segment] ?? 0
-            let segmentAmount = Decimal(segmentCents) / 100
+            let segmentCents = centsBySegment[segment] ?? 0
             return SegmentContribution(
                 segment: segment,
-                amount: segmentAmount,
+                amount: Decimal(segmentCents) / 100,
                 currentWeight: totalValue > 0 ? value / totalValue : 0,
-                projectedWeight: (value + Double(segmentCents) / 100) / projectedTotal,
+                projectedWeight: projectedTotal > 0 ? (value + Double(segmentCents) / 100) / projectedTotal : 0,
                 targetWeight: strategy.targetWeights[segment] ?? 0
             )
-        }
-        .sorted { lhs, rhs in
-            if lhs.amount != rhs.amount {
-                return lhs.amount > rhs.amount
-            }
-            return (segments.firstIndex(of: lhs.segment) ?? 0) < (segments.firstIndex(of: rhs.segment) ?? 0)
         }
     }
 
