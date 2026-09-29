@@ -76,7 +76,7 @@ Abra `ImobFIIs.xcodeproj` no Xcode e rode no simulador (**⌘R**).
 ## Testes
 
 ```bash
-# SwiftLint (mesmo comando do CI)
+# SwiftLint 0.63.3 (versão fixada no CI; outras versões podem ter regras diferentes)
 swiftlint lint --strict
 
 # Unit tests
@@ -101,7 +101,7 @@ Config/                xcconfig compartilhado e secrets locais
 
 | Workflow | Trigger | Função |
 |----------|---------|--------|
-| **CI** | Pull request | SwiftLint + testes |
+| **CI** | Pull request | SwiftLint + testes (pulados quando o PR não altera o app) |
 | **FII Sentiment Daily** | Cron + manual | Gera relatórios de sentimento por segmento |
 | **GitHub Pages** | Push em `docs/**`, manual, ou após **FII Sentiment Daily** | Publica JSONs de sentimento |
 
