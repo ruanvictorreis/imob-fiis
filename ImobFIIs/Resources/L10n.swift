@@ -94,9 +94,19 @@ enum L10n {
         static var addShares: String { text("fundDetail.addShares") }
         static var addToPortfolio: String { text("fundDetail.addToPortfolio") }
         static var editPosition: String { text("fundDetail.editPosition") }
+        static var news: String { text("fundDetail.news") }
+        static var newsFooter: String { text("fundDetail.newsFooter") }
 
         static func rangeValue(low: String, high: String) -> String {
             format("fundDetail.rangeValue", low, high)
+        }
+
+        static func newsArticles(_ count: Int) -> String {
+            format("fundDetail.newsArticles", count)
+        }
+
+        static func newsUpdated(_ relative: String) -> String {
+            format("fundDetail.newsUpdated", relative)
         }
     }
 

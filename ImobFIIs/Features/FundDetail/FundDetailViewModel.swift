@@ -10,12 +10,20 @@ final class FundDetailViewModel {
     var indicators: FIIIndicators?
     var isLoadingMarketData = false
     var lastDividend: Decimal?
+    var sentiment: FundSentiment?
+    var sentimentGeneratedAt: Date?
 
     private let catalog: any FIICatalogServing
+    private let sentimentService: SentimentReportService
 
-    init(summary: FundSummary, catalog: any FIICatalogServing = BrapiFIICatalogService()) {
+    init(
+        summary: FundSummary,
+        catalog: any FIICatalogServing = BrapiFIICatalogService(),
+        sentimentService: SentimentReportService = SentimentReportService()
+    ) {
         self.summary = summary
         self.catalog = catalog
+        self.sentimentService = sentimentService
     }
 
     var displayPrice: Decimal? {
@@ -64,6 +72,16 @@ final class FundDetailViewModel {
             )
             isLoadingMarketData = false
         }
+    }
+
+    func loadSentiment() async {
+        let segmentKey = summary.segment.sentimentKey
+        guard segmentKey != "other" else { return }
+        guard let report = await sentimentService.report(for: segmentKey) else { return }
+        guard !Task.isCancelled else { return }
+
+        sentiment = report.sentiment(for: summary.ticker)
+        sentimentGeneratedAt = sentiment == nil ? nil : report.generatedAt
     }
 
     private func applyMarketData(

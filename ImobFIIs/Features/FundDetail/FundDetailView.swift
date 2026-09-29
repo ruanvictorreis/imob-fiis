@@ -124,6 +124,10 @@ struct FundDetailView: View {
                 .imobSurface()
             }
 
+            if let sentiment = viewModel.sentiment {
+                FundNewsSection(sentiment: sentiment, generatedAt: viewModel.sentimentGeneratedAt)
+            }
+
             Section(L10n.FundDetail.about) {
                 LabeledContent(L10n.Common.segment, value: viewModel.summary.segment.title)
                 if let tipoGestao = viewModel.indicators?.tipoGestao {
@@ -145,6 +149,9 @@ struct FundDetailView: View {
             await viewModel.loadMarketData()
             guard !Task.isCancelled else { return }
             persistCachedFund()
+        }
+        .task {
+            await viewModel.loadSentiment()
         }
         .sheet(isPresented: $isAddingHolding) {
             AddHoldingSheet(
