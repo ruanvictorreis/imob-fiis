@@ -33,11 +33,42 @@ jobs:
         with:
           xcode-version: "26.2"
 
+      # O CoreSimulator do runner às vezes demora a listar os dispositivos e o xcodebuild
+      # desiste de achar o simulador pelo nome; resolvemos o UDID com retentativas.
+      - name: Resolve simulator
+        id: simulator
+        env:
+          DEVICE_NAME: iPhone 17
+        run: |
+          for attempt in 1 2 3 4 5; do
+            UDID=$(xcrun simctl list devices available --json | python3 -c '
+          import json, os, sys
+          name = os.environ["DEVICE_NAME"]
+          runtimes = json.load(sys.stdin)["devices"]
+          ios = sorted((key for key in runtimes if ".iOS-" in key), reverse=True)
+          for key in ios:
+              for device in runtimes[key]:
+                  if device["name"] == name and device.get("isAvailable", True):
+                      print(device["udid"])
+                      sys.exit(0)
+          ' || true)
+            if [ -n "$UDID" ]; then
+              echo "Using $DEVICE_NAME ($UDID)"
+              echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Simulator not listed yet (attempt $attempt); retrying in 15s..."
+            sleep 15
+          done
+          echo "::error::Could not find an available '$DEVICE_NAME' simulator."
+          xcrun simctl list devices available
+          exit 1
+
       - name: Run tests
         run: |
           set -o pipefail
           xcodebuild test \
             -scheme ImobFIIs \
-            -destination 'platform=iOS Simulator,name=iPhone 17' \
+            -destination 'id=${{ steps.simulator.outputs.udid }}' \
             -skipPackagePluginValidation \
             CODE_SIGNING_ALLOWED=NO
