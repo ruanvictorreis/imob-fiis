@@ -29,6 +29,10 @@ struct EditHoldingSheet: View {
         return shares != holding.shares || price != holding.averagePrice
     }
 
+    private var tickerText: String {
+        holding.ticker.isEmpty ? L10n.Common.dash : holding.ticker
+    }
+
     private var fundDisplayName: String {
         guard let fund = holding.fund else { return L10n.Common.dash }
         return FundSummary(fund: fund).displayName
@@ -49,7 +53,7 @@ struct EditHoldingSheet: View {
         NavigationStack {
             Form {
                 Section(L10n.AddHolding.fund) {
-                    LabeledContent(L10n.Common.ticker, value: holding.fund?.ticker ?? L10n.Common.dash)
+                    LabeledContent(L10n.Common.ticker, value: tickerText)
                     LabeledContent(L10n.Common.name, value: fundDisplayName)
                 }
                 .imobSurface()

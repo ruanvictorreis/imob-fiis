@@ -170,8 +170,8 @@ extension InsightEngine {
                     if lhs.currentValue != rhs.currentValue {
                         return lhs.currentValue < rhs.currentValue
                     }
-                    return (lhs.fund?.ticker ?? "") < (rhs.fund?.ticker ?? "")
-                }?.fund?.ticker
+                    return lhs.ticker < rhs.ticker
+                }?.ticker
             }
         )
     }

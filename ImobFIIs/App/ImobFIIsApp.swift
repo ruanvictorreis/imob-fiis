@@ -6,7 +6,7 @@ struct ImobFIIsApp: App {
     private let container: ModelContainer
 
     init() {
-        container = Persistence.makeContainer()
+        container = Persistence.makeAppContainer()
         ImobChrome.configure()
     }
 

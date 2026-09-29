@@ -175,7 +175,7 @@ struct FundDetailView: View {
     }
 
     private var currentHolding: Holding? {
-        holdings.first { $0.fund?.ticker == viewModel.summary.ticker }
+        holdings.first { $0.ticker == viewModel.summary.ticker }
     }
 
     private var isInPortfolio: Bool {

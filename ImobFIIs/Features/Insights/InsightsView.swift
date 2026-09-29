@@ -227,7 +227,7 @@ struct InsightsView: View {
 
     private func fundSummary(for ticker: String) -> FundSummary? {
         holdings
-            .first { $0.fund?.ticker == ticker }
+            .first { $0.ticker == ticker }
             .flatMap(\.fund)
             .map(FundSummary.init(fund:))
     }

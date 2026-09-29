@@ -158,16 +158,9 @@ final class Fund {
     var lastDividendUpdatedAt: Date?
     var vacancyRate: Double?
 
-    @Relationship(deleteRule: .cascade, inverse: \Holding.fund)
-    var holdings: [Holding] = []
-
     var segment: FundSegment {
         get { FundSegment(rawValue: segmentRaw) ?? .hybrid }
         set { segmentRaw = newValue.rawValue }
-    }
-
-    var isInPortfolio: Bool {
-        !holdings.isEmpty
     }
 
     init(

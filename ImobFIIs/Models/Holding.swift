@@ -3,11 +3,30 @@ import SwiftData
 
 @Model
 final class Holding {
-    var shares: Int
-    var averagePrice: Decimal
-    var purchasedAt: Date
-    var notes: String
-    var fund: Fund?
+    var ticker: String = ""
+    var shares: Int = 0
+    var averagePrice: Decimal = 0
+    var purchasedAt: Date = Date.now
+    var notes: String = ""
+
+    @Transient private var resolvedFund: Fund?
+
+    /// Fundo do cache local com o mesmo ticker. A carteira fica em outro store (CloudKit),
+    /// então não existe relacionamento entre os dois modelos.
+    var fund: Fund? {
+        if let resolvedFund, resolvedFund.ticker == ticker {
+            return resolvedFund
+        }
+        guard let modelContext else { return nil }
+        FundCacheRevision.shared.observe()
+
+        let ticker = ticker
+        var descriptor = FetchDescriptor<Fund>(predicate: #Predicate { $0.ticker == ticker })
+        descriptor.fetchLimit = 1
+        let fund = try? modelContext.fetch(descriptor).first
+        resolvedFund = fund
+        return fund
+    }
 
     var investedAmount: Decimal {
         averagePrice * Decimal(shares)
@@ -26,17 +45,19 @@ final class Holding {
     }
 
     init(
+        ticker: String = "",
         shares: Int,
         averagePrice: Decimal,
         purchasedAt: Date = .now,
         notes: String = "",
         fund: Fund? = nil
     ) {
+        self.ticker = fund?.ticker ?? ticker
         self.shares = shares
         self.averagePrice = averagePrice
         self.purchasedAt = purchasedAt
         self.notes = notes
-        self.fund = fund
+        self.resolvedFund = fund
     }
 
     func addShares(_ additionalShares: Int, at price: Decimal) {
