@@ -144,6 +144,13 @@ struct ImobFIIsTests {
         #expect(BRLCurrencyMask.amount(fromCents: 98_501) == Decimal(string: "985.01"))
         #expect(BRLCurrencyMask.cents(fromTypedText: "") == 0)
         #expect(BRLCurrencyMask.amount(fromCents: 0) == nil)
+
+        #expect(BRLCurrencyMask.maskedText(fromTypedText: "") == "")
+        #expect(BRLCurrencyMask.maskedText(fromTypedText: "0") == "")
+        #expect(BRLCurrencyMask.maskedText(fromTypedText: "1") == BRLCurrencyMask.formatted(cents: 1))
+        #expect(BRLCurrencyMask.maskedText(fromTypedText: "R$ 0,015") == BRLCurrencyMask.formatted(cents: 15))
+        let masked = BRLCurrencyMask.maskedText(fromTypedText: "150000")
+        #expect(BRLCurrencyMask.maskedText(fromTypedText: masked) == masked)
     }
 }
 
