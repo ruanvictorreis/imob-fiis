@@ -205,13 +205,7 @@
       "confidence": "low",
       "summary": "RECR11 pagou R$ 0,74/cota em 15/09 (DY ~0,95%), o menor provento em seis meses; não houve cobertura editorial nova após o anúncio.",
       "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "Dividendos do RECR11 são os menores em 6 meses; veja quanto",
-          "url": "https://fiis.com.br/noticias/recr11-fundo-imobiliario-dividendos-agosto-menor-6-meses-carteira-cri-jj/",
-          "publishedAt": "2026-09-08"
-        }
-      ]
+      "topHeadlines": []
     },
     {
       "ticker": "KDIF11",
@@ -240,7 +234,7 @@
     {
       "ticker": "ARRI11",
       "sentiment": "neutral",
-      "score": -0.05,
+      "score": 0,
       "confidence": "low",
       "summary": "Sem notícias sobre o ARRI11 nos portais permitidos na janela; o último provento foi de R$ 0,05/cota (08/09) e a cota acumula queda de ~21% no ano.",
       "articleCount": 0,

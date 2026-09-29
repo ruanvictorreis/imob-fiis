@@ -23,16 +23,6 @@
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "Fiagros divulgam dividendos com yield de até 1,77%; veja valores",
-          "url": "https://fiis.com.br/noticias/fiagros-divulgam-dividendos-mes-setembro-2026-yield-vcra11-lista-fundos-agro-jj/",
-          "publishedAt": "2026-09-02"
-        },
-        {
-          "title": "Fiagros anunciam rendimentos de até 1,77%; confira valores",
-          "url": "https://www.suno.com.br/noticias/dividendos-de-fiagros-setembro-2026/",
-          "publishedAt": "2026-09-02"
-        },
-        {
           "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
           "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
           "publishedAt": "2026-09-18"
@@ -51,11 +41,6 @@
           "title": "SNAG11 pagará dividendos com yield de 1,23%; veja valor e data",
           "url": "https://fiis.com.br/noticias/snag11-pagara-dividendos-com-yield-de-123-veja-valor-e-data/",
           "publishedAt": "2026-09-16"
-        },
-        {
-          "title": "Receita com exportações de soja cresce 14% em agosto e beneficia cenário do SNAG11",
-          "url": "https://fiis.com.br/noticias/receita-exportacoes-soja-cresce-agosto-beneficia-cenario-snag11-vi/",
-          "publishedAt": "2026-09-09"
         },
         {
           "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
@@ -102,16 +87,6 @@
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "Fiagros anunciam rendimentos de até 1,77%; confira valores",
-          "url": "https://www.suno.com.br/noticias/dividendos-de-fiagros-setembro-2026/",
-          "publishedAt": "2026-09-02"
-        },
-        {
-          "title": "Fiagros divulgam dividendos com yield de até 1,77%; veja valores",
-          "url": "https://fiis.com.br/noticias/fiagros-divulgam-dividendos-mes-setembro-2026-yield-vcra11-lista-fundos-agro-jj/",
-          "publishedAt": "2026-09-02"
-        },
-        {
           "title": "XPCA11 - FIAGRO XP CA - Cotações e Dividendos",
           "url": "https://fiis.com.br/xpca11/",
           "publishedAt": "2026-09-15"
@@ -126,16 +101,6 @@
       "summary": "Valora CRA reduziu o provento a R$ 0,12/cota em setembro (vs. R$ 0,13), com Languiru ainda inadimplente; resultado de julho caiu e o fundo segue no top 10 de liquidez.",
       "articleCount": 3,
       "topHeadlines": [
-        {
-          "title": "VGIA11 lucra R$ 10,44 milhões e entrega dividendos de CDI + 1,7% ao ano",
-          "url": "https://www.suno.com.br/noticias/vgia11-resultado-julho-2026-rendimentos/",
-          "publishedAt": "2026-09-08"
-        },
-        {
-          "title": "Dividendo acima do CDI acompanha lucro milionário do VGIA11",
-          "url": "https://www.fundsexplorer.com.br/noticias/rendimentos-do-vgia11-julho-2026",
-          "publishedAt": "2026-09-08"
-        },
         {
           "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
           "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
@@ -190,19 +155,13 @@
       "confidence": "low",
       "summary": "Kinea Hedge Fund manteve R$ 1,00/cota (data-base 31/08, pagamento 11/09, yield ~1,08%); cobertura limitada a listas semanais de dividendos.",
       "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "KNHF11 - FII KINEA HF - Fiis",
-          "url": "https://fiis.com.br/knhf11/",
-          "publishedAt": "2026-09-11"
-        }
-      ]
+      "topHeadlines": []
     },
     {
       "ticker": "SNFZ11",
       "sentiment": "positive",
       "score": 0.75,
-      "confidence": "high",
+      "confidence": "medium",
       "summary": "Suno Fazendas anunciou R$ 0,10/cota (yield 1,09%, pagamento 25/09), concluiu compra de três fazendas no MT com vacância zero e superou 16 mil cotistas.",
       "articleCount": 4,
       "topHeadlines": [
@@ -210,16 +169,6 @@
           "title": "SNFZ11 apresenta dividendos de setembro com yield de 1,09%",
           "url": "https://fiis.com.br/noticias/fiagro-snfz11-apresenta-dividendos-de-setembro-com-yield-vi/",
           "publishedAt": "2026-09-16"
-        },
-        {
-          "title": "Fiagros têm desconto de até 20% sobre patrimônio; veja situação do SNFZ11",
-          "url": "https://fiis.com.br/noticias/fiagros-tem-desconto-20-sobre-patrimonio-veja-situacao-snfz11-vi/",
-          "publishedAt": "2026-09-09"
-        },
-        {
-          "title": "Fiagros se reinventam na crise, com 20% de desconto e dividendo de 15%",
-          "url": "https://www.infomoney.com.br/onde-investir/fiagros-se-reinventam-na-crise-com-20-de-desconto-e-dividendo-de-15/",
-          "publishedAt": "2026-09-09"
         }
       ]
     },
@@ -230,18 +179,7 @@
       "confidence": "medium",
       "summary": "Éxes Araguaia mantém distribuição estável e reserva de ~4 meses de dividendos, com DY perto de 19% a.a.; InfoMoney destaca caixa elevado e cautela pós-AgroGalaxy.",
       "articleCount": 2,
-      "topHeadlines": [
-        {
-          "title": "Fiagros se reinventam na crise, com 20% de desconto e dividendo de 15%",
-          "url": "https://www.infomoney.com.br/onde-investir/fiagros-se-reinventam-na-crise-com-20-de-desconto-e-dividendo-de-15/",
-          "publishedAt": "2026-09-09"
-        },
-        {
-          "title": "AGRX11 - FIAGRO AGRX - Fiis",
-          "url": "https://fiis.com.br/agrx11/",
-          "publishedAt": "2026-09-08"
-        }
-      ]
+      "topHeadlines": []
     },
     {
       "ticker": "CPTR11",
@@ -304,11 +242,6 @@
           "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
           "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
           "publishedAt": "2026-09-18"
-        },
-        {
-          "title": "Fiagros se reinventam na crise, com 20% de desconto e dividendo de 15%",
-          "url": "https://www.infomoney.com.br/onde-investir/fiagros-se-reinventam-na-crise-com-20-de-desconto-e-dividendo-de-15/",
-          "publishedAt": "2026-09-09"
         }
       ]
     },
@@ -320,16 +253,6 @@
       "summary": "Itaú Asset Rural pagou R$ 0,105/cota em 08/09 (yield 1,29%) e aparece no top 10 de liquidez ADTV dos Fiagros em agosto, apesar de leve corte vs. R$ 0,11.",
       "articleCount": 3,
       "topHeadlines": [
-        {
-          "title": "Fiagros divulgam dividendos com yield de até 1,77%; veja valores",
-          "url": "https://fiis.com.br/noticias/fiagros-divulgam-dividendos-mes-setembro-2026-yield-vcra11-lista-fundos-agro-jj/",
-          "publishedAt": "2026-09-02"
-        },
-        {
-          "title": "Fiagros anunciam rendimentos de até 1,77%; confira valores",
-          "url": "https://www.suno.com.br/noticias/dividendos-de-fiagros-setembro-2026/",
-          "publishedAt": "2026-09-02"
-        },
         {
           "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
           "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
@@ -364,13 +287,7 @@
       "confidence": "low",
       "summary": "Kinea Infra manteve a distribuição reduzida em R$ 1,00/cota em agosto e setembro (vs. R$ 1,45 até junho), com yield mensal de ~0,87% na data-com de 31/08.",
       "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "KDIF11 - KINEA INFRAF - Fiis",
-          "url": "https://fiis.com.br/kdif11/",
-          "publishedAt": "2026-09-08"
-        }
-      ]
+      "topHeadlines": []
     },
     {
       "ticker": "VGIR11",

@@ -16,7 +16,7 @@
     {
       "ticker": "HGLG11",
       "sentiment": "positive",
-      "score": 0.30,
+      "score": 0.3,
       "confidence": "medium",
       "summary": "Pátria Log manteve R$ 1,17/cota e o guidance do 2º semestre, mas o resultado de agosto foi de R$ 1,02/cota, consumindo reserva (agora R$ 0,93/cota); vacância física em 2,9%, primeira fase do Itupeva G400 entregue ao Mercado Livre e incorporação do LVBI11 ainda aguardando parecer da CVM.",
       "articleCount": 4,
@@ -41,17 +41,11 @@
     {
       "ticker": "HSML11",
       "sentiment": "neutral",
-      "score": 0.20,
+      "score": 0.2,
       "confidence": "low",
       "summary": "HSI Malls manteve R$ 0,75/cota com resultado recorrente de R$ 0,64 em agosto; considerando julho e agosto juntos (efeitos da venda parcial do Pátio Maceió), o resultado somou R$ 2,09/cota. Sem novos fatos relevantes na última semana.",
       "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "HSML11 paga R$ 0,75, enquanto resultado recorrente fica em R$ 0,64; entenda os números",
-          "url": "https://fiis.com.br/noticias/hsml11-paga-r-075-enquanto-resultado-recorrente-fica-em-r-064-entenda-os-numeros/",
-          "publishedAt": "2026-09-14"
-        }
-      ]
+      "topHeadlines": []
     },
     {
       "ticker": "PVBI11",
@@ -91,7 +85,7 @@
     {
       "ticker": "TRXF11",
       "sentiment": "positive",
-      "score": 0.40,
+      "score": 0.4,
       "confidence": "high",
       "summary": "TRX anunciou ~R$ 1,79 bi em operações, incluindo compromisso por fatias de cinco shoppings da Iguatemi (R$ 876,1 mi, condicionado a financiamento) e lajes em Pinheiros via HIRE11 (R$ 143,8 mi), mantendo dividendo projetado de R$ 0,90–0,93/cota; o uso intensivo de cotas da 13ª emissão como pagamento e a dependência de financiamento seguem como pontos de atenção.",
       "articleCount": 6,
@@ -131,7 +125,7 @@
     {
       "ticker": "TGAR11",
       "sentiment": "neutral",
-      "score": 0.10,
+      "score": 0.1,
       "confidence": "low",
       "summary": "TG Ativo Real pagou R$ 0,70/cota em 15/09, leve queda frente aos R$ 0,72 anteriores e no piso do guidance de R$ 0,70–1,00 para 2026; sem novos eventos operacionais na cobertura da janela.",
       "articleCount": 1,
@@ -155,7 +149,7 @@
     {
       "ticker": "RZAK11",
       "sentiment": "positive",
-      "score": 0.40,
+      "score": 0.4,
       "confidence": "medium",
       "summary": "Riza Akin pagou R$ 1,05/cota referente a agosto em 22/09 (DY ~1,33%), com carteira 99% alocada, 77% em CRIs e sem alavancagem por compromissadas.",
       "articleCount": 3,
@@ -195,7 +189,7 @@
     {
       "ticker": "JSAF11",
       "sentiment": "neutral",
-      "score": 0.20,
+      "score": 0.2,
       "confidence": "medium",
       "summary": "JS Real Estate Ativos Financeiros teve resultado 27% maior em agosto (R$ 0,080/cota), cobrindo o dividendo de R$ 0,08 (DY ~1,14%); ampliou JSRE11, iniciou KNHY11 e mantém 22% dos ativos em liquidez para novas alocações.",
       "articleCount": 2,
@@ -248,7 +242,7 @@
     {
       "ticker": "VRTA11",
       "sentiment": "positive",
-      "score": 0.50,
+      "score": 0.5,
       "confidence": "high",
       "summary": "Fator Verità pagou R$ 0,85/cota em agosto (~124% do CDI com gross-up), mantém projeção de R$ 0,85–0,95 no 2º semestre com reserva de R$ 1,26/cota e teve alta de 2,16% na cota em 25/09, figurando em dois Bom Dia FIIs.",
       "articleCount": 5,
@@ -288,7 +282,7 @@
     {
       "ticker": "XPLG11",
       "sentiment": "positive",
-      "score": 0.40,
+      "score": 0.4,
       "confidence": "medium",
       "summary": "XP Log manteve R$ 0,82/cota e reduziu a vacância física de 8,8% para 4,1% com locações em Seropédica e do CD Imigrantes V ao Mercado Livre; o Safra iniciou cobertura neutra, questionando a dependência de ganhos com venda de imóveis para sustentar o dividendo.",
       "articleCount": 3,
@@ -347,7 +341,7 @@
     {
       "ticker": "GGRC11",
       "sentiment": "positive",
-      "score": 0.30,
+      "score": 0.3,
       "confidence": "medium",
       "summary": "Zagros manteve R$ 0,10/cota (DY ~1,10%) com resultado de R$ 34,9 mi em agosto, recomprou 453 mil cotas abaixo do valor patrimonial e chegou a 411 mil cotistas; pontos de atenção são a exposição indireta à Casas Bahia (<5% da receita, aluguel de agosto em RJ) e a supervisão da CVM sobre aquisições pagas com cotas.",
       "articleCount": 4,
