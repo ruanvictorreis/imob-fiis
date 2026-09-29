@@ -52,6 +52,9 @@ enum FundStore {
 
     /// Posições sincronizadas de outro aparelho chegam só com o ticker; busca os fundos
     /// que ainda não estão no cache local.
+    ///
+    /// Os indicadores de FII exigem plano pago da brapi; sem eles, usa a listagem do catálogo
+    /// (plano gratuito), que traz preço e segmento.
     @MainActor
     static func cacheMissingFunds(
         for tickers: [String],
@@ -59,12 +62,11 @@ enum FundStore {
         in context: ModelContext
     ) async {
         let cached = Set(((try? context.fetch(FetchDescriptor<Fund>())) ?? []).map(\.ticker))
-        let missing = Set(tickers.filter { !$0.isEmpty }).subtracting(cached)
-        guard !missing.isEmpty,
-              let indicators = try? await catalog.indicators(for: missing.sorted())
-        else { return }
+        var missing = Set(tickers.filter { !$0.isEmpty }).subtracting(cached)
+        guard !missing.isEmpty else { return }
 
-        for item in indicators where missing.contains(item.ticker) {
+        let indicators = (try? await catalog.indicators(for: missing.sorted())) ?? []
+        for item in indicators where missing.remove(item.ticker) != nil {
             let name = item.name ?? item.ticker
             let summary = FundSummary(
                 ticker: item.ticker,
@@ -77,6 +79,11 @@ enum FundStore {
                 currentPrice: item.price
             )
             upsert(summary, indicators: item, in: context)
+        }
+
+        guard !missing.isEmpty, let page = try? await catalog.tickers(.allFIIs) else { return }
+        for summary in page.funds where missing.remove(summary.ticker) != nil {
+            upsert(summary, indicators: nil, in: context)
         }
     }
 
