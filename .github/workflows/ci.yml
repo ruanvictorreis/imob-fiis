@@ -21,6 +21,30 @@ jobs:
       - name: Run SwiftLint
         run: swiftlint lint --strict --reporter github-actions-logging
 
+  sentiment-scripts:
+    name: Sentiment Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install -r agents/fii-sentiment/requirements.txt
+
+      - name: Run script tests
+        run: python -m unittest discover -s agents/fii-sentiment/tests -v
+
+      - name: Validate published reports
+        run: |
+          for report in docs/sentiment/{paper,urban,logistics,malls,offices,fiagro}.json; do
+            python agents/fii-sentiment/scripts/validate_report.py "$report"
+          done
+
   test:
     name: Unit Tests
     runs-on: macos-15

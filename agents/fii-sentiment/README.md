@@ -36,6 +36,8 @@ Após sucesso, o workflow **GitHub Pages** roda automaticamente (`workflow_run`)
 
 ```bash
 pip install -r agents/fii-sentiment/requirements.txt
+python -m unittest discover -s agents/fii-sentiment/tests
+python agents/fii-sentiment/scripts/normalize_report.py docs/sentiment/paper.json
 python agents/fii-sentiment/scripts/validate_report.py docs/sentiment/paper.json
 python agents/fii-sentiment/scripts/merge_manifest.py
 ```
