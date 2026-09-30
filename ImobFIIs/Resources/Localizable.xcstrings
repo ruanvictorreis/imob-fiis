@@ -1324,17 +1324,6 @@
         }
       }
     },
-    "portfolio.updatedAt" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Atualizado às %@"
-          }
-        }
-      }
-    },
     "recovery.description" : {
       "extractionState" : "manual",
       "localizations" : {

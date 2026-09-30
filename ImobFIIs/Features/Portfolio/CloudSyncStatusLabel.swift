@@ -4,10 +4,17 @@ struct CloudSyncStatusLabel: View {
     let status: CloudSyncStatus
 
     var body: some View {
-        Label(title, systemImage: symbol)
-            .font(.caption)
-            .foregroundStyle(isWarning ? Color.orange : Color.appSecondaryText)
-            .symbolEffect(.pulse, isActive: status == .syncing)
+        Label {
+            Text(title)
+                .contentTransition(.interpolate)
+        } icon: {
+            Image(systemName: symbol)
+                .contentTransition(.symbolEffect(.replace))
+                .symbolEffect(.pulse, isActive: status == .syncing)
+        }
+        .font(.caption)
+        .foregroundStyle(isWarning ? Color.orange : Color.appSecondaryText)
+        .animation(.smooth(duration: 0.4), value: status)
     }
 
     private var title: String {
