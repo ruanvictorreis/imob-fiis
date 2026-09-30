@@ -175,17 +175,6 @@
         }
       }
     },
-    "addHolding.purchaseDate" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data da compra"
-          }
-        }
-      }
-    },
     "addHolding.shareShortcuts" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -225,7 +214,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use o preço médio da corretora. A alteração fica registrada como um ajuste no histórico de operações."
+            "value" : "Use o preço médio da corretora. Isso substitui os valores atuais e não registra uma compra."
           }
         }
       }
@@ -753,17 +742,6 @@
         }
       }
     },
-    "fundDetail.sellShares" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vender cotas"
-          }
-        }
-      }
-    },
     "fundDetail.vacancy" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -926,17 +904,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Não foi possível atualizar as cotações"
-          }
-        }
-      }
-    },
-    "portfolio.sell" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vender"
           }
         }
       }
@@ -1477,118 +1444,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Renda Urbana"
-          }
-        }
-      }
-    },
-    "sellHolding.closesPosition" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A posição será encerrada. As operações continuam no histórico."
-          }
-        }
-      }
-    },
-    "sellHolding.confirm" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registrar venda"
-          }
-        }
-      }
-    },
-    "sellHolding.date" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data da venda"
-          }
-        }
-      }
-    },
-    "sellHolding.exceedsPosition" : {
-      "comment" : "%lld é a quantidade de cotas em carteira.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Você tem apenas %lld cotas deste fundo."
-          }
-        }
-      }
-    },
-    "sellHolding.price" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preço de venda"
-          }
-        }
-      }
-    },
-    "sellHolding.realizedResult" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Resultado da venda"
-          }
-        }
-      }
-    },
-    "sellHolding.remainingPosition" : {
-      "comment" : "%lld cotas restantes; %@ preço médio.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Após a venda: %lld cotas · média %@"
-          }
-        }
-      }
-    },
-    "sellHolding.sellAll" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Todas"
-          }
-        }
-      }
-    },
-    "sellHolding.shares" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotas vendidas"
-          }
-        }
-      }
-    },
-    "sellHolding.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vender cotas"
           }
         }
       }

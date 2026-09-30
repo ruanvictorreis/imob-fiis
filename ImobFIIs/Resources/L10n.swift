@@ -32,7 +32,6 @@ enum L10n {
         static var positions: String { text("portfolio.positions") }
         static var addShares: String { text("portfolio.addShares") }
         static var editPosition: String { text("portfolio.editPosition") }
-        static var sell: String { text("portfolio.sell") }
         static var netWorth: String { text("portfolio.netWorth") }
         static var invested: String { text("portfolio.invested") }
         static var result: String { text("portfolio.result") }
@@ -95,7 +94,6 @@ enum L10n {
         static var addShares: String { text("fundDetail.addShares") }
         static var addToPortfolio: String { text("fundDetail.addToPortfolio") }
         static var editPosition: String { text("fundDetail.editPosition") }
-        static var sellShares: String { text("fundDetail.sellShares") }
         static var news: String { text("fundDetail.news") }
         static var newsFooter: String { text("fundDetail.newsFooter") }
         static var newsLoadFailed: String { text("fundDetail.newsLoadFailed") }
@@ -135,7 +133,6 @@ enum L10n {
         static var addToPortfolioTitle: String { text("addHolding.addToPortfolioTitle") }
         static var shareShortcuts: String { text("addHolding.shareShortcuts") }
         static var emptyFunds: String { text("addHolding.emptyFunds") }
-        static var purchaseDate: String { text("addHolding.purchaseDate") }
 
         static func currentPositionValue(shares: Int, average: String) -> String {
             format("addHolding.currentPositionValue", shares, average)
@@ -150,25 +147,6 @@ enum L10n {
         static var title: String { text("editHolding.title") }
         static var helper: String { text("editHolding.helper") }
         static var tapToEdit: String { text("editHolding.tapToEdit") }
-    }
-
-    enum SellHolding {
-        static var title: String { text("sellHolding.title") }
-        static var shares: String { text("sellHolding.shares") }
-        static var sellAll: String { text("sellHolding.sellAll") }
-        static var price: String { text("sellHolding.price") }
-        static var date: String { text("sellHolding.date") }
-        static var realizedResult: String { text("sellHolding.realizedResult") }
-        static var closesPosition: String { text("sellHolding.closesPosition") }
-        static var confirm: String { text("sellHolding.confirm") }
-
-        static func remainingPosition(shares: Int, average: String) -> String {
-            format("sellHolding.remainingPosition", shares, average)
-        }
-
-        static func exceedsPosition(_ shares: Int) -> String {
-            format("sellHolding.exceedsPosition", shares)
-        }
     }
 
     enum Insights {

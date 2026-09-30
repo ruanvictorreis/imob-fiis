@@ -60,16 +60,22 @@ final class Holding {
         self.resolvedFund = fund
     }
 
+    func addShares(_ additionalShares: Int, at price: Decimal) {
+        guard let projected = projectedPosition(adding: additionalShares, at: price) else { return }
+        shares = projected.shares
+        averagePrice = projected.averagePrice
+    }
+
+    func replacePosition(shares: Int, averagePrice: Decimal) {
+        guard shares > 0, averagePrice > 0 else { return }
+        self.shares = shares
+        self.averagePrice = averagePrice
+    }
+
     func projectedPosition(adding additionalShares: Int, at price: Decimal) -> (shares: Int, averagePrice: Decimal)? {
         guard additionalShares > 0, price > 0 else { return nil }
         let totalShares = shares + additionalShares
         let totalCost = investedAmount + (price * Decimal(additionalShares))
         return (totalShares, totalCost / Decimal(totalShares))
-    }
-
-    func projectedPosition(selling soldShares: Int) -> (shares: Int, averagePrice: Decimal)? {
-        guard soldShares > 0, soldShares <= shares else { return nil }
-        let remaining = shares - soldShares
-        return (remaining, remaining > 0 ? averagePrice : 0)
     }
 }

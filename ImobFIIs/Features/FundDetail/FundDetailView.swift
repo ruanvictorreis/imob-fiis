@@ -7,7 +7,6 @@ struct FundDetailView: View {
     @State private var viewModel: FundDetailViewModel
     @State private var isAddingHolding = false
     @State private var isEditingHolding = false
-    @State private var isSellingHolding = false
 
     init(summary: FundSummary, catalog: any FIICatalogServing = BrapiFIICatalogService()) {
         _viewModel = State(
@@ -164,11 +163,6 @@ struct FundDetailView: View {
                 EditHoldingSheet(holding: currentHolding)
             }
         }
-        .sheet(isPresented: $isSellingHolding) {
-            if let currentHolding {
-                SellHoldingSheet(holding: currentHolding)
-            }
-        }
     }
 
     private func persistCachedFund() {
@@ -197,13 +191,8 @@ struct FundDetailView: View {
             )
 
             if isInPortfolio {
-                HStack(spacing: Spacing.lg) {
-                    Button(L10n.FundDetail.sellShares) {
-                        isSellingHolding = true
-                    }
-                    Button(L10n.FundDetail.editPosition) {
-                        isEditingHolding = true
-                    }
+                Button(L10n.FundDetail.editPosition) {
+                    isEditingHolding = true
                 }
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Color.accentColor)
