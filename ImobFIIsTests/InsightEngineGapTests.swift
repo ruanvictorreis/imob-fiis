@@ -5,7 +5,7 @@ import Testing
 
 @Suite("Insights de aporte — gaps e aporte")
 struct InsightEngineGapTests {
-    private let strategy = BalancedRetailStrategy()
+    private let strategy = TestAllocationStrategy.classic
 
     @Test @MainActor
     func prefersExistingHoldingsBeforeMissingSegments() {
