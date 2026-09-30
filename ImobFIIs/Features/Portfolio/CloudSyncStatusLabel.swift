@@ -4,13 +4,13 @@ struct CloudSyncStatusLabel: View {
     let status: CloudSyncStatus
 
     var body: some View {
-        Label {
-            Text(title)
-                .contentTransition(.interpolate)
-        } icon: {
+        HStack(alignment: .firstTextBaseline, spacing: 6) {
             Image(systemName: symbol)
                 .contentTransition(.symbolEffect(.replace))
                 .symbolEffect(.pulse, isActive: status == .syncing)
+                .accessibilityHidden(true)
+            Text(title)
+                .contentTransition(.interpolate)
         }
         .font(.caption)
         .foregroundStyle(isWarning ? Color.orange : Color.appSecondaryText)
