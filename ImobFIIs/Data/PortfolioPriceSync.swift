@@ -55,11 +55,6 @@ enum PortfolioPriceSync {
         return finish(outcome, postsNotification: postsNotification)
     }
 
-    static func lastPriceRefreshDate(for funds: [Fund], defaults: UserDefaults = .standard) -> Date? {
-        let dates = refreshDates(forKey: priceStorageKey, defaults: defaults)
-        return funds.compactMap { dates[$0.ticker] }.max()
-    }
-
     private struct RefreshPlan {
         var fundsToRefresh: [Fund]
         var fundsNeedingPrice: [Fund]
