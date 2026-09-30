@@ -7,6 +7,8 @@ final class Holding {
     var shares: Int = 0
     var averagePrice: Decimal = 0
     var purchasedAt: Date = Date.now
+    /// Última alteração da posição; `nil` em posições gravadas antes deste campo existir.
+    var updatedAt: Date?
     var notes: String = ""
 
     @Transient private var resolvedFund: Fund?
@@ -49,6 +51,7 @@ final class Holding {
         shares: Int,
         averagePrice: Decimal,
         purchasedAt: Date = .now,
+        updatedAt: Date? = .now,
         notes: String = "",
         fund: Fund? = nil
     ) {
@@ -56,20 +59,23 @@ final class Holding {
         self.shares = shares
         self.averagePrice = averagePrice
         self.purchasedAt = purchasedAt
+        self.updatedAt = updatedAt
         self.notes = notes
         self.resolvedFund = fund
     }
 
-    func addShares(_ additionalShares: Int, at price: Decimal) {
+    func addShares(_ additionalShares: Int, at price: Decimal, now: Date = .now) {
         guard let projected = projectedPosition(adding: additionalShares, at: price) else { return }
         shares = projected.shares
         averagePrice = projected.averagePrice
+        updatedAt = now
     }
 
-    func replacePosition(shares: Int, averagePrice: Decimal) {
+    func replacePosition(shares: Int, averagePrice: Decimal, now: Date = .now) {
         guard shares > 0, averagePrice > 0 else { return }
         self.shares = shares
         self.averagePrice = averagePrice
+        updatedAt = now
     }
 
     func projectedPosition(adding additionalShares: Int, at price: Decimal) -> (shares: Int, averagePrice: Decimal)? {
