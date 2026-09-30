@@ -117,6 +117,7 @@ private final class LegacyDatabase {
                 shares: row.int(1) ?? 0,
                 averagePrice: row.decimal(2) ?? 0,
                 purchasedAt: row.date(3) ?? .now,
+                updatedAt: nil,
                 notes: row.text(4) ?? ""
             )
         }
