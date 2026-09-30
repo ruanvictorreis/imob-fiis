@@ -50,7 +50,7 @@ enum Persistence {
         directory: URL? = nil,
         cloudKitDatabase: ModelConfiguration.CloudKitDatabase = .none
     ) throws -> ModelContainer {
-        let portfolioSchema = Schema([Holding.self])
+        let portfolioSchema = Schema([Holding.self, PortfolioTransaction.self])
         let marketCacheSchema = Schema([Fund.self])
 
         let configurations: [ModelConfiguration]

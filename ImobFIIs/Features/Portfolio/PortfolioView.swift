@@ -60,6 +60,10 @@ struct PortfolioView: View {
                 if let holding = holdings.first(where: { $0.ticker == ticker }) {
                     EditHoldingSheet(holding: holding)
                 }
+            case .sell(let ticker):
+                if let holding = holdings.first(where: { $0.ticker == ticker }) {
+                    SellHoldingSheet(holding: holding)
+                }
             }
         }
         .onAppear {
@@ -92,13 +96,17 @@ struct PortfolioView: View {
                     .imobSurface()
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         Button(L10n.Common.delete, systemImage: "trash", role: .destructive) {
-                            modelContext.delete(holding)
+                            PortfolioLedger.deletePosition(ticker: holding.ticker, in: modelContext)
                         }
                         .tint(.red)
                         Button(L10n.Portfolio.editPosition, systemImage: "pencil") {
                             presentSheet(.edit(ticker: holding.ticker))
                         }
                         .tint(.accentColor)
+                        Button(L10n.Portfolio.sell, systemImage: "arrow.down.circle") {
+                            presentSheet(.sell(ticker: holding.ticker))
+                        }
+                        .tint(.orange)
                     }
                 }
             }
@@ -217,6 +225,7 @@ struct PortfolioView: View {
 private enum PositionSheet: Identifiable {
     case addNew
     case edit(ticker: String)
+    case sell(ticker: String)
 
     var id: String {
         switch self {
@@ -224,6 +233,8 @@ private enum PositionSheet: Identifiable {
             "addNew"
         case .edit(let ticker):
             "edit-\(ticker)"
+        case .sell(let ticker):
+            "sell-\(ticker)"
         }
     }
 }
