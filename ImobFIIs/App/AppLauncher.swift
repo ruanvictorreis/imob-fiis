@@ -34,8 +34,11 @@ final class AppLauncher {
             )
         }
         let directory = URL.applicationSupportDirectory
+        let cloudKitDatabase: ModelConfiguration.CloudKitDatabase? = Persistence.hasCloudKitEntitlements
+            ? .private(Persistence.cloudKitContainerIdentifier)
+            : nil
         return AppLauncher(
-            load: { try Persistence.loadAppPersistence(directory: directory) },
+            load: { try Persistence.loadAppPersistence(directory: directory, cloudKitDatabase: cloudKitDatabase) },
             restore: { try PersistenceRecovery.restoreFromBackup(in: directory) }
         )
     }

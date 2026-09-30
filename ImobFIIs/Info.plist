@@ -4,6 +4,8 @@
 <dict>
 	<key>BRAPI_API_TOKEN</key>
 	<string>$(BRAPI_API_TOKEN)</string>
+	<key>LUMINA_CODE_SIGNING_ALLOWED</key>
+	<string>$(CODE_SIGNING_ALLOWED)</string>
 	<key>SENTIMENT_BASE_URL</key>
 	<string>https://ruanvictorreis.github.io/imob-fiis/sentiment/</string>
 	<key>UIBackgroundModes</key>
