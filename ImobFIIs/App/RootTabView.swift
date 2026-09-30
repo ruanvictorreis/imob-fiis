@@ -55,9 +55,20 @@ struct RootTabView: View {
             await refreshPortfolioData()
         }
         .onChange(of: scenePhase) { _, phase in
-            guard phase == .active else { return }
-            Task { await refreshPortfolioData() }
+            switch phase {
+            case .active:
+                Task { await refreshPortfolioData() }
+            case .background:
+                backUpPortfolio()
+            default:
+                break
+            }
         }
+    }
+
+    private func backUpPortfolio() {
+        guard !Persistence.isRunningTests else { return }
+        _ = try? PortfolioBackupStore(directory: .applicationSupportDirectory).backUpIfNeeded(holdings)
     }
 
     private var portfolioRefreshKey: String {
@@ -66,6 +77,7 @@ struct RootTabView: View {
 
     private func refreshPortfolioData() async {
         HoldingDeduplicator.removeDuplicates(in: modelContext)
+        backUpPortfolio()
         await FundStore.cacheMissingFunds(
             for: holdings.map(\.ticker),
             using: exploreViewModel.catalog,
