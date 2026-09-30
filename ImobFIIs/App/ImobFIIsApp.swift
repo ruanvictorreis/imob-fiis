@@ -3,18 +3,30 @@ import SwiftUI
 
 @main
 struct ImobFIIsApp: App {
-    private let container: ModelContainer
+    @State private var launcher = AppLauncher.live()
 
     init() {
-        container = Persistence.makeAppContainer()
         ImobChrome.configure()
     }
 
     var body: some Scene {
         WindowGroup {
-            RootTabView()
-                .imobAppearance()
+            Group {
+                switch launcher.state {
+                case .ready(let container, let syncMonitor):
+                    RootTabView()
+                        .modelContainer(container)
+                        .environment(syncMonitor)
+                case .failed(let errorDescription):
+                    StoreRecoveryView(
+                        errorDescription: errorDescription,
+                        restoreFailed: launcher.restoreFailed,
+                        onRetry: launcher.retry,
+                        onRestore: launcher.restoreBackup
+                    )
+                }
+            }
+            .imobAppearance()
         }
-        .modelContainer(container)
     }
 }

@@ -8,40 +8,45 @@ enum Persistence {
     static let marketCacheStoreName = "market-cache.store"
     static let legacyStoreName = "default.store"
 
+    static var isRunningTests: Bool {
+        ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+    }
+
     /// Container do app: carteira no CloudKit (banco privado) e cache de fundos local.
-    /// Sem iCloud disponível (build sem assinatura, testes) cai para armazenamento só local.
+    /// Sem iCloud disponível (build sem assinatura) cai para armazenamento só local.
+    /// Lança erro quando nem o store local abre, para o app oferecer a tela de recuperação.
     @MainActor
-    static func makeAppContainer() -> ModelContainer {
-        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
-            return makeContainer(inMemory: true)
-        }
+    static func loadAppPersistence(
+        directory: URL = .applicationSupportDirectory,
+        cloudKitDatabase: ModelConfiguration.CloudKitDatabase? = .private(cloudKitContainerIdentifier),
+        fileManager: FileManager = .default
+    ) throws -> AppPersistence {
+        try fileManager.createDirectory(at: directory, withIntermediateDirectories: true)
 
-        let directory = URL.applicationSupportDirectory
-        try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
-
-        let container: ModelContainer
-        do {
-            container = try makeContainerThrowing(
-                directory: directory,
-                cloudKitDatabase: .private(cloudKitContainerIdentifier)
-            )
-        } catch {
-            container = makeContainer(directory: directory)
+        let persistence: AppPersistence
+        if let cloudKitDatabase,
+           let container = try? makeContainerThrowing(directory: directory, cloudKitDatabase: cloudKitDatabase) {
+            persistence = AppPersistence(container: container, isCloudSyncEnabled: true)
+        } else {
+            let container = try makeContainerThrowing(directory: directory)
+            persistence = AppPersistence(container: container, isCloudSyncEnabled: false)
         }
 
         // Se falhar, o arquivo antigo permanece e a importação é tentada no próximo launch.
         _ = try? LegacyStoreImporter.importIfNeeded(
             from: directory.appending(path: legacyStoreName),
-            into: container.mainContext
+            into: persistence.container.mainContext,
+            fileManager: fileManager
         )
-        return container
+        return persistence
     }
 
-    static func makeContainer(inMemory: Bool = false, directory: URL? = nil) -> ModelContainer {
+    /// Container em memória para previews e testes.
+    static func makeContainer(inMemory: Bool = true) -> ModelContainer {
         do {
-            return try makeContainerThrowing(inMemory: inMemory, directory: directory)
+            return try makeContainerThrowing(inMemory: inMemory)
         } catch {
-            fatalError("Não foi possível criar o ModelContainer: \(error)")
+            preconditionFailure("Não foi possível criar o ModelContainer em memória: \(error)")
         }
     }
 
@@ -92,4 +97,9 @@ enum Persistence {
             configurations: configurations
         )
     }
+}
+
+struct AppPersistence {
+    let container: ModelContainer
+    let isCloudSyncEnabled: Bool
 }
