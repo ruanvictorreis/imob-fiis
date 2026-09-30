@@ -13,16 +13,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="SplashPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Y5k-bF-splash">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="LuminaSplash" translatesAutoresizingMaskIntoConstraints="NO" id="Y5k-bF-splash">
+                                <rect key="frame" x="126.66666666666669" y="336.83333333333331" width="140" height="158.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="c3D-e4-wdt"/>
+                                    <constraint firstAttribute="width" secondItem="Y5k-bF-splash" secondAttribute="height" multiplier="770:870" id="d4E-f5-rat"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.011764705882352941" green="0.10980392156862745" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Y5k-bF-splash" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="a1B-c2-ldn"/>
-                            <constraint firstAttribute="trailing" secondItem="Y5k-bF-splash" secondAttribute="trailing" id="b2C-d3-trl"/>
-                            <constraint firstItem="Y5k-bF-splash" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="c3D-e4-top"/>
-                            <constraint firstAttribute="bottom" secondItem="Y5k-bF-splash" secondAttribute="bottom" id="d4E-f5-btm"/>
+                            <constraint firstItem="Y5k-bF-splash" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="a1B-c2-cnx"/>
+                            <constraint firstItem="Y5k-bF-splash" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-10" id="b2C-d3-cny"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -32,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SplashPhoto" width="853" height="1844"/>
+        <image name="LuminaSplash" width="256.66665649414062" height="290"/>
     </resources>
 </document>
