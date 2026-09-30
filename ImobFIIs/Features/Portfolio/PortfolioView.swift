@@ -3,6 +3,7 @@ import SwiftUI
 
 struct PortfolioView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(CloudSyncMonitor.self) private var syncMonitor: CloudSyncMonitor?
     @Query private var holdings: [Holding]
     @State private var positionSheet: PositionSheet?
     @State private var isRefreshingMarketData = false
@@ -126,6 +127,9 @@ struct PortfolioView: View {
                     .monospacedDigit()
                     .minimumScaleFactor(0.7)
                 marketDataStatusText
+                if let syncMonitor {
+                    CloudSyncStatusLabel(status: syncMonitor.status)
+                }
             }
 
             HStack(spacing: Spacing.md) {

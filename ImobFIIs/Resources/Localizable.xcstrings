@@ -1335,6 +1335,83 @@
         }
       }
     },
+    "recovery.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O banco de dados da carteira não pôde ser aberto. Tente novamente ou restaure o backup."
+          }
+        }
+      }
+    },
+    "recovery.details" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalhes do erro"
+          }
+        }
+      }
+    },
+    "recovery.restore" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar backup"
+          }
+        }
+      }
+    },
+    "recovery.restoreConfirmMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os arquivos atuais serão guardados à parte. A carteira volta do último backup local e é sincronizada novamente com o iCloud."
+          }
+        }
+      }
+    },
+    "recovery.restoreConfirmTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar backup?"
+          }
+        }
+      }
+    },
+    "recovery.restoreFailed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível restaurar o backup."
+          }
+        }
+      }
+    },
+    "recovery.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível abrir seus dados"
+          }
+        }
+      }
+    },
     "segment.fiagro" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1519,6 +1596,73 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ → %2$@ · meta %3$@"
+          }
+        }
+      }
+    },
+    "sync.failed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falha ao sincronizar com o iCloud"
+          }
+        }
+      }
+    },
+    "sync.idle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronização com o iCloud ativa"
+          }
+        }
+      }
+    },
+    "sync.localOnly" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvo apenas neste dispositivo"
+          }
+        }
+      }
+    },
+    "sync.noAccount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entre no iCloud para sincronizar"
+          }
+        }
+      }
+    },
+    "sync.synced" : {
+      "comment" : "%@ é o horário da última sincronização.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronizado com o iCloud às %@"
+          }
+        }
+      }
+    },
+    "sync.syncing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronizando com o iCloud…"
           }
         }
       }

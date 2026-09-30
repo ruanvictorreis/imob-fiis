@@ -46,6 +46,28 @@ enum L10n {
         }
     }
 
+    enum Sync {
+        static var localOnly: String { text("sync.localOnly") }
+        static var noAccount: String { text("sync.noAccount") }
+        static var idle: String { text("sync.idle") }
+        static var syncing: String { text("sync.syncing") }
+        static var failed: String { text("sync.failed") }
+
+        static func synced(_ time: String) -> String {
+            format("sync.synced", time)
+        }
+    }
+
+    enum Recovery {
+        static var title: String { text("recovery.title") }
+        static var description: String { text("recovery.description") }
+        static var restore: String { text("recovery.restore") }
+        static var restoreConfirmTitle: String { text("recovery.restoreConfirmTitle") }
+        static var restoreConfirmMessage: String { text("recovery.restoreConfirmMessage") }
+        static var restoreFailed: String { text("recovery.restoreFailed") }
+        static var details: String { text("recovery.details") }
+    }
+
     enum Accessory {
         static var estimatedIncome: String { text("accessory.estimatedIncome") }
         static var estimatedIncomeFormula: String { text("accessory.estimatedIncomeFormula") }
