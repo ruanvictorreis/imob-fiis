@@ -12,7 +12,7 @@ struct PortfolioView: View {
 
     private let catalog: any FIICatalogServing
 
-    init(catalog: any FIICatalogServing = BrapiFIICatalogService()) {
+    init(catalog: any FIICatalogServing = ResilientFIICatalogService()) {
         self.catalog = catalog
     }
 

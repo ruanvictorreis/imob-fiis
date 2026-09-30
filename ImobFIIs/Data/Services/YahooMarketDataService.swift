@@ -141,7 +141,11 @@ struct BrapiQuoteMarketDataService: PortfolioMarketDataServing {
     func latestMarketData(for symbols: [String]) async -> [PortfolioMarketData] {
         var snapshots: [PortfolioMarketData] = []
         for symbol in symbols where !symbol.isEmpty {
-            guard let quote = try? await catalog.quote(for: symbol), let price = quote.price, price > 0 else {
+            guard let quote = try? await catalog.quote(for: symbol),
+                  quote.cachedAt == nil,
+                  let price = quote.price,
+                  price > 0
+            else {
                 continue
             }
             snapshots.append(PortfolioMarketData(ticker: symbol.uppercased(), price: price, lastDividend: nil))
@@ -179,6 +183,78 @@ struct FallbackPortfolioMarketDataService: PortfolioMarketDataServing {
     }
 }
 
+struct FundMarketSnapshot: Sendable, Equatable {
+    var quote: FundQuote
+    var indicators: FIIIndicators
+}
+
+protocol FundMarketSnapshotServing: Sendable {
+    func marketSnapshot(for symbol: String) async -> FundMarketSnapshot?
+}
+
+extension YahooMarketDataService: FundMarketSnapshotServing {
+    /// Cotação e indicadores derivados do histórico de 1 ano (DY 12m pela soma dos proventos),
+    /// para quando a brapi não entrega os indicadores no plano gratuito.
+    func marketSnapshot(for symbol: String) async -> FundMarketSnapshot? {
+        guard let request = makeRequest(for: symbol, range: "1y", events: "div") else { return nil }
+
+        do {
+            let (data, response) = try await session.data(for: request)
+            guard let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) else {
+                return nil
+            }
+            let decoded = try JSONDecoder().decode(YahooChartResponse.self, from: data)
+            guard let result = decoded.chart.result?.first else { return nil }
+            return FundMarketSnapshot(ticker: symbol.uppercased(), result: result)
+        } catch {
+            return nil
+        }
+    }
+}
+
+extension FundMarketSnapshot {
+    fileprivate init?(ticker: String, result: YahooChartResult) {
+        guard let price = result.latestPrice, price > 0 else { return nil }
+        let meta = result.meta
+        let closes = result.indicators?.quote?.first?.close?.compactMap { $0 } ?? []
+        let previousClose = closes.count >= 2 ? closes[closes.count - 2] : nil
+        let priceValue = NSDecimalNumber(decimal: price).doubleValue
+
+        quote = FundQuote(
+            ticker: ticker,
+            shortName: meta?.shortName,
+            longName: meta?.longName,
+            price: price,
+            changePercent: previousClose.flatMap { $0 > 0 ? (priceValue - $0) / $0 : nil },
+            volume: meta?.regularMarketVolume.flatMap { $0 > 0 ? $0 : nil },
+            previousClose: yahooDecimal(previousClose),
+            dayHigh: yahooDecimal(meta?.regularMarketDayHigh),
+            dayLow: yahooDecimal(meta?.regularMarketDayLow),
+            fiftyTwoWeekHigh: yahooDecimal(meta?.fiftyTwoWeekHigh) ?? yahooDecimal(closes.max()),
+            fiftyTwoWeekLow: yahooDecimal(meta?.fiftyTwoWeekLow) ?? yahooDecimal(closes.min()),
+            marketCap: nil
+        )
+
+        let dividends = result.events?.dividends?.values.sorted { $0.date < $1.date } ?? []
+        let reference = result.timestamp?.last ?? dividends.last?.date ?? 0
+        let lastYear = dividends.filter { $0.date > reference - 365 * 86_400 }
+        let yearlyTotal = lastYear.reduce(0) { $0 + $1.amount }
+        indicators = FIIIndicators(
+            ticker: ticker,
+            name: meta?.longName ?? meta?.shortName,
+            price: price,
+            dividendYield12m: lastYear.isEmpty ? nil : yearlyTotal / priceValue,
+            dividendYield1m: dividends.last.map { $0.amount / priceValue }
+        )
+    }
+}
+
+/// Fora do pregão o Yahoo devolve `0` em vários campos do `meta`; os fechamentos vêm com ruído de `Double`.
+private func yahooDecimal(_ value: Double?) -> Decimal? {
+    guard let value, value > 0 else { return nil }
+    return Decimal(string: String(format: "%.2f", value))
+}
+
 private struct YahooChartResponse: Decodable {
     var chart: YahooChart
 }
@@ -189,6 +265,7 @@ private struct YahooChart: Decodable {
 
 private struct YahooChartResult: Decodable {
     var meta: YahooChartMeta?
+    var timestamp: [Int]?
     var indicators: YahooChartIndicators?
     var events: YahooChartEvents?
 
@@ -201,6 +278,13 @@ private struct YahooChartResult: Decodable {
 
 private struct YahooChartMeta: Decodable {
     var regularMarketPrice: Double?
+    var longName: String?
+    var shortName: String?
+    var regularMarketDayHigh: Double?
+    var regularMarketDayLow: Double?
+    var regularMarketVolume: Double?
+    var fiftyTwoWeekHigh: Double?
+    var fiftyTwoWeekLow: Double?
 }
 
 private struct YahooChartIndicators: Decodable {

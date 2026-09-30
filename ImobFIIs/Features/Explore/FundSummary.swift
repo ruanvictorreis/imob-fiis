@@ -1,6 +1,6 @@
 import Foundation
 
-struct FundSummary: Identifiable, Hashable, Sendable {
+struct FundSummary: Identifiable, Hashable, Codable, Sendable {
     var id: String { ticker }
 
     var ticker: String

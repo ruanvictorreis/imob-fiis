@@ -262,14 +262,14 @@ struct InsightsView: View {
         container.mainContext.insert(Holding(shares: 120, averagePrice: 98.5, fund: fund))
     }
     return NavigationStack {
-        InsightsView(catalog: BrapiFIICatalogService())
+        InsightsView(catalog: ResilientFIICatalogService())
     }
     .modelContainer(container)
 }
 
 #Preview("Vazia") {
     NavigationStack {
-        InsightsView(catalog: BrapiFIICatalogService())
+        InsightsView(catalog: ResilientFIICatalogService())
     }
     .modelContainer(Persistence.makeContainer(inMemory: true))
 }
