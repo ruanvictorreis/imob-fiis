@@ -144,9 +144,7 @@ struct InsightsView: View {
 
     private var analysisNoticeSection: some View {
         Section {
-            Text(L10n.Insights.analysisNotice)
-                .font(.caption)
-                .foregroundStyle(Color.appSecondaryText)
+            JustifiedText(text: L10n.Insights.analysisNotice)
         }
         .imobSurface()
     }
@@ -170,9 +168,7 @@ struct InsightsView: View {
 
     private var disclaimerSection: some View {
         Section {
-            Text(L10n.Insights.disclaimer)
-                .font(.footnote)
-                .foregroundStyle(Color.appSecondaryText)
+            JustifiedText(text: L10n.Insights.disclaimer, textStyle: .footnote)
         }
         .imobSurface()
     }
