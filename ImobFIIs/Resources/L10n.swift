@@ -194,15 +194,6 @@ enum L10n {
         static var sentimentNeutral: String { text("insights.sentimentNeutral") }
         static var sentimentNegative: String { text("insights.sentimentNegative") }
         static var noNewsCoverage: String { text("insights.noNewsCoverage") }
-        static var newsStale: String { text("insights.newsStale") }
-
-        static func newsCoverage(covered: Int, total: Int) -> String {
-            format("insights.newsCoverage", covered, total)
-        }
-
-        static func newsUpdated(_ relative: String) -> String {
-            format("insights.newsUpdated", relative)
-        }
 
         static func target(_ percent: String) -> String {
             format("insights.target", percent)

@@ -4,7 +4,7 @@ import Testing
 
 @Suite("Insights de aporte — sentimento")
 struct InsightEngineSentimentTests {
-    private let strategy = BalancedRetailStrategy()
+    private let strategy = TestAllocationStrategy.classic
 
     @Test @MainActor
     func prefersHigherSentimentWhenAllocationSignalsAreEqual() {

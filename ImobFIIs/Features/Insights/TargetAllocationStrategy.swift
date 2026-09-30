@@ -14,26 +14,28 @@ struct BalancedRetailStrategy: AllocationStrategy {
 
     let orderedSegments: [FundSegment] = [
         .paper,
-        .urban,
         .logistics,
         .malls,
-        .offices,
-        .fiagro,
         .hybrid,
+        .offices,
+        .urban,
         .fundsOfFunds,
+        .fiagro,
         .residential,
         .other,
     ]
 
+    /// Composição por segmento do IFIX (carteira set–dez/2026), arredondada para múltiplos de 5%.
+    /// Multiestratégia entra em Híbrido; Fiagro não faz parte do índice.
     let targetWeights: [FundSegment: Double] = [
-        .paper: 0.30,
-        .urban: 0.20,
+        .paper: 0.35,
         .logistics: 0.20,
         .malls: 0.15,
+        .hybrid: 0.15,
         .offices: 0.10,
-        .fiagro: 0.05,
-        .hybrid: 0,
+        .urban: 0.05,
         .fundsOfFunds: 0,
+        .fiagro: 0,
         .residential: 0,
         .other: 0,
     ]

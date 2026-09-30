@@ -5,7 +5,7 @@ import Testing
 
 @Suite("Insights de aporte — ranking")
 struct InsightEngineRankingTests {
-    private let strategy = BalancedRetailStrategy()
+    private let strategy = TestAllocationStrategy.classic
 
     @Test @MainActor
     func prefersPaperOverLogisticsWhenValuesAreEqual() {

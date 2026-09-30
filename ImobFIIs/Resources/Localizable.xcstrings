@@ -839,7 +839,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carteira equilibrada"
+            "value" : "Referência de mercado (IFIX)"
           }
         }
       }
@@ -1008,41 +1008,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Esta análise considera apenas os FIIs que você já tem em carteira. Para segmentos sem posição, consulte o catálogo."
-          }
-        }
-      }
-    },
-    "insights.newsCoverage" : {
-      "comment" : "%1$lld é a quantidade de posições com análise; %2$lld é o total de posições listadas.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Análise de notícias: %1$lld de %2$lld posições cobertas."
-          }
-        }
-      }
-    },
-    "insights.newsStale" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Parte da análise de notícias tem mais de uma semana."
-          }
-        }
-      }
-    },
-    "insights.newsUpdated" : {
-      "comment" : "%@ é a data relativa, por exemplo \"há 3 dias\".",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Análise mais antiga atualizada %@."
           }
         }
       }
