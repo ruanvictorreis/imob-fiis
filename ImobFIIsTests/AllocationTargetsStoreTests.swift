@@ -3,6 +3,7 @@ import Testing
 @testable import ImobFIIs
 
 @Suite("Metas de alocação")
+@MainActor
 struct AllocationTargetsStoreTests {
     @Test
     func startsWithBalancedRetailDefaults() {

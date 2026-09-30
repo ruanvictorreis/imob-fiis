@@ -17,7 +17,7 @@ struct InsightsView: View {
     init(
         catalog: any FIICatalogServing,
         sentimentService: SentimentReportService = SentimentReportService(),
-        targetsStore: AllocationTargetsStore = AllocationTargetsStore(),
+        targetsStore: AllocationTargetsStore = .live(),
         onExploreSegment: ((FundSegment) -> Void)? = nil
     ) {
         self.catalog = catalog
