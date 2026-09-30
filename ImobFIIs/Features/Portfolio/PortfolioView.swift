@@ -7,7 +7,6 @@ struct PortfolioView: View {
     @Query private var holdings: [Holding]
     @State private var positionSheet: PositionSheet?
     @State private var isRefreshingMarketData = false
-    @State private var lastPriceRefreshDate: Date?
     @State private var didFailLastRefresh = false
 
     private let catalog: any FIICatalogServing
@@ -62,9 +61,6 @@ struct PortfolioView: View {
                     EditHoldingSheet(holding: holding)
                 }
             }
-        }
-        .onAppear {
-            syncRefreshStatusFromStore()
         }
         .onReceive(NotificationCenter.default.publisher(for: .portfolioMarketDataDidSync)) { notification in
             let key = PortfolioPriceSync.outcomeUserInfoKey
@@ -167,10 +163,6 @@ struct PortfolioView: View {
             Text(L10n.Portfolio.refreshFailed)
                 .font(.caption)
                 .foregroundStyle(Color.red)
-        } else if let lastPriceRefreshDate {
-            Text(L10n.Portfolio.updatedAt(lastPriceRefreshDate.formatted(date: .omitted, time: .shortened)))
-                .font(.caption)
-                .foregroundStyle(Color.appSecondaryText)
         }
     }
 
@@ -188,12 +180,7 @@ struct PortfolioView: View {
         applySyncOutcome(outcome)
     }
 
-    private func syncRefreshStatusFromStore() {
-        lastPriceRefreshDate = PortfolioPriceSync.lastPriceRefreshDate(for: holdings.compactMap(\.fund))
-    }
-
     private func applySyncOutcome(_ outcome: PortfolioPriceSyncOutcome?) {
-        syncRefreshStatusFromStore()
         switch outcome {
         case .failed:
             didFailLastRefresh = true
