@@ -65,6 +65,7 @@ struct RootTabView: View {
     }
 
     private func refreshPortfolioData() async {
+        HoldingDeduplicator.removeDuplicates(in: modelContext)
         await FundStore.cacheMissingFunds(
             for: holdings.map(\.ticker),
             using: exploreViewModel.catalog,
