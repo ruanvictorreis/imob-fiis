@@ -53,8 +53,8 @@ enum FundStore {
     /// Posições sincronizadas de outro aparelho chegam só com o ticker; busca os fundos
     /// que ainda não estão no cache local.
     ///
-    /// Os indicadores de FII exigem plano pago da brapi; sem eles, usa a listagem do catálogo
-    /// (plano gratuito), que traz preço e segmento.
+    /// Os indicadores de FII com segmento exigem plano pago da brapi; sem eles, usa a listagem do
+    /// catálogo (plano gratuito), que traz preço e segmento, e aproveita o DY que veio do Yahoo.
     @MainActor
     static func cacheMissingFunds(
         for tickers: [String],
@@ -66,7 +66,9 @@ enum FundStore {
         guard !missing.isEmpty else { return }
 
         let indicators = (try? await catalog.indicators(for: missing.sorted())) ?? []
-        for item in indicators where missing.remove(item.ticker) != nil {
+        let indicatorsByTicker = Dictionary(indicators.map { ($0.ticker, $0) }) { first, _ in first }
+        let withSegment = indicators.filter { $0.segmentoAtuacao != nil || $0.segmentType != nil }
+        for item in withSegment where missing.remove(item.ticker) != nil {
             let name = item.name ?? item.ticker
             let summary = FundSummary(
                 ticker: item.ticker,
@@ -83,7 +85,7 @@ enum FundStore {
 
         guard !missing.isEmpty, let page = try? await catalog.tickers(.allFIIs) else { return }
         for summary in page.funds where missing.remove(summary.ticker) != nil {
-            upsert(summary, indicators: nil, in: context)
+            upsert(summary, indicators: indicatorsByTicker[summary.ticker], in: context)
         }
     }
 

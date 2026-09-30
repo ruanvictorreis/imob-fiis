@@ -1,8 +1,8 @@
 import Foundation
 
-/// Tira do caminho os stores que não abrem e recoloca o último backup local (`default.store`)
-/// para o `LegacyStoreImporter` importar no próximo carregamento. Posições que estão no iCloud
-/// voltam pela sincronização do CloudKit.
+/// Tira do caminho os stores que não abrem e deixa o backup local mais recente pronto para
+/// importação no próximo carregamento: a cópia em JSON da carteira ou, sem ela, o `default.store`
+/// da migração da V1. Posições que estão no iCloud voltam pela sincronização do CloudKit.
 enum PersistenceRecovery {
     static let damagedDirectoryName = "DamagedStores"
 
@@ -17,7 +17,10 @@ enum PersistenceRecovery {
         now: Date = .now
     ) throws -> Bool {
         try moveDamagedStores(in: directory, fileManager: fileManager, now: now)
-        return try stageLatestBackup(in: directory, fileManager: fileManager)
+        if try PortfolioBackupStore(directory: directory, fileManager: fileManager).stageLatestForRestore() {
+            return true
+        }
+        return try stageLatestLegacyBackup(in: directory, fileManager: fileManager)
     }
 
     /// Inclui os arquivos auxiliares do SQLite (`-shm`, `-wal`) e do CloudKit (`.portfolio_SUPPORT`, `_ckAssets`).
@@ -37,7 +40,7 @@ enum PersistenceRecovery {
         }
     }
 
-    private static func stageLatestBackup(in directory: URL, fileManager: FileManager) throws -> Bool {
+    private static func stageLatestLegacyBackup(in directory: URL, fileManager: FileManager) throws -> Bool {
         let legacyName = Persistence.legacyStoreName
         guard !fileManager.fileExists(atPath: directory.appending(path: legacyName).path(percentEncoded: false)),
               let backup = latestBackupDirectory(in: directory, fileManager: fileManager)

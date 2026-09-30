@@ -11,6 +11,7 @@ struct InsightsView: View {
     @State private var isSimulatingContribution = false
     @State private var sentimentContext = SentimentContext.empty
     @State private var hasLoadedSentiment = false
+    @State private var snapshotCache = InsightSnapshotCache()
 
     @Query private var holdings: [Holding]
 
@@ -31,7 +32,7 @@ struct InsightsView: View {
     }
 
     private var snapshot: InsightSnapshot {
-        InsightEngine.evaluate(holdings, strategy: strategy, sentiment: sentimentContext)
+        snapshotCache.snapshot(for: holdings, strategy: strategy, sentiment: sentimentContext)
     }
 
     private var activeAllocations: [SegmentAllocation] {
@@ -261,14 +262,14 @@ struct InsightsView: View {
         container.mainContext.insert(Holding(shares: 120, averagePrice: 98.5, fund: fund))
     }
     return NavigationStack {
-        InsightsView(catalog: BrapiFIICatalogService())
+        InsightsView(catalog: ResilientFIICatalogService())
     }
     .modelContainer(container)
 }
 
 #Preview("Vazia") {
     NavigationStack {
-        InsightsView(catalog: BrapiFIICatalogService())
+        InsightsView(catalog: ResilientFIICatalogService())
     }
     .modelContainer(Persistence.makeContainer(inMemory: true))
 }

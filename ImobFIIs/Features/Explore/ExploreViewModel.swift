@@ -13,7 +13,7 @@ final class ExploreViewModel {
     let catalog: any FIICatalogServing
     private var hasLoaded = false
 
-    init(catalog: any FIICatalogServing = BrapiFIICatalogService()) {
+    init(catalog: any FIICatalogServing = ResilientFIICatalogService()) {
         self.catalog = catalog
     }
 

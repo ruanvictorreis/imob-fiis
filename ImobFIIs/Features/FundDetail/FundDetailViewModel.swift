@@ -25,7 +25,7 @@ final class FundDetailViewModel {
 
     init(
         summary: FundSummary,
-        catalog: any FIICatalogServing = BrapiFIICatalogService(),
+        catalog: any FIICatalogServing = ResilientFIICatalogService(),
         sentimentService: SentimentReportService = SentimentReportService()
     ) {
         self.summary = summary

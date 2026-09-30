@@ -8,7 +8,7 @@ struct FundDetailView: View {
     @State private var isAddingHolding = false
     @State private var isEditingHolding = false
 
-    init(summary: FundSummary, catalog: any FIICatalogServing = BrapiFIICatalogService()) {
+    init(summary: FundSummary, catalog: any FIICatalogServing = ResilientFIICatalogService()) {
         _viewModel = State(
             initialValue: FundDetailViewModel(summary: summary, catalog: catalog)
         )
@@ -21,7 +21,7 @@ struct FundDetailView: View {
             }
             .imobSurface()
 
-            Section(L10n.FundDetail.quote) {
+            Section {
                 LabeledContent(L10n.FundDetail.currentPrice) {
                     if let price = viewModel.displayPrice {
                         Text(price, format: .brl)
@@ -71,6 +71,12 @@ struct FundDetailView: View {
                     LabeledContent(L10n.FundDetail.volume) {
                         Text(volume, format: .number.notation(.compactName).locale(Locale(identifier: "pt_BR")))
                     }
+                }
+            } header: {
+                Text(L10n.FundDetail.quote)
+            } footer: {
+                if let cachedAt = viewModel.quote?.cachedAt {
+                    Text(L10n.FundDetail.cachedQuote(cachedAt.formatted(date: .abbreviated, time: .shortened)))
                 }
             }
             .imobSurface()

@@ -117,6 +117,10 @@ enum L10n {
         static var newsLoadFailed: String { text("fundDetail.newsLoadFailed") }
         static var newsStale: String { text("fundDetail.newsStale") }
 
+        static func cachedQuote(_ date: String) -> String {
+            format("fundDetail.cachedQuote", date)
+        }
+
         static func rangeValue(low: String, high: String) -> String {
             format("fundDetail.rangeValue", low, high)
         }

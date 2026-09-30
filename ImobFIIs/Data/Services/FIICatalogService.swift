@@ -1,11 +1,11 @@
 import Foundation
 
-struct FIITickerPage: Sendable, Equatable {
+struct FIITickerPage: Codable, Sendable, Equatable {
     var funds: [FundSummary]
     var totalItems: Int
 }
 
-struct FIIIndicators: Sendable, Equatable {
+struct FIIIndicators: Codable, Sendable, Equatable {
     var ticker: String
     var name: String?
     var price: Decimal?
@@ -23,7 +23,7 @@ struct FIIIndicators: Sendable, Equatable {
     var vacancyRate: Double?
 }
 
-struct FundQuote: Sendable, Equatable {
+struct FundQuote: Codable, Sendable, Equatable {
     var ticker: String
     var shortName: String?
     var longName: String?
@@ -36,6 +36,8 @@ struct FundQuote: Sendable, Equatable {
     var fiftyTwoWeekHigh: Decimal?
     var fiftyTwoWeekLow: Decimal?
     var marketCap: Decimal?
+    /// Preenchido quando a cotação veio do cache local porque nenhuma fonte respondeu.
+    var cachedAt: Date?
 }
 
 struct FIIDividend: Sendable, Equatable {

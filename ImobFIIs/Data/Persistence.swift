@@ -38,6 +38,8 @@ enum Persistence {
             into: persistence.container.mainContext,
             fileManager: fileManager
         )
+        _ = try? PortfolioBackupStore(directory: directory, fileManager: fileManager)
+            .importPendingRestore(into: persistence.container.mainContext)
         return persistence
     }
 
