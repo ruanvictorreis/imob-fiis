@@ -7,17 +7,6 @@
     "0" : {
 
     },
-    "app.name" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lumina"
-          }
-        }
-      }
-    },
     "accessory.estimatedIncome" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -175,17 +164,6 @@
         }
       }
     },
-    "addHolding.purchaseDate" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data da compra"
-          }
-        }
-      }
-    },
     "addHolding.shareShortcuts" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -219,35 +197,13 @@
         }
       }
     },
-    "editHolding.helper" : {
+    "app.name" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use o preço médio da corretora. A alteração fica registrada como um ajuste no histórico de operações."
-          }
-        }
-      }
-    },
-    "editHolding.tapToEdit" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toque para editar"
-          }
-        }
-      }
-    },
-    "editHolding.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Editar posição"
+            "value" : "Lumina"
           }
         }
       }
@@ -395,6 +351,39 @@
         }
       }
     },
+    "editHolding.helper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use o preço médio da corretora. Isso substitui os valores atuais e não registra uma compra."
+          }
+        }
+      }
+    },
+    "editHolding.tapToEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque para editar"
+          }
+        }
+      }
+    },
+    "editHolding.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar posição"
+          }
+        }
+      }
+    },
     "explore.fundsCount" : {
       "comment" : "%lld é a quantidade de fundos filtrados.",
       "extractionState" : "manual",
@@ -528,17 +517,6 @@
         }
       }
     },
-    "fundDetail.editPosition" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Editar posição"
-          }
-        }
-      }
-    },
     "fundDetail.dayRange" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -557,6 +535,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dividend yield 12m"
+          }
+        }
+      }
+    },
+    "fundDetail.editPosition" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar posição"
           }
         }
       }
@@ -753,17 +742,6 @@
         }
       }
     },
-    "fundDetail.sellShares" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vender cotas"
-          }
-        }
-      }
-    },
     "fundDetail.vacancy" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -805,6 +783,411 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld cotas · média %@"
+          }
+        }
+      }
+    },
+    "insights.allocation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alocação"
+          }
+        }
+      }
+    },
+    "insights.allocationTotalInvalid" : {
+      "comment" : "%@ é o total atual das metas, por exemplo 95%.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total: %@. Ajuste para somar 100% antes de salvar."
+          }
+        }
+      }
+    },
+    "insights.allocationTotalValid" : {
+      "comment" : "%@ é o total das metas, por exemplo 100%.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total: %@"
+          }
+        }
+      }
+    },
+    "insights.analysisNotice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Análise descritiva da sua carteira, calculada a partir das metas que você definiu. Não é recomendação de investimento."
+          }
+        }
+      }
+    },
+    "insights.balancedStrategy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carteira equilibrada"
+          }
+        }
+      }
+    },
+    "insights.belowAveragePrice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abaixo do seu preço médio"
+          }
+        }
+      }
+    },
+    "insights.customStrategy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metas personalizadas"
+          }
+        }
+      }
+    },
+    "insights.disclaimer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Lumina é uma ferramenta de organização e acompanhamento da sua carteira. Os números mostram desvios em relação às metas que você mesmo definiu e não constituem recomendação, oferta, consultoria ou análise de valores mobiliários. Os dados podem estar incompletos ou desatualizados. Toda decisão de investimento é sua."
+          }
+        }
+      }
+    },
+    "insights.editAllocation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar metas"
+          }
+        }
+      }
+    },
+    "insights.editAllocationHeader" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metas por segmento"
+          }
+        }
+      }
+    },
+    "insights.editAllocationTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metas de alocação"
+          }
+        }
+      }
+    },
+    "insights.emptyDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione fundos à carteira para ver os desvios em relação às suas metas."
+          }
+        }
+      }
+    },
+    "insights.emptyTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem análise ainda"
+          }
+        }
+      }
+    },
+    "insights.exploreSegment" : {
+      "comment" : "%@ é o nome do segmento, por exemplo Logística.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explorar %@"
+          }
+        }
+      }
+    },
+    "insights.gapToTarget" : {
+      "comment" : "%@ é a diferença em reais entre a posição atual no segmento e a meta definida pelo usuário.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap estimado até a meta: ~%@"
+          }
+        }
+      }
+    },
+    "insights.largestGap" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior desvio vs sua meta"
+          }
+        }
+      }
+    },
+    "insights.lowestWeightInSegment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menor peso neste segmento da carteira"
+          }
+        }
+      }
+    },
+    "insights.missingSegmentGap" : {
+      "comment" : "%@ é o segmento, depois o peso atual e a meta, já formatados em percentual.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ está em %@, meta %@. Você ainda não tem nenhum fundo nesse segmento."
+          }
+        }
+      }
+    },
+    "insights.missingSegments" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segmentos sem posição"
+          }
+        }
+      }
+    },
+    "insights.missingSegmentsFooter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta análise considera apenas os FIIs que você já tem em carteira. Para segmentos sem posição, consulte o catálogo."
+          }
+        }
+      }
+    },
+    "insights.newsCoverage" : {
+      "comment" : "%1$lld é a quantidade de posições com análise; %2$lld é o total de posições listadas.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Análise de notícias: %1$lld de %2$lld posições cobertas."
+          }
+        }
+      }
+    },
+    "insights.newsStale" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parte da análise de notícias tem mais de uma semana."
+          }
+        }
+      }
+    },
+    "insights.newsUpdated" : {
+      "comment" : "%@ é a data relativa, por exemplo \"há 3 dias\".",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Análise mais antiga atualizada %@."
+          }
+        }
+      }
+    },
+    "insights.nextPurchaseYield" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior dividend yield (12m) no segmento"
+          }
+        }
+      }
+    },
+    "insights.noNewsCoverage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem análise de notícias"
+          }
+        }
+      }
+    },
+    "insights.otherPositions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demais posições analisadas"
+          }
+        }
+      }
+    },
+    "insights.resetAllocation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar metas padrão"
+          }
+        }
+      }
+    },
+    "insights.segmentGap" : {
+      "comment" : "%@ é o segmento, depois o peso atual e a meta, já formatados em percentual.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ está em %@, meta %@"
+          }
+        }
+      }
+    },
+    "insights.sentimentNegative" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notícias negativas"
+          }
+        }
+      }
+    },
+    "insights.sentimentNeutral" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notícias neutras"
+          }
+        }
+      }
+    },
+    "insights.sentimentPositive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notícias positivas"
+          }
+        }
+      }
+    },
+    "insights.setTargetsAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir metas"
+          }
+        }
+      }
+    },
+    "insights.setTargetsDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A análise compara a alocação atual com as metas que você escolher. Até lá, usamos uma distribuição inicial só como referência."
+          }
+        }
+      }
+    },
+    "insights.setTargetsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Defina as metas da sua carteira"
+          }
+        }
+      }
+    },
+    "insights.target" : {
+      "comment" : "%@ é o percentual da meta, por exemplo 30%.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "meta %@"
+          }
+        }
+      }
+    },
+    "insights.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insights"
           }
         }
       }
@@ -897,17 +1280,6 @@
         }
       }
     },
-    "portfolio.result" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Resultado"
-          }
-        }
-      }
-    },
     "portfolio.refresh" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -930,13 +1302,13 @@
         }
       }
     },
-    "portfolio.sell" : {
+    "portfolio.result" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vender"
+            "value" : "Resultado"
           }
         }
       }
@@ -959,414 +1331,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Atualizado às %@"
-          }
-        }
-      }
-    },
-    "R$ 0,00" : {
-
-    },
-    "insights.allocation" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alocação"
-          }
-        }
-      }
-    },
-    "insights.allocationTotalInvalid" : {
-      "comment" : "%@ é o total atual das metas, por exemplo 95%.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Total: %@. Ajuste para somar 100% antes de salvar."
-          }
-        }
-      }
-    },
-    "insights.allocationTotalValid" : {
-      "comment" : "%@ é o total das metas, por exemplo 100%.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Total: %@"
-          }
-        }
-      }
-    },
-    "insights.balancedStrategy" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carteira equilibrada"
-          }
-        }
-      }
-    },
-    "insights.belowAveragePrice" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abaixo do seu preço médio"
-          }
-        }
-      }
-    },
-    "insights.customStrategy" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Metas personalizadas"
-          }
-        }
-      }
-    },
-    "insights.analysisNotice" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Análise descritiva da sua carteira, calculada a partir das metas que você definiu. Não é recomendação de investimento."
-          }
-        }
-      }
-    },
-    "insights.disclaimer" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O Lumina é uma ferramenta de organização e acompanhamento da sua carteira. Os números mostram desvios em relação às metas que você mesmo definiu e não constituem recomendação, oferta, consultoria ou análise de valores mobiliários. Os dados podem estar incompletos ou desatualizados. Toda decisão de investimento é sua."
-          }
-        }
-      }
-    },
-    "insights.emptyDescription" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Adicione fundos à carteira para ver os desvios em relação às suas metas."
-          }
-        }
-      }
-    },
-    "insights.emptyTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sem análise ainda"
-          }
-        }
-      }
-    },
-    "insights.exploreSegment" : {
-      "comment" : "%@ é o nome do segmento, por exemplo Logística.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Explorar %@"
-          }
-        }
-      }
-    },
-    "insights.editAllocation" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Editar metas"
-          }
-        }
-      }
-    },
-    "insights.editAllocationHeader" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Metas por segmento"
-          }
-        }
-      }
-    },
-    "insights.editAllocationTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Metas de alocação"
-          }
-        }
-      }
-    },
-    "insights.lowestWeightInSegment" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Menor peso neste segmento da carteira"
-          }
-        }
-      }
-    },
-    "insights.missingSegmentGap" : {
-      "comment" : "%@ é o segmento, depois o peso atual e a meta, já formatados em percentual.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ está em %@, meta %@. Você ainda não tem nenhum fundo nesse segmento."
-          }
-        }
-      }
-    },
-    "insights.missingSegments" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Segmentos sem posição"
-          }
-        }
-      }
-    },
-    "insights.missingSegmentsFooter" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esta análise considera apenas os FIIs que você já tem em carteira. Para segmentos sem posição, consulte o catálogo."
-          }
-        }
-      }
-    },
-    "insights.largestGap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maior desvio vs sua meta"
-          }
-        }
-      }
-    },
-    "insights.newsCoverage" : {
-      "comment" : "%1$lld é a quantidade de posições com análise; %2$lld é o total de posições listadas.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Análise de notícias: %1$lld de %2$lld posições cobertas."
-          }
-        }
-      }
-    },
-    "insights.newsStale" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Parte da análise de notícias tem mais de uma semana."
-          }
-        }
-      }
-    },
-    "insights.newsUpdated" : {
-      "comment" : "%@ é a data relativa, por exemplo \"há 3 dias\".",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Análise mais antiga atualizada %@."
-          }
-        }
-      }
-    },
-    "insights.nextPurchaseYield" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maior dividend yield (12m) no segmento"
-          }
-        }
-      }
-    },
-    "insights.sentimentPositive" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notícias positivas"
-          }
-        }
-      }
-    },
-    "insights.sentimentNeutral" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notícias neutras"
-          }
-        }
-      }
-    },
-    "insights.sentimentNegative" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notícias negativas"
-          }
-        }
-      }
-    },
-    "insights.noNewsCoverage" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sem análise de notícias"
-          }
-        }
-      }
-    },
-    "insights.otherPositions" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Demais posições analisadas"
-          }
-        }
-      }
-    },
-    "insights.setTargetsTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Defina as metas da sua carteira"
-          }
-        }
-      }
-    },
-    "insights.setTargetsDescription" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A análise compara a alocação atual com as metas que você escolher. Até lá, usamos uma distribuição inicial só como referência."
-          }
-        }
-      }
-    },
-    "insights.setTargetsAction" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Definir metas"
-          }
-        }
-      }
-    },
-    "insights.resetAllocation" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar metas padrão"
-          }
-        }
-      }
-    },
-    "insights.segmentGap" : {
-      "comment" : "%@ é o segmento, depois o peso atual e a meta, já formatados em percentual.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ está em %@, meta %@"
-          }
-        }
-      }
-    },
-    "insights.gapToTarget" : {
-      "comment" : "%@ é a diferença em reais entre a posição atual no segmento e a meta definida pelo usuário.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gap estimado até a meta: ~%@"
-          }
-        }
-      }
-    },
-    "insights.target" : {
-      "comment" : "%@ é o percentual da meta, por exemplo 30%.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "meta %@"
-          }
-        }
-      }
-    },
-    "insights.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Insights"
           }
         }
       }
@@ -1481,118 +1445,6 @@
         }
       }
     },
-    "sellHolding.closesPosition" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A posição será encerrada. As operações continuam no histórico."
-          }
-        }
-      }
-    },
-    "sellHolding.confirm" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Registrar venda"
-          }
-        }
-      }
-    },
-    "sellHolding.date" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data da venda"
-          }
-        }
-      }
-    },
-    "sellHolding.exceedsPosition" : {
-      "comment" : "%lld é a quantidade de cotas em carteira.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Você tem apenas %lld cotas deste fundo."
-          }
-        }
-      }
-    },
-    "sellHolding.price" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preço de venda"
-          }
-        }
-      }
-    },
-    "sellHolding.realizedResult" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Resultado da venda"
-          }
-        }
-      }
-    },
-    "sellHolding.remainingPosition" : {
-      "comment" : "%lld cotas restantes; %@ preço médio.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Após a venda: %lld cotas · média %@"
-          }
-        }
-      }
-    },
-    "sellHolding.sellAll" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Todas"
-          }
-        }
-      }
-    },
-    "sellHolding.shares" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cotas vendidas"
-          }
-        }
-      }
-    },
-    "sellHolding.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vender cotas"
-          }
-        }
-      }
-    },
     "simulator.amount" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1682,17 +1534,6 @@
         }
       }
     },
-    "tab.portfolio" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carteira"
-          }
-        }
-      }
-    },
     "tab.insights" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1700,6 +1541,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Insights"
+          }
+        }
+      }
+    },
+    "tab.portfolio" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carteira"
           }
         }
       }

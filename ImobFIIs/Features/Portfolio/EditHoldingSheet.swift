@@ -2,7 +2,6 @@ import SwiftData
 import SwiftUI
 
 struct EditHoldingSheet: View {
-    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
     let holding: Holding
@@ -151,7 +150,7 @@ struct EditHoldingSheet: View {
 
     private func save() {
         guard let price else { return }
-        PortfolioLedger.recordAdjustment(ticker: holding.ticker, shares: shares, averagePrice: price, in: modelContext)
+        holding.replacePosition(shares: shares, averagePrice: price)
         dismiss()
     }
 

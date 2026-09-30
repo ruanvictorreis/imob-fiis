@@ -1,8 +1,7 @@
 import Foundation
 import SwiftData
 
-/// Versão 2: carteira (`Holding` e `PortfolioTransaction`, sincronizadas via CloudKit)
-/// separada do cache local de fundos.
+/// Versão 2: carteira (`Holding`, sincronizada via CloudKit) separada do cache local de fundos.
 ///
 /// A versão 1 era um banco único local (`default.store`) com `Holding` apontando para `Fund`;
 /// ela é lida pelo `LegacyStoreImporter`, não por uma etapa de migração.
@@ -13,7 +12,7 @@ enum SchemaV2: VersionedSchema {
     static let versionIdentifier = Schema.Version(2, 0, 0)
 
     static var models: [any PersistentModel.Type] {
-        [Fund.self, Holding.self, PortfolioTransaction.self]
+        [Fund.self, Holding.self]
     }
 }
 

@@ -15,7 +15,6 @@ struct AddHoldingSheet: View {
     @State private var selectedFund: Fund?
     @State private var sharesText = ""
     @State private var price: Decimal?
-    @State private var purchaseDate = Date.now
     @FocusState private var focusedField: Field?
 
     init(
@@ -93,13 +92,6 @@ struct AddHoldingSheet: View {
                                 .multilineTextAlignment(.trailing)
                                 .focused($focusedField, equals: .price)
                         }
-                    )
-
-                    DatePicker(
-                        L10n.AddHolding.purchaseDate,
-                        selection: $purchaseDate,
-                        in: ...Date.now,
-                        displayedComponents: .date
                     )
                 }
                 .imobSurface()
@@ -245,13 +237,12 @@ struct AddHoldingSheet: View {
             return
         }
 
-        PortfolioLedger.recordBuy(
-            ticker: fund.ticker,
-            shares: shares,
-            price: price,
-            date: purchaseDate,
-            in: modelContext
-        )
+        if let existing = holdings.first(where: { $0.ticker == fund.ticker }) {
+            existing.addShares(shares, at: price)
+        } else {
+            modelContext.insert(Holding(shares: shares, averagePrice: price, fund: fund))
+        }
+
         dismiss()
     }
 

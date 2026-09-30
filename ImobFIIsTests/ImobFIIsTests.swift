@@ -19,6 +19,25 @@ struct ImobFIIsTests {
     }
 
     @Test @MainActor
+    func addingSharesMergesExistingHolding() throws {
+        let container = Persistence.makeContainer(inMemory: true)
+        let context = container.mainContext
+        SampleData.seedIfNeeded(in: context)
+
+        let fund = try #require(context.fetch(FetchDescriptor<Fund>()).first)
+        let holding = Holding(shares: 10, averagePrice: 100, fund: fund)
+        context.insert(holding)
+
+        holding.addShares(10, at: 120)
+
+        #expect(holding.shares == 20)
+        #expect(holding.averagePrice == 110)
+        let ticker = fund.ticker
+        let sameTicker = FetchDescriptor<Holding>(predicate: #Predicate { $0.ticker == ticker })
+        #expect(try context.fetchCount(sameTicker) == 1)
+    }
+
+    @Test @MainActor
     func repairSegmentsUpdatesStaleOtherClassification() {
         let container = Persistence.makeContainer(inMemory: true)
         let context = container.mainContext
@@ -81,6 +100,28 @@ struct ImobFIIsTests {
         #expect(projected?.averagePrice == Decimal(string: "98.8"))
         #expect(holding.shares == 120)
         #expect(holding.averagePrice == Decimal(string: "98.5"))
+    }
+
+    @Test
+    func replacingPositionOverwritesSharesAndAverage() {
+        let holding = Holding(shares: 120, averagePrice: Decimal(string: "98.5")!)
+        holding.replacePosition(shares: 200, averagePrice: Decimal(string: "87.3")!)
+
+        #expect(holding.shares == 200)
+        #expect(holding.averagePrice == Decimal(string: "87.3"))
+    }
+
+    @Test
+    func replacingPositionIgnoresInvalidValues() {
+        let holding = Holding(shares: 10, averagePrice: 100)
+
+        holding.replacePosition(shares: 0, averagePrice: 90)
+        #expect(holding.shares == 10)
+        #expect(holding.averagePrice == 100)
+
+        holding.replacePosition(shares: 5, averagePrice: 0)
+        #expect(holding.shares == 10)
+        #expect(holding.averagePrice == 100)
     }
 
     @Test
