@@ -12,6 +12,12 @@ enum Persistence {
         ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
     }
 
+    /// Builds sem assinatura (CI) saem sem os entitlements do iCloud: o SwiftData abre o store com
+    /// CloudKit mesmo assim, mas `CKContainer(identifier:)` encerra o processo.
+    static var hasCloudKitEntitlements: Bool {
+        Bundle.main.object(forInfoDictionaryKey: "LUMINA_CODE_SIGNING_ALLOWED") as? String != "NO"
+    }
+
     /// Container do app: carteira no CloudKit (banco privado) e cache de fundos local.
     /// Sem iCloud disponível (build sem assinatura) cai para armazenamento só local.
     /// Lança erro quando nem o store local abre, para o app oferecer a tela de recuperação.

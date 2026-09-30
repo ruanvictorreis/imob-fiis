@@ -68,7 +68,7 @@ final class AllocationTargetsStore {
     }
 
     static func live() -> AllocationTargetsStore {
-        AllocationTargetsStore(cloud: NSUbiquitousKeyValueStore.default)
+        AllocationTargetsStore(cloud: Persistence.hasCloudKitEntitlements ? NSUbiquitousKeyValueStore.default : nil)
     }
 
     func markTargetsPrompted() {
