@@ -147,9 +147,6 @@ struct InsightsView: View {
             Text(L10n.Insights.analysisNotice)
                 .font(.caption)
                 .foregroundStyle(Color.appSecondaryText)
-            if hasLoadedSentiment {
-                InsightsNewsCoverageNote(insights: snapshot.insights)
-            }
         }
         .imobSurface()
     }
