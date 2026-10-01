@@ -1,6 +1,6 @@
 import Foundation
 
-struct SegmentContribution: Identifiable, Equatable {
+struct SegmentContribution: Identifiable, Hashable {
     var id: FundSegment { segment }
 
     var segment: FundSegment
@@ -19,14 +19,20 @@ enum ContributionSimulator {
         holdings: [Holding],
         strategy: some AllocationStrategy
     ) -> [SegmentContribution] {
+        simulate(amount: amount, valueBySegment: segmentValues(in: holdings), strategy: strategy)
+    }
+
+    /// Mesma distribuição, a partir do patrimônio por segmento já calculado. Permite congelar a carteira
+    /// usada na simulação enquanto o usuário compra cotas.
+    static func simulate(
+        amount: Decimal,
+        valueBySegment: [FundSegment: Double],
+        strategy: some AllocationStrategy
+    ) -> [SegmentContribution] {
         let amountCents = max(cents(from: amount), 0)
         let segments = strategy.orderedSegments.filter { (strategy.targetWeights[$0] ?? 0) > 0 }
         guard !segments.isEmpty else { return [] }
 
-        let valueBySegment = holdings.reduce(into: [FundSegment: Double]()) { partial, holding in
-            guard let segment = holding.fund?.segment else { return }
-            partial[segment, default: 0] += InsightEngine.double(from: holding.currentValue)
-        }
         let totalValue = valueBySegment.values.reduce(0, +)
         let contribution = Double(amountCents) / 100
         let projectedTotal = totalValue + contribution
@@ -55,6 +61,13 @@ enum ContributionSimulator {
                 projectedWeight: projectedTotal > 0 ? (value + Double(segmentCents) / 100) / projectedTotal : 0,
                 targetWeight: strategy.targetWeights[segment] ?? 0
             )
+        }
+    }
+
+    static func segmentValues(in holdings: [Holding]) -> [FundSegment: Double] {
+        holdings.reduce(into: [:]) { partial, holding in
+            guard let segment = holding.fund?.segment else { return }
+            partial[segment, default: 0] += InsightEngine.double(from: holding.currentValue)
         }
     }
 

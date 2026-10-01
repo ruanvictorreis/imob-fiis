@@ -1,63 +1,66 @@
+import SwiftData
 import SwiftUI
 
 struct ContributionSimulatorView: View {
-    @Environment(\.dismiss) private var dismiss
-
-    let holdings: [Holding]
     let strategy: any AllocationStrategy
+
+    @Query private var holdings: [Holding]
 
     @State private var amount: Decimal?
     @State private var simulatedAmount: Decimal = 0
+    /// Patrimônio por segmento no momento em que o simulador abriu: as cotas compradas a partir dele
+    /// não redistribuem o aporte que o usuário está executando.
+    @State private var frozenValues: [FundSegment: Double]?
 
     var body: some View {
         let contributions = ContributionSimulator.simulate(
             amount: simulatedAmount,
-            holdings: holdings,
+            valueBySegment: frozenValues ?? ContributionSimulator.segmentValues(in: holdings),
             strategy: strategy
         )
 
-        NavigationStack {
-            Form {
-                Section {
-                    BRLCurrencyTextField(amount: $amount)
-                        .font(.title3.weight(.semibold))
-                } header: {
-                    Text(L10n.Simulator.amount)
-                } footer: {
-                    Text(L10n.Simulator.amountFooter)
-                }
-                .imobSurface()
+        Form {
+            Section {
+                BRLCurrencyTextField(amount: $amount)
+                    .font(.title3.weight(.semibold))
+            } header: {
+                Text(L10n.Simulator.amount)
+            } footer: {
+                Text(L10n.Simulator.amountFooter)
+            }
+            .imobSurface()
 
-                Section {
-                    ForEach(contributions) { contribution in
+            Section {
+                ForEach(contributions) { contribution in
+                    NavigationLink(value: InsightsRoute.segmentHoldings(contribution)) {
                         contributionRow(contribution)
                     }
-                } header: {
-                    Text(L10n.Simulator.distribution)
-                } footer: {
-                    Text(L10n.Simulator.disclaimer)
                 }
-                .imobSurface()
+            } header: {
+                Text(L10n.Simulator.distribution)
+            } footer: {
+                Text(L10n.Simulator.disclaimer)
             }
-            .task(id: amount) {
-                // Recalcular a lista a cada tecla atrasa a atualização da máscara enquanto o campo está em edição.
-                try? await Task.sleep(for: .milliseconds(250))
-                guard !Task.isCancelled else { return }
-                simulatedAmount = amount ?? 0
-            }
-            .imobListCanvas()
-            .scrollDismissesKeyboard(.interactively)
-            .navigationTitle(L10n.Simulator.title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(L10n.Common.close) {
-                        dismiss()
-                    }
-                }
+            .imobSurface()
+        }
+        .onAppear {
+            if frozenValues == nil {
+                frozenValues = ContributionSimulator.segmentValues(in: holdings)
             }
         }
-        .imobAppearance()
+        .task(id: amount) {
+            // Recalcular a lista a cada tecla atrasa a atualização da máscara enquanto o campo está em edição.
+            try? await Task.sleep(for: .milliseconds(250))
+            guard !Task.isCancelled else { return }
+            simulatedAmount = amount ?? 0
+        }
+        .imobListCanvas()
+        .scrollDismissesKeyboard(.interactively)
+        .background {
+            DismissKeyboardOnTap()
+        }
+        .navigationTitle(L10n.Simulator.title)
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     private func contributionRow(_ contribution: SegmentContribution) -> some View {

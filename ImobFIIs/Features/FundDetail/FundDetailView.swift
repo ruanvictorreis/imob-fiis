@@ -8,7 +8,14 @@ struct FundDetailView: View {
     @State private var isAddingHolding = false
     @State private var isEditingHolding = false
 
-    init(summary: FundSummary, catalog: any FIICatalogServing = ResilientFIICatalogService()) {
+    private let suggestedContribution: Decimal?
+
+    init(
+        summary: FundSummary,
+        catalog: any FIICatalogServing = ResilientFIICatalogService(),
+        suggestedContribution: Decimal? = nil
+    ) {
+        self.suggestedContribution = suggestedContribution
         _viewModel = State(
             initialValue: FundDetailViewModel(summary: summary, catalog: catalog)
         )
@@ -161,7 +168,8 @@ struct FundDetailView: View {
             AddHoldingSheet(
                 summary: viewModel.summary,
                 indicators: viewModel.indicators,
-                lastDividend: viewModel.lastDividend
+                lastDividend: viewModel.lastDividend,
+                suggestedContribution: suggestedContribution
             )
         }
         .sheet(isPresented: $isEditingHolding) {

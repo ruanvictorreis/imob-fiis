@@ -8,7 +8,6 @@ struct InsightsView: View {
 
     @State private var targetsStore: AllocationTargetsStore
     @State private var isEditingTargets = false
-    @State private var isSimulatingContribution = false
     @State private var sentimentContext = SentimentContext.empty
     @State private var hasLoadedSentiment = false
     @State private var snapshotCache = InsightSnapshotCache()
@@ -61,9 +60,6 @@ struct InsightsView: View {
         .sheet(isPresented: $isEditingTargets) {
             EditAllocationTargetsView(store: targetsStore)
         }
-        .sheet(isPresented: $isSimulatingContribution) {
-            ContributionSimulatorView(holdings: holdings, strategy: strategy)
-        }
         .onAppear {
             presentTargetsEditorIfNeeded()
         }
@@ -72,6 +68,29 @@ struct InsightsView: View {
         }
         .navigationDestination(for: FundSummary.self) { summary in
             FundDetailView(summary: summary, catalog: catalog)
+        }
+        .navigationDestination(for: InsightsRoute.self) { route in
+            destination(for: route)
+        }
+    }
+
+    @ViewBuilder
+    private func destination(for route: InsightsRoute) -> some View {
+        switch route {
+        case .contributionSimulator:
+            ContributionSimulatorView(strategy: strategy)
+        case .segmentHoldings(let contribution):
+            SegmentHoldingsView(
+                contribution: contribution,
+                strategy: strategy,
+                sentiment: sentimentContext,
+                showsMissingNews: hasLoadedSentiment,
+                onExploreSegment: onExploreSegment.map { explore in
+                    { explore(contribution.segment) }
+                }
+            )
+        case .fund(let summary, let suggestedContribution):
+            FundDetailView(summary: summary, catalog: catalog, suggestedContribution: suggestedContribution)
         }
     }
 
@@ -158,9 +177,7 @@ struct InsightsView: View {
             ForEach(activeAllocations) { allocation in
                 SegmentAllocationRow(allocation: allocation)
             }
-            Button {
-                isSimulatingContribution = true
-            } label: {
+            NavigationLink(value: InsightsRoute.contributionSimulator) {
                 Label(L10n.Simulator.open, systemImage: "banknote")
             }
         }
