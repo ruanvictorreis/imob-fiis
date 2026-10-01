@@ -56,6 +56,9 @@ struct ContributionSimulatorView: View {
         }
         .imobListCanvas()
         .scrollDismissesKeyboard(.interactively)
+        .background {
+            DismissKeyboardOnTap()
+        }
         .navigationTitle(L10n.Simulator.title)
         .navigationBarTitleDisplayMode(.inline)
     }
