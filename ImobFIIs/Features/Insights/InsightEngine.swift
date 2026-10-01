@@ -4,6 +4,11 @@ struct InsightSnapshot: Equatable {
     var allocations: [SegmentAllocation]
     var insights: [InsightItem]
     var missingSegments: [MissingSegmentInsight]
+
+    /// Posições do segmento, na mesma ordem de prioridade da lista geral.
+    func insights(in segment: FundSegment) -> [InsightItem] {
+        insights.filter { $0.segment == segment }
+    }
 }
 
 struct SegmentAllocation: Identifiable, Equatable {

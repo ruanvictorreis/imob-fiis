@@ -1532,6 +1532,17 @@
         }
       }
     },
+    "simulator.emptySegment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você ainda não tem FIIs deste segmento na carteira."
+          }
+        }
+      }
+    },
     "simulator.open" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1539,6 +1550,62 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simular aporte"
+          }
+        }
+      }
+    },
+    "simulator.segmentHoldings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus FIIs no segmento"
+          }
+        }
+      }
+    },
+    "simulator.segmentHoldingsFooter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordenados pela mesma prioridade da aba Insights. Toque em um FII para adicionar cotas."
+          }
+        }
+      }
+    },
+    "simulator.suggestedForSegment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aporte sugerido no segmento"
+          }
+        }
+      }
+    },
+    "simulator.suggestedPurchase" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulação de aporte"
+          }
+        }
+      }
+    },
+    "simulator.suggestedShares" : {
+      "comment" : "%1$@ é o valor sugerido para o segmento e %2$lld a quantidade de cotas que ele compra.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aporte sugerido de %1$@ no segmento: cerca de %2$lld cotas pelo preço atual."
           }
         }
       }

@@ -11,21 +11,36 @@ struct AddHoldingSheet: View {
     let summary: FundSummary?
     let indicators: FIIIndicators?
     let lastDividend: Decimal?
+    let suggestedContribution: Decimal?
 
     @State private var selectedFund: Fund?
-    @State private var sharesText = ""
+    @State private var sharesText: String
     @State private var price: Decimal?
     @FocusState private var focusedField: Field?
 
     init(
         summary: FundSummary? = nil,
         indicators: FIIIndicators? = nil,
-        lastDividend: Decimal? = nil
+        lastDividend: Decimal? = nil,
+        suggestedContribution: Decimal? = nil
     ) {
         self.summary = summary
         self.indicators = indicators
         self.lastDividend = lastDividend
-        _price = State(initialValue: Self.suggestedAveragePrice(summary: summary, indicators: indicators))
+        self.suggestedContribution = suggestedContribution
+        let price = Self.suggestedAveragePrice(summary: summary, indicators: indicators)
+        _price = State(initialValue: price)
+        let suggestedShares = Self.shares(buying: suggestedContribution, at: price)
+        _sharesText = State(initialValue: suggestedShares > 0 ? String(suggestedShares) : "")
+    }
+
+    /// Quantas cotas inteiras o valor compra pelo preço informado.
+    static func shares(buying amount: Decimal?, at price: Decimal?) -> Int {
+        guard let amount, let price, amount > 0, price > 0 else { return 0 }
+        var quotient = amount / price
+        var rounded = Decimal()
+        NSDecimalRound(&rounded, &quotient, 0, .down)
+        return min(NSDecimalNumber(decimal: rounded).intValue, 1_000_000)
     }
 
     private var shares: Int {
@@ -53,6 +68,15 @@ struct AddHoldingSheet: View {
                     fundSection
                 }
                 .imobSurface()
+
+                if let suggestedSharesText {
+                    Section(L10n.Simulator.suggestedPurchase) {
+                        Text(suggestedSharesText)
+                            .font(.subheadline)
+                            .foregroundStyle(Color.appSecondaryText)
+                    }
+                    .imobSurface()
+                }
 
                 if let existingHolding {
                     Section(L10n.AddHolding.currentPosition) {
@@ -138,6 +162,13 @@ struct AddHoldingSheet: View {
         .presentationDetents([.large])
         .presentationBackground(Color.appBackground)
         .imobAppearance()
+    }
+
+    private var suggestedSharesText: String? {
+        guard let suggestedContribution else { return nil }
+        let shares = Self.shares(buying: suggestedContribution, at: price)
+        guard shares > 0 else { return nil }
+        return L10n.Simulator.suggestedShares(amount: suggestedContribution.formatted(.brl), shares: shares)
     }
 
     private var projectedPositionText: String? {

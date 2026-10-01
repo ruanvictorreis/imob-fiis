@@ -235,6 +235,15 @@ enum L10n {
         static var amountFooter: String { text("simulator.amountFooter") }
         static var distribution: String { text("simulator.distribution") }
         static var disclaimer: String { text("simulator.disclaimer") }
+        static var suggestedForSegment: String { text("simulator.suggestedForSegment") }
+        static var segmentHoldings: String { text("simulator.segmentHoldings") }
+        static var segmentHoldingsFooter: String { text("simulator.segmentHoldingsFooter") }
+        static var emptySegment: String { text("simulator.emptySegment") }
+        static var suggestedPurchase: String { text("simulator.suggestedPurchase") }
+
+        static func suggestedShares(amount: String, shares: Int) -> String {
+            format("simulator.suggestedShares", amount, shares)
+        }
 
         static func weightChange(current: String, projected: String, target: String) -> String {
             format("simulator.weightChange", current, projected, target)

@@ -89,6 +89,47 @@ struct ContributionSimulatorTests {
         )
     }
 
+    @Test @MainActor
+    func frozenSegmentValuesIgnoreLaterPurchases() {
+        let paper = makeInsightHolding(ticker: "KNCR11", segment: .paper, shares: 7, price: 100, average: 100)
+        let holdings = [
+            paper,
+            makeInsightHolding(ticker: "HGLG11", segment: .logistics, shares: 3, price: 100, average: 100),
+        ]
+        let frozen = ContributionSimulator.segmentValues(in: holdings)
+        let before = ContributionSimulator.simulate(amount: 100, holdings: holdings, strategy: strategy)
+
+        paper.addShares(10, at: 100)
+
+        let after = ContributionSimulator.simulate(amount: 100, valueBySegment: frozen, strategy: strategy)
+        #expect(after == before)
+        #expect(ContributionSimulator.simulate(amount: 100, holdings: holdings, strategy: strategy) != before)
+    }
+
+    @Test @MainActor
+    func snapshotListsOnlyHoldingsOfTheSegmentInPriorityOrder() {
+        let holdings = [
+            makeInsightHolding(ticker: "KNCR11", segment: .paper, shares: 5, price: 100, average: 100),
+            makeInsightHolding(ticker: "CPTS11", segment: .paper, shares: 1, price: 100, average: 100),
+            makeInsightHolding(ticker: "HGLG11", segment: .logistics, shares: 3, price: 100, average: 100),
+        ]
+        let snapshot = InsightEngine.evaluate(holdings, strategy: strategy)
+
+        let paper = snapshot.insights(in: .paper)
+
+        #expect(Set(paper.map(\.ticker)) == ["KNCR11", "CPTS11"])
+        #expect(paper.map(\.ticker) == snapshot.insights.map(\.ticker).filter { $0 != "HGLG11" })
+        #expect(snapshot.insights(in: .malls).isEmpty)
+    }
+
+    @Test @MainActor
+    func suggestedSharesRoundDownToWholeShares() {
+        #expect(AddHoldingSheet.shares(buying: 1_000, at: Decimal(string: "98.50")!) == 10)
+        #expect(AddHoldingSheet.shares(buying: 50, at: 100) == 0)
+        #expect(AddHoldingSheet.shares(buying: nil, at: 100) == 0)
+        #expect(AddHoldingSheet.shares(buying: 100, at: nil) == 0)
+    }
+
     private func total(_ contributions: [SegmentContribution]) -> Decimal {
         contributions.reduce(0) { $0 + $1.amount }
     }
