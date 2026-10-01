@@ -14,7 +14,7 @@ struct AddHoldingSheet: View {
     let suggestedContribution: Decimal?
 
     @State private var selectedFund: Fund?
-    @State private var sharesText: String
+    @State private var sharesText = ""
     @State private var price: Decimal?
     @FocusState private var focusedField: Field?
 
@@ -28,10 +28,7 @@ struct AddHoldingSheet: View {
         self.indicators = indicators
         self.lastDividend = lastDividend
         self.suggestedContribution = suggestedContribution
-        let price = Self.suggestedAveragePrice(summary: summary, indicators: indicators)
-        _price = State(initialValue: price)
-        let suggestedShares = Self.shares(buying: suggestedContribution, at: price)
-        _sharesText = State(initialValue: suggestedShares > 0 ? String(suggestedShares) : "")
+        _price = State(initialValue: Self.suggestedAveragePrice(summary: summary, indicators: indicators))
     }
 
     /// Quantas cotas inteiras o valor compra pelo preço informado.
