@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Fiagro",
   "segmentKey": "fiagro",
-  "generatedAt": "2026-09-26T14:53:00Z",
+  "generatedAt": "2026-10-03T15:30:00Z",
   "lookbackDays": 14,
   "sources": [
     "clube.fii",
@@ -16,135 +16,149 @@
   "funds": [
     {
       "ticker": "KNCA11",
-      "sentiment": "negative",
-      "score": -0.35,
+      "sentiment": "positive",
+      "score": 0.3,
       "confidence": "medium",
-      "summary": "Kinea Crédito Agro pagou R$ 0,85/cota em 14/09 (yield 0,96%), abaixo dos R$ 1,00 de agosto; permanece entre os Fiagros mais líquidos da B3 em agosto.",
-      "articleCount": 3,
+      "summary": "Kinea Crédito Agro elevou o provento para R$ 0,93/cota (data-com 30/09, pagamento 14/10, yield 1,08%), alta de cerca de 9% sobre os R$ 0,85 de agosto, ainda abaixo do patamar de R$ 1,10 do 1º semestre; segue como 2º Fiagro mais líquido da B3 em agosto (ADTV de R$ 5,70 mi).",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
-          "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
-          "publishedAt": "2026-09-18"
+          "title": "KNCA11 - FIAGRO KINEA: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/knca11/",
+          "publishedAt": "2026-10-02"
+        },
+        {
+          "title": "SNAG11 movimenta R$ 3,54 mi por dia e aparece entre os Fiagros mais negociados",
+          "url": "https://fiis.com.br/noticias/snag11-movimenta-por-dia-aparece-entre-fiagros-mais-negociados-vi/",
+          "publishedAt": "2026-09-22"
         }
       ]
     },
     {
       "ticker": "SNAG11",
       "sentiment": "positive",
-      "score": 0.8,
+      "score": 0.75,
       "confidence": "high",
-      "summary": "Suno Agro manteve R$ 0,12/cota (yield 1,23%, pagamento 25/09), ultrapassou 140 mil cotistas e figura no top 3 de liquidez ADTV dos Fiagros em agosto; soja em alta reforça a tese.",
+      "summary": "Suno Agro comprou quatro CRAs de proteína animal (MBRF e Minerva), elevou o carrego para CDI + 2,76% com inadimplência zero e fixou guidance de R$ 0,115 a R$ 0,125/cota até novembro; manteve R$ 0,12 em agosto usando parte da reserva e figura entre os Fiagros mais negociados.",
       "articleCount": 5,
       "topHeadlines": [
         {
-          "title": "SNAG11 pagará dividendos com yield de 1,23%; veja valor e data",
-          "url": "https://fiis.com.br/noticias/snag11-pagara-dividendos-com-yield-de-123-veja-valor-e-data/",
-          "publishedAt": "2026-09-16"
+          "title": "SNAG11 compra quatro CRAs e eleva remuneração da carteira para CDI + 2,76%",
+          "url": "https://fiis.com.br/noticias/snag11-compra-quatro-cras-eleva-remuneracao-carteira-cdi-276-vi/",
+          "publishedAt": "2026-10-01"
         },
         {
-          "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
-          "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
-          "publishedAt": "2026-09-18"
+          "title": "SNAG11 avança 1,13% no pregão após pagar R$ 0,12 em dividendos",
+          "url": "https://fiis.com.br/noticias/snag11-avanca-113-pregao-apos-pagar-dividendos-vi/",
+          "publishedAt": "2026-09-25"
+        },
+        {
+          "title": "SNAG11 movimenta R$ 3,54 mi por dia e aparece entre os Fiagros mais negociados",
+          "url": "https://fiis.com.br/noticias/snag11-movimenta-por-dia-aparece-entre-fiagros-mais-negociados-vi/",
+          "publishedAt": "2026-09-22"
         }
       ]
     },
     {
       "ticker": "RBRF11",
       "sentiment": "neutral",
-      "score": 0.0,
+      "score": 0,
       "confidence": "low",
-      "summary": "Sem cobertura recente nos portais permitidos; o fundo foi incorporado ao RBRX11 e deixou de negociar na B3 em outubro de 2025.",
+      "summary": "Sem cobertura nos portais permitidos nos últimos 14 dias; o fundo foi incorporado ao RBRX11 e deixou de negociar na B3.",
       "articleCount": 0,
       "topHeadlines": []
     },
     {
       "ticker": "SNCI11",
       "sentiment": "positive",
-      "score": 0.55,
+      "score": 0.35,
       "confidence": "medium",
-      "summary": "Suno Recebíveis manteve R$ 1,00/cota em setembro (data-base 15/09, pagamento 25/09, yield 1,23%), na sequência estável desde o início de 2026, com caixa elevado.",
+      "summary": "Suno Recebíveis gerou R$ 1,37/cota em agosto, distribuiu R$ 1,00 e elevou a reserva para R$ 0,46/cota, mantendo guidance de R$ 1,00 a R$ 1,10 no 3T26; quatro CRIs seguem em tratamento especial e operações que somam 22,2% do PL passaram por waivers.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "SNCI11 anuncia dividendos de R$ 1,00 por cota em setembro; veja data",
-          "url": "https://fiis.com.br/noticias/snci11-anuncia-dividendos-por-cota-setembro-veja-data-vi/",
-          "publishedAt": "2026-09-15"
+          "title": "SNCI11 compra R$ 34,5 milhões em ativos e encontra operações a CDI + 6%",
+          "url": "https://fiis.com.br/noticias/snci11-compra-34-mil-ativos-encontra-operacoes-6-vi/",
+          "publishedAt": "2026-09-30"
         },
         {
-          "title": "SNCI11 - FII SUNO CRI - Fiis",
-          "url": "https://fiis.com.br/snci11/",
-          "publishedAt": "2026-09-15"
+          "title": "SNCI11, BTLG11: veja quais fundos imobiliários pagarão dividendos nesta sexta (25)",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-fiis-snci11-btlg11-agenda-rendimento-dividendos-25092026/",
+          "publishedAt": "2026-09-25"
         }
       ]
     },
     {
       "ticker": "XPCA11",
-      "sentiment": "positive",
-      "score": 0.45,
-      "confidence": "medium",
-      "summary": "XP Crédito Agro anunciou R$ 0,10/cota com yield de 1,33% na rodada de setembro (pagamento 15/09), entre os Fiagros com retorno mensal acima de 1%.",
-      "articleCount": 3,
+      "sentiment": "neutral",
+      "score": 0.15,
+      "confidence": "low",
+      "summary": "XP Crédito Agrícola manteve R$ 0,10/cota pelo sexto mês (data-com 30/09, pagamento 15/10, yield 1,33%); cota a R$ 7,25 com P/VP de 0,75, sem matérias editoriais novas na janela.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "XPCA11 - FIAGRO XP CA - Cotações e Dividendos",
+          "title": "XPCA11 - FIAGRO XP CA: cotações e dividendos",
           "url": "https://fiis.com.br/xpca11/",
-          "publishedAt": "2026-09-15"
+          "publishedAt": "2026-10-02"
         }
       ]
     },
     {
       "ticker": "VGIA11",
       "sentiment": "neutral",
-      "score": -0.1,
+      "score": 0.1,
       "confidence": "medium",
-      "summary": "Valora CRA reduziu o provento a R$ 0,12/cota em setembro (vs. R$ 0,13), com Languiru ainda inadimplente; resultado de julho caiu e o fundo segue no top 10 de liquidez.",
+      "summary": "Gestor do Valora CRA disse ao InfoMoney que a 'tempestade' no agro começa a se dissipar com a recuperação de milho e soja, mas os juros seguem como principal preocupação; o fundo lidera o ADTV dos Fiagros (R$ 6,90 mi), após reduzir o provento para R$ 0,12 em setembro.",
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
-          "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
-          "publishedAt": "2026-09-18"
+          "title": "Valora dobra patrimônio em 2 anos e revela onde vê oportunidades em FIIs e Fiagros",
+          "url": "https://www.infomoney.com.br/onde-investir/valora-dobra-patrimonio-em-2-anos-e-revela-onde-ve-oportunidades-em-fiis-e-fiagros/",
+          "publishedAt": "2026-09-19"
+        },
+        {
+          "title": "SNAG11 avança 1,13% no pregão após pagar R$ 0,12 em dividendos",
+          "url": "https://fiis.com.br/noticias/snag11-avanca-113-pregao-apos-pagar-dividendos-vi/",
+          "publishedAt": "2026-09-25"
+        },
+        {
+          "title": "SNAG11 movimenta R$ 3,54 mi por dia e aparece entre os Fiagros mais negociados",
+          "url": "https://fiis.com.br/noticias/snag11-movimenta-por-dia-aparece-entre-fiagros-mais-negociados-vi/",
+          "publishedAt": "2026-09-22"
         }
       ]
     },
     {
       "ticker": "BTAG11",
-      "sentiment": "positive",
-      "score": 0.6,
+      "sentiment": "neutral",
+      "score": 0.1,
       "confidence": "medium",
-      "summary": "BTG Pactual Crédito Agrícola manteve R$ 1,30/cota (data-com 08/09, pagamento 15/09, yield 1,33%) e ficou em 2º no ADTV dos Fiagros em agosto (R$ 5,7 mi/dia).",
-      "articleCount": 3,
+      "summary": "BTG Pactual Crédito Agrícola mantém R$ 1,30/cota desde março e segue no top 10 de liquidez dos Fiagros, mas a cota acumula queda de cerca de 10,7% no ano e negocia com P/VP de 0,92.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
-          "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
-          "publishedAt": "2026-09-18"
+          "title": "BTAG11 | BTG Pactual Crédito Agrícola - Funds Explorer",
+          "url": "https://www.fundsexplorer.com.br/fiagros/btag11"
         },
         {
-          "title": "BTAG11 - Fiis",
-          "url": "https://fiis.com.br/btag11/",
-          "publishedAt": "2026-09-15"
-        },
-        {
-          "title": "BTAG11 | BTG Pactual Crédito Agrícola",
-          "url": "https://www.fundsexplorer.com.br/fiagros/btag11",
-          "publishedAt": "2026-09-15"
+          "title": "SNAG11 movimenta R$ 3,54 mi por dia e aparece entre os Fiagros mais negociados",
+          "url": "https://fiis.com.br/noticias/snag11-movimenta-por-dia-aparece-entre-fiagros-mais-negociados-vi/",
+          "publishedAt": "2026-09-22"
         }
       ]
     },
     {
       "ticker": "ZAVI11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.3,
       "confidence": "low",
-      "summary": "Zavit Real Estate manteve R$ 0,12/cota para setembro (pagamento 14/09, yield ~1,23% na data-com 31/08), com distribuição estável e cota em alta no ano.",
+      "summary": "Zavit Real Estate manteve R$ 0,12/cota (data-com 30/09, pagamento 14/10, yield 1,23%) e publicou novo relatório gerencial em 02/10; a cota sobe 24,6% em 12 meses, mas segue com P/VP de 0,69 e liquidez baixa.",
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Dividendos de FIIs: MXRF11 e mais 178 fundos pagam na semana",
-          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
-          "publishedAt": "2026-09-14"
+          "title": "ZAVI11 - FII-ZAVIT-R: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/zavi11/",
+          "publishedAt": "2026-10-02"
         }
       ]
     },
@@ -152,160 +166,176 @@
       "ticker": "KNHF11",
       "sentiment": "neutral",
       "score": 0.2,
-      "confidence": "low",
-      "summary": "Kinea Hedge Fund manteve R$ 1,00/cota (data-base 31/08, pagamento 11/09, yield ~1,08%); cobertura limitada a listas semanais de dividendos.",
-      "articleCount": 1,
-      "topHeadlines": []
+      "confidence": "medium",
+      "summary": "Kinea Hedge Fund manteve R$ 1,00/cota pelo 12º mês seguido (data-base 30/09, pagamento 13/10, yield 1,08%), em linha com a política de dividendos linearizados; a cota subiu 1,95% no último pregão.",
+      "articleCount": 2,
+      "topHeadlines": [
+        {
+          "title": "GARE11, MXRF11 e HGBS11 pagam dividendos em outubro; confira os valores",
+          "url": "https://www.infomoney.com.br/onde-investir/dividendos-fiis-outubro-gare11-mxrf11-hgbs11/",
+          "publishedAt": "2026-10-02"
+        },
+        {
+          "title": "KNHF11 - KINEA HEDGE FUND: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/knhf11/",
+          "publishedAt": "2026-10-02"
+        }
+      ]
     },
     {
       "ticker": "SNFZ11",
       "sentiment": "positive",
-      "score": 0.75,
-      "confidence": "medium",
-      "summary": "Suno Fazendas anunciou R$ 0,10/cota (yield 1,09%, pagamento 25/09), concluiu compra de três fazendas no MT com vacância zero e superou 16 mil cotistas.",
-      "articleCount": 4,
+      "score": 0.5,
+      "confidence": "high",
+      "summary": "Suno Fazendas segue pagando R$ 0,10/cota de forma estável; a cobertura recente liga suas seis fazendas no MT (3.160 ha, 1.060 ha irrigados) a vetores positivos como o manejo de solo, o déficit global de milho e a expansão dos biocombustíveis.",
+      "articleCount": 5,
       "topHeadlines": [
         {
-          "title": "SNFZ11 apresenta dividendos de setembro com yield de 1,09%",
-          "url": "https://fiis.com.br/noticias/fiagro-snfz11-apresenta-dividendos-de-setembro-com-yield-vi/",
-          "publishedAt": "2026-09-16"
+          "title": "SNFZ11: manejo do solo pode elevar produtividade da soja em 11,1%",
+          "url": "https://fiis.com.br/noticias/fiagro-snfz11-manejo-solo-pode-elevar-produtividade-soja-em-111-vi/",
+          "publishedAt": "2026-10-01"
+        },
+        {
+          "title": "Consumo de Milho pode chegar em 30 mi de ton; cenário pode favorecer produção do SNFZ11?",
+          "url": "https://fiis.com.br/noticias/milho-pode-ter-deficit-de-30-milhoes-de-toneladas-snfz11-avanca-vi/",
+          "publishedAt": "2026-09-30"
+        },
+        {
+          "title": "Biocombustíveis podem crescer 70% até 2030; onde entra o SNFZ11?",
+          "url": "https://fiis.com.br/noticias/biocombustiveis-podem-crescer-70-ate-2030-onde-entra-snfz11/",
+          "publishedAt": "2026-09-24"
         }
       ]
     },
     {
       "ticker": "AGRX11",
-      "sentiment": "positive",
-      "score": 0.4,
-      "confidence": "medium",
-      "summary": "Éxes Araguaia mantém distribuição estável e reserva de ~4 meses de dividendos, com DY perto de 19% a.a.; InfoMoney destaca caixa elevado e cautela pós-AgroGalaxy.",
-      "articleCount": 2,
+      "sentiment": "neutral",
+      "score": 0,
+      "confidence": "low",
+      "summary": "Sem notícias sobre o Éxes Araguaia nos portais permitidos nos últimos 14 dias; o último provento (R$ 0,12/cota, data-com 08/09) foi anunciado antes da janela.",
+      "articleCount": 0,
       "topHeadlines": []
     },
     {
       "ticker": "CPTR11",
       "sentiment": "neutral",
-      "score": 0.15,
+      "score": 0,
       "confidence": "low",
-      "summary": "Capitânia Agro Strategies manteve R$ 0,11/cota (data-com 11/09, pagamento 18/09, yield 1,36%); distribuição estável sem matérias editoriais novas na janela.",
-      "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "CPTR11 - FIAGRO CPTR - Fiis",
-          "url": "https://fiis.com.br/cptr11/",
-          "publishedAt": "2026-09-18"
-        }
-      ]
+      "summary": "Sem notícias sobre o Capitânia Agro Strategies nos portais permitidos nos últimos 14 dias; o último provento (R$ 0,11/cota, data-com 11/09) foi anunciado antes da janela.",
+      "articleCount": 0,
+      "topHeadlines": []
     },
     {
       "ticker": "FGAA11",
       "sentiment": "neutral",
-      "score": 0.2,
-      "confidence": "medium",
-      "summary": "FG/Agro manteve R$ 0,11/cota em setembro (yield 1,34%, pagamento 15/09) e entrou no top 10 de liquidez ADTV dos Fiagros em agosto; cota segue em baixa no ano.",
-      "articleCount": 2,
+      "score": 0.05,
+      "confidence": "low",
+      "summary": "FG/Agro aparece entre os dez Fiagros mais líquidos da B3 em agosto; mantém R$ 0,11/cota desde maio, com cota a R$ 8,14 e P/VP de 0,86.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
-          "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
-          "publishedAt": "2026-09-18"
-        },
-        {
-          "title": "FGAA11 - FIAGRO FGA - Cotações e Dividendos",
-          "url": "https://fiis.com.br/fgaa11/",
-          "publishedAt": "2026-09-15"
+          "title": "SNAG11 movimenta R$ 3,54 mi por dia e aparece entre os Fiagros mais negociados",
+          "url": "https://fiis.com.br/noticias/snag11-movimenta-por-dia-aparece-entre-fiagros-mais-negociados-vi/",
+          "publishedAt": "2026-09-22"
         }
       ]
     },
     {
       "ticker": "NCHB11",
       "sentiment": "neutral",
-      "score": 0.0,
+      "score": 0,
       "confidence": "low",
-      "summary": "Sem notícias nos últimos 14 dias nos portais consultados; o fundo migrou para FYTO11 em março de 2025 e não há cobertura editorial recente.",
+      "summary": "Sem notícias nos portais permitidos nos últimos 14 dias; o fundo migrou para FYTO11 e não tem cobertura editorial recente.",
       "articleCount": 0,
       "topHeadlines": []
     },
     {
       "ticker": "CRAA11",
-      "sentiment": "negative",
-      "score": -0.45,
-      "confidence": "medium",
-      "summary": "Sparta Fiagro reduziu o provento de R$ 1,25 (agosto) para R$ 0,95/cota em setembro (queda de 24%, yield 1,05%); segue entre os Fiagros mais negociados na B3.",
-      "articleCount": 3,
+      "sentiment": "neutral",
+      "score": -0.1,
+      "confidence": "low",
+      "summary": "Sparta Fiagro segue no top 10 de liquidez dos Fiagros em agosto, mas vem de corte do provento para R$ 0,95/cota em setembro (vs. R$ 1,25 em agosto); sem fatos novos na janela.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "CRAA11 - FIAGRO CRAA - Fiis",
-          "url": "https://fiis.com.br/craa11/",
-          "publishedAt": "2026-09-15"
-        },
-        {
-          "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
-          "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
-          "publishedAt": "2026-09-18"
+          "title": "SNAG11 movimenta R$ 3,54 mi por dia e aparece entre os Fiagros mais negociados",
+          "url": "https://fiis.com.br/noticias/snag11-movimenta-por-dia-aparece-entre-fiagros-mais-negociados-vi/",
+          "publishedAt": "2026-09-22"
         }
       ]
     },
     {
       "ticker": "RURA11",
-      "sentiment": "positive",
-      "score": 0.5,
+      "sentiment": "negative",
+      "score": -0.35,
       "confidence": "medium",
-      "summary": "Itaú Asset Rural pagou R$ 0,105/cota em 08/09 (yield 1,29%) e aparece no top 10 de liquidez ADTV dos Fiagros em agosto, apesar de leve corte vs. R$ 0,11.",
-      "articleCount": 3,
+      "summary": "Itaú Asset Rural reduziu o provento para R$ 0,09/cota (data-com 30/09, pagamento 07/10, yield 1,12%), queda de cerca de 14% sobre os R$ 0,105 de agosto e menor valor do ano; segue como 3º Fiagro mais líquido (ADTV de R$ 4,62 mi).",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "B3: Fiagros voltam a ganhar força; volume negociado dispara em agosto",
-          "url": "https://www.suno.com.br/noticias/b3-fiagros-voltam-a-ganhar-forca-volume-negociado-dispara-em-agosto/",
-          "publishedAt": "2026-09-18"
+          "title": "RURA11 - FIAGRO RURA: cotações e dividendos",
+          "url": "https://fiis.com.br/rura11/",
+          "publishedAt": "2026-10-02"
+        },
+        {
+          "title": "SNAG11 avança 1,13% no pregão após pagar R$ 0,12 em dividendos",
+          "url": "https://fiis.com.br/noticias/snag11-avanca-113-pregao-apos-pagar-dividendos-vi/",
+          "publishedAt": "2026-09-25"
         }
       ]
     },
     {
       "ticker": "KNSC11",
       "sentiment": "negative",
-      "score": -0.3,
+      "score": -0.35,
       "confidence": "medium",
-      "summary": "Kinea Securities gerou só R$ 0,07/cota em agosto (vs. R$ 0,10 em julho) e manteve R$ 0,09 distribuídos com uso de reserva; resultado pressionado pelo IPCA baixo nos CRIs.",
-      "articleCount": 2,
+      "summary": "Kinea Securities anunciou R$ 0,08/cota (pagamento 14/10, yield ~0,89%), o menor provento em 7 meses; no mês, investiu R$ 34,6 mi em dois CRIs IPCA+ (taxa média IPCA + 10,08%).",
+      "articleCount": 4,
       "topHeadlines": [
         {
-          "title": "KNSC11: FII paga dividendos de 1,20% e lucra R$ 16 milhões; veja detalhes",
-          "url": "https://fiis.com.br/noticias/knsc11-fundo-imobiliario-resultado-agosto-2026-dividendos-carteira-cri-investe-jj/",
-          "publishedAt": "2026-09-16"
+          "title": "KNSC11 reduz dividendos ao menor nível em 7 meses; veja valor",
+          "url": "https://www.suno.com.br/noticias/knsc11-dividendos-outubro-2026-cris/",
+          "publishedAt": "2026-10-02"
         },
         {
-          "title": "Dividendos de FIIs: MXRF11 e mais 178 fundos pagam na semana",
-          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
-          "publishedAt": "2026-09-14"
+          "title": "KNSC11 anuncia menores dividendos dos últimos 7 meses; confira o valor",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-knsc11-dividendos-outubro-2026-pagamento-cotistas-jj/",
+          "publishedAt": "2026-10-01"
+        },
+        {
+          "title": "GARE11, MXRF11 e HGBS11 pagam dividendos em outubro; confira os valores",
+          "url": "https://www.infomoney.com.br/onde-investir/dividendos-fiis-outubro-gare11-mxrf11-hgbs11/",
+          "publishedAt": "2026-10-02"
         }
       ]
     },
     {
       "ticker": "KDIF11",
-      "sentiment": "negative",
-      "score": -0.35,
+      "sentiment": "neutral",
+      "score": -0.15,
       "confidence": "low",
-      "summary": "Kinea Infra manteve a distribuição reduzida em R$ 1,00/cota em agosto e setembro (vs. R$ 1,45 até junho), com yield mensal de ~0,87% na data-com de 31/08.",
+      "summary": "Kinea Infra manteve R$ 1,00/cota referente a setembro (data-base 30/09, pagamento 07/10, yield ~0,87%), terceiro mês no patamar reduzido frente aos R$ 1,45 pagos até junho.",
       "articleCount": 1,
-      "topHeadlines": []
+      "topHeadlines": [
+        {
+          "title": "KDIF11 - KINEA INFRA: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/kdif11/",
+          "publishedAt": "2026-10-02"
+        }
+      ]
     },
     {
       "ticker": "VGIR11",
       "sentiment": "positive",
-      "score": 0.5,
-      "confidence": "medium",
-      "summary": "Valora CRI manteve R$ 0,13/cota (data-com 11/09, pagamento 18/09, yield 1,36%), reforçando previsibilidade de proventos na janela.",
-      "articleCount": 2,
+      "score": 0.35,
+      "confidence": "low",
+      "summary": "A Valora disse ao InfoMoney que os FIIs de papel atrelados ao CDI são o 'porto mais seguro' hoje, e que o VGIR11 busca retorno próximo de CDI + 2% com baixa volatilidade; a cota está perto da máxima de 52 semanas (R$ 9,65).",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Dividendos de FIIs: MXRF11 e mais 178 fundos pagam na semana",
-          "url": "https://fiis.com.br/noticias/dividendos-fiis-mxrf11-brco11-mais-fundos-imobiliarios-pagam-semana-lista-jj/",
-          "publishedAt": "2026-09-14"
-        },
-        {
-          "title": "VGIR11 - VALORA CRI CDI - Fiis",
-          "url": "https://fiis.com.br/vgir11/",
-          "publishedAt": "2026-09-18"
+          "title": "Valora dobra patrimônio em 2 anos e revela onde vê oportunidades em FIIs e Fiagros",
+          "url": "https://www.infomoney.com.br/onde-investir/valora-dobra-patrimonio-em-2-anos-e-revela-onde-ve-oportunidades-em-fiis-e-fiagros/",
+          "publishedAt": "2026-09-19"
         }
       ]
     }
