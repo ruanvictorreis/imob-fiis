@@ -1,6 +1,6 @@
 # Backlog do Lumina
 
-Atualizado em 1º de outubro de 2026. Prioridades:
+Atualizado em 8 de outubro de 2026. Prioridades:
 
 - **P0:** bloqueia o TestFlight.
 - **P1:** antes de abrir o TestFlight externo ou publicar na App Store.
@@ -13,10 +13,10 @@ Atualizado em 1º de outubro de 2026. Prioridades:
 | # | Item | Por quê | Esforço |
 |---|------|---------|---------|
 | T1 | Fazer o deploy do schema do CloudKit para **Production** no CloudKit Console | Builds do TestFlight usam o ambiente de produção. Sem o schema, a sincronização da carteira falha para os testadores | P |
-| T2 | Adicionar `PrivacyInfo.xcprivacy` com o motivo de uso de `UserDefaults` (CA92.1) e "nenhum dado coletado" | O app usa `UserDefaults` (metas, sincronização de preços, notícias). Sem o manifesto, o upload gera o aviso ITMS-91053 | P |
-| T3 | Adicionar `ITSAppUsesNonExemptEncryption = NO` no `Info.plist` | O app só usa HTTPS. Evita responder ao questionário de exportação a cada build | P |
+| T2 | ~~Adicionar `PrivacyInfo.xcprivacy`~~ Feito: motivo `CA92.1` para `UserDefaults` e nenhum dado coletado | O app usa `UserDefaults` (metas, sincronização de preços, notícias). Sem o manifesto, o upload gera o aviso ITMS-91053 | P |
+| T3 | ~~Adicionar `ITSAppUsesNonExemptEncryption = NO`~~ Feito no `Info.plist` | O app só usa HTTPS. Evita responder ao questionário de exportação a cada build | P |
 | T4 | Confirmar que o arquivamento de Release lê o token da brapi em `Config/Secrets.xcconfig` | Sem token, as cotações caem direto no Yahoo e no cache | P |
-| T5 | Aumentar `CURRENT_PROJECT_VERSION` a cada upload; manter a versão `1.0` | O App Store Connect rejeita builds com número repetido | P |
+| T5 | ~~Aumentar `CURRENT_PROJECT_VERSION`~~ Feito: build `3`, versão `1.0`. Subir de novo a cada upload | O App Store Connect rejeita builds com número repetido | P |
 | T6 | Testar a sincronização com uma conta iCloud diferente, num build de Release em aparelho físico | O ambiente de produção do CloudKit só é exercitado nesse tipo de build | M |
 | T7 | Conferir o `aps-environment` no build arquivado (tem que ser `production`) | O arquivo `Lumina.entitlements` está com `development`; a assinatura automática costuma trocar, mas vale confirmar | P |
 
