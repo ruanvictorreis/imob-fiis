@@ -2,99 +2,99 @@
   "version": 1,
   "segment": "Shoppings",
   "segmentKey": "malls",
-  "generatedAt": "2026-10-01T17:30:00Z",
+  "generatedAt": "2026-10-08T17:50:00Z",
   "lookbackDays": 14,
   "sources": [
     "fiis.com.br",
+    "fundsexplorer.com.br",
     "suno.com.br",
     "infomoney.com.br",
-    "moneytimes.com.br",
-    "clube.fii"
+    "moneytimes.com.br"
   ],
   "funds": [
     {
       "ticker": "XPML11",
-      "sentiment": "neutral",
-      "score": 0.15,
-      "confidence": "medium",
-      "summary": "XPML11 manteve dividendos estáveis de R$ 0,92 por cota em setembro e entrou na agenda de ofertas com nova emissão de cotas, enquanto negocia com P/VP próximo de 0,90.",
-      "articleCount": 3,
+      "sentiment": "positive",
+      "score": 0.5,
+      "confidence": "high",
+      "summary": "O XPML11 divide a liderança das recomendações de outubro, com sete indicações, e segue nas carteiras de Santander (9,5%), XP (10,5%), Itaú BBA (7,5%) e Daycoval (20%). A 15ª emissão, de até cerca de R$ 800 milhões, teve preferência até 1º de outubro; o Santander aponta cerca de R$ 532 milhões em obrigações via CRIs como principal risco.",
+      "articleCount": 7,
       "topHeadlines": [
         {
-          "title": "XPML11, VISC11, AZPL11 e ZAGH11 são destaques do Bom Dia FIIs (29/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-290926/",
-          "publishedAt": "2026-09-29"
+          "title": "KNCR11, BTLG11 e XPML11 lideram recomendações de FIIs para outubro; veja ranking",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-xpml11-lideram-recomendacoes-de-fiis-para-outubro-veja-ranking-igdl/",
+          "publishedAt": "2026-10-07"
         },
         {
-          "title": "XPML11 está na agenda de ofertas de fundos imobiliários desta semana",
-          "url": "https://fiis.com.br/noticias/xpml11-agenda-ofertas-fundos-imobiliarios-desta-semana-fiis-emissoes/",
-          "publishedAt": "2026-09-28"
+          "title": "Dividendos de 12,2%: Santander recomenda 11 FIIs para outubro; veja quais",
+          "url": "https://www.moneytimes.com.br/dividendos-de-122-santander-recomenda-11-fiis-para-outubro-veja-quais-igdl/",
+          "publishedAt": "2026-10-06"
         },
         {
-          "title": "XPML11 divulga novos dividendos para setembro; confira quanto",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-xpml11-divulga-novos-dividendos-para-setembro-de-2026-jj/",
-          "publishedAt": "2026-09-21"
+          "title": "Fundos imobiliários (FIIs): Veja 5 para ter na carteira em outubro, segundo o Daycoval",
+          "url": "https://www.moneytimes.com.br/fundos-imobiliarios-fiis-veja-5-para-ter-na-carteira-em-outubro-segundo-o-daycoval-igdl/",
+          "publishedAt": "2026-10-05"
         }
       ]
     },
     {
       "ticker": "HSML11",
-      "sentiment": "neutral",
-      "score": 0,
-      "confidence": "low",
-      "summary": "Sem notícias específicas sobre o HSML11 nos portais consultados dentro da janela de 14 dias.",
-      "articleCount": 0,
-      "topHeadlines": []
+      "sentiment": "positive",
+      "score": 0.4,
+      "confidence": "high",
+      "summary": "O HSML11 pagou R$ 0,75 por cota em 7 de outubro (DY mensal de cerca de 0,90%) e soma cinco indicações nas carteiras de outubro, com peso de 7,5% no Itaú BBA. A XP mantém guidance de R$ 0,74 a R$ 0,78 até o fim de 2026 e cita a recuperação judicial da Casas Bahia, com peso de cerca de 1,5% do NOI.",
+      "articleCount": 6,
+      "topHeadlines": [
+        {
+          "title": "Cotistas do HSML11 vão receber novos dividendos; veja o valor",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-hsml11-dividendos-outubro-2026-pagamento-cotistas-jj/",
+          "publishedAt": "2026-10-02"
+        },
+        {
+          "title": "Após queda de juros, enfim chegou a hora dos FIIs de tijolo? Veja os mais indicados",
+          "url": "https://www.infomoney.com.br/onde-investir/carteira-recomendada-fiis-outubro-2026/",
+          "publishedAt": "2026-10-08"
+        },
+        {
+          "title": "Fundos imobiliários (FIIs): Veja 12 para ter na carteira em outubro, segundo o Itaú BBA",
+          "url": "https://www.moneytimes.com.br/fundos-imobiliarios-fiis-veja-12-para-ter-na-carteira-em-outubro-segundo-o-itau-bba-igdl/",
+          "publishedAt": "2026-10-03"
+        }
+      ]
     },
     {
       "ticker": "VISC11",
       "sentiment": "positive",
       "score": 0.35,
-      "confidence": "high",
-      "summary": "VISC11 anunciou R$ 0,84 por cota para outubro e consolidou a aquisição do Shopping Paralela, passando a 32 shoppings; a cota segue com desconto de cerca de 12% sobre o patrimônio com indicadores operacionais estáveis.",
-      "articleCount": 5,
+      "confidence": "medium",
+      "summary": "O VISC11 manteve R$ 0,84 por cota para pagamento em 15 de outubro e o BTG elevou o peso do fundo para 6% na carteira de outubro. Após consolidar o Shopping Paralela, o portfólio chegou a 32 shoppings, mas os compromissos de aquisição somam cerca de R$ 1,1 bilhão.",
+      "articleCount": 3,
       "topHeadlines": [
-        {
-          "title": "Dividendos do VISC11 já foram divulgados; descubra quanto",
-          "url": "https://www.suno.com.br/noticias/dividendos-do-visc11-outubro-2026/",
-          "publishedAt": "2026-10-01"
-        },
         {
           "title": "VISC11 já anunciou quanto vai pagar de dividendos; veja o valor",
           "url": "https://fiis.com.br/noticias/fundo-imobiliario-visc11-dividendos-outubro-2026-pagamento-rendimentos-cotistas-jj/",
           "publishedAt": "2026-09-30"
         },
         {
-          "title": "VISC11 está barato? Entenda o que explica o desconto da cota",
-          "url": "https://fiis.com.br/noticias/visc11-esta-barato-entenda-o-que-explica-desconto-cota-vi/",
-          "publishedAt": "2026-09-28"
+          "title": "Dividendos do VISC11 já foram divulgados; descubra quanto",
+          "url": "https://www.suno.com.br/noticias/dividendos-do-visc11-outubro-2026/",
+          "publishedAt": "2026-10-01"
+        },
+        {
+          "title": "Dividendo de 11,3%: Estes são os fundos imobiliários (FIIs) recomendados pelo BTG para outubro",
+          "url": "https://www.moneytimes.com.br/dividendo-de-113-estes-sao-os-fiis-recomendados-pelo-btg-para-outubro-igdl/",
+          "publishedAt": "2026-10-01"
         }
       ]
     },
     {
       "ticker": "MALL11",
-      "sentiment": "positive",
-      "score": 0.5,
-      "confidence": "medium",
-      "summary": "O MALL11 foi sucedido pelo PMLL11 (Patria Malls), que encerrou a 7ª emissão captando cerca de R$ 718 milhões, comprou participações em cinco shoppings por R$ 257 milhões e gerou R$ 0,93 por cota em agosto.",
-      "articleCount": 3,
-      "topHeadlines": [
-        {
-          "title": "PMLL11: FII lucra R$ 15,96 milhões e dividendos rendem 11,7% ao ano; veja valor",
-          "url": "https://fiis.com.br/noticias/pmll11-fundo-imobiliario-resultado-agosto-pipeline-7-emissao-shoppings-jj/",
-          "publishedAt": "2026-09-28"
-        },
-        {
-          "title": "PMLL11 encerra oferta e capta cerca de R$ 718,2 milhões",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-pmll11-encerra-oferta-setima-emissao-cotas-718-milhoes-jj/",
-          "publishedAt": "2026-09-22"
-        },
-        {
-          "title": "PMLL11 fecha compra de 5 shoppings por R$ 257 milhões",
-          "url": "https://fiis.com.br/noticias/pmll11-fundo-imobiliario-compra-participacoes-cinco-shoppings-diversificacao-jj/",
-          "publishedAt": "2026-09-18"
-        }
-      ]
+      "sentiment": "neutral",
+      "score": 0,
+      "confidence": "low",
+      "summary": "Sem notícias específicas sobre o ticker MALL11 nos portais consultados na janela de 14 dias; a cobertura recente do veículo aparece sob o código sucessor PMLL11.",
+      "articleCount": 0,
+      "topHeadlines": []
     },
     {
       "ticker": "ABCP11",
@@ -128,17 +128,17 @@
       "sentiment": "neutral",
       "score": 0,
       "confidence": "low",
-      "summary": "Sem notícias específicas sobre o VSHO11 nos portais consultados dentro da janela de 14 dias; a conclusão da venda de participações em dois ativos foi noticiada antes do período.",
+      "summary": "Sem notícias específicas sobre o VSHO11 nos portais consultados dentro da janela de 14 dias.",
       "articleCount": 0,
       "topHeadlines": []
     },
     {
       "ticker": "MCCI11",
       "sentiment": "positive",
-      "score": 0.5,
-      "confidence": "medium",
-      "summary": "MCCI11 registrou alta de 27% no resultado líquido de agosto, para R$ 20,6 milhões, e pagou R$ 1,00 por cota, com dividend yield anualizado de cerca de 13,3%.",
-      "articleCount": 2,
+      "score": 0.55,
+      "confidence": "high",
+      "summary": "O MCCI11 registrou resultado líquido de R$ 20,6 milhões em agosto, alta de 27%, e distribuiu R$ 1,00 por cota, com dividend yield anualizado de 13,3% e guidance de R$ 0,90 a R$ 1,00. O fundo aparece em quatro carteiras de outubro, com pesos de 11,5% no Santander, 9% na XP e 8% no BTG.",
+      "articleCount": 6,
       "topHeadlines": [
         {
           "title": "MCCI11 vê lucro saltar 27% e paga dividendos de 13,3% ao ano; veja valores",
@@ -146,29 +146,39 @@
           "publishedAt": "2026-09-29"
         },
         {
-          "title": "MCCI11, VGIP11: cotistas de FIIs vão receber dividendos hoje; veja quais",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-fiis-mcci11-vgip11-agenda-rendimento-dividendos-18092026/",
-          "publishedAt": "2026-09-18"
+          "title": "KNCR11, BTLG11 e XPML11 lideram recomendações de FIIs para outubro; veja ranking",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-xpml11-lideram-recomendacoes-de-fiis-para-outubro-veja-ranking-igdl/",
+          "publishedAt": "2026-10-07"
+        },
+        {
+          "title": "Dividendos de 12,2%: Santander recomenda 11 FIIs para outubro; veja quais",
+          "url": "https://www.moneytimes.com.br/dividendos-de-122-santander-recomenda-11-fiis-para-outubro-veja-quais-igdl/",
+          "publishedAt": "2026-10-06"
         }
       ]
     },
     {
       "ticker": "RBRR11",
-      "sentiment": "positive",
-      "score": 0.45,
+      "sentiment": "neutral",
+      "score": -0.05,
       "confidence": "medium",
-      "summary": "RBRR11 apurou resultado distribuível de R$ 0,86 por cota em agosto, cerca de 20% acima de julho, e pagou R$ 0,90 por cota em setembro.",
-      "articleCount": 2,
+      "summary": "O RBRR11 apurou resultado distribuível de R$ 0,86 por cota em agosto, alta de 20,2%, mas pagou R$ 0,90 usando reserva, que ficou em R$ 0,10 por cota. A AGE para vender todos os ativos ao PCIP11 e liquidar o fundo segue como principal incerteza, embora a XP tenha elevado o peso para 8%.",
+      "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "FII RBRR11 vê resultado avançar mais de 20%; veja quanto pagou por cota",
+          "url": "https://www.fundsexplorer.com.br/noticias/rbrr11-resultado-age-liquidacao",
+          "publishedAt": "2026-09-28"
+        },
         {
           "title": "RBRR11 vê lucro saltar mais de 20%; veja valor e dividendos do mês",
           "url": "https://fiis.com.br/noticias/rbrr11-fundo-imobiliario-resultado-agosto-liquidacao-venda-pcip11-carteira-cri-jj/",
           "publishedAt": "2026-09-25"
         },
         {
-          "title": "RBRR11; RBRY11: Veja quais fundos imobiliários pagarão dividendos nesta quinta (17)",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-fiis-rbrr11-rbry11-agenda-rendimento-dividendos-17092026/",
-          "publishedAt": "2026-09-17"
+          "title": "Fundos imobiliários (FIIs): Veja os 15 recomendados pela XP para outubro",
+          "url": "https://www.moneytimes.com.br/fundos-imobiliarios-fiis-veja-os-15-recomendados-pela-xp-para-outubro-igdl/",
+          "publishedAt": "2026-10-01"
         }
       ]
     },
@@ -177,61 +187,87 @@
       "sentiment": "positive",
       "score": 0.35,
       "confidence": "medium",
-      "summary": "HGLG11 anunciou R$ 1,17 por cota para outubro após resultado distribuível de R$ 46,4 milhões (R$ 1,02 por cota) em agosto e divulgou guidance de dividendos; também foi citado em rebalanceamento de índices internacionais.",
-      "articleCount": 3,
+      "summary": "O HGLG11 manteve R$ 1,17 por cota para pagamento em 15 de outubro, com vacância física de 2,9% em agosto e projeção de 3,6% após saídas previstas para 2027; a obra de Itupeva locada ao Mercado Livre está em 86,8%. A incorporação do LVBI11 segue pendente na CVM e o BTG manteve peso de 3%.",
+      "articleCount": 4,
       "topHeadlines": [
+        {
+          "title": "HGLG11 confirma dividendos para outubro; veja valor e data",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-hglg11-15102026",
+          "publishedAt": "2026-10-02"
+        },
+        {
+          "title": "Patria não quer deixar FII LVBI11 “no escanteio” enquanto aguarda fusão com HGLG11",
+          "url": "https://www.infomoney.com.br/onde-investir/patria-nao-quer-deixar-fii-lvbi11-no-escanteio-enquanto-aguarda-fusao-com-hglg11/",
+          "publishedAt": "2026-09-30"
+        },
         {
           "title": "HGLG11 anuncia novos dividendos aos cotistas; descubra o valor",
           "url": "https://fiis.com.br/noticias/fundo-imobiliario-hglg11-dividendos-outubro-2026-pagamento-rendimentos-cotistas-jj-2/",
           "publishedAt": "2026-10-01"
-        },
-        {
-          "title": "HGLG11: FII lucra R$ 46,3 milhões e revela guidance de dividendos",
-          "url": "https://fiis.com.br/noticias/hglg11-fundo-imobiliario-resultado-agosto-obras-mercado-livre-consolidacao-jj/",
-          "publishedAt": "2026-09-19"
-        },
-        {
-          "title": "HGLG11, ALZR11 e GGRC11: veja os FIIs que anunciaram rebalanceamento de índices para hoje (18)",
-          "url": "https://fiis.com.br/noticias/fundos-imoobiliarios-hglg11-alzr11-ggrc11-fiis-rebalanceamento-indices-jj/",
-          "publishedAt": "2026-09-18"
         }
       ]
     },
     {
       "ticker": "PVBI11",
-      "sentiment": "neutral",
-      "score": 0,
-      "confidence": "low",
-      "summary": "PVBI11 foi citado apenas em comunicado sobre rebalanceamento de índices internacionais, sem impacto fundamental relevante.",
-      "articleCount": 1,
+      "sentiment": "positive",
+      "score": 0.25,
+      "confidence": "high",
+      "summary": "O PVBI11 pagou R$ 0,37 por cota em 7 de outubro (DY mensal de cerca de 0,56%) e soma quatro indicações, com pesos de 6,5% no Itaú BBA, 5% no BTG e 4,5% na XP. O desconto patrimonial (P/VP perto de 0,62) convive com vacância de cerca de 15% física e 25% financeira.",
+      "articleCount": 6,
       "topHeadlines": [
         {
-          "title": "HGLG11, ALZR11 e GGRC11: veja os FIIs que anunciaram rebalanceamento de índices para hoje (18)",
-          "url": "https://fiis.com.br/noticias/fundos-imoobiliarios-hglg11-alzr11-ggrc11-fiis-rebalanceamento-indices-jj/",
-          "publishedAt": "2026-09-18"
+          "title": "Dividendos do PVBI11 são divulgados aos investidores; confira quanto",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-pvbi11-dividendos-outubro-2026-pagamento-cotistas-jj/",
+          "publishedAt": "2026-10-02"
+        },
+        {
+          "title": "Após queda de juros, enfim chegou a hora dos FIIs de tijolo? Veja os mais indicados",
+          "url": "https://www.infomoney.com.br/onde-investir/carteira-recomendada-fiis-outubro-2026/",
+          "publishedAt": "2026-10-08"
+        },
+        {
+          "title": "KNCR11, BTLG11 e XPML11 lideram recomendações de FIIs para outubro; veja ranking",
+          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-xpml11-lideram-recomendacoes-de-fiis-para-outubro-veja-ranking-igdl/",
+          "publishedAt": "2026-10-07"
         }
       ]
     },
     {
       "ticker": "BRCR11",
       "sentiment": "neutral",
-      "score": 0,
+      "score": 0.1,
       "confidence": "low",
-      "summary": "Sem notícias específicas sobre o BRCR11 nos portais consultados dentro da janela de 14 dias.",
-      "articleCount": 0,
-      "topHeadlines": []
+      "summary": "O BRCR11 foi mantido com 4,5% na carteira de outubro do BTG, com dividend yield anualizado de 11,8%, sem fato operacional novo nos portais consultados na janela.",
+      "articleCount": 1,
+      "topHeadlines": [
+        {
+          "title": "Dividendo de 11,3%: Estes são os fundos imobiliários (FIIs) recomendados pelo BTG para outubro",
+          "url": "https://www.moneytimes.com.br/dividendo-de-113-estes-sao-os-fiis-recomendados-pelo-btg-para-outubro-igdl/",
+          "publishedAt": "2026-10-01"
+        }
+      ]
     },
     {
       "ticker": "KNRI11",
       "sentiment": "neutral",
-      "score": 0.1,
-      "confidence": "low",
-      "summary": "KNRI11 anunciou R$ 1,10 por cota em dividendos referentes a setembro, com pagamento em 15 de outubro.",
-      "articleCount": 1,
+      "score": 0.15,
+      "confidence": "high",
+      "summary": "O KNRI11 manteve R$ 1,10 por cota para pagamento em 15 de outubro e segue com a venda condicional do PIB Sumaré por R$ 26 milhões, prêmio de 36,3% sobre o laudo. A XP encerrou a alocação, enquanto Itaú BBA (8,5%) e Daycoval (20%) mantiveram o fundo.",
+      "articleCount": 5,
       "topHeadlines": [
         {
-          "title": "Dividendos do KNRI11 já foram divulgados; veja quanto será pago em outubro",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-knri11-dividendos-outubro-2026-pagamento-rendimentos-cotistas-jj/",
+          "title": "KNRI11 anuncia novo pagamento aos cotistas; saiba quanto",
+          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-do-knri11-outubro-2026",
+          "publishedAt": "2026-10-02"
+        },
+        {
+          "title": "Fundos imobiliários (FIIs): Veja 12 para ter na carteira em outubro, segundo o Itaú BBA",
+          "url": "https://www.moneytimes.com.br/fundos-imobiliarios-fiis-veja-12-para-ter-na-carteira-em-outubro-segundo-o-itau-bba-igdl/",
+          "publishedAt": "2026-10-03"
+        },
+        {
+          "title": "Fundos imobiliários (FIIs): Veja os 15 recomendados pela XP para outubro",
+          "url": "https://www.moneytimes.com.br/fundos-imobiliarios-fiis-veja-os-15-recomendados-pela-xp-para-outubro-igdl/",
           "publishedAt": "2026-10-01"
         }
       ]
@@ -239,15 +275,15 @@
     {
       "ticker": "VRTA11",
       "sentiment": "positive",
-      "score": 0.5,
+      "score": 0.45,
       "confidence": "medium",
-      "summary": "VRTA11 distribuiu R$ 0,85 por cota em agosto (cerca de 124% do CDI com gross up) e projetou dividendos de até R$ 0,95; a cota subiu 2,16% em 25 de setembro.",
-      "articleCount": 4,
+      "summary": "O VRTA11 anunciou R$ 0,85 por cota para 15 de outubro (DY de 1,18% no fechamento de setembro) e manteve guidance de R$ 0,85 a R$ 0,95, com reserva de R$ 1,26 por cota. Em agosto a distribuição equivalia a cerca de 124% do CDI com gross-up, e a cota subiu 2,99% em 6 de outubro.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "VRTA11 dispara 2,16% e se destaca entre FIIs nesta sexta-feira",
-          "url": "https://fiis.com.br/noticias/vrta11-dispara-216-se-destaca-entre-fiis-nesta-sexta-feira-vi/",
-          "publishedAt": "2026-09-26"
+          "title": "VRTA11 apresenta novos dividendos com yield acima de 1%; veja detalhes",
+          "url": "https://fiis.com.br/noticias/fii-vrta11-apresenta-dividendos-yield-acima-1-veja-detalhes-vi/",
+          "publishedAt": "2026-10-01"
         },
         {
           "title": "VRTA11 rende 124% do CDI em agosto e projeta dividendos de até R$ 0,95 por cota",
@@ -255,66 +291,55 @@
           "publishedAt": "2026-09-25"
         },
         {
-          "title": "KNCR11, VRTA11, ALZC11 e CCME11 são destaques do Bom Dia FIIs (28/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-280926/",
-          "publishedAt": "2026-09-28"
+          "title": "VRTA11 sobe 2,99% e movimenta R$ 2,34 milhões após eleição",
+          "url": "https://fiis.com.br/noticias/vrta11-cresce-299-e-movimenta-r-234-milhoes-apos-eleicao/",
+          "publishedAt": "2026-10-06"
         }
       ]
     },
     {
       "ticker": "JSRE11",
-      "sentiment": "neutral",
-      "score": 0.1,
+      "sentiment": "positive",
+      "score": 0.35,
       "confidence": "low",
-      "summary": "JSRE11 encerrou agosto com resultado de R$ 10,9 milhões (R$ 0,53 por cota) e divulgou projeção de dividendos para os próximos meses.",
+      "summary": "O JSRE11 encerrou agosto com resultado de R$ 10,9 milhões (R$ 0,53 por cota), acima dos R$ 0,50 distribuídos, e manteve reserva de R$ 0,72 por cota com projeção de R$ 0,50 a R$ 0,53. A vacância consolidada ficou em 3,9%, com expansões da Stellantis e da Salesforce e renovação do Fleury.",
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "JSRE11: FII lucra R$ 10,9 milhões e projeta dividendos para próximos meses",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-jsre11-resultado-agosto-2026-dividendos-vacancia-carteira-jj/",
-          "publishedAt": "2026-09-23"
+          "title": "Fundo imobiliário lucra R$ 10,9 milhões e projeta próximos dividendos",
+          "url": "https://www.fundsexplorer.com.br/noticias/jsre11-resultado-dividendos-agosto-2026",
+          "publishedAt": "2026-09-24"
         }
       ]
     },
     {
       "ticker": "ALZR11",
       "sentiment": "positive",
-      "score": 0.45,
-      "confidence": "high",
-      "summary": "ALZR11 gerou resultado recorrente acima da distribuição de R$ 0,084 por cota, reforçou reservas, recomprou cotas e elevou o guidance do semestre.",
-      "articleCount": 5,
+      "score": 0.4,
+      "confidence": "medium",
+      "summary": "O gestor do ALZR11 afirmou que não tem pressa para usar o caixa e trata shopping como fluxo de caixa mais incerto que a logística, hoje cerca de 30% da carteira. O fundo elevou o guidance do semestre para R$ 0,082–0,084 por cota, distribuiu R$ 0,084 com resultado recorrente de R$ 0,0859 e recomprou 44 mil cotas a R$ 9,90.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "ALZR11 reforça reservas, recompra cotas e eleva guidance para o semestre",
-          "url": "https://fiis.com.br/noticias/alzr11-reforca-reservas-recompra-cotas-eleva-guidance-semestre/",
-          "publishedAt": "2026-09-23"
+          "title": "Por que o FII ALZR11 não tem pressa para comprar — e vê oportunidades no varejo?",
+          "url": "https://www.infomoney.com.br/onde-investir/por-que-o-fii-alzr11-nao-tem-pressa-para-comprar-e-ve-oportunidades-no-varejo/",
+          "publishedAt": "2026-10-01"
         },
         {
-          "title": "ALZR11 divulgou novos dividendos; confira valor e data de pagamento",
-          "url": "https://fiis.com.br/noticias/fii-alzr11-divulgou-novos-dividendos-confira-valor-data-pagamento-vi/",
-          "publishedAt": "2026-09-21"
-        },
-        {
-          "title": "ALZR11, BRCO11, VVRI11 e PORD11 são destaques do Bom Dia FIIs (24/9)",
-          "url": "https://fiis.com.br/noticias/bom-dia-fiis-240926/",
-          "publishedAt": "2026-09-24"
+          "title": "ALZR11 sobe 0,99% e movimenta quase R$ 6 milhões no pregão",
+          "url": "https://fiis.com.br/noticias/alzr11-sobe-099-e-movimenta-quase-r-6-milhoes-no-pregao/",
+          "publishedAt": "2026-10-05"
         }
       ]
     },
     {
       "ticker": "RBRP11",
-      "sentiment": "positive",
-      "score": 0.3,
+      "sentiment": "neutral",
+      "score": 0,
       "confidence": "low",
-      "summary": "RBRP11 concluiu a venda de edifício na Vila Olímpia por R$ 167,5 milhões, recebendo R$ 100,5 milhões proporcionais à sua participação de 60%.",
-      "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "FII conclui venda de prédio por R$ 167,5 milhões e recebe R$ 100,5 milhões",
-          "url": "https://fiis.com.br/noticias/fii-conclui-venda-de-predio-por-r-1675-milhoes-e-recebe-r-1005-milhoes/",
-          "publishedAt": "2026-09-18"
-        }
-      ]
+      "summary": "Sem notícias específicas sobre o RBRP11 nos portais consultados dentro da janela de 14 dias.",
+      "articleCount": 0,
+      "topHeadlines": []
     },
     {
       "ticker": "XPPR11",
@@ -328,25 +353,15 @@
     {
       "ticker": "PMLL11",
       "sentiment": "positive",
-      "score": 0.6,
-      "confidence": "medium",
-      "summary": "PMLL11 encerrou a 7ª emissão captando cerca de R$ 718 milhões, comprou participações em cinco shoppings por R$ 257 milhões e gerou R$ 0,93 por cota em agosto, com dividend yield anualizado de 11,7%.",
-      "articleCount": 3,
+      "score": 0.5,
+      "confidence": "low",
+      "summary": "O PMLL11 registrou receita de R$ 15,96 milhões em agosto e resultado distribuível de R$ 0,93 por cota, com distribuição de R$ 1,00 e dividend yield anualizado de 11,7%. A gestão projeta manter R$ 1,00 no segundo semestre após aquisições, entre elas 29% do Shopping Jardim Sul e participações em mais cinco shoppings.",
+      "articleCount": 1,
       "topHeadlines": [
         {
           "title": "PMLL11: FII lucra R$ 15,96 milhões e dividendos rendem 11,7% ao ano; veja valor",
           "url": "https://fiis.com.br/noticias/pmll11-fundo-imobiliario-resultado-agosto-pipeline-7-emissao-shoppings-jj/",
           "publishedAt": "2026-09-28"
-        },
-        {
-          "title": "PMLL11 encerra oferta e capta cerca de R$ 718,2 milhões",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-pmll11-encerra-oferta-setima-emissao-cotas-718-milhoes-jj/",
-          "publishedAt": "2026-09-22"
-        },
-        {
-          "title": "PMLL11 fecha compra de 5 shoppings por R$ 257 milhões",
-          "url": "https://fiis.com.br/noticias/pmll11-fundo-imobiliario-compra-participacoes-cinco-shoppings-diversificacao-jj/",
-          "publishedAt": "2026-09-18"
         }
       ]
     }
