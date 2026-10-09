@@ -34,7 +34,7 @@ Para cada ticker:
 | `sentiment` | `positive`, `neutral` ou `negative` |
 | `score` | `-1.0` … `1.0` (negativo = pessimista) |
 | `confidence` | `low` (<2 fontes), `medium` (2–4), `high` (5+) |
-| `summary` | 1–2 frases em pt-BR, factual |
+| `summary` | 1–2 frases em pt-BR, factual. Atribua recomendação de terceiros à instituição. Não diga que o leitor deve comprar ou vender |
 | `articleCount` | notícias consideradas |
 | `topHeadlines` | até 3: `title`, `url`, `publishedAt` (ISO date) |
 
