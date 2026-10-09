@@ -1,6 +1,6 @@
 # Backlog do Lumina
 
-Atualizado em 8 de outubro de 2026. Prioridades:
+Atualizado em 9 de outubro de 2026. Prioridades:
 
 - **P0:** bloqueia o TestFlight.
 - **P1:** antes de abrir o TestFlight externo ou publicar na App Store.
@@ -12,13 +12,13 @@ Atualizado em 8 de outubro de 2026. Prioridades:
 
 | # | Item | Por quê | Esforço |
 |---|------|---------|---------|
-| T1 | Fazer o deploy do schema do CloudKit para **Production** no CloudKit Console | Builds do TestFlight usam o ambiente de produção. Sem o schema, a sincronização da carteira falha para os testadores | P |
+| T1 | ~~Fazer o deploy do schema do CloudKit para **Production**~~ Feito no container `iCloud.br.com.ruanvictorreis.Lumina` | Builds do TestFlight usam o ambiente de produção. Sem o schema, a sincronização da carteira falha para os testadores | P |
 | T2 | ~~Adicionar `PrivacyInfo.xcprivacy`~~ Feito: motivo `CA92.1` para `UserDefaults` e nenhum dado coletado | O app usa `UserDefaults` (metas, sincronização de preços, notícias). Sem o manifesto, o upload gera o aviso ITMS-91053 | P |
 | T3 | ~~Adicionar `ITSAppUsesNonExemptEncryption = NO`~~ Feito no `Info.plist` | O app só usa HTTPS. Evita responder ao questionário de exportação a cada build | P |
-| T4 | Confirmar que o arquivamento de Release lê o token da brapi em `Config/Secrets.xcconfig` | Sem token, as cotações caem direto no Yahoo e no cache | P |
+| T4 | ~~Confirmar que o arquivamento de Release lê o token da brapi~~ Feito: o build de Release embute `BRAPI_API_TOKEN` a partir de `Config/Secrets.xcconfig` | Sem token, as cotações caem direto no Yahoo e no cache | P |
 | T5 | ~~Aumentar `CURRENT_PROJECT_VERSION`~~ Feito: build `3`, versão `1.0`. Subir de novo a cada upload | O App Store Connect rejeita builds com número repetido | P |
-| T6 | Testar a sincronização com uma conta iCloud diferente, num build de Release em aparelho físico | O ambiente de produção do CloudKit só é exercitado nesse tipo de build | M |
-| T7 | Conferir o `aps-environment` no build arquivado (tem que ser `production`) | O arquivo `Lumina.entitlements` está com `development`; a assinatura automática costuma trocar, mas vale confirmar | P |
+| T6 | ~~Testar a sincronização num build de Release em aparelho físico~~ Feito | O ambiente de produção do CloudKit só é exercitado nesse tipo de build | M |
+| T7 | ~~Conferir o `aps-environment` no build arquivado~~ Feito: saiu como `production` | O arquivo `Lumina.entitlements` está com `development`; a assinatura automática troca no archive | P |
 
 ### P1: antes do TestFlight externo (revisão da Apple)
 
@@ -81,7 +81,7 @@ Atualizado em 8 de outubro de 2026. Prioridades:
 ## Ordem sugerida até o TestFlight
 
 1. Fazer o merge do PR #37.
-2. Resolver T1–T7: um PR curto com o manifesto de privacidade, o `Info.plist` e o número do build, mais as configurações no CloudKit Console.
+2. T1–T7 concluídos (manifesto de privacidade, build 3, schema em Production, token da brapi, sincronização no aparelho e `aps-environment` de produção).
 3. Adicionar os logs (E3), para ter diagnóstico já na primeira rodada de testes.
 4. Arquivar, enviar e abrir o TestFlight interno.
 5. Em paralelo ao teste interno: política de privacidade, textos da loja e revisão da linguagem dos Insights (T8–T12, F1).
