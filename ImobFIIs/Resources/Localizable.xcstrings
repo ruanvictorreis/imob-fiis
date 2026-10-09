@@ -963,7 +963,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gap estimado até a meta: ~%@"
+            "value" : "Diferença em relação à sua meta: ~%@"
           }
         }
       }
@@ -1019,7 +1019,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Esta análise considera apenas os FIIs que você já tem em carteira. Para segmentos sem posição, consulte o catálogo."
+            "value" : "Esta análise descreve apenas os FIIs que você já tem em carteira. O número abaixo é a diferença entre o peso atual e a meta que você definiu."
           }
         }
       }
@@ -1030,7 +1030,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maior dividend yield (12m) no segmento"
+            "value" : "Maior dividend yield (12m) entre as suas posições deste segmento"
           }
         }
       }
@@ -1571,7 +1571,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ordenados pela mesma prioridade da aba Insights. Toque em um FII para adicionar cotas."
+            "value" : "Na mesma ordem da aba Insights, do maior desvio em relação à sua meta. Toque em um FII para registrar cotas."
           }
         }
       }
@@ -1582,7 +1582,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aporte sugerido no segmento"
+            "value" : "Valor simulado no segmento"
           }
         }
       }
@@ -1599,13 +1599,13 @@
       }
     },
     "simulator.suggestedShares" : {
-      "comment" : "%1$@ é o valor sugerido para o segmento e %2$lld a quantidade de cotas que ele compra.",
+      "comment" : "%1$@ é o valor que a simulação destina ao segmento e %2$lld a quantidade de cotas correspondente ao preço atual.",
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aporte sugerido de %1$@ no segmento: cerca de %2$lld cotas pelo preço atual."
+            "value" : "A simulação destina %1$@ a este segmento, o equivalente a cerca de %2$lld cotas pelo preço atual."
           }
         }
       }
