@@ -24,9 +24,9 @@ Atualizado em 9 de outubro de 2026. Prioridades:
 
 | # | Item | Por quê | Esforço |
 |---|------|---------|---------|
-| T8 | Publicar uma política de privacidade (uma página simples) | Exigida no App Store Connect, inclusive para teste externo | P |
+| T8 | ~~Publicar uma política de privacidade~~ Feito: [ruanvictorreis.github.io/imob-fiis/privacidade](https://ruanvictorreis.github.io/imob-fiis/privacidade/) | Exigida no App Store Connect, inclusive para teste externo | P |
 | T9 | Preencher os rótulos de privacidade da loja ("nenhum dado coletado") | Diferencial real do app: sem conta e sem servidor | P |
-| T10 | Escrever o texto "O que testar" e o e-mail de contato para feedback | Orienta os testadores e agiliza a revisão do teste externo | P |
+| T10 | ~~Escrever o texto "O que testar" e o e-mail de contato~~ Feito: texto pronto para o TestFlight; feedback pelo app TestFlight e pelo e-mail de suporte da ficha | Orienta os testadores e agiliza a revisão do teste externo | P |
 | T11 | Revisar os textos dos Insights para a linguagem analítica, sem recomendação de compra (Resolução CVM 20) | Evita configurar recomendação de investimento | P |
 | T12 | Consultar a marca "Lumina" no INPI (classes 9 e 36) | "Lumina" é um nome bastante usado em apps | P |
 
@@ -84,5 +84,5 @@ Atualizado em 9 de outubro de 2026. Prioridades:
 2. T1–T7 concluídos (manifesto de privacidade, build 3, schema em Production, token da brapi, sincronização no aparelho e `aps-environment` de produção).
 3. Adicionar os logs (E3), para ter diagnóstico já na primeira rodada de testes.
 4. Arquivar, enviar e abrir o TestFlight interno.
-5. Em paralelo ao teste interno: política de privacidade, textos da loja e revisão da linguagem dos Insights (T8–T12, F1).
+5. Em paralelo ao teste interno: rótulos de privacidade, textos da loja, revisão da linguagem dos Insights e consulta da marca (T9, T11, T12, F1). T8 e T10 concluídos.
 6. Abrir o TestFlight externo.
