@@ -14,12 +14,12 @@
     },
     "logistics": {
       "updatedAt": "2026-10-07T18:30:00Z",
-      "fundCount": 20,
+      "fundCount": 19,
       "url": "logistics.json"
     },
     "malls": {
       "updatedAt": "2026-10-08T17:50:00Z",
-      "fundCount": 20,
+      "fundCount": 21,
       "url": "malls.json"
     },
     "offices": {

@@ -222,31 +222,6 @@
       ]
     },
     {
-      "ticker": "HGBS11",
-      "sentiment": "neutral",
-      "score": 0,
-      "confidence": "medium",
-      "summary": "Hedge Brasil Shopping manteve R$ 0,17 por cota (pagamento em 15/10, DY ~0,92%) e vacância consolidada de 4,4% da ABL. A XP manteve peso de 3,5%, enquanto o BTG retirou o fundo da carteira de outubro no ajuste do segmento de shoppings.",
-      "articleCount": 3,
-      "topHeadlines": [
-        {
-          "title": "HGBS11 confirma novos dividendos aos cotistas; veja a data",
-          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hgbs11-outubro-2026",
-          "publishedAt": "2026-10-02"
-        },
-        {
-          "title": "Fundos imobiliários (FIIs): Veja os 15 recomendados pela XP para outubro",
-          "url": "https://www.moneytimes.com.br/fundos-imobiliarios-fiis-veja-os-15-recomendados-pela-xp-para-outubro-igdl/",
-          "publishedAt": "2026-10-01"
-        },
-        {
-          "title": "Dividendo de 11,3%: Estes são os fundos imobiliários (FIIs) recomendados pelo BTG para outubro",
-          "url": "https://www.moneytimes.com.br/dividendo-de-113-estes-sao-os-fiis-recomendados-pelo-btg-para-outubro-igdl/",
-          "publishedAt": "2026-10-01"
-        }
-      ]
-    },
-    {
       "ticker": "KNRI11",
       "sentiment": "neutral",
       "score": 0.1,
