@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T17:50:00Z",
+  "updatedAt": "2026-10-09T17:30:00Z",
   "segments": {
     "paper": {
       "updatedAt": "2026-09-28T18:45:00Z",
@@ -23,7 +23,7 @@
       "url": "malls.json"
     },
     "offices": {
-      "updatedAt": "2026-10-02T16:45:00Z",
+      "updatedAt": "2026-10-09T17:30:00Z",
       "fundCount": 20,
       "url": "offices.json"
     },
