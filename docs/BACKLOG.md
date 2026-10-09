@@ -41,6 +41,20 @@ Atualizado em 9 de outubro de 2026. Prioridades:
 | E5 | P2 | **Testes de interface do fluxo principal** | Adicionar posição, editar, ver Insights, simular aporte e adicionar cotas pelo segmento |
 | E6 | P2 | **Analytics que respeite a privacidade** | TelemetryDeck ou só o App Analytics da Apple, para medir retenção e uso das telas |
 | E7 | P2 | **Dividir arquivos grandes** | `AddHoldingSheet` e `FundDetailView` se aproximam do limite de 400 linhas do SwiftLint |
+| E8 | P1 | **Cloudflare Pages no lugar do GitHub Pages** | Publica `docs/` de graça com o repositório privado. O site continua público, para a política de privacidade e os relatórios de sentimento. Passos na seção abaixo |
+
+### E8: Cloudflare Pages
+
+Conta gratuita em [pages.cloudflare.com](https://pages.cloudflare.com). O repositório pode ficar privado. A política e o sentimento continuam em URL pública, sem login.
+
+1. **Connect to Git** e autorize o repositório `imob-fiis`.
+2. Comando de build vazio. Pasta de saída: `docs`.
+3. Conferir as URLs no domínio `pages.dev`:
+   - política: `/privacidade/`
+   - sentimento: `/sentiment/manifest.json`
+4. Trocar `SENTIMENT_BASE_URL` no `Info.plist` para `https://<projeto>.pages.dev/sentiment/`.
+5. Trocar a **Privacy Policy URL** no App Store Connect para `https://<projeto>.pages.dev/privacidade/`.
+6. Só então deixar o repositório privado. Cada push na `main` que altere `docs/`, inclusive o workflow diário de sentimento, republica o site.
 
 ## 3. Produto
 
