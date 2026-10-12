@@ -171,13 +171,19 @@ struct ExploreCatalogTests {
 
         let summary = try #require(FundSummary(dto: page.results[0]))
         #expect(summary.ticker == "MXRF11")
-        #expect(summary.segment == .logistics)
+        #expect(summary.segment == .paper)
         #expect(summary.changePercent == 0.0043)
     }
 
     @Test
     func mapsAPISubsectorsToFundSegments() {
         #expect(FundSegment.fromAPI(subsector: "Logística") == .logistics)
+        #expect(
+            FundSegment.fromAPI(
+                subsector: "Logística",
+                name: "MXRF11 Maxi Renda Fundo de Investimento Imobiliario Cotas"
+            ) == .paper
+        )
         #expect(FundSegment.fromAPI(subsector: "Escritórios") == .offices)
         #expect(FundSegment.fromAPI(subsector: "Shoppings") == .malls)
         #expect(FundSegment.fromAPI(subsector: "Híbrido") == .hybrid)

@@ -58,7 +58,15 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
         }
     }
 
+    /// A brapi classifica alguns fundos no setor errado. O ticker no nome prevalece.
+    private static let segmentOverrides: [String: FundSegment] = [
+        "mxrf11": .paper,
+    ]
+
     static func fromAPI(subsector: String?, subType: String? = nil, name: String? = nil) -> FundSegment {
+        if let overridden = overriddenSegment(in: name) {
+            return overridden
+        }
         if subType == "fi-agro" {
             return .fiagro
         }
@@ -103,10 +111,13 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
         }
     }
 
+    private static func overriddenSegment(in name: String?) -> FundSegment? {
+        let blob = normalized(name)
+        return segmentOverrides.first { blob.contains($0.key) }?.value
+    }
+
     private static func inferred(from name: String?) -> FundSegment? {
-        let blob = name?
-            .folding(options: .diacriticInsensitive, locale: Locale(identifier: "pt_BR"))
-            .lowercased() ?? ""
+        let blob = normalized(name)
         guard !blob.isEmpty else { return nil }
 
         if containsAny(blob, ["fiagro", "agronegocio", "agroindustrial", "agricola", "rural", " agro"]) {
@@ -137,6 +148,12 @@ enum FundSegment: String, Codable, CaseIterable, Identifiable {
             return .offices
         }
         return nil
+    }
+
+    private static func normalized(_ name: String?) -> String {
+        name?
+            .folding(options: .diacriticInsensitive, locale: Locale(identifier: "pt_BR"))
+            .lowercased() ?? ""
     }
 
     private static func containsAny(_ blob: String, _ tokens: [String]) -> Bool {

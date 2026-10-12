@@ -377,6 +377,15 @@
           "publishedAt": "2026-09-17"
         }
       ]
+    },
+    {
+      "ticker": "MXRF11",
+      "sentiment": "neutral",
+      "score": 0,
+      "confidence": "low",
+      "summary": "Sem notícias específicas sobre o MXRF11 nos portais consultados dentro da janela de 14 dias.",
+      "articleCount": 0,
+      "topHeadlines": []
     }
   ]
 }
