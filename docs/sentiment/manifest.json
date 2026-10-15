@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-14T16:10:00Z",
+  "updatedAt": "2026-10-15T15:45:00Z",
   "segments": {
     "paper": {
       "updatedAt": "2026-10-12T20:45:00Z",
@@ -18,7 +18,7 @@
       "url": "logistics.json"
     },
     "malls": {
-      "updatedAt": "2026-10-08T17:50:00Z",
+      "updatedAt": "2026-10-15T15:45:00Z",
       "fundCount": 21,
       "url": "malls.json"
     },
