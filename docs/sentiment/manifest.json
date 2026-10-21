@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-20T16:10:00Z",
+  "updatedAt": "2026-10-21T16:30:00Z",
   "segments": {
     "paper": {
       "updatedAt": "2026-10-19T17:35:00Z",
@@ -13,7 +13,7 @@
       "url": "urban.json"
     },
     "logistics": {
-      "updatedAt": "2026-10-14T16:10:00Z",
+      "updatedAt": "2026-10-21T16:30:00Z",
       "fundCount": 19,
       "url": "logistics.json"
     },
