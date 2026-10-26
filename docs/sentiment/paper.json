@@ -2,83 +2,85 @@
   "version": 1,
   "segment": "Papel",
   "segmentKey": "paper",
-  "generatedAt": "2026-10-19T17:35:00Z",
+  "generatedAt": "2026-10-26T17:30:00Z",
   "lookbackDays": 14,
   "sources": [
+    "clube.fii",
     "fiis.com.br",
     "fundsexplorer.com.br",
     "infomoney.com.br",
     "moneytimes.com.br",
+    "statusinvest.com.br",
     "suno.com.br"
   ],
   "funds": [
     {
       "ticker": "KNCR11",
       "sentiment": "positive",
-      "score": 0.62,
+      "score": 0.5,
       "confidence": "high",
-      "summary": "O KNCR11 distribuiu R$ 1,13 por cota em 14/10 (DY mensal de 1,06% a 1,08%), abaixo dos R$ 1,15 de agosto, após resultado de setembro de R$ 1,12 por cota e R$ 1,19 bilhão em novas alocações a CDI + 1,76% ao ano; a 13ª emissão, de até R$ 3,13 bilhões, teve preferência de 5 a 16/10. O fundo liderou as indicações de outubro, com sete menções no Money Times e seis no InfoMoney, peso de 11,5% no Santander e de 15,5% na carteira de fundos listados do BTG.",
+      "summary": "O KNCR11 distribuiu R$ 1,13 por cota em 14/10, acima do resultado de setembro de R$ 1,12, com DY mensal de 1,06% a 1,11% e novas alocações de cerca de R$ 1,19 bilhão a CDI + 1,76% ao ano no relatório de setembro. O relatório intermediário de outubro, repercutido pela Suno e pelo fiis.com.br, cita R$ 664,4 milhões em investimentos, ausência de eventos de crédito e carteira 99% indexada ao CDI, com o alerta de que cortes da Selic, em 13,75%, tendem a reduzir gradualmente os rendimentos.",
       "articleCount": 8,
       "topHeadlines": [
         {
-          "title": "KNCR11 registra dividendos com retorno acima de 1% em setembro",
-          "url": "https://www.suno.com.br/noticias/kncr11-resultado-setembro-2026-distribuicao/",
-          "publishedAt": "2026-10-15"
+          "title": "Juros em queda: o que pode mudar para o KNCR11 e seus dividendos?",
+          "url": "https://www.suno.com.br/noticias/kncr11-renda-cdi-riscos-dados/",
+          "publishedAt": "2026-10-22"
         },
         {
-          "title": "KNCR11, BTLG11 e XPML11 lideram recomendações de FIIs para outubro; veja ranking",
-          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-xpml11-lideram-recomendacoes-de-fiis-para-outubro-veja-ranking-igdl/",
-          "publishedAt": "2026-10-07"
+          "title": "KNCR11, TRXF11 e EXES11 são destaques do Bom Dia FIIs (22/10)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-221026/",
+          "publishedAt": "2026-10-22"
         },
         {
-          "title": "KNCR11 inicia nova emissão bilionária; veja a agenda de ofertas de FIIs",
-          "url": "https://www.suno.com.br/noticias/ofertas-de-fiis-semana-kncr11/",
-          "publishedAt": "2026-10-05"
+          "title": "Dividendos do KNCR11 superam lucro de setembro e rendem 1,11% no mês",
+          "url": "https://www.suno.com.br/noticias/kncr11-distribui-r-121-mi/",
+          "publishedAt": "2026-10-21"
         }
       ]
     },
     {
       "ticker": "CPTS11",
       "sentiment": "positive",
-      "score": 0.4,
+      "score": 0.35,
       "confidence": "medium",
-      "summary": "O resultado de agosto subiu 43%, para R$ 0,120 por cota, mas a distribuição foi mantida em R$ 0,09, com guidance da gestão entre R$ 0,08 e R$ 0,10. Novo crédito de R$ 0,09 está marcado para 22/10 (DY mensal de cerca de 1,20% sobre R$ 7,53), e o BTG manteve peso de 4,5% na carteira de fundos listados.",
-      "articleCount": 4,
+      "summary": "O CPTS11 manteve a distribuição de R$ 0,09 por cota referente a setembro, com pagamento em 22/10, data de corte em 15/10 e dividend yield mensal de 1,13% a 1,20% sobre o fechamento de setembro a R$ 7,53, segundo a Suno e o fiis.com.br.",
+      "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "XPML11, CPTS11 e Suno Asset são destaques do Bom Dia FIIs (19/10)",
+          "url": "https://fiis.com.br/noticias/noticias-bom-dia-fiis-191026/",
+          "publishedAt": "2026-10-19"
+        },
         {
           "title": "CPTS11 anuncia pagamento de dividendos em outubro; confira",
           "url": "https://www.suno.com.br/noticias/cpts11-rendimentos-outubro-2026-dy/",
           "publishedAt": "2026-10-16"
         },
         {
-          "title": "CPTS11 aumenta lucro em 43% e paga dividendos com yield de 1,20%",
-          "url": "https://www.suno.com.br/noticias/cpts11-resultado-agosto-2026-dividendos/",
-          "publishedAt": "2026-10-06"
-        },
-        {
-          "title": "FIIs e FI-Infra: Os melhores fundos para investir em outubro, segundo o BTG",
-          "url": "https://www.moneytimes.com.br/fiis-e-fi-infra-os-melhores-fundos-para-investir-em-outubro-segundo-o-btg-igdl/",
-          "publishedAt": "2026-10-10"
+          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
+          "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
+          "publishedAt": "2026-10-19"
         }
       ]
     },
     {
       "ticker": "RBRR11",
       "sentiment": "negative",
-      "score": -0.45,
+      "score": -0.48,
       "confidence": "medium",
-      "summary": "A Suno reportou distribuição de R$ 0,73 por cota em 19/10, queda de 18,9% ante os R$ 0,90 anteriores, com DY mensal próximo de 0,99% sobre a cotação de R$ 74,01 do relatório de agosto, que já apontava pressão do IPCA e uso de reserva. O calendário do fiis.com.br confirma o crédito de R$ 0,73 (DY de 0,97%) nesta segunda-feira.",
+      "summary": "A Suno reportou em 12/10 que o RBRR11 distribuiria R$ 0,73 por cota em 19/10, queda de 18,9% ante os R$ 0,90 anteriores, com DY mensal de cerca de 0,99% e pressão do IPCA sobre o resultado de agosto, já coberto em parte pela reserva. O calendário do fiis.com.br confirmou o crédito de R$ 0,73, com DY de 0,97%.",
       "articleCount": 2,
       "topHeadlines": [
+        {
+          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
+          "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
+          "publishedAt": "2026-10-19"
+        },
         {
           "title": "RBRR11: fundo imobiliário divulga novos dividendos; confira valor",
           "url": "https://www.suno.com.br/noticias/rbrr11-fundo-imobiliario-divulga-novos-dividendos-confira-valor/",
           "publishedAt": "2026-10-12"
-        },
-        {
-          "title": "XPML11 e mais 64 FIIs pagam dividendos na semana; veja quais",
-          "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
-          "publishedAt": "2026-10-19"
         }
       ]
     },
@@ -87,7 +89,7 @@
       "sentiment": "positive",
       "score": 0.25,
       "confidence": "medium",
-      "summary": "O VRTA11 pagou R$ 0,85 por cota em 15/10, com dividend yield mensal de 1,17%, segundo o calendário do fiis.com.br e a InfoMoney. Não houve outras notícias operacionais sobre o fundo na janela.",
+      "summary": "O VRTA11 pagou R$ 0,85 por cota em 15/10, com dividend yield mensal de 1,17% e data com em 30/09, segundo o calendário do fiis.com.br e a InfoMoney. Não houve outras notícias operacionais sobre o fundo na janela.",
       "articleCount": 2,
       "topHeadlines": [
         {
@@ -105,23 +107,13 @@
     {
       "ticker": "MCCI11",
       "sentiment": "positive",
-      "score": 0.55,
-      "confidence": "high",
-      "summary": "O MCCI11 segue entre os papéis mais indicados de outubro, com quatro menções no Money Times e no InfoMoney, peso de 11,5% no Santander e de 7% na carteira de fundos listados do BTG; o InfoMoney destacou carteira majoritariamente em IPCA, com taxa média de IPCA + 8,6% ao ano. O calendário prevê R$ 1,00 por cota em 20/10, com dividend yield mensal de 1,05%.",
-      "articleCount": 5,
+      "score": 0.35,
+      "confidence": "low",
+      "summary": "O calendário do fiis.com.br registrou pagamento de R$ 1,00 por cota do MCCI11 em 20/10, com dividend yield mensal de 1,05%. Não houve outras notícias do fundo nos portais consultados entre 12 e 26/10.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Após queda de juros, enfim chegou a hora dos FIIs de tijolo? Veja os mais indicados",
-          "url": "https://www.infomoney.com.br/onde-investir/carteira-recomendada-fiis-outubro-2026/",
-          "publishedAt": "2026-10-08"
-        },
-        {
-          "title": "Dividendos de 12,2%: Santander recomenda 11 FIIs para outubro; veja quais",
-          "url": "https://www.moneytimes.com.br/dividendos-de-122-santander-recomenda-11-fiis-para-outubro-veja-quais-igdl/",
-          "publishedAt": "2026-10-06"
-        },
-        {
-          "title": "XPML11 e mais 64 FIIs pagam dividendos na semana; veja quais",
+          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
           "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
           "publishedAt": "2026-10-19"
         }
@@ -130,16 +122,11 @@
     {
       "ticker": "HGCR11",
       "sentiment": "positive",
-      "score": 0.4,
+      "score": 0.35,
       "confidence": "medium",
-      "summary": "O Santander manteve o HGCR11 com peso de 11,5% na carteira de FIIs de outubro, empatado no topo com MCCI11 e KNCR11. O fundo pagou R$ 1,00 por cota em 15/10, com dividend yield mensal de 1,05%, conforme InfoMoney e fiis.com.br.",
-      "articleCount": 3,
+      "summary": "O HGCR11 pagou R$ 1,00 por cota em 15/10, com dividend yield mensal de 1,05% e data com em 30/09, conforme InfoMoney e o calendário do fiis.com.br. Não houve outras notícias operacionais na janela.",
+      "articleCount": 2,
       "topHeadlines": [
-        {
-          "title": "Dividendos de 12,2%: Santander recomenda 11 FIIs para outubro; veja quais",
-          "url": "https://www.moneytimes.com.br/dividendos-de-122-santander-recomenda-11-fiis-para-outubro-veja-quais-igdl/",
-          "publishedAt": "2026-10-06"
-        },
         {
           "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
           "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
@@ -157,7 +144,7 @@
       "sentiment": "neutral",
       "score": 0,
       "confidence": "low",
-      "summary": "Não houve notícias sobre o IRDM11 nos portais consultados na janela de 5 a 19/10/2026.",
+      "summary": "Não houve notícias sobre o IRDM11 nos portais consultados na janela de 12 a 26/10/2026.",
       "articleCount": 0,
       "topHeadlines": []
     },
@@ -166,8 +153,8 @@
       "sentiment": "neutral",
       "score": 0.1,
       "confidence": "medium",
-      "summary": "O KNIP11 pagou R$ 0,60 por cota em 14/10, com dividend yield mensal de 0,64% a 0,67% conforme Suno e fiis.com.br. O BTG manteve o fundo com peso de 3,5% na carteira de fundos listados de outubro.",
-      "articleCount": 3,
+      "summary": "O KNIP11 pagou R$ 0,60 por cota em 14/10, referente a setembro, com dividend yield mensal de 0,64% a 0,67% e DY de 12 meses de 10,81%, segundo a Suno e o fiis.com.br. A cobertura da janela se limitou ao calendário de proventos.",
+      "articleCount": 2,
       "topHeadlines": [
         {
           "title": "Dividendos pagam hoje; confira quais FIIS estão inclusos",
@@ -178,20 +165,15 @@
           "title": "MXRF11 e mais 179 FIIs pagam dividendos na semana; veja valor",
           "url": "https://fiis.com.br/noticias/fiis-fundos-imobiliarios-calendario-pagamento-semana-outubro-2026-jj/",
           "publishedAt": "2026-10-13"
-        },
-        {
-          "title": "FIIs e FI-Infra: Os melhores fundos para investir em outubro, segundo o BTG",
-          "url": "https://www.moneytimes.com.br/fiis-e-fi-infra-os-melhores-fundos-para-investir-em-outubro-segundo-o-btg-igdl/",
-          "publishedAt": "2026-10-10"
         }
       ]
     },
     {
       "ticker": "KNSC11",
       "sentiment": "negative",
-      "score": -0.45,
+      "score": -0.4,
       "confidence": "medium",
-      "summary": "O resultado de setembro ficou em R$ 15,9 milhões, abaixo da distribuição de R$ 18,9 milhões (R$ 0,08 por cota em 14/10), com uso de reserva após deflação sobre a parcela indexada ao IPCA; o saldo não distribuído encerrou o mês em R$ 0,04 por cota. O DY mensal ficou em torno de 0,87% a 0,88%, e a gestão alocou R$ 20,1 milhões em dois CRIs a CDI + 3,12% ao ano em média.",
+      "summary": "O resultado de setembro do KNSC11 ficou em R$ 15,9 milhões (R$ 0,06 por cota), abaixo da distribuição de R$ 18,9 milhões (R$ 0,08 por cota em 14/10), com uso de reserva após deflação na parcela indexada ao IPCA; o saldo não distribuído encerrou o mês em R$ 0,04 por cota. A Suno também registrou alocação de R$ 20,1 milhões em dois CRIs a CDI + 3,12% ao ano em média, e o DY mensal ficou em torno de 0,87% a 0,88%.",
       "articleCount": 3,
       "topHeadlines": [
         {
@@ -214,16 +196,11 @@
     {
       "ticker": "RECR11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.3,
       "confidence": "medium",
-      "summary": "O RECR11 pagou R$ 0,6182 por cota em 15/10, com data-base em 7/10 e DY mensal de cerca de 0,80% a 0,82%; o Funds Explorer registrou DY de 12 meses de 14,11%. A carteira encerrou setembro com 96% dos recursos alocados, em 99 operações de CRI.",
+      "summary": "O RECR11 pagou cerca de R$ 0,62 por cota em 15/10 (R$ 0,6182 no calendário da InfoMoney e do fiis.com.br; R$ 0,61 no Funds Explorer), com data com em 7/10 e DY mensal de 0,80% a 0,81%. O Funds Explorer apontou DY de 12 meses de 14,11% e R$ 9,10 já pagos no ano.",
       "articleCount": 4,
       "topHeadlines": [
-        {
-          "title": "RECR11 divulga novos dividendos aos cotistas; saiba quem terá direito",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-recr11-dividendos-outubro-2026-pagamento-jj/",
-          "publishedAt": "2026-10-08"
-        },
         {
           "title": "MXRF11 e outros FIIs pagam dividendos hoje; confira detalhes",
           "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hoje-fiis-7",
@@ -233,39 +210,38 @@
           "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
           "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
           "publishedAt": "2026-10-15"
+        },
+        {
+          "title": "MXRF11, VISC11: Cotistas de FIIs vão receber dividendos hoje",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-fiis-hctr11-mxrf11-agenda-rendimento-dividendos-jj/",
+          "publishedAt": "2026-10-15"
         }
       ]
     },
     {
       "ticker": "KDIF11",
-      "sentiment": "positive",
-      "score": 0.2,
+      "sentiment": "neutral",
+      "score": 0,
       "confidence": "low",
-      "summary": "O BTG Pactual listou o KDIF11 com peso de 4,5% na carteira de fundos listados de outubro, na parcela classificada como FI-Infra. Não houve outras notícias específicas do fundo na janela.",
-      "articleCount": 1,
-      "topHeadlines": [
-        {
-          "title": "FIIs e FI-Infra: Os melhores fundos para investir em outubro, segundo o BTG",
-          "url": "https://www.moneytimes.com.br/fiis-e-fi-infra-os-melhores-fundos-para-investir-em-outubro-segundo-o-btg-igdl/",
-          "publishedAt": "2026-10-10"
-        }
-      ]
+      "summary": "Não houve notícias sobre o KDIF11 nos portais consultados na janela de 12 a 26/10/2026.",
+      "articleCount": 0,
+      "topHeadlines": []
     },
     {
       "ticker": "VGIR11",
       "sentiment": "positive",
-      "score": 0.4,
+      "score": 0.45,
       "confidence": "medium",
-      "summary": "O VGIR11 distribui R$ 0,13 por cota em 20/10, com dividend yield mensal de 1,33%, um dos maiores da semana de 19 a 23/10 segundo a Suno e o calendário do fiis.com.br.",
+      "summary": "O VGIR11 distribuiu R$ 0,13 por cota em 20/10, com dividend yield mensal de 1,33%, um dos maiores da semana de 19 a 23/10 segundo a Suno e o calendário do fiis.com.br.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "FIIs pagam dividendos nesta semana; retorno mensal chega a 1,69%",
+          "title": "FIIs pagam dividendos entre 19 e 23 de outubro; retorno mensal chega a 1,69%",
           "url": "https://www.suno.com.br/noticias/dividendos-fiis-semana-19-23-outubro/",
           "publishedAt": "2026-10-19"
         },
         {
-          "title": "XPML11 e mais 64 FIIs pagam dividendos na semana; veja quais",
+          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
           "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
           "publishedAt": "2026-10-19"
         }
@@ -276,29 +252,18 @@
       "sentiment": "neutral",
       "score": 0,
       "confidence": "low",
-      "summary": "Não houve notícias sobre o ARRI11 nos portais consultados na janela de 5 a 19/10/2026.",
+      "summary": "Não houve notícias sobre o ARRI11 nos portais consultados na janela de 12 a 26/10/2026.",
       "articleCount": 0,
       "topHeadlines": []
     },
     {
       "ticker": "HABT11",
-      "sentiment": "positive",
-      "score": 0.45,
-      "confidence": "medium",
-      "summary": "O HABT11 pagou R$ 0,92 por cota em 9/10, referente a setembro, com data com em 30/09. Suno e Funds Explorer apontaram dividend yield mensal de 1,34% e de 16,56% em 12 meses.",
-      "articleCount": 2,
-      "topHeadlines": [
-        {
-          "title": "HABT11 e mais 2 FIIs distribuem rendimentos hoje; confira",
-          "url": "https://www.suno.com.br/noticias/dividendos-hoje-habt11-fiib11-pagamento/",
-          "publishedAt": "2026-10-09"
-        },
-        {
-          "title": "Pagamentos de dividendos movimentam três FIIs nesta sexta-feira (9)",
-          "url": "https://www.fundsexplorer.com.br/noticias/dividendos-hoje-fundos-imobiliarios",
-          "publishedAt": "2026-10-09"
-        }
-      ]
+      "sentiment": "neutral",
+      "score": 0,
+      "confidence": "low",
+      "summary": "Não houve notícias sobre o HABT11 nos portais consultados na janela de 12 a 26/10/2026.",
+      "articleCount": 0,
+      "topHeadlines": []
     },
     {
       "ticker": "HGRE11",
@@ -330,11 +295,11 @@
       "sentiment": "positive",
       "score": 0.2,
       "confidence": "low",
-      "summary": "O calendário do fiis.com.br registra pagamento de R$ 0,72 por cota do CXAG11 em 19/10, com dividend yield mensal de 0,99%. Não houve outras notícias sobre o fundo na janela.",
+      "summary": "O calendário do fiis.com.br registrou pagamento de R$ 0,72 por cota do CXAG11 em 19/10, com dividend yield mensal de 0,99%. Não houve outras notícias sobre o fundo na janela.",
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "XPML11 e mais 64 FIIs pagam dividendos na semana; veja quais",
+          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
           "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
           "publishedAt": "2026-10-19"
         }
@@ -362,19 +327,14 @@
     },
     {
       "ticker": "RBRY11",
-      "sentiment": "negative",
-      "score": -0.35,
-      "confidence": "medium",
-      "summary": "O BTG retirou o RBRY11 da carteira de fundos listados de outubro ao reduzir a exposição a crédito de perfil mais arrojado indexado ao CDI. O fundo ainda creditou R$ 1,00 por cota em 19/10, com dividend yield mensal de 1,15%, conforme o calendário do fiis.com.br.",
-      "articleCount": 2,
+      "sentiment": "positive",
+      "score": 0.4,
+      "confidence": "low",
+      "summary": "O calendário do fiis.com.br registrou crédito de R$ 1,00 por cota do RBRY11 em 19/10, com dividend yield mensal de 1,15%. Não houve outras notícias do fundo na janela.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "FIIs e FI-Infra: Os melhores fundos para investir em outubro, segundo o BTG",
-          "url": "https://www.moneytimes.com.br/fiis-e-fi-infra-os-melhores-fundos-para-investir-em-outubro-segundo-o-btg-igdl/",
-          "publishedAt": "2026-10-10"
-        },
-        {
-          "title": "XPML11 e mais 64 FIIs pagam dividendos na semana; veja quais",
+          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
           "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
           "publishedAt": "2026-10-19"
         }
@@ -385,7 +345,7 @@
       "sentiment": "neutral",
       "score": 0,
       "confidence": "low",
-      "summary": "Não houve notícias sobre o CARE11 nos portais consultados na janela de 5 a 19/10/2026.",
+      "summary": "Não houve notícias sobre o CARE11 nos portais consultados na janela de 12 a 26/10/2026.",
       "articleCount": 0,
       "topHeadlines": []
     },
@@ -394,11 +354,11 @@
       "sentiment": "positive",
       "score": 0.3,
       "confidence": "low",
-      "summary": "O calendário do fiis.com.br prevê R$ 1,00 por cota do AFHI11 em 22/10, com dividend yield mensal de 1,03%. Não houve outras notícias sobre o fundo na janela.",
+      "summary": "O calendário do fiis.com.br registrou R$ 1,00 por cota do AFHI11 em 22/10, com dividend yield mensal de 1,03%. Não houve outras notícias sobre o fundo na janela.",
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "XPML11 e mais 64 FIIs pagam dividendos na semana; veja quais",
+          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
           "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
           "publishedAt": "2026-10-19"
         }
@@ -407,16 +367,11 @@
     {
       "ticker": "BTCI11",
       "sentiment": "positive",
-      "score": 0.3,
+      "score": 0.25,
       "confidence": "medium",
-      "summary": "Relatório repercutido pela Suno mostra lucro de R$ 11,59 milhões em julho (R$ 0,116 por cota) e distribuição de R$ 0,103 em agosto, com 95,1% do patrimônio em 32 operações de crédito. Em 15/10 o fundo pagou R$ 0,095 por cota, com dividend yield mensal de 1,04%, segundo InfoMoney e fiis.com.br.",
-      "articleCount": 3,
+      "summary": "O BTCI11 pagou R$ 0,095 por cota em 15/10, com data com em 7/10 e dividend yield mensal de 1,04%, segundo a InfoMoney e o calendário do fiis.com.br. Não houve outras notícias operacionais na janela.",
+      "articleCount": 2,
       "topHeadlines": [
-        {
-          "title": "BTCI11 lucra R$ 11,59 milhões e dividendos entregam retorno de 1,13%",
-          "url": "https://www.suno.com.br/noticias/btci11-lucro-julho-2026-dividendos-2/",
-          "publishedAt": "2026-10-07"
-        },
         {
           "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
           "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
@@ -433,9 +388,9 @@
       "ticker": "MXRF11",
       "sentiment": "positive",
       "score": 0.35,
-      "confidence": "medium",
-      "summary": "O MXRF11 manteve R$ 0,10 por cota referentes a setembro, com pagamento em 15/10, data com em 30/09 e dividend yield mensal de 1,07% a 1,09%. O Funds Explorer registrou DY de 12 meses de 12,77%.",
-      "articleCount": 4,
+      "confidence": "high",
+      "summary": "O MXRF11 manteve R$ 0,10 por cota referentes a setembro, com pagamento em 15/10, data com em 30/09 e dividend yield mensal de 1,07% a 1,09%. O Funds Explorer registrou DY de 12 meses de 12,77% e R$ 1,00 já pagos no ano.",
+      "articleCount": 5,
       "topHeadlines": [
         {
           "title": "MXRF11 e outros FIIs pagam dividendos hoje; confira detalhes",
