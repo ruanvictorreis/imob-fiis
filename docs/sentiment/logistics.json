@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Logística",
   "segmentKey": "logistics",
-  "generatedAt": "2026-10-21T16:30:00Z",
+  "generatedAt": "2026-10-28T17:15:00Z",
   "lookbackDays": 14,
   "sources": [
     "fiis.com.br",
@@ -15,54 +15,59 @@
     {
       "ticker": "XPLG11",
       "sentiment": "positive",
-      "score": 0.3,
+      "score": 0.32,
       "confidence": "medium",
-      "summary": "O XPLG11 pagou R$ 0,82 por cota em 15/10 (DY mensal de 0,89%, data-com em 30/09). No relatório de setembro, a vacância física ficou em 3,8% e a financeira em 3,7%, com inadimplência de 2,6% da receita de locação em seis locatárias; o Mercado Livre respondia por 22% da receita imobiliária.",
-      "articleCount": 2,
+      "summary": "O XPLG11 pagou R$ 0,82 por cota em 15/10 (DY mensal de 0,89%). No relatório de setembro, repercutido pelo fiis.com.br, a vacância física ficou em 3,8% e a financeira em 3,7%, com inadimplência de 2,6% da receita de locação em seis locatárias e o Mercado Livre em 22% da receita; o Itaú BBA manteve recomendação de compra em 22/10.",
+      "articleCount": 4,
       "topHeadlines": [
+        {
+          "title": "GGRC11, BRCO11, TRXF11, HGLG11 e outros FIIs: quem são os inquilinos dos galpões?",
+          "url": "https://fiis.com.br/noticias/ggrc11-brco11-trxf11-hglg11-e-outros-fiis-quem-sao-os-inquilinos-dos-galpoes/",
+          "publishedAt": "2026-10-20"
+        },
         {
           "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
           "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
           "publishedAt": "2026-10-15"
         },
         {
-          "title": "GGRC11, BRCO11, TRXF11, HGLG11 e outros FIIs: quem são os inquilinos dos galpões?",
-          "url": "https://fiis.com.br/noticias/ggrc11-brco11-trxf11-hglg11-e-outros-fiis-quem-sao-os-inquilinos-dos-galpoes/",
-          "publishedAt": "2026-10-20"
+          "title": "Demanda aquecida e vacância baixa: 6 FIIs de galpões para ter na carteira, segundo o Itaú BBA",
+          "url": "https://www.moneytimes.com.br/demanda-alta-e-vacancia-baixa-6-fiis-de-galpoes-para-ter-na-carteira-segundo-o-itau-bba-igdl/",
+          "publishedAt": "2026-10-22"
         }
       ]
     },
     {
       "ticker": "HGLG11",
       "sentiment": "positive",
-      "score": 0.4,
-      "confidence": "medium",
-      "summary": "O HGLG11 pagou R$ 1,17 por cota em 15/10 (DY de 0,79%) e creditou no mesmo dia o leilão de frações do PATL11, de R$ 2,77 milhões a R$ 146,36. A 12ª emissão teve mudança de condições, com prazo de desistência até 16h de 22/10; no relatório de agosto a vacância física era de 2,9%, com a primeira fase de Itupeva liberada ao Mercado Livre, e a incorporação do LVBI11 seguia pendente na CVM em 30/09.",
-      "articleCount": 4,
+      "score": 0.28,
+      "confidence": "high",
+      "summary": "O HGLG11 manteve dividendos de R$ 1,17 por cota em setembro, pagos em 15/10, embora o resultado tenha caído a R$ 0,89 por cota, com reserva de R$ 0,65; a gestão atribuiu a queda a um atraso pontual de aluguel e manteve o guidance do semestre. Em 22/10 o fundo comprou a SPE do Pátio GRU por R$ 9,98 milhões, a cap rate de 9,1%, e o Itaú BBA reiterou recomendação de compra.",
+      "articleCount": 5,
       "topHeadlines": [
         {
-          "title": "HGLG11 muda condições de emissão e abre prazo para desistência",
-          "url": "https://fiis.com.br/noticias/hglg11-muda-condicoes-de-emissao-e-abre-prazo-para-desistencia-de-investidores/",
-          "publishedAt": "2026-10-16"
+          "title": "HGLG11 registra resultado de R$ 0,89, mas mantém dividendos de R$ 1,17",
+          "url": "https://fiis.com.br/noticias/hglg11-registra-resultado-de-r-089-mas-mantem-dividendos-de-r-117/",
+          "publishedAt": "2026-10-21"
         },
         {
-          "title": "HGLG11 confirma repasse milionário após leilão de cotas na B3; veja valor",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-hglg11-pagamento-leilao-fracoes-cotas-patl11/",
-          "publishedAt": "2026-10-09"
+          "title": "HGLG11 fecha compra milionária de SPE e passa a deter ativo em Guarulhos",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-hglg11-compra-patio-gru-guarulhos-10-milhoes-jj/",
+          "publishedAt": "2026-10-23"
         },
         {
-          "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
-          "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
-          "publishedAt": "2026-10-15"
+          "title": "Demanda aquecida e vacância baixa: 6 FIIs de galpões para ter na carteira, segundo o Itaú BBA",
+          "url": "https://www.moneytimes.com.br/demanda-alta-e-vacancia-baixa-6-fiis-de-galpoes-para-ter-na-carteira-segundo-o-itau-bba-igdl/",
+          "publishedAt": "2026-10-22"
         }
       ]
     },
     {
       "ticker": "VILG11",
       "sentiment": "positive",
-      "score": 0.5,
+      "score": 0.45,
       "confidence": "medium",
-      "summary": "O VILG11 pagou R$ 0,82 por cota em 15/10 (DY de 0,88%) e, segundo o relatório de setembro, concluiu em 1º/10 a compra do Multimodal Campinas por R$ 140 milhões, com Shopee e MBRF em mais de 75% da receita desse ativo. O Money Times registrou quatro indicações do fundo em carteiras de outubro, e a gestão vendeu R$ 61,1 milhões em cotas de HGLG11 no mês.",
+      "summary": "O VILG11 pagou R$ 0,82 por cota em 15/10 (DY mensal de 0,88%). O relatório de setembro, segundo o fiis.com.br, registrou a compra do Multimodal Campinas por R$ 140 milhões, concluída em 1º/10, e a venda de R$ 61,1 milhões em cotas de HGLG11; o Itaú BBA manteve recomendação de compra.",
       "articleCount": 3,
       "topHeadlines": [
         {
@@ -76,60 +81,65 @@
           "publishedAt": "2026-10-15"
         },
         {
-          "title": "KNCR11, BTLG11 e XPML11 lideram recomendações de FIIs para outubro; veja ranking",
-          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-xpml11-lideram-recomendacoes-de-fiis-para-outubro-veja-ranking-igdl/",
-          "publishedAt": "2026-10-07"
+          "title": "Demanda aquecida e vacância baixa: 6 FIIs de galpões para ter na carteira, segundo o Itaú BBA",
+          "url": "https://www.moneytimes.com.br/demanda-alta-e-vacancia-baixa-6-fiis-de-galpoes-para-ter-na-carteira-segundo-o-itau-bba-igdl/",
+          "publishedAt": "2026-10-22"
         }
       ]
     },
     {
       "ticker": "BTLG11",
       "sentiment": "positive",
-      "score": 0.55,
+      "score": 0.5,
       "confidence": "high",
-      "summary": "O BTLG11 aprovou a 17ª emissão, com captação inicial de cerca de R$ 800 milhões e teto próximo de R$ 1,2 bilhão, e anunciou R$ 0,81 por cota para 23/10 (data-com em 15/10, DY mensal de 0,82%). O relatório de setembro mostra vacância de 1,1% e um memorando para três galpões da Amazon e do Mercado Livre por R$ 918,5 milhões; o fundo teve sete indicações no levantamento do Money Times e cinco no do InfoMoney.",
-      "articleCount": 6,
+      "summary": "O BTLG11 distribuiu R$ 0,81 por cota em 23/10 (DY mensal de 0,78% a 0,82%, data-com em 15/10) e, no relatório de setembro, manteve vacância de 1,1% em 35 imóveis. O fundo assinou memorando não vinculante para comprar três galpões AAA, ocupados por Amazon e Mercado Livre, por cerca de R$ 918,5 milhões; o Itaú BBA manteve recomendação de compra.",
+      "articleCount": 5,
       "topHeadlines": [
         {
-          "title": "FII BTLG11 aprova 17ª emissão e pode captar até R$ 1,2 bilhão para novas aquisições",
-          "url": "https://www.infomoney.com.br/onde-investir/fii-btlg11-aprova-17a-emissao-e-pode-captar-ate-r-12-bilhao-para-novas-aquisicoes/",
-          "publishedAt": "2026-10-08"
-        },
-        {
-          "title": "BTLG11 aprova nova emissão e pode captar até R$ 1,2 bilhão",
-          "url": "https://fiis.com.br/noticias/btlg11-aprova-nova-emissao-e-pode-captar-ate-r-12-bilhao/",
-          "publishedAt": "2026-10-07"
-        },
-        {
-          "title": "Dividendos do BTLG11 já saíram, veja valor",
+          "title": "BTLG11 divulga novos dividendos; veja as condições para receber",
           "url": "https://fiis.com.br/noticias/fundo-imobiliario-btlg11-dividendos-outubro-2026-jj/",
+          "publishedAt": "2026-10-16"
+        },
+        {
+          "title": "FIIs ALZR11, XPML11 e SNEL11 pagam dividendos nesta sexta-feira (23); veja valores",
+          "url": "https://www.infomoney.com.br/onde-investir/fiis-alzr11-xpml11-e-snel11-pagam-dividendos-nesta-sexta-feira-23-veja-valores/",
+          "publishedAt": "2026-10-23"
+        },
+        {
+          "title": "BTLG11 anuncia novos dividendos para outubro; veja quem recebe",
+          "url": "https://www.suno.com.br/noticias/btlg11-distribui-rendimentos-outubro-2026/",
           "publishedAt": "2026-10-16"
         }
       ]
     },
     {
       "ticker": "LVBI11",
-      "sentiment": "neutral",
-      "score": 0.1,
+      "sentiment": "positive",
+      "score": 0.48,
       "confidence": "low",
-      "summary": "A cobertura do HGLG11 em 16/10 registrou que, em 30/09, o pedido de incorporação do LVBI11 ainda aguardava análise da CVM. Não houve, na janela, relatório ou anúncio próprio do fundo nos portais acompanhados.",
+      "summary": "O relatório de setembro do LVBI11, repercutido em 26/10 pelo fiis.com.br, mostrou resultado distribuível de R$ 0,81 por cota, vacância física zerada e venda do galpão de Itapevi por R$ 103,7 milhões, deixando a carteira apenas com ativos classe A. A incorporação pelo HGLG11 segue indicada para o primeiro semestre de 2027, ainda pendente de manifestação da CVM sobre o reembolso dos cotistas, e a saída antecipada da ArcelorMittal eleva a vacância física projetada a 0,6%.",
       "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "HGLG11 muda condições de emissão e abre prazo para desistência",
-          "url": "https://fiis.com.br/noticias/hglg11-muda-condicoes-de-emissao-e-abre-prazo-para-desistencia-de-investidores/",
-          "publishedAt": "2026-10-16"
+          "title": "LVBI11 vende galpão por R$ 103,7 milhões e avança em incorporação pelo HGLG11",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-lvbi11-resultado-dividendos-do-mes-setembro-jj/",
+          "publishedAt": "2026-10-26"
         }
       ]
     },
     {
       "ticker": "HGRU11",
-      "sentiment": "positive",
-      "score": 0.25,
-      "confidence": "low",
-      "summary": "O HGRU11 pagou R$ 0,95 por cota em 15/10, com dividend yield mensal de 0,83% e data-com em 30/09, segundo a agenda do InfoMoney. Não apareceram, na janela, notícias operacionais adicionais do fundo nos portais acompanhados.",
-      "articleCount": 1,
+      "sentiment": "neutral",
+      "score": -0.12,
+      "confidence": "medium",
+      "summary": "O HGRU11 manteve rendimentos de R$ 0,95 por cota em setembro, pagos em 15/10, pelo terceiro mês seguido acima do resultado distribuível, que foi de R$ 0,85 por cota. A vacância física encerrou setembro em 0,8%, em carteira de 104 imóveis, e a gestão segue com projeção de resultado médio de R$ 0,94 por cota no segundo semestre.",
+      "articleCount": 2,
       "topHeadlines": [
+        {
+          "title": "HGRU11 paga dividendos acima do resultado pelo 3º mês seguido; veja os números",
+          "url": "https://fiis.com.br/noticias/hgru11-paga-dividendos-acima-do-resultado-pelo-3o-mes-seguido-veja-os-numeros/",
+          "publishedAt": "2026-10-19"
+        },
         {
           "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
           "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
@@ -142,31 +152,41 @@
       "sentiment": "neutral",
       "score": 0,
       "confidence": "low",
-      "summary": "Não houve notícias do SDIL11 nos portais acompanhados entre 7 e 21 de outubro de 2026.",
+      "summary": "Não houve notícias do SDIL11 nos portais acompanhados entre 14 e 28 de outubro de 2026. As fichas do fiis.com.br e do Funds Explorer permanecem com atualização de julho de 2023 e registram a mudança do fundo para o ticker TRBL11.",
       "articleCount": 0,
       "topHeadlines": []
     },
     {
       "ticker": "GGRC11",
       "sentiment": "neutral",
-      "score": 0.1,
-      "confidence": "low",
-      "summary": "Levantamento de 20/10, com base no relatório de agosto, mostrou o GGRC11 com 42 ativos, mais de 1 milhão de m² de ABL, 49 inquilinos e prazo médio de contratos de 4,47 anos; Renault, Ambev e Americanas respondiam por 8,8%, 8,0% e 7,9% da receita. O mesmo documento registrou distribuição de R$ 0,10 por cota referente a agosto e base de 411.230 cotistas.",
-      "articleCount": 1,
+      "score": 0.05,
+      "confidence": "medium",
+      "summary": "O GGRC11 encerrou o ajuste de preço da compra de imóveis do RELG11, com complemento de cerca de R$ 13,3 milhões e custo econômico atualizado perto de R$ 147 milhões, em linha com os laudos, segundo o relatório de setembro. O Itaú BBA manteve indicação neutra; no levantamento de inquilinos de agosto, Renault, Ambev e Americanas respondiam por 8,8%, 8,0% e 7,9% da receita.",
+      "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "GGRC11, ALZR11, BRCO11 e ALZC11 são destaques do Bom Dia FIIs (20/10)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-201026/",
+          "publishedAt": "2026-10-20"
+        },
         {
           "title": "GGRC11, BRCO11, TRXF11, HGLG11 e outros FIIs: quem são os inquilinos dos galpões?",
           "url": "https://fiis.com.br/noticias/ggrc11-brco11-trxf11-hglg11-e-outros-fiis-quem-sao-os-inquilinos-dos-galpoes/",
           "publishedAt": "2026-10-20"
+        },
+        {
+          "title": "Demanda aquecida e vacância baixa: 6 FIIs de galpões para ter na carteira, segundo o Itaú BBA",
+          "url": "https://www.moneytimes.com.br/demanda-alta-e-vacancia-baixa-6-fiis-de-galpoes-para-ter-na-carteira-segundo-o-itau-bba-igdl/",
+          "publishedAt": "2026-10-22"
         }
       ]
     },
     {
       "ticker": "XPCI11",
       "sentiment": "positive",
-      "score": 0.2,
+      "score": 0.15,
       "confidence": "low",
-      "summary": "O XPCI11 pagou R$ 0,82 por cota em 15/10, com dividend yield mensal de 1,03% e data-com em 30/09, conforme a agenda do InfoMoney. Não houve, na janela, outras reportagens sobre a carteira de crédito do fundo.",
+      "summary": "O XPCI11 pagou R$ 0,82 por cota em 15/10, com dividend yield mensal de 1,03% e data-com em 30/09, segundo a agenda do InfoMoney. Não houve outras reportagens sobre a carteira de crédito do fundo nos portais acompanhados dentro da janela.",
       "articleCount": 1,
       "topHeadlines": [
         {
@@ -179,85 +199,95 @@
     {
       "ticker": "BRCO11",
       "sentiment": "positive",
-      "score": 0.35,
-      "confidence": "medium",
-      "summary": "O BRCO11 pagou R$ 0,91 por cota em 15/10 (DY de 0,81%). No relatório de setembro, a vacância física era de 1,6%, com Natura, Mercado Livre, Whirlpool e GPA entre os principais locatários; o InfoMoney e o Money Times registraram quatro indicações em carteiras de outubro, enquanto o BTG reduziu o peso e ressalvou que a distribuição atual conta com resultados acumulados e parcelas de venda de ativo.",
-      "articleCount": 4,
+      "score": 0.48,
+      "confidence": "high",
+      "summary": "O BRCO11 teve receita de R$ 23,3 milhões em setembro, distribuiu R$ 0,91 por cota (DY anualizado de 9,8%) e reduziu a vacância financeira de 5,2% para 4,8%, com física em 1,6% e lucro caixa retido de R$ 1,90 por cota. O fiis.com.br atribuiu ao gestor Rafael Fonseca espaço para alta de aluguéis de até 50% em parte dos contratos, e o Itaú BBA manteve recomendação de compra.",
+      "articleCount": 5,
       "topHeadlines": [
+        {
+          "title": "BRCO11 tem receita de R$ 23,3 milhões e vê espaço para alta de até 50% nos aluguéis",
+          "url": "https://fiis.com.br/noticias/fii-brco11-lucra-23-milhoes-espaco-para-alta-alugueis-vi/",
+          "publishedAt": "2026-10-19"
+        },
         {
           "title": "GGRC11, BRCO11, TRXF11, HGLG11 e outros FIIs: quem são os inquilinos dos galpões?",
           "url": "https://fiis.com.br/noticias/ggrc11-brco11-trxf11-hglg11-e-outros-fiis-quem-sao-os-inquilinos-dos-galpoes/",
           "publishedAt": "2026-10-20"
         },
         {
-          "title": "Após queda de juros, enfim chegou a hora dos FIIs de tijolo? Veja os mais indicados",
-          "url": "https://www.infomoney.com.br/onde-investir/carteira-recomendada-fiis-outubro-2026/",
-          "publishedAt": "2026-10-08"
-        },
-        {
-          "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
-          "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
-          "publishedAt": "2026-10-15"
+          "title": "Demanda aquecida e vacância baixa: 6 FIIs de galpões para ter na carteira, segundo o Itaú BBA",
+          "url": "https://www.moneytimes.com.br/demanda-alta-e-vacancia-baixa-6-fiis-de-galpoes-para-ter-na-carteira-segundo-o-itau-bba-igdl/",
+          "publishedAt": "2026-10-22"
         }
       ]
     },
     {
       "ticker": "KNRI11",
       "sentiment": "positive",
-      "score": 0.2,
-      "confidence": "low",
-      "summary": "O KNRI11 pagou R$ 1,10 por cota em 15/10, com dividend yield mensal de 0,70% e data-com em 30/09, segundo a agenda do InfoMoney. Não houve outras reportagens do fundo nos portais acompanhados dentro da janela.",
-      "articleCount": 1,
+      "score": 0.3,
+      "confidence": "medium",
+      "summary": "O KNRI11 pagou R$ 1,10 por cota em 15/10, com dividend yield mensal de 0,70% na agenda do InfoMoney. O Itaú BBA manteve recomendação de compra para o fundo, ao lado de outros cinco FIIs de galpões, citando demanda aquecida e vacância setorial de 3,1% no terceiro trimestre, sem definir preço-alvo.",
+      "articleCount": 3,
       "topHeadlines": [
         {
           "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
           "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
           "publishedAt": "2026-10-15"
+        },
+        {
+          "title": "MXRF11, VISC11: Cotistas de FIIs vão receber dividendos hoje",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-fiis-hctr11-mxrf11-agenda-rendimento-dividendos-jj/",
+          "publishedAt": "2026-10-15"
+        },
+        {
+          "title": "Demanda aquecida e vacância baixa: 6 FIIs de galpões para ter na carteira, segundo o Itaú BBA",
+          "url": "https://www.moneytimes.com.br/demanda-alta-e-vacancia-baixa-6-fiis-de-galpoes-para-ter-na-carteira-segundo-o-itau-bba-igdl/",
+          "publishedAt": "2026-10-22"
         }
       ]
     },
     {
       "ticker": "XPML11",
       "sentiment": "positive",
-      "score": 0.4,
+      "score": 0.3,
       "confidence": "medium",
-      "summary": "O XPML11 distribuirá R$ 0,92 por cota em 23/10 (DY de 0,87%). O Money Times apontou sete indicações em dez carteiras de outubro, e o InfoMoney registrou quatro menções, com o Santander destacando a reciclagem do portfólio — inclusive a venda de cerca de 17% do Shopping Cidade Jardim por R$ 454 milhões — e obrigações de cerca de R$ 532 milhões em CRIs.",
+      "summary": "O XPML11 pagou R$ 0,92 por cota em 23/10, com dividend yield mensal de 0,87% e data-base em 16/10, segundo o InfoMoney. A Suno também incluiu o fundo entre os pagadores do dia, e o perfil do fiis.com.br em 21/10 apontou média de R$ 0,92 por cota nos últimos 24 meses e P/VP de 0,96.",
       "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "KNCR11, BTLG11 e XPML11 lideram recomendações de FIIs para outubro; veja ranking",
-          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-xpml11-lideram-recomendacoes-de-fiis-para-outubro-veja-ranking-igdl/",
-          "publishedAt": "2026-10-07"
+          "title": "FIIs ALZR11, XPML11 e SNEL11 pagam dividendos nesta sexta-feira (23); veja valores",
+          "url": "https://www.infomoney.com.br/onde-investir/fiis-alzr11-xpml11-e-snel11-pagam-dividendos-nesta-sexta-feira-23-veja-valores/",
+          "publishedAt": "2026-10-23"
         },
         {
-          "title": "Após queda de juros, enfim chegou a hora dos FIIs de tijolo? Veja os mais indicados",
-          "url": "https://www.infomoney.com.br/onde-investir/carteira-recomendada-fiis-outubro-2026/",
-          "publishedAt": "2026-10-08"
+          "title": "Confira quais FIIs pagam dividendos hoje; XPML está na lista",
+          "url": "https://www.suno.com.br/noticias/dividendos-hoje-8-fiis-pagam/",
+          "publishedAt": "2026-10-23"
         },
         {
-          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
-          "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
-          "publishedAt": "2026-10-19"
+          "title": "XPML11, ALZR11, VRTA11 e AZIN11 são destaques do Bom Dia FIIs (21/10)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-211026/",
+          "publishedAt": "2026-10-21"
         }
       ]
     },
     {
       "ticker": "PVBI11",
-      "sentiment": "neutral",
-      "score": 0.1,
+      "sentiment": "negative",
+      "score": -0.55,
       "confidence": "medium",
-      "summary": "O PVBI11 apareceu com quatro indicações nas carteiras de outubro tanto no levantamento do Money Times quanto no do InfoMoney. O BTG descreveu sete edifícios em São Paulo, sem alavancagem e negociados a cerca de 0,62 vez o valor patrimonial, e apontou vacância física perto de 15% e financeira perto de 25% após desocupações recentes.",
+      "summary": "O PVBI11 foi o segundo maior recuo do IFIX em 26/10, com queda de 16,24% e fechamento a R$ 64,74, em sessão em que o índice caiu 5,68% após o segundo turno das eleições e a alta dos juros futuros. O fiis.com.br associou o movimento à sensibilidade das lajes corporativas à taxa de desconto dos aluguéis; não houve, na janela, atualização operacional do portfólio.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "Após queda de juros, enfim chegou a hora dos FIIs de tijolo? Veja os mais indicados",
-          "url": "https://www.infomoney.com.br/onde-investir/carteira-recomendada-fiis-outubro-2026/",
-          "publishedAt": "2026-10-08"
+          "title": "ALZR11, EXES11 e PPEI11 são destaques do Bom Dia FIIs (27/10)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-271026/",
+          "publishedAt": "2026-10-27"
         },
         {
-          "title": "KNCR11, BTLG11 e XPML11 lideram recomendações de FIIs para outubro; veja ranking",
-          "url": "https://www.moneytimes.com.br/kncr11-btlg11-e-xpml11-lideram-recomendacoes-de-fiis-para-outubro-veja-ranking-igdl/",
-          "publishedAt": "2026-10-07"
+          "title": "Fundos imobiliários: IFIX afunda quase 8% no pós-eleição; veja as maiores quedas (26)",
+          "url": "https://fiis.com.br/noticias/fundos-imobiliarios-ifix-queda-forte-bolsa-valores-eleicao-2026-jj/",
+          "publishedAt": "2026-10-26"
         }
       ]
     },
@@ -266,44 +296,59 @@
       "sentiment": "positive",
       "score": 0.35,
       "confidence": "medium",
-      "summary": "O RZAK11 pagará R$ 1,05 por cota em 22/10 (DY mensal de cerca de 1,35% sobre o fechamento de setembro, data-com em 15/10). Em agosto, a gestão incorporou cinco operações de crédito, entre elas um CRI da Plano & Plano a IPCA + 11,45% ao ano, com exposição de aproximadamente R$ 40,3 milhões.",
+      "summary": "O RZAK11 pagou R$ 1,05 por cota em 22/10, referente a setembro, com DY mensal de cerca de 1,35% sobre o fechamento de setembro a R$ 77,57 e data-com em 15/10. Reportagem do Funds Explorer também retomou a carteira de agosto, com cinco operações novas de crédito e exposição de cerca de R$ 40,3 milhões a um CRI da Plano & Plano a IPCA + 11,45% ao ano.",
       "articleCount": 2,
       "topHeadlines": [
+        {
+          "title": "RZAK11: FII vai pagar dividendos de 1,35%; veja quanto",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-rzak11-dividendos-outubro-2026-jj/",
+          "publishedAt": "2026-10-16"
+        },
         {
           "title": "Cotistas do RZAK11 receberão novos rendimentos; saiba valores",
           "url": "https://www.fundsexplorer.com.br/noticias/rzak11-dividendos-outubro-2026",
           "publishedAt": "2026-10-17"
-        },
-        {
-          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
-          "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
-          "publishedAt": "2026-10-19"
         }
       ]
     },
     {
       "ticker": "VRTA11",
       "sentiment": "positive",
-      "score": 0.25,
-      "confidence": "low",
-      "summary": "O VRTA11 pagou R$ 0,85 por cota em 15/10, com dividend yield mensal de 1,17% e data-com em 30/09, conforme a agenda do InfoMoney. Não houve outras reportagens do fundo na janela.",
-      "articleCount": 1,
+      "score": 0.22,
+      "confidence": "medium",
+      "summary": "O VRTA11 pagou R$ 0,85 por cota em 15/10, com dividend yield mensal de 1,17% e data-com em 30/09. Em 21/10, o fiis.com.br destacou o desconto da cota, negociada a R$ 76,15 ante valor patrimonial de R$ 83,62 no último relatório, em carteira de 71 CRIs e cotas de nove FIIs.",
+      "articleCount": 2,
       "topHeadlines": [
         {
           "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
           "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
           "publishedAt": "2026-10-15"
+        },
+        {
+          "title": "XPML11, ALZR11, VRTA11 e AZIN11 são destaques do Bom Dia FIIs (21/10)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-211026/",
+          "publishedAt": "2026-10-21"
         }
       ]
     },
     {
       "ticker": "JSRE11",
-      "sentiment": "positive",
-      "score": 0.2,
-      "confidence": "low",
-      "summary": "O JSRE11 pagou R$ 0,50 por cota em 15/10, com dividend yield mensal de 0,81% e data-com em 30/09, segundo a agenda do InfoMoney. Não apareceram notícias adicionais do fundo nos portais acompanhados.",
-      "articleCount": 1,
+      "sentiment": "negative",
+      "score": -0.38,
+      "confidence": "medium",
+      "summary": "O JSRE11 caiu 13,46% em 26/10, a R$ 62,11, devolvendo a alta de outubro; o fiis.com.br atribuiu o movimento à disparada dos juros após as eleições e à exposição de cerca de 18,5% do patrimônio em cotas subordinadas do JSRI. No operacional, a vacância física recuou a 2,9% em setembro, e o dividendo de R$ 0,50 por cota foi coberto pelo resultado, com projeção da gestão de R$ 0,50 a R$ 0,53 até dezembro.",
+      "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "JSRE11: fundo imobiliário tomba mais de 14% na Bolsa hoje (26); veja o que aconteceu",
+          "url": "https://fiis.com.br/noticias/jsre11-fundo-imobiliario-caindo-2026-jj/",
+          "publishedAt": "2026-10-26"
+        },
+        {
+          "title": "ALZR11, EXES11 e PPEI11 são destaques do Bom Dia FIIs (27/10)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-271026/",
+          "publishedAt": "2026-10-27"
+        },
         {
           "title": "Dezenas de FIIs pagam dividendos hoje; veja valores de MXRF11, TRXF11 e XPLG11",
           "url": "https://www.infomoney.com.br/onde-investir/dezenas-de-fiis-pagam-dividendos-hoje-veja-valores-de-mxrf11-trxf11-e-xplg11/",
@@ -314,29 +359,34 @@
     {
       "ticker": "ALZR11",
       "sentiment": "positive",
-      "score": 0.4,
-      "confidence": "medium",
-      "summary": "O ALZR11 anunciou R$ 0,084 por cota para 23/10 (data-com em 16/10), dentro do guidance do segundo semestre, elevado para a faixa de R$ 0,082 a R$ 0,084 por cota ao mês. Em agosto, o resultado recorrente foi de R$ 0,0859 por cota e o fundo recomprou 44 mil cotas a R$ 9,90, com reserva de R$ 0,035 por cota.",
-      "articleCount": 2,
+      "score": 0.46,
+      "confidence": "high",
+      "summary": "O ALZR11 pagou R$ 0,084 por cota em 23/10 (DY mensal de 0,81% a 0,84%) e registrou resultado caixa de R$ 13,5 milhões em setembro, mantendo a distribuição dentro do guidance. O fundo iniciou a 9ª emissão, de até R$ 530,5 milhões com o lote adicional, a R$ 10,61 por cota, após consulta formal encerrada em 17/10.",
+      "articleCount": 5,
       "topHeadlines": [
         {
-          "title": "ALZR11 anuncia novos dividendos para outubro; veja o valor do mês",
-          "url": "https://fiis.com.br/noticias/alzr11-anuncia-novos-dividendos-para-outubro-veja-o-valor-do-mes/",
-          "publishedAt": "2026-10-19"
+          "title": "XPLG11, ALZR11, RBVA11 e AZPL11 são destaques do Bom Dia FIIs (23/10)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-231026/",
+          "publishedAt": "2026-10-23"
         },
         {
-          "title": "XPML11, ALZR11 e mais: 65 FIIs pagam dividendos na semana; veja quais",
-          "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
-          "publishedAt": "2026-10-19"
+          "title": "XPML11, ALZR11, VRTA11 e AZIN11 são destaques do Bom Dia FIIs (21/10)",
+          "url": "https://fiis.com.br/noticias/bom-dia-fiis-211026/",
+          "publishedAt": "2026-10-21"
+        },
+        {
+          "title": "FIIs ALZR11, XPML11 e SNEL11 pagam dividendos nesta sexta-feira (23); veja valores",
+          "url": "https://www.infomoney.com.br/onde-investir/fiis-alzr11-xpml11-e-snel11-pagam-dividendos-nesta-sexta-feira-23-veja-valores/",
+          "publishedAt": "2026-10-23"
         }
       ]
     },
     {
       "ticker": "RBRP11",
       "sentiment": "positive",
-      "score": 0.2,
+      "score": 0.18,
       "confidence": "low",
-      "summary": "O RBRP11 pagou R$ 0,35 por cota em 15/10, com dividend yield mensal de 0,66% e data-com em 7/10, conforme a agenda do InfoMoney. Não houve outras reportagens do fundo na janela.",
+      "summary": "O RBRP11 pagou R$ 0,35 por cota em 15/10, com dividend yield mensal de 0,66% e data-com em 7/10, conforme a agenda do InfoMoney. Não houve outras reportagens do fundo nos portais acompanhados dentro da janela.",
       "articleCount": 1,
       "topHeadlines": [
         {
@@ -349,9 +399,9 @@
     {
       "ticker": "BTAL11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.4,
       "confidence": "low",
-      "summary": "O BTAL11 pagará R$ 1,00 por cota em 27/10 (DY mensal de cerca de 1,22%, data-com em 20/10). No relatório de setembro, os 11 ativos estavam adimplentes e a gestão avaliava a venda da SPE Santo Antônio, em Muquém (BA), sem data definida.",
+      "summary": "O BTAL11 pagou R$ 1,00 por cota em 27/10, referente a setembro, com DY mensal de cerca de 1,22% sobre o fechamento de R$ 82,24 e data-com em 20/10. No relatório de setembro, os 11 ativos estavam adimplentes e a gestão avaliava a venda da SPE Santo Antônio, em Muquém (BA), sem data definida.",
       "articleCount": 1,
       "topHeadlines": [
         {
