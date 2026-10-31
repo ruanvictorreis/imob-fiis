@@ -2,7 +2,7 @@
   "version": 1,
   "segment": "Fiagro",
   "segmentKey": "fiagro",
-  "generatedAt": "2026-10-24T14:30:00Z",
+  "generatedAt": "2026-10-31T16:50:00Z",
   "lookbackDays": 14,
   "sources": [
     "fiis.com.br",
@@ -16,49 +16,45 @@
     {
       "ticker": "KNCA11",
       "sentiment": "positive",
-      "score": 0.5,
+      "score": 0.4,
       "confidence": "medium",
-      "summary": "O Kinea Crédito Agro pagou R$ 0,93 por cota em 14/10 (yield de 1,08%), acima dos R$ 0,85 de setembro. O InfoMoney registrou alta de 6,4% entre 2 e 9/10; em 23/10 a cota fechou a R$ 91,60, com P/VP de 0,91, e o Status Invest aponta valorização de 7,61% no mês.",
-      "articleCount": 3,
+      "summary": "O Status Invest registra provento provisionado de R$ 1,00 por cota do Kinea Crédito Agro, com data-com em 30/10 e pagamento em 13/11, acima dos R$ 0,93 pagos em 14/10. A Fiis atualizou a cota em 30/10 a R$ 85,24, perto da mínima de 52 semanas de R$ 84,30, com P/VP de 0,85 e dividend yield de 15,86% em 12 meses.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "Fiagros colhem até 11% em uma semana, mas ainda enfrentam praga da inadimplência",
-          "url": "https://www.infomoney.com.br/onde-investir/fiagros-colhem-ate-11-em-uma-semana-mas-ainda-enfrentam-praga-da-inadimplencia/",
-          "publishedAt": "2026-10-16"
+          "title": "KNCA11 - KINEA CRÉDITO AGRO FIAGRO: dividendos",
+          "url": "https://statusinvest.com.br/fiagros/knca11",
+          "publishedAt": "2026-10-30"
         },
         {
           "title": "KNCA11 - FIAGRO KINEA: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/knca11/",
-          "publishedAt": "2026-10-23"
-        },
-        {
-          "title": "KNCA11 - KINEA CRÉDITO AGRO FIAGRO: dividendos",
-          "url": "https://statusinvest.com.br/fiagros/knca11"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "SNAG11",
       "sentiment": "positive",
-      "score": 0.65,
+      "score": 0.6,
       "confidence": "medium",
-      "summary": "O Suno Agro pagou R$ 0,12 por cota em 23/10, yield mensal de 1,21% sobre o fechamento de R$ 9,91 em 30/09. A Fiis relatou a compra de quatro CRAs de proteína animal, com carrego a CDI + 2,76% e inadimplência zero.",
+      "summary": "O Suno Agro pagou R$ 0,12 por cota em 23/10, yield mensal de 1,21% sobre o fechamento de R$ 9,91 em 30/09, segundo a Fiis. Em 28/10 a cota subiu 0,31%, a R$ 9,72, com o IFIX em queda de 1,19%; a mesma cobertura cita inadimplência zero e carrego a CDI + 2,76% após a compra de quatro CRAs. Em 30/10 o papel fechou a R$ 9,58, com P/VP de 0,96.",
       "articleCount": 3,
       "topHeadlines": [
+        {
+          "title": "SNAG11 avança 0,31%, apesar da queda do mercado, no pregão de terça-feira",
+          "url": "https://fiis.com.br/noticias/snag11-avanca-031-apesar-queda-mercado-pregao-terca-feira-vi/",
+          "publishedAt": "2026-10-28"
+        },
         {
           "title": "SNAG11 paga dividendos hoje de 1,21%; veja valor",
           "url": "https://fiis.com.br/noticias/snag11-paga-dividendos-hoje-de-121-veja-valor/",
           "publishedAt": "2026-10-23"
         },
         {
-          "title": "Fundos da Suno anunciam dividendos de até 15,99%; veja valores e data",
-          "url": "https://www.suno.com.br/noticias/fundos-suno-anunciam-dividendos-outubro-rendimentos-datas-pagamento-vi/",
-          "publishedAt": "2026-10-16"
-        },
-        {
-          "title": "Fundos da Suno anunciam dividendos de até 15,99%; veja valores e data",
-          "url": "https://fiis.com.br/noticias/fundos-da-suno-anunciam-dividendos-de-ate-1599-veja-valores-e-data/",
-          "publishedAt": "2026-10-16"
+          "title": "SNAG11 - FIAGRO SUNO: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/snag11/",
+          "publishedAt": "2026-10-30"
         }
       ]
     },
@@ -74,25 +70,15 @@
     {
       "ticker": "SNCI11",
       "sentiment": "positive",
-      "score": 0.25,
-      "confidence": "medium",
-      "summary": "O Suno Recebíveis manteve R$ 1,00 por cota, com data-base em 15/10 e pagamento em 23/10. A Suno informou retorno mensal de 1,21%; o calendário do fiis.com.br aponta dividend yield de 1,14% nesse crédito.",
-      "articleCount": 3,
+      "score": 0.3,
+      "confidence": "low",
+      "summary": "O Suno Recebíveis manteve R$ 1,00 por cota, com data-com em 15/10 e pagamento em 23/10, yield mensal de 1,13% segundo a Fiis. Em 30/10 a cota fechou a R$ 81,11, com P/VP de 0,86 e dividend yield de 14,79% em 12 meses.",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Fundos da Suno anunciam dividendos de até 15,99%; veja valores e data",
-          "url": "https://www.suno.com.br/noticias/fundos-suno-anunciam-dividendos-outubro-rendimentos-datas-pagamento-vi/",
-          "publishedAt": "2026-10-16"
-        },
-        {
-          "title": "Confira quais FIIs pagam dividendos hoje; XPML está na lista",
-          "url": "https://www.suno.com.br/noticias/dividendos-hoje-8-fiis-pagam/",
-          "publishedAt": "2026-10-23"
-        },
-        {
-          "title": "XPML11 e mais 64 FIIs pagam dividendos na semana; veja quais",
-          "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
-          "publishedAt": "2026-10-19"
+          "title": "SNCI11 - SUNO RECEBÍVEIS IMOBILIÁRIOS: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/snci11/",
+          "publishedAt": "2026-10-30"
         }
       ]
     },
@@ -101,33 +87,33 @@
       "sentiment": "neutral",
       "score": 0.1,
       "confidence": "medium",
-      "summary": "O XP Crédito Agrícola manteve R$ 0,10 por cota, pago em 15/10 (yield de 1,33%). Em 23/10 a cota fechou a R$ 7,79, com P/VP de 0,81 e dividend yield de 16,43% em 12 meses.",
+      "summary": "A Fiis repercutiu em 28/10 o relatório de setembro do XP Crédito Agrícola: lucro contábil de R$ 5,69 milhões (R$ 0,1249 por cota), após prejuízo de R$ 2,59 milhões em agosto, com dividendos mantidos em R$ 0,10 pagos em 15/10. A gestão informou devedores adimplentes, exceto a Agrogalaxy. Em 30/10 a cota fechou a R$ 7,10, com P/VP de 0,74 e dividend yield de 19,30% em 12 meses.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "169 fundos imobiliários pagam proventos hoje (15), com valores de até R$ 180 por cota; IFIX avança",
-          "url": "https://www.moneytimes.com.br/169-fundos-imobiliarios-pagam-proventos-hoje-15-com-valores-de-ate-r-180-por-cota-ifix-sobe-igdl/",
-          "publishedAt": "2026-10-15"
+          "title": "XPCA11: Fiagro paga dividendos de 17,4% ao ano e atualiza carteira; veja valores",
+          "url": "https://fiis.com.br/noticias/fiagro-xpca11-lucro-setembro-2026-paga-dividendos-retorno-jj/",
+          "publishedAt": "2026-10-28"
         },
         {
           "title": "XPCA11 - FIAGRO XP CA: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/xpca11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "VGIA11",
       "sentiment": "neutral",
-      "score": 0.1,
+      "score": 0.05,
       "confidence": "low",
-      "summary": "O Valora CRA manteve R$ 0,12 por cota (data-base 13/10, pagamento 20/10, yield de 1,33%), o mesmo valor de setembro e abaixo dos R$ 0,13 de agosto. Em 23/10 a cota fechou a R$ 9,10, com P/VP de 0,95.",
+      "summary": "O Valora CRA manteve R$ 0,12 por cota, com data-com em 13/10 e pagamento em 20/10, yield de 1,33%. Em 30/10 a cota fechou a R$ 8,50, com P/VP de 0,89 e dividend yield de 19,06% em 12 meses, segundo a Fiis. Não houve reportagem nova sobre inadimplência na janela.",
       "articleCount": 1,
       "topHeadlines": [
         {
           "title": "VGIA11 - FIAGRO VGIA: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/vgia11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
@@ -135,144 +121,109 @@
       "ticker": "BTAG11",
       "sentiment": "neutral",
       "score": 0.15,
-      "confidence": "medium",
-      "summary": "O BTG Pactual Crédito Agrícola manteve R$ 1,30 por cota (data-base 07/10, pagamento 15/10, yield de 1,33%). Em 23/10 a cota fechou a R$ 94,82, com P/VP de 0,90 e dividend yield de 16,66% em 12 meses.",
-      "articleCount": 2,
+      "confidence": "low",
+      "summary": "O BTG Pactual Crédito Agrícola manteve R$ 1,30 por cota (data-com 07/10, pagamento 15/10, yield de 1,33%). Em 30/10 a cota fechou a R$ 90,11, alta de 4,75% no pregão, com P/VP de 0,85 e dividend yield de 17,53% em 12 meses, segundo a Fiis.",
+      "articleCount": 1,
       "topHeadlines": [
-        {
-          "title": "169 fundos imobiliários pagam proventos hoje (15), com valores de até R$ 180 por cota; IFIX avança",
-          "url": "https://www.moneytimes.com.br/169-fundos-imobiliarios-pagam-proventos-hoje-15-com-valores-de-ate-r-180-por-cota-ifix-sobe-igdl/",
-          "publishedAt": "2026-10-15"
-        },
         {
           "title": "BTAG11 - FIAGRO BTAG: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/btag11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "ZAVI11",
-      "sentiment": "positive",
-      "score": 0.3,
-      "confidence": "medium",
-      "summary": "O Zavit manteve R$ 0,12 por cota, pago em 14/10 (yield de 1,23%). Em 23/10 a cota fechou a R$ 9,92, com P/VP de 0,70.",
-      "articleCount": 2,
+      "sentiment": "neutral",
+      "score": 0,
+      "confidence": "low",
+      "summary": "A página do ZAVI11 no Fiis, atualizada em 30/10, lista aviso de rendimentos nessa data, sem reportagem nos portais com o valor anunciado. O último provento registrado segue em R$ 0,12 (pago em 14/10); a cota fechou a R$ 9,20, com P/VP de 0,65.",
+      "articleCount": 1,
       "topHeadlines": [
-        {
-          "title": "MXRF11, BRCO11: 180 FIIs pagam dividendos na semana; veja os valores",
-          "url": "https://fiis.com.br/noticias/fiis-fundos-imobiliarios-calendario-pagamento-semana-outubro-2026-jj/",
-          "publishedAt": "2026-10-13"
-        },
         {
           "title": "ZAVI11 - FII-ZAVIT-R: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/zavi11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "KNHF11",
-      "sentiment": "positive",
-      "score": 0.45,
+      "sentiment": "neutral",
+      "score": 0.1,
       "confidence": "medium",
-      "summary": "O Kinea Hedge Fund manteve R$ 1,00 por cota, pago em 13/10 (yield de 1,08%); em 23/10 a cota fechou a R$ 96,61, com P/VP de 0,98. O BTG Pactual elevou o peso do KNHF11 para 6,5% na carteira recomendada de outubro, em relatório que cita um cenário mais construtivo para o equilíbrio fiscal.",
-      "articleCount": 3,
+      "summary": "O Kinea Hedge Fund manteve R$ 1,00 por cota, com data-com em 30/10 e pagamento em 12/11, o mesmo valor da distribuição de setembro, segundo o Status Invest. Em 30/10 a cota fechou a R$ 90,04, com P/VP de 0,91 e dividend yield de 14,44% em 12 meses; o mês acumula queda de 2,96%.",
+      "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "FIIs e FI-Infra: Os melhores fundos para investir em outubro, segundo o BTG",
-          "url": "https://www.moneytimes.com.br/fiis-e-fi-infra-os-melhores-fundos-para-investir-em-outubro-segundo-o-btg-igdl/",
-          "publishedAt": "2026-10-10"
-        },
-        {
-          "title": "MXRF11, BRCO11: 180 FIIs pagam dividendos na semana; veja os valores",
-          "url": "https://fiis.com.br/noticias/fiis-fundos-imobiliarios-calendario-pagamento-semana-outubro-2026-jj/",
-          "publishedAt": "2026-10-13"
+          "title": "KNHF11 - KINEA HEDGE FUND: dividendos",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/knhf11",
+          "publishedAt": "2026-10-30"
         },
         {
           "title": "KNHF11 - KINEA HEDGE FUND: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/knhf11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "SNFZ11",
       "sentiment": "positive",
-      "score": 0.45,
-      "confidence": "medium",
-      "summary": "O Suno Fazendas manteve R$ 0,10 por cota (data-base 15/10, pagamento 23/10), com retorno mensal de 1,10% segundo a Suno. A mesma cobertura relata a conclusão, em julho, da compra de três fazendas no Mato Grosso arrendadas à Jequitibá Agro, com vacância física e financeira zerada.",
-      "articleCount": 2,
+      "score": 0.25,
+      "confidence": "low",
+      "summary": "O Suno Fazendas manteve R$ 0,10 por cota, com data-com em 15/10 e pagamento em 23/10, yield mensal de 1,09%. Em 30/10 a cota fechou a R$ 9,00, com P/VP de 0,90 e dividend yield de 13,33% em 12 meses, abaixo da média de Fiagro citada pela Fiis (14,21%).",
+      "articleCount": 1,
       "topHeadlines": [
         {
-          "title": "Fundos da Suno anunciam dividendos de até 15,99%; veja valores e data",
-          "url": "https://www.suno.com.br/noticias/fundos-suno-anunciam-dividendos-outubro-rendimentos-datas-pagamento-vi/",
-          "publishedAt": "2026-10-16"
-        },
-        {
-          "title": "Fundos da Suno anunciam dividendos de até 15,99%; veja valores e data",
-          "url": "https://fiis.com.br/noticias/fundos-da-suno-anunciam-dividendos-de-ate-1599-veja-valores-e-data/",
-          "publishedAt": "2026-10-16"
+          "title": "SNFZ11 - FIAGRO SNFZ: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/snfz11/",
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "AGRX11",
-      "sentiment": "positive",
-      "score": 0.25,
-      "confidence": "medium",
-      "summary": "O Éxes Araguaia manteve R$ 0,12 por cota (data-base 07/10, pagamento 15/10, yield de 1,48%). Em 23/10 a cota fechou a R$ 8,10, com P/VP de 0,77 e dividend yield de 18,02% em 12 meses.",
-      "articleCount": 2,
+      "sentiment": "neutral",
+      "score": 0.1,
+      "confidence": "low",
+      "summary": "O Éxes Araguaia manteve R$ 0,12 por cota (data-com 07/10, pagamento 15/10, yield de 1,48%). Em 30/10 a cota fechou a R$ 7,90, alta de 1,94% no pregão, com P/VP de 0,75 e dividend yield de 18,48% em 12 meses, segundo a Fiis.",
+      "articleCount": 1,
       "topHeadlines": [
-        {
-          "title": "169 fundos imobiliários pagam proventos hoje (15), com valores de até R$ 180 por cota; IFIX avança",
-          "url": "https://www.moneytimes.com.br/169-fundos-imobiliarios-pagam-proventos-hoje-15-com-valores-de-ate-r-180-por-cota-ifix-sobe-igdl/",
-          "publishedAt": "2026-10-15"
-        },
         {
           "title": "AGRX11 - FIAGRO AGRX: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/agrx11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "CPTR11",
-      "sentiment": "positive",
-      "score": 0.5,
-      "confidence": "medium",
-      "summary": "O InfoMoney apontou alta de 9,05% do Capitânia Agro entre 2 e 9/10 e ganho de 12,92% em 2026, com dividend yield anualizado de 16,54%. O fundo manteve R$ 0,11 por cota (pagamento em 20/10, yield de 1,33%); em 23/10 a cota fechou a R$ 7,74, com P/VP de 0,77.",
-      "articleCount": 2,
+      "sentiment": "neutral",
+      "score": 0.1,
+      "confidence": "low",
+      "summary": "O Capitânia Agro manteve R$ 0,11 por cota, com data-com em 13/10 e pagamento em 20/10, yield de 1,33%. Em 30/10 a cota fechou a R$ 7,04, com P/VP de 0,70 e dividend yield de 18,89% em 12 meses, segundo a Fiis.",
+      "articleCount": 1,
       "topHeadlines": [
-        {
-          "title": "Fiagros colhem até 11% em uma semana, mas ainda enfrentam praga da inadimplência",
-          "url": "https://www.infomoney.com.br/onde-investir/fiagros-colhem-ate-11-em-uma-semana-mas-ainda-enfrentam-praga-da-inadimplencia/",
-          "publishedAt": "2026-10-16"
-        },
         {
           "title": "CPTR11 - FIAGRO CPTR: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/cptr11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "FGAA11",
       "sentiment": "neutral",
-      "score": 0.15,
-      "confidence": "medium",
-      "summary": "O FG/Agro manteve R$ 0,11 por cota (data-base 07/10, pagamento 15/10, yield de 1,34%). Em 23/10 a cota fechou a R$ 8,18, com P/VP de 0,86 e dividend yield de 16,81% em 12 meses.",
-      "articleCount": 2,
+      "score": 0.05,
+      "confidence": "low",
+      "summary": "O FG/Agro manteve R$ 0,11 por cota (data-com 07/10, pagamento 15/10, yield de 1,34%). Em 30/10 a cota fechou a R$ 7,74, com P/VP de 0,81 e dividend yield de 17,76% em 12 meses, segundo a Fiis.",
+      "articleCount": 1,
       "topHeadlines": [
-        {
-          "title": "169 fundos imobiliários pagam proventos hoje (15), com valores de até R$ 180 por cota; IFIX avança",
-          "url": "https://www.moneytimes.com.br/169-fundos-imobiliarios-pagam-proventos-hoje-15-com-valores-de-ate-r-180-por-cota-ifix-sobe-igdl/",
-          "publishedAt": "2026-10-15"
-        },
         {
           "title": "FGAA11 - FIAGRO FGA: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/fgaa11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
@@ -288,104 +239,95 @@
     {
       "ticker": "CRAA11",
       "sentiment": "positive",
-      "score": 0.5,
-      "confidence": "medium",
-      "summary": "O Sparta Fiagro elevou o provento para R$ 1,10 por cota (data-base 07/10, pagamento 15/10, yield de 1,15%), acima dos R$ 0,95 de setembro. O InfoMoney registrou alta de 5,12% entre 2 e 9/10 e de 11,98% no ano; em 23/10 a cota fechou a R$ 94,89, com P/VP de 0,94.",
-      "articleCount": 3,
+      "score": 0.3,
+      "confidence": "low",
+      "summary": "A Fiis, atualizada em 30/10, registra o último provento do Sparta Fiagro em R$ 1,10 por cota (data-com 07/10, pagamento 15/10, yield de 1,15%), acima dos R$ 0,95 de setembro. A cota fechou a R$ 88,10, com P/VP de 0,87 e dividend yield de 16,00% em 12 meses.",
+      "articleCount": 1,
       "topHeadlines": [
-        {
-          "title": "Fiagros colhem até 11% em uma semana, mas ainda enfrentam praga da inadimplência",
-          "url": "https://www.infomoney.com.br/onde-investir/fiagros-colhem-ate-11-em-uma-semana-mas-ainda-enfrentam-praga-da-inadimplencia/",
-          "publishedAt": "2026-10-16"
-        },
-        {
-          "title": "169 fundos imobiliários pagam proventos hoje (15), com valores de até R$ 180 por cota; IFIX avança",
-          "url": "https://www.moneytimes.com.br/169-fundos-imobiliarios-pagam-proventos-hoje-15-com-valores-de-ate-r-180-por-cota-ifix-sobe-igdl/",
-          "publishedAt": "2026-10-15"
-        },
         {
           "title": "CRAA11 - FIAGRO CRAA: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/craa11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "RURA11",
-      "sentiment": "negative",
-      "score": -0.4,
+      "sentiment": "neutral",
+      "score": 0.15,
       "confidence": "medium",
-      "summary": "O Itaú Asset Rural reduziu o provento para R$ 0,09 por cota (data-base 30/09, pagamento 07/10, yield de 1,12%), abaixo dos R$ 0,11 de agosto. Fiis e Funds Explorer registram a cota a R$ 8,29 e P/VP de 0,81.",
+      "summary": "O Itaú Asset Rural tem provento provisionado de R$ 0,10 por cota, com data-com em 30/10 e pagamento em 09/11, acima dos R$ 0,09 pagos em 07/10 e ainda abaixo dos R$ 0,11 de agosto, segundo o Status Invest. Em 30/10 a cota fechou a R$ 7,90, com P/VP de 0,77 e dividend yield de 18,08% em 12 meses.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "RURA11 - FIAGRO RURA: cotação e histórico de dividendos",
-          "url": "https://fiis.com.br/rura11/",
-          "publishedAt": "2026-10-23"
+          "title": "RURA11 - ITAU ASSET RURAL FIAGRO: dividendos e cotação",
+          "url": "https://statusinvest.com.br/fiagros/rura11",
+          "publishedAt": "2026-10-30"
         },
         {
-          "title": "RURA11 | Itaú Asset Rural: dividendos e comunicados",
-          "url": "https://www.fundsexplorer.com.br/fiagros/rura11"
+          "title": "RURA11 - FIAGRO RURA: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/rura11/",
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "KNSC11",
       "sentiment": "negative",
-      "score": -0.4,
+      "score": -0.35,
       "confidence": "medium",
-      "summary": "O Kinea Securities pagou R$ 0,08 por cota em 14/10 (yield de 0,88%), abaixo dos R$ 0,09 de setembro e no menor valor desde fevereiro. Em 23/10 a cota fechou a R$ 9,18, com P/VP de 1,05.",
-      "articleCount": 2,
+      "summary": "O Kinea Securities manteve R$ 0,08 por cota, com data-com em 30/10 e pagamento em 13/11, o mesmo valor de setembro e abaixo dos R$ 0,09 de agosto, segundo a Fiis e o Status Invest. No pregão de 30/10 a cota subiu 0,46%, a R$ 8,74, com P/VP de 1,00, em dia em que o IFIX interrompeu quatro quedas seguidas após a reeleição, mas ainda acumulava perda de 8,62% na semana.",
+      "articleCount": 3,
       "topHeadlines": [
         {
-          "title": "MXRF11, BRCO11: 180 FIIs pagam dividendos na semana; veja os valores",
-          "url": "https://fiis.com.br/noticias/fiis-fundos-imobiliarios-calendario-pagamento-semana-outubro-2026-jj/",
-          "publishedAt": "2026-10-13"
+          "title": "MXRF11, VISC11, XPLG11: FIIs anunciam dividendos; veja valores",
+          "url": "https://fiis.com.br/noticias/fundo-imobiliario-dividendos-pagamento-sexta/",
+          "publishedAt": "2026-10-30"
         },
         {
-          "title": "KNSC11 - KINEA SECURITIES: cotação e histórico de dividendos",
-          "url": "https://fiis.com.br/knsc11/",
-          "publishedAt": "2026-10-23"
+          "title": "IFIX interrompe descida após eleição, mas fecha semana e mês no vermelho",
+          "url": "https://fiis.com.br/noticias/ifix-interrompe-sequencia-negativa-eleicao/",
+          "publishedAt": "2026-10-30"
+        },
+        {
+          "title": "KNSC11 - KINEA SECURITIES: dividendos",
+          "url": "https://statusinvest.com.br/fundos-imobiliarios/knsc11",
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "KDIF11",
-      "sentiment": "neutral",
-      "score": -0.1,
-      "confidence": "medium",
-      "summary": "O Kinea Infra manteve R$ 1,00 por cota (pagamento em 07/10, yield de 0,87%), terceiro mês nesse valor, abaixo dos R$ 1,45 pagos até junho. O BTG Pactual manteve o KDIF11 com peso de 4,5% na carteira recomendada de fundos listados de outubro; em 23/10 a cota fechou a R$ 120,31.",
-      "articleCount": 2,
+      "sentiment": "negative",
+      "score": -0.3,
+      "confidence": "low",
+      "summary": "A página do Kinea Infra no Fiis, atualizada em 30/10, mostra a cota a R$ 104,70, perto da mínima de 52 semanas de R$ 104,20, e o último provento ainda em R$ 1,00 (pago em 07/10, yield de 0,87%), abaixo dos R$ 1,45 distribuídos até junho. Não houve reportagem nova sobre o fundo na janela.",
+      "articleCount": 1,
       "topHeadlines": [
-        {
-          "title": "FIIs e FI-Infra: Os melhores fundos para investir em outubro, segundo o BTG",
-          "url": "https://www.moneytimes.com.br/fiis-e-fi-infra-os-melhores-fundos-para-investir-em-outubro-segundo-o-btg-igdl/",
-          "publishedAt": "2026-10-10"
-        },
         {
           "title": "KDIF11 - KINEA INFRA: cotação e histórico de dividendos",
           "url": "https://fiis.com.br/kdif11/",
-          "publishedAt": "2026-10-23"
+          "publishedAt": "2026-10-30"
         }
       ]
     },
     {
       "ticker": "VGIR11",
       "sentiment": "positive",
-      "score": 0.35,
+      "score": 0.3,
       "confidence": "medium",
-      "summary": "O Valora CRI CDI pagou R$ 0,13 por cota em 20/10, com dividend yield de 1,35% sobre o fechamento de R$ 9,65 em setembro, segundo a Fiis. A mesma reportagem descreve compras de CRIs em agosto, incluindo R$ 180 milhões em séries da Barra da Tijuca remuneradas entre CDI + 4,5% e CDI + 6% ao ano.",
+      "summary": "O Valora CRI CDI pagou R$ 0,13 por cota em 20/10 (data-com 13/10, yield de 1,33%), segundo a Fiis. No pregão de 30/10 a cota avançou 1,25%, a R$ 8,90, com P/VP de 0,91, entre os papéis mais negociados no dia em que o IFIX subiu 0,4% e ainda acumulava queda de 8,62% na semana.",
       "articleCount": 2,
       "topHeadlines": [
         {
-          "title": "VGIR11 divulgou dividendos de outubro; veja quem tem direito",
-          "url": "https://fiis.com.br/noticias/fundo-imobiliario-vgir11-dividendos-outubro-2026/",
-          "publishedAt": "2026-10-14"
+          "title": "IFIX interrompe descida após eleição, mas fecha semana e mês no vermelho",
+          "url": "https://fiis.com.br/noticias/ifix-interrompe-sequencia-negativa-eleicao/",
+          "publishedAt": "2026-10-30"
         },
         {
-          "title": "XPML11 e mais 64 FIIs pagam dividendos na semana; veja quais",
-          "url": "https://fiis.com.br/noticias/dividendos-de-fiis-65-fundos-imobiliarios-pagam-esta-semana-outubro-jj/",
-          "publishedAt": "2026-10-19"
+          "title": "VGIR11 - VALORA CRI CDI: cotação e histórico de dividendos",
+          "url": "https://fiis.com.br/vgir11/",
+          "publishedAt": "2026-10-30"
         }
       ]
     }
